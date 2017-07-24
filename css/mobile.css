@@ -411,7 +411,13 @@ nav ul li a:hover {
   background-image: url("../image/background.jpg");
   background-size: 100%;
   height: 100%;
-  margin-top: 2em;
+}
+
+#contentActors h2
+{
+  width: 100%;
+  text-align: center;
+  padding-top: 1em;
 }
 
 .descriptionAF
@@ -435,8 +441,8 @@ nav ul li a:hover {
   text-align: center;
   color: rgb(184, 14, 14);
   padding: 1em 0;
-  font-size: 1.3em;
-  border-bottom: 0.1em solid #000;
+  font-size: 1.6em;
+  border-bottom: 0.08em solid #000;
 }
 
 .descriptionAF p
@@ -447,6 +453,68 @@ nav ul li a:hover {
   word-wrap: break-word;
   padding-bottom: 3em;
   padding-top: 0.5em;
+}
+
+#insertActor
+{
+  width: 70%;
+  margin: 2em auto;
+  padding-bottom: 2em;
+  border: 0.05em solid #000;
+  box-shadow: 0em 0.4em 0.6em #333;
+}
+
+#insertActor fieldset
+{
+  border: none;
+}
+
+#insertActor legend
+{
+  margin: 1em auto;
+  font-weight: bold;
+  font-size: 1.3em;
+  float: left;
+  padding: 1em auto;
+  width: 100%;
+  text-align: center;
+}
+
+#insertActor label
+{
+  display: block;
+  text-align: center;
+  margin-top: 1em;
+  font-size: 1.3em;
+}
+
+#insertActor input
+{
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  padding: 0.2em;
+}
+
+#insertActor textarea
+{
+  width: 80%;
+  resize: vertical;
+  display: block;
+  margin: 0 auto;
+  padding: 0.2em;
+  min-height: 8em;
+}
+
+#insertActor input[type="submit"]
+{
+  cursor: pointer;
+  margin-top: 1em;
+  color: #fff;
+  background-color: rgb(184, 14, 14);
+  border: none;
+  width: 60%;
+  font-size: 1em;
 }
 
 /* FOOTER */

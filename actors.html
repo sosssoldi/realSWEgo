@@ -25,7 +25,7 @@
 			<nav>
 				<ul>
 					<li lang="en"><a href="use_case.html">USE CASE</a></li>
-					<li class="here">ATTORI</a></li>
+					<li class="here">ATTORI</li>
 					<li><a href="fonti.html">FONTI</a></li>
 					<li><a href="requisiti.html">REQUISITI</a></li>
           <li><a href="forum.html">FORUM</a></li>
@@ -34,7 +34,7 @@
 			</nav>
 		</header>
     <div id="contentActors">
-      <p id="introActors">Elenco di tutti gli attori del Sistema.</p>
+      <h2>Elenco degli attori del Sistema.</h2>
       <div class="descriptionAF">
         <h3>Cliente</h3>
         <p>Tipica descrizione di un utente LMAO.</p>
@@ -43,20 +43,21 @@
         <h3>Cliente</h3>
         <p>Tipica descrizione di un utente ROFL.</p>
       </div>
-			<form>
+			<form id="insertActor">
 			  <fieldset>
 			    <legend>Inserimento nuovo Attore</legend>
-			    <div>
+			    <div class="entranceForm">
 						<label for="nameEntrance">Nome</label>
 			      <input type="text" name="Nome Attore" id="nameEntrance">
 			    </div>
-			    <div>
+			    <div class="entranceForm">
 			      <label for="descriptionEntrance">Descrizione</label>
-						<input type="text" name="Descrizione Attore" id="descriptionEntrance">
-			    </div>
+						<textarea name="Descrizione Attore" id="descriptionEntrance"></textarea>
+					</div>
+					<input type="submit" name="login" value="INSERISCI ATTORE" />
 			  </fieldset>
 			</form>
-    </div>
+	  </div>
     <footer>
 			<span lang="en">SWEgo	&copy;</span>
 		</footer>
