@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>SWEgo - Use Case</title>
+		<meta name="title" content="SWEgo - Use Case" />
+		<meta name="description" content="Visualizza tutti i tuoi Use Case" />
+		<meta name="keywords" content="SWEgo, Use Case" />
+		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="script/nav.js"></script>
+		<script src="script/useCase.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<div id="mobileMenu" class="hideButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li lang="en"><a href="index.html">HOMEPAGE</a></li>
+					<li><a href="#">FONTI</a></li>
+					<li><a href="actors.html">ATTORI</a></li>
+					<li><a href="requirements.html">REQUISITI</a></li>
+					<li lang="en" class="here">USE CASE</li>
+					<li lang="en"><a href="#">LOGOUT</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="content">
+			<div id="viewAllUCDescription">
+				<p>Visualizza tutti i tuoi <span lang="en">Use Case</span> ordinati per numero crescente. Puoi modificarli, eliminarli o inserirne di nuovi.</p>
+				<p>Utilizzando la barra di ricerca potrai anche filtrare i tuoi Casi d'Uso per nome.</p>
+			</div>
+			<form method="get" action="viewAllUC.html" id="search_UC">
+				<fieldset form="search_UC">
+					<legend>Form di ricerca</legend>
+					<label for="name_UC">Ricerca per nome</label>
+					<input type="text" id="name_UC" name="search" autocomplete="off" placeholder="Ricerca per nome..." />
+					<input class="hide" type="submit" value="RICERCA" />
+				</fieldset>
+			</form>
+			<table id="allUC">
+				<thead>
+					<tr>
+						<th scope="col">Codice</th>
+						<th scope="col">Nome</th>
+						<th scope="col">Descrizione</th>
+						<th scope="col">Precondizione</th>
+						<th scope="col">Postcondizione</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="codUC">UC2.3</td>
+						<td>Registrazione</td>
+						<td>L'utente deve poter registrarsi al sito dopo il completamento del form.</td>
+						<td>L'utente si trova nella pagina Registrati.</td>
+						<td>L'utente si è registrato.</td>
+					</tr>
+					<tr>
+						<td class="codUC">UC5</td>
+						<td>Login</td>
+						<td>L'utente deve poter accedere alle funzionalit&agrave; di <span lang="en">SWEgo</span>.</td>
+						<td>L'utente si trova nella pagina di Login.</td>
+						<td>L'utente ha effettuato l'accesso.</td>
+					</tr>
+					<tr>
+						<td class="codUC">UC8</td>
+						<td>Inserisci Caso d'Uso</td>
+						<td>L'utente deve poter inserire un nuovo Caso d'Uso.</td>
+						<td>L'utente si trova nella pagina Inserisci <span lang="en">Use Case</span> e ha riempito il form.</td>
+						<td>L'utente ha inserito un nuovo Caso d'Uso con i dati inseriti nel form.</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<footer>
+			<span lang="en">SWEgo	&copy;</span>
+		</footer>
+	</body>
+</html>

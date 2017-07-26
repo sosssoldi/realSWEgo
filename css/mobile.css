@@ -394,6 +394,135 @@ nav ul li a:hover {
 	margin-bottom: 5%;
 }
 
+/* USE CASE */
+
+#viewAllUCDescription {
+	width: 94%;
+	margin-top: 5%;
+	margin-left: 3%;
+	font-size: 0.92em;
+}
+
+#viewAllUCDescription p {
+	margin-bottom: 2%;
+}
+
+#search_UC {
+	width: 94%;
+	margin: 5% 3%;
+	text-align: center;
+}
+
+#search_UC fieldset {
+	border: none;
+}
+
+#search_UC legend {
+	height: 0em;
+	overflow: hidden;
+}
+
+#search_UC label {
+	display: none;
+}
+
+#search_UC input[type="text"] {
+	width: 70%;
+	font-size: 0.8em;
+	padding: 0.5em;
+	border: 0.1em solid lightgray;
+}
+
+#search_UC input[type="submit"] {
+	background-color: white;
+	background-image: url('../image/search.png');
+	background-size: 100% 100%;
+	width: 2.5em;
+	padding: 0.5em 0em;
+	border: none;
+}
+
+/* Tabella responsive */
+
+#allUC {
+	width: 100%;
+	margin-top: 2%;
+	padding-left: 3%;
+	padding-right: 3%;
+	font-size: 0.9em;
+	background-color: lightagray;
+	background-image: url('../image/background.jpg');
+	background-size: 100%;
+}
+
+#allUC thead, tbody, th, td, tr {
+	display: block;
+}
+
+#allUC tr {
+	border: 0.1em solid black;
+	border-collapse: collapse;
+	margin: 4% 0%;
+}
+
+#allUC thead tr {
+	position: absolute;    /* Nascondiamo la testata */
+  top: -9999px;
+  left: -9999px;
+}
+
+#allUC td {
+	position: relative;		/* Creiamo lo spazio per l'intestazione */
+	border: 0em;
+	padding: 2% 0% 2% 30%;
+}
+
+#allUC td:before {
+	position: absolute;		/* Creiamo le altre celle per la descrizione */
+	top: 0.8em;
+	left: 0%;
+	width: 30%;
+	line-height: 0em;
+	text-align: center;
+	padding: 2% 0%;
+}
+
+#allUC td:nth-of-type(1):before {
+	content: "Codice";
+	font-weight: bold;
+}
+
+#allUC td:nth-of-type(2):before {
+	content: "Nome";
+	font-weight: bold;
+}
+
+#allUC td:nth-of-type(3):before {
+	content: "Descrizione";
+	font-weight: bold;
+}
+
+#allUC td:nth-of-type(4):before {
+	content: "Pre";
+	font-weight: bold;
+}
+
+#allUC td:nth-of-type(5):before {
+	content: "Post";
+	font-weight: bold;
+}
+
+.codUC {
+	background-color: #c40000;
+	color: white;
+}
+
+#noResult {
+	text-align: center;
+	font-size: 0.92em;
+	color: #c40000;
+}
+
 /* FOOTER */
 
 footer {
