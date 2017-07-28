@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>SWEgo - Inserisci Use Case</title>
+		<meta name="title" content="SWEgo - Inserisci Use Case" />
+		<meta name="description" content="Inserisci un nuovo Use Case." />
+		<meta name="keywords" content="SWEgo, Use Case, Inserisci" />
+		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="script/nav.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<div id="mobileMenu" class="hideButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li lang="en"><a href="index.html">HOMEPAGE</a></li>
+					<li><a href="#">FONTI</a></li>
+					<li><a href="actors.html">ATTORI</a></li>
+					<li><a href="requirements.html">REQUISITI</a></li>
+					<li lang="en"><a href="viewAllUC.html">USE CASE</a></li>
+					<li><a href="#">PROFILO</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="breadcrumb">
+			<p>Ti trovi in: USE CASE &gt; INSERSCI USE CASE</p>
+		</div>
+		<div id="content">
+			<div id="insertUC">
+				<p>Inserisci un nuovo <span lang="en">Use Case</span>. L'inserimento è costituito da due parti.</p>
+				<p>Nella prima parte verranno richieste le maggior parte delle informazioni, tra cui il nome, la descrizione, il padre, la precondizione e la postcondizione dello <span lang="en">Use Case</span>.</p>
+				<p>Nella seconda saranno richiesti i requisiti e gli attori associati al Caso d'Uso.</p>
+			</div>
+			<form method="post" action="trackingUC.html" id="insert_UC">
+				<fieldset form="insert_UC">
+					<legend>Inserisci Use Case</legend>
+					<label for="nameUC">Nome</label>
+					<input type="text" name="name" id="nameUC" required="required" />
+					<label for="padreUC">Padre</label>
+					<select id="padreUC" name="padre">
+						<option>Nessuno</option>
+						<option>UC5 - Registrazione</option>
+						<option>UC8.2 - Inserisci nome</option>
+					</select>
+					<label for="descriptionUC">Descrizione</label>
+					<textarea id="descriptionUC" name="description" maxlength="200" required="required"></textarea>
+					<label for="preUC">Precondizione</label>
+					<textarea id="preUC" name="pre" maxlength="200" required="required"></textarea>
+					<label for="postUC">Postcondizione</label>
+					<textarea id="postUC" name="post" maxlength="200" required="required"></textarea>
+					<label for="extendUC">Estensione</label>
+					<select id="extendUC" name="extend">
+						<option>Nessuno</option>
+						<option>UC5 - Registrazione</option>
+						<option>UC8.2 - Inserisci nome</option>
+					</select>
+					<input type="submit" value="CONTINUA" />
+				</fieldset>
+			</form>
+		</div>
+		<footer>
+			<span lang="en">SWEgo	&copy;</span>
+		</footer>
+	</body>
+</html>

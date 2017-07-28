@@ -756,6 +756,129 @@ nav ul li a:hover {
 	background-color: #9d0404;
 }
 
+/* INSERT USE CASE */
+
+#insertUC {
+	width: 94%;
+	margin-top: 5%;
+	margin-left: 3%;
+	font-size: 0.92em;
+}
+
+#insertUC p {
+	margin-bottom: 2%;
+}
+
+#insert_UC {
+	background-color: lightgray;
+	background-image: url('../image/background.jpg');
+	background-size: 100%;
+	margin: 4% 0%;
+	text-align: center;
+}
+
+#insert_UC fieldset {
+	border: none;
+}
+
+#insert_UC legend {
+	height: 0em;
+	overflow: hidden;
+}
+
+#insert_UC label {
+	display: block;
+	margin-top: 4%;
+}
+
+#insert_UC input[type="text"] {
+	padding: 0.5em;
+	width: 60%;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+#insert_UC textarea {
+	padding: 0.5em;
+	width: 60%;
+	height: 5em;
+	font-size: 0.8em;
+	resize: none;
+}
+
+#insert_UC select {
+	width: 63%;
+	padding: 0.5em;
+	font-size: 0.8em;
+	margin-bottom: 1%;
+}
+
+#insert_UC input[type="submit"] {
+	display: block;
+	width: 64%;
+	padding: 0.7em;
+	margin: 5% 0% 5% 18%;
+	background-color: #8b0000;
+	color: white;
+	font-weight: bold;
+	font-size: 0.8em;
+	border: none;
+	border-radius: 0.3em;
+	cursor: pointer;
+}
+
+#insert_UC input[type="submit"]:hover {
+	background-color: #9d0404;
+}
+
+#trackingUC {
+	background-color: lightgray;
+	background-image: url('../image/background.jpg');
+	background-size: 100%;
+	margin: 4% 0%;
+	padding: 3% 0%;
+}
+
+#trackingUC fieldset {
+	border: none;
+}
+
+#trackingUC legend {
+	text-transform: uppercase;
+	margin: 2% 0%;
+	text-align: center;
+}
+
+#trackingUC input[type="checkbox"] {
+	display: block;
+	float: left;
+	margin-bottom: 5%;
+	margin-left: 10%;
+}
+
+#trackingUC label {
+	display: block;
+	margin: 0% 10% 5% 15%;
+}
+
+#trackingUC input[type="submit"] {
+	display: block;
+	width: 64%;
+	padding: 0.7em;
+	margin: 5% 0% 5% 18%;
+	background-color: #8b0000;
+	color: white;
+	font-weight: bold;
+	font-size: 0.8em;
+	border: none;
+	border-radius: 0.3em;
+	cursor: pointer;
+}
+
+#trackingUC input[type="submit"]:hover {
+	background-color: #9d0404;
+}
+
 /* FOOTER */
 
 footer {

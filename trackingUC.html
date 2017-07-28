@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>SWEgo - Inserisci Use Case</title>
+		<meta name="title" content="SWEgo - Inserisci Use Case" />
+		<meta name="description" content="Traccia lo Use Case con gli attori e i requisiti." />
+		<meta name="keywords" content="SWEgo, Use Case, Inserisci, Tracking, Tracciamento, Attori" />
+		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="script/nav.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<div id="mobileMenu" class="hideButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li lang="en"><a href="index.html">HOMEPAGE</a></li>
+					<li><a href="#">FONTI</a></li>
+					<li><a href="actors.html">ATTORI</a></li>
+					<li><a href="requirements.html">REQUISITI</a></li>
+					<li lang="en"><a href="viewAllUC.html">USE CASE</a></li>
+					<li><a href="#">PROFILO</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="breadcrumb">
+			<p>Ti trovi in: USE CASE &gt; INSERSCI USE CASE</p>
+		</div>
+		<div id="content">
+			<div id="insertUC">
+				<p>Completa l'inserimento dello <span lang="en">Use Case</span> inserendo gli attori e successivamete tracciandolo con i requisiti.</p>
+			</div>
+			<form method="post" action="#" id="trackingUC">
+				<fieldset form="trackingUC">
+					<legend>Inserisci attori</legend>
+					<input type="checkbox" name="actors" value="Co.Code" id="actor1" />
+					<label for="actor1">Co.Code</label>
+					<input type="checkbox" name="actors" value="Kaleidos.Code" id="actor2" />
+					<label for="actor2">Kaleidos.Code</label>
+					<input type="checkbox" name="actors" value="API.AI" id="actor3" />
+					<label for="actor3">API.AI</label>
+				</fieldset>
+				<fieldset form="trackingUC">
+					<legend>Tracciamento con Use Case</legend>
+					<input type="checkbox" name="actors" value="Login" id="req1" />
+					<label for="req1">UC2 - Login</label>
+					<input type="checkbox" name="actors" value="Registrazione" id="req2" />
+					<label for="req2">UC5 - Registrazione</label>
+					<input type="checkbox" name="actors" value="Inserisci Caso d'Uso" id="req3" />
+					<label for="req3">UC8 - Inserisci Caso d'Uso</label>
+					<input type="submit" value="INSERISCI" />
+				</fieldset>
+			</form>
+		</div>
+		<footer>
+			<span lang="en">SWEgo	&copy;</span>
+		</footer>
+	</body>
+</html>
