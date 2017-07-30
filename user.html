@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>SWEgo - Profilo</title>
+		<meta name="title" content="SWEgo - Profilo" />
+		<meta name="description" content="Visualizza il profilo di un utente." />
+		<meta name="keywords" content="SWEgo, Utente, Profilo" />
+		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+		<script src="https://www.amcharts.com/lib/3/pie.js"></script>
+		<script src="https://www.amcharts.com/lib/3/themes/dark.js"></script>
+		<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+		<script src="script/nav.js"></script>
+		<script src="script/user.js"></script>
+	</head>
+	<body onLoad="createGraphics([{'sodd':'Soddisfatto', 'req': 52}, {'sodd':'Non soddisfatto', 'req': 27}], [{'sodd':'Soddisfatto', 'req': 52}, {'sodd':'Non soddisfatto', 'req': 27}], [{'sodd':'Soddisfatto', 'req': 52}, {'sodd':'Non soddisfatto', 'req': 27}]);">
+		<header>
+			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<div id="mobileMenu" class="hideButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li lang="en"><a href="index.html">HOMEPAGE</a></li>
+					<li><a href="#">FONTI</a></li>
+					<li><a href="actors.html">ATTORI</a></li>
+					<li><a href="requirements.html">REQUISITI</a></li>
+					<li lang="en"><a href="viewAllUC.html">USE CASE</a></li>
+					<li class="here">PROFILO</li>
+				</ul>
+			</nav>
+		</header>
+		<div id="breadcrumb">
+			<p>Ti trovi in: PROFILO</p>
+		</div>
+		<div id="content">
+			<div id="userDescription">
+				<p>In questa pagina potrai cambiare la tua password, vedere un riassunto delle tue metriche oppure effettuare il logout.</p>
+				<p class="warning">ATTENZIONE: attivare JavaScript per il corretto funzionamento della pagina!</p>
+			</div>
+			<form method="post" action="#" id="changePassword">
+				<fieldset>
+					<legend>Form per il cambio password</legend>
+					<label for="oldPassword">Vecchia password</label>
+					<input type="password" name="old" id="oldPassword" required="required" />
+					<label for="newPassoword">Nuova password</label>
+					<input type="password" name="new" id="newPassoword" required="required" />
+					<label for="confirmPassword">Conferma password</label>
+					<input type="password" name="confirm" id="confirmPassword" required="required" />
+					<input type="submit" value="CAMBIA" />
+				</fieldset>
+			</form>
+			<div id="graphics">
+				<h2>REQUISITI OBBLIGATORI</h2>
+				<div id="graphicObb"></div>
+				<h2>REQUISITI DESIDERABILI</h2>
+				<div id="graphicDes"></div>
+				<h2>REQUISITI OPZIONALI</h2>
+				<div id="graphicOpz"></div>
+			</div>
+			<div id="logout">
+				<a href="logout.html">Logout</a>
+				<div></div>
+			</div>
+		</div>
+		<footer>
+			<span lang="en">SWEgo	&copy;</span>
+		</footer>
+	</body>
+</html>

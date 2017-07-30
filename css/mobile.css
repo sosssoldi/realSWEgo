@@ -933,9 +933,112 @@ nav ul li a:hover {
 	background-color: #9d0404;
 }
 
+/* PROFILO */
+
+#userDescription {
+	width: 94%;
+	margin: 5% 3% 4% 3%;
+	font-size: 0.92em;
+}
+
+#userDescription p {
+	margin-bottom: 2%;
+}
+
+#changePassword {
+	margin: 4% 0%;
+	text-align: center;
+}
+
+#changePassword fieldset {
+	border: none;
+}
+
+#changePassword legend {
+	height: 0em;
+	overflow: hidden;
+}
+
+#changePassword label {
+	display: block;
+	margin-top: 2%;
+}
+
+#changePassword input[type="password"] {
+	padding: 0.5em;
+	width: 60%;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+#changePassword input[type="submit"] {
+	display: block;
+	width: 64%;
+	padding: 0.7em;
+	margin: 5% 0% 5% 18%;
+	background-color: #8b0000;
+	color: white;
+	font-weight: bold;
+	font-size: 0.8em;
+	border: none;
+	border-radius: 0.3em;
+	cursor: pointer;
+}
+
+#changePassword input[type="submit"]:hover {
+	background-color: #9d0404;
+}
+
+#graphics h2 {
+	text-align: center;
+	font-weight: normal;
+	margin-top: 4%;
+}
+
+#graphicObb {
+	width: 96%;
+	height: 200px;
+	margin: 0 auto;
+	border: 0.05em solid gray;
+}
+
+#graphicDes {
+	width: 96%;
+	height: 200px;
+	margin: 0 auto;
+	background-color: #3f3f4f;
+}
+
+#graphicOpz {
+	width: 96%;
+	height: 200px;
+	margin: 0 auto;
+	border: 0.05em solid gray;
+}
+
+#logout {
+	text-align: center;
+	margin-top: 4%;
+}
+
+#logout a {
+	color: blue;
+	text-decoration: none;
+}
+
+#logout div {
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	background-image: url('../image/logout.jpg');
+	background-size: 100% 100%;
+	padding: 0.3em;
+}
+
 /* FOOTER */
 
 footer {
 	display: block;
+	clear: both;
 	margin: 2%;
 }
