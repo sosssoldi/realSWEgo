@@ -45,25 +45,44 @@
 				<p>In questa pagina potrai cambiare la tua password, vedere un riassunto delle tue metriche oppure effettuare il logout.</p>
 				<p class="warning">ATTENZIONE: attivare JavaScript per il corretto funzionamento della pagina!</p>
 			</div>
-			<form method="post" action="#" id="changePassword">
-				<fieldset>
-					<legend>Form per il cambio password</legend>
-					<label for="oldPassword">Vecchia password</label>
-					<input type="password" name="old" id="oldPassword" required="required" />
-					<label for="newPassoword">Nuova password</label>
-					<input type="password" name="new" id="newPassoword" required="required" />
-					<label for="confirmPassword">Conferma password</label>
-					<input type="password" name="confirm" id="confirmPassword" required="required" />
-					<input type="submit" value="CAMBIA" />
-				</fieldset>
-			</form>
+			<div id="changePassword">
+				<form method="post" action="#" id="change_password">
+					<fieldset form="change_password">
+						<legend>Form per il cambio password</legend>
+						<label for="oldPassword">Vecchia password</label>
+						<input type="password" name="old" id="oldPassword" required="required" />
+						<label for="newPassoword">Nuova password</label>
+						<input type="password" name="new" id="newPassoword" required="required" />
+						<label for="confirmPassword">Conferma password</label>
+						<input type="password" name="confirm" id="confirmPassword" required="required" />
+						<input type="submit" value="CAMBIA" />
+					</fieldset>
+				</form>
+				<a href="#change_password" class="showMoreInfo">Cambia password</a>
+			</div>
 			<div id="graphics">
 				<h2>REQUISITI OBBLIGATORI</h2>
-				<div id="graphicObb"></div>
+				<div id="graphicObb">
+					<ul>
+						<li>Soddisfatti: 73% (38)</li>
+						<li>Non soddisfatti: 27% (18)</li>
+					</ul>
+				</div>
 				<h2>REQUISITI DESIDERABILI</h2>
-				<div id="graphicDes"></div>
+				<div id="graphicDes">
+					<ul>
+						<li>Soddisfatti: 73% (38)</li>
+						<li>Non soddisfatti: 27% (18)</li>
+					</ul>
+				</div>
 				<h2>REQUISITI OPZIONALI</h2>
-				<div id="graphicOpz"></div>
+				<div id="graphicOpz">
+					<ul>
+						<li>Soddisfatti: 73% (38)</li>
+						<li>Non soddisfatti: 27% (18)</li>
+					</ul>
+				</div>
+				<a href="#graphicObb" class="showMoreInfo">Mostra copertura dei requisiti</a>
 			</div>
 			<div id="logout">
 				<a href="logout.html">Logout</a>

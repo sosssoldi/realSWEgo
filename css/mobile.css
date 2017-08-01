@@ -946,32 +946,37 @@ nav ul li a:hover {
 }
 
 #changePassword {
-	margin: 4% 0%;
+	text-align: center;
+	margin-top: 2%;
+}
+
+#change_password {
+	margin: 2% 0% 0% 0%;
 	text-align: center;
 }
 
-#changePassword fieldset {
+#change_password fieldset {
 	border: none;
 }
 
-#changePassword legend {
+#change_password legend {
 	height: 0em;
 	overflow: hidden;
 }
 
-#changePassword label {
+#change_password label {
 	display: block;
 	margin-top: 2%;
 }
 
-#changePassword input[type="password"] {
+#change_password input[type="password"] {
 	padding: 0.5em;
 	width: 60%;
 	font-size: 0.8em;
 	text-align: center;
 }
 
-#changePassword input[type="submit"] {
+#change_password input[type="submit"] {
 	display: block;
 	width: 64%;
 	padding: 0.7em;
@@ -985,8 +990,17 @@ nav ul li a:hover {
 	cursor: pointer;
 }
 
-#changePassword input[type="submit"]:hover {
+#change_password input[type="submit"]:hover {
 	background-color: #9d0404;
+}
+
+#graphics {
+	text-align: center;
+	margin-top: 6%;
+}
+
+#graphics a {
+	margin-top: 2%;
 }
 
 #graphics h2 {
@@ -995,11 +1009,17 @@ nav ul li a:hover {
 	margin-top: 4%;
 }
 
+#graphics ul {
+	padding-top: 3%;
+	list-style-type: none;
+}
+
 #graphicObb {
 	width: 96%;
 	height: 200px;
 	margin: 0 auto;
 	border: 0.05em solid gray;
+	text-align: center;
 }
 
 #graphicDes {
@@ -1007,6 +1027,8 @@ nav ul li a:hover {
 	height: 200px;
 	margin: 0 auto;
 	background-color: #3f3f4f;
+	text-align: center;
+	color: white;
 }
 
 #graphicOpz {
@@ -1014,11 +1036,12 @@ nav ul li a:hover {
 	height: 200px;
 	margin: 0 auto;
 	border: 0.05em solid gray;
+	text-align: center;
 }
 
 #logout {
 	text-align: center;
-	margin-top: 4%;
+	margin-top: 5%;
 }
 
 #logout a {
@@ -1028,8 +1051,8 @@ nav ul li a:hover {
 
 #logout div {
 	display: inline-block;
-	width: 1.5em;
-	height: 1.5em;
+	width: 0.45em;
+	height: 0.45em;
 	background-image: url('../image/logout.jpg');
 	background-size: 100% 100%;
 	padding: 0.3em;
