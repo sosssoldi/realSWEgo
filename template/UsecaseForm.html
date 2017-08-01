@@ -1,0 +1,27 @@
+<form name="insert" method="POST" action="insert.php?obj=Usecase">
+	<fieldset form="insert">
+		<legend>Inserimento usecase</legend>
+		<label for="name">Nome</label>
+		<input id="name" name="name" type="text" required="required" maxlength="50" />
+		<label for="description">Descrizione</label>
+		<textarea id="description" name="description" required="required"></textarea>
+		<label for="precondition">Pre-condizione</label>
+		<textarea id="precondition" name="precondition" required="required"></textarea>
+		<label for="postcondition">Post-condizione</label>
+		<textarea id="postcondition" name="postcondition" required="required"></textarea>
+		<label for="mainscenario">Scenario principale</label>
+		<textarea id="mainscenario" name="mainscenario" required="required"></textarea>
+		<label for="alternativescenario">Scenario alternativo</label>
+		<textarea id="alternativescenario" name="alternativescenario" required="required"></textarea>
+		<label for="generalization">Generalizzazione</label>
+		<select id="generalization" name="generalization">
+			<option value="true">Si</option>
+			<option value="false">No</option>
+		</select>
+		<label for="parent">Usecase padre</label>
+		<select id="parent" name="parent" multiple="multiple">
+			:options:
+		</select>
+		<input type="submit" name="insert" value="INSERISCI" />
+	</fieldset>
+</form>
