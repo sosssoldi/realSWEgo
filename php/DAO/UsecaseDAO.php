@@ -5,12 +5,12 @@
 			parent::__construct($connection);
 		}
 
-		public function insert($obj) {
+		public function insert($obj, $projectid) {
 			if($obj['parent'] == 'NULL')
-				$id = $this->getIdWithoutParent();
+				$id = $this->getIdWithoutParent($projectid);
 			else
-				$id = $this->getIdWithParent($obj['parent']);
-			$this->query("INSERT INTO usecase VALUES (id, '{$id}', '{$obj['name']}', '{$obj['description']}', '{$obj['precondition']}', '{$obj['postcondition']}', '{$obj['mainscenario']}', '{$obj['alternativescenario']}', {$obj['generalization']}, {$obj['parent']})");
+				$id = $this->getIdWithParent($obj['parent'], $projectid);
+			$this->query("INSERT INTO usecase VALUES (id, '{$id}', '{$obj['name']}', '{$obj['description']}', '{$obj['precondition']}', '{$obj['postcondition']}', '{$obj['mainscenario']}', '{$obj['alternativescenario']}', {$obj['generalization']}, {$obj['parent']}, {$projectid})");
 			$this->resultSet();
 			$this->query("SELECT id FROM usecase WHERE usecaseid='{$id}';");
 			$rs = $this->resultSet();
@@ -30,8 +30,8 @@
 			}
 		}
 
-		public function getIdWithoutParent() {
-			$this->query("SELECT usecaseid FROM usecase WHERE parent IS NULL ORDER BY usecaseid DESC LIMIT 1;");
+		public function getIdWithoutParent($projectid) {
+			$this->query("SELECT usecaseid FROM usecase WHERE parent IS NULL AND projectid = {$projectid} ORDER BY usecaseid DESC LIMIT 1;");
 			$rs = $this->resultSet();
 			if(!$rs)
 				$id = "UC1";
@@ -43,8 +43,8 @@
 			return $id;
 		}
 
-		public function getIdWithParent($parent) {
-			$this->query("SELECT usecaseid FROM usecase WHERE parent={$parent} ORDER BY length(usecaseid) desc, usecaseid DESC LIMIT 1;");
+		public function getIdWithParent($parent, $projectid) {
+			$this->query("SELECT usecaseid FROM usecase WHERE parent={$parent} AND projectid = {$projectid}ORDER BY length(usecaseid) desc, usecaseid DESC LIMIT 1;");
 			$rs = $this->resultSet();
 			if(!$rs) {
 				$this->query("SELECT usecaseid FROM usecase WHERE id={$parent};");
@@ -63,14 +63,14 @@
 			return $id;
 		}
 
-		public function update($id, $obj) {
+		public function update($id, $obj, $projectid) {
 			$lid = $obj["usecaseid"];
 			$nid = "";
 			if($obj["parent"] != $this->getParent($id))
 				if($obj['parent'] == 'NULL')
-					$nid = $this->getIdWithoutParent();
+					$nid = $this->getIdWithoutParent($projectid);
 				else
-					$nid = $this->getIdWithParent($obj['parent']);
+					$nid = $this->getIdWithParent($obj['parent'], $projectid);
 			else
 				$nid = $lid;
 			$this->query("UPDATE usecase SET usecaseid = '{$nid}', name = '{$obj['name']}', description = '{$obj['description']}', precondition = '{$obj['precondition']}', postcondition = '{$obj['postcondition']}', mainscenario = '{$obj['mainscenario']}', alternativescenario = '{$obj['alternativescenario']}', generalization = {$obj['generalization']}, parent = {$obj['parent']} WHERE id = {$id};");
@@ -115,13 +115,13 @@
 			return $this->resultSet();
 		}
 
-		public function select() {
-			$this->query('SELECT * FROM usecase ORDER BY usecaseid;');
+		public function select($projectid) {
+			$this->query("SELECT * FROM usecase WHERE projectid = {$projectid} ORDER BY usecaseid;");
 			return $this->resultSet();
 		}
 
-		public function getUsecase($id) {
-			$this->query("SELECT * FROM usecase WHERE id={$id};");
+		public function getUsecase($id, $projectid) {
+			$this->query("SELECT * FROM usecase WHERE id={$id} AND projectid = {$projectid};");
 			return $this->resultSet();
 		}
 
@@ -181,18 +181,18 @@
 			return $this->resultSet();
 		}
 
-		public function selectActors() {
-			$this->query('SELECT * FROM actors ORDER BY name;');
+		public function selectActors($projectid) {
+			$this->query("SELECT * FROM actors WHERE projectid = {$projectid} ORDER BY name;");
 			return $this->resultSet();
 		}
 
-		public function selectRequirements() {
-			$this->query('SELECT * FROM requirements ORDER BY requirementid;');
+		public function selectRequirements($projectid) {
+			$this->query("SELECT * FROM requirements WHERE projectid = {$projectid} ORDER BY requirementid;");
 			return $this->resultSet();
 		}
 
-		public function adjustForm($page, $data) {
-			$rs = $this->select();
+		public function adjustForm($page, $data, $projectid) {
+			$rs = $this->select($projectid);
 			$str = "";
 			if($rs) {
 				foreach($rs as $uc)
@@ -200,7 +200,7 @@
 				$page = str_replace(":usecaseoptions", $str, $page);
 			} else
 				$page = str_replace(":usecaseoptions", "", $page);
-			$rs = $this->selectActors();
+			$rs = $this->selectActors($projectid);
 			$str = "";
 			if($rs) {
 				foreach($rs as $actor)
@@ -232,8 +232,8 @@
 			return $page;
 		}
 
-		public function adjustTrackingForm($page, $data) {
-			$rs = $this->select();
+		public function adjustTrackingForm($page, $data, $projectid) {
+			$rs = $this->select($projectid);
 			$str = "";
 			if($rs) {
 				foreach($rs as $uc)
@@ -241,7 +241,7 @@
 				$page = str_replace(":usecaseoptions", $str, $page);
 			} else
 				$page = str_replace(":usecaseoptions", "", $page);
-			$rs = $this->selectRequirements();
+			$rs = $this->selectRequirements($projectid);
 			$str = "";
 			if($rs) {
 				foreach($rs as $r)
@@ -269,7 +269,7 @@
 			return $found;
 		}
 
-		public function fillForm($page, $data) {
+		public function fillForm($page, $data, $projectid) {
 			$page = str_replace(':usecaseid:', $data["usecaseid"], $page);
 			$page = str_replace(':name:', $data["name"], $page);
 			$page = str_replace(':description:', $data["description"], $page);
@@ -277,7 +277,7 @@
 			$page = str_replace(':postcondition:', $data["postcondition"], $page);
 			$page = str_replace(':mainscenario:', $data["mainscenario"], $page);
 			$page = str_replace(':alternativescenario:', $data["alternativescenario"], $page);
-			$rs = $this->select();
+			$rs = $this->select($projectid);
 			$str = "";
 			if($rs) {
 				foreach($rs as $uc)
@@ -301,7 +301,7 @@
 			$array = array();
 			foreach($rs as $inclusion)
 				$array[] = $inclusion["includedusecaseid"];
-			$rs = $this->select();
+			$rs = $this->select($projectid);
 			if($rs) {
 				foreach($rs as $uc)
 					if($this->find($uc["id"], $array))
@@ -316,7 +316,7 @@
 			$array = array();
 			foreach($rs as $extension)
 				$array[] = $extension["extendedusecaseid"];
-			$rs = $this->select();
+			$rs = $this->select($projectid);
 			if($rs) {
 				foreach($rs as $uc)
 					if($this->find($uc["id"], $array))
@@ -331,7 +331,7 @@
 			$array = array();
 			foreach($rs as $actor)
 				$array[] = $actor["actorsid"];
-			$rs = $this->selectActors();
+			$rs = $this->selectActors($projectid);
 			if($rs) {
 				foreach($rs as $actor)
 					if($this->find($actor["id"], $array))

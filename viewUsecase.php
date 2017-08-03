@@ -1,6 +1,6 @@
 <?php
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
+	/*error_reporting(E_ALL);
+	ini_set('display_errors', 1);*/
 	session_start();
 	include_once "php/Database/Database.php";
 	include_once "php/DAO/DAO.php";
@@ -8,11 +8,11 @@
 	include_once "php/Object/Object.php";
 	include_once "php/Object/Usecase.php";
 
-	/*if(empty($_SESSION))
-		header("Location: index.html");*/
+	if(empty($_SESSION))
+		header("Location: index.html");
 
 	$usecaseDAO = new UsecaseDAO();
-	$rs = $usecaseDAO->select($_POST);
+	$rs = $usecaseDAO->select($_SESSION["id"]);
 	if($rs) {
 		$str = '<table id="allUC">';
 		$str .= '<thead>';

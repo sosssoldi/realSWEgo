@@ -5,21 +5,21 @@
 			parent::__construct($connection);
 		}
 
-		public function insert($obj) {
+		public function insert($obj, $projectid) {
 			if($obj['parent'] == 'NULL')
-				$id = $this->getIdWithoutParent($obj['importance'], $obj['type']);
+				$id = $this->getIdWithoutParent($obj['importance'], $obj['type'], $projectid);
 			else
-				$id = $this->getIdWithParent($obj['parent'], $obj['importance'], $obj['type']);
+				$id = $this->getIdWithParent($obj['parent'], $obj['importance'], $obj['type'], $projectid);
 			$importance = array("Obbligatorio","Desiderabile","Opzionale");
 			$type = array("F"=>"Funzionale","Q"=>"Di Qualità","P"=>"Prestazionale","V"=>"Di Vincolo");
 			$importance = $importance[$obj["importance"]];
 			$type = $type[$obj["type"]];
-			$this->query("INSERT INTO requirements VALUES (id, '{$id}', '{$obj['description']}', '{$type}', '{$importance}', '{$obj['satisfied']}', {$obj['parent']}, {$obj['source']});");
+			$this->query("INSERT INTO requirements VALUES (id, '{$id}', '{$obj['description']}', '{$type}', '{$importance}', '{$obj['satisfied']}', {$obj['parent']}, {$obj['source']}, {$projectid});");
 			return $this->resultSet();
 		}
 
-		public function getIdWithoutParent($importance, $type) {
-			$this->query("SELECT requirementid FROM requirements WHERE parent IS NULL AND type LIKE '%{$type}%' ORDER BY id desc LIMIT 1;");
+		public function getIdWithoutParent($importance, $type, $projectid) {
+			$this->query("SELECT requirementid FROM requirements WHERE parent IS NULL AND type LIKE '%{$type}%' AND projectid = {$projectid} ORDER BY id desc LIMIT 1;");
 			$rs = $this->resultSet();
 			if(!$rs)
 				$id = "R".$importance.$type."1";
@@ -31,8 +31,8 @@
 			return $id;
 		}
 
-		public function getIdWithParent($parent, $importance, $type) {
-			$this->query("SELECT requirementid FROM requirements WHERE parent={$parent} ORDER BY length(requirementid) desc, requirementid DESC;");
+		public function getIdWithParent($parent, $importance, $type, $projectid) {
+			$this->query("SELECT requirementid FROM requirements WHERE parent={$parent} AND projectid = {$projectid} ORDER BY length(requirementid) desc, requirementid DESC;");
 			$rs = $this->resultSet();
 			if(!$rs) {
 				$this->query("SELECT requirementid FROM requirements WHERE id={$parent};");
@@ -60,14 +60,14 @@
 			return $id;
 		}
 
-		public function update($id, $obj) {
+		public function update($id, $obj, $projectid) {
 			$lid = $obj["requirementid"];
 			$nid = "";
 			if($obj["parent"] != $this->getParent($id))
 				if($obj['parent'] == 'NULL')
-					$nid = $this->getIdWithoutParent($obj['importance'], $obj['type']);
+					$nid = $this->getIdWithoutParent($obj['importance'], $obj['type'], $projectid);
 				else
-					$nid = $this->getIdWithParent($obj['parent'], $obj['importance'], $obj['type']);
+					$nid = $this->getIdWithParent($obj['parent'], $obj['importance'], $obj['type'], $projectid);
 			else {
 				$requirementid = substr($lid,3);
 				$nid = "R".$obj["importance"].$obj["type"].$requirementid;
@@ -102,13 +102,13 @@
 			return $this->resultSet();
 		}
 
-		public function select() {
-			$this->query('SELECT * FROM requirements ORDER BY requirementid;');
+		public function select($projectid) {
+			$this->query("SELECT * FROM requirements WHERE projectid = {$projectid} ORDER BY requirementid;");
 			return $this->resultSet();
 		}
 
-		public function getRequirement($id) {
-			$this->query("SELECT * FROM requirements WHERE id={$id};");
+		public function getRequirement($id, $projectid) {
+			$this->query("SELECT * FROM requirements WHERE id = {$id} AND projectid = {$projectid};");
 			return $this->resultSet();
 		}
 
@@ -143,13 +143,13 @@
 			return $array;
 		}
 
-		public function selectSources() {
-			$this->query('SELECT * FROM sources ORDER BY name;');
+		public function selectSources($projectid) {
+			$this->query("SELECT * FROM sources WHERE projectid = {$projectid} ORDER BY name;");
 			return $this->resultSet();
 		}
 
-		public function adjustForm($page, $data) {
-			$rs = $this->select();
+		public function adjustForm($page, $data, $projectid) {
+			$rs = $this->select($projectid);
 			$str = "";
 			if($rs) {
 				foreach($rs as $requirement)
@@ -157,7 +157,7 @@
 				$page = str_replace(":requirementoptions", $str, $page);
 			} else
 				$page = str_replace(":requirementoptions", "", $page);
-			$rs = $this->selectSources();
+			$rs = $this->selectSources($projectid);
 			$str = "";
 			if($rs) {
 				foreach($rs as $source)
@@ -182,10 +182,10 @@
 			return $found;
 		}
 
-		public function fillForm($page, $data) {
+		public function fillForm($page, $data, $projectid) {
 			$page = str_replace(':requirementid:', $data["requirementid"], $page);
 			$page = str_replace(':description:', $data["description"], $page);
-			$rs = $this->select();
+			$rs = $this->select($projectid);
 			$str = "";
 			if($rs) {
 				foreach($rs as $requirement)
@@ -235,7 +235,7 @@
 			}
 			$page = str_replace(':importance:', $str, $page);
 			$str = "";
-			if($data["satisfied"] == "Non Implementato") {
+			if($data["satisfied"] == "Non implementato") {
 				$str = '<option value="Non implementato" selected="selected">Non Implementato</option>';
 				$str .= '<option value="Implementato">Implementato</option>';
 			} else {
@@ -244,7 +244,7 @@
 			}
 			$page = str_replace(':satisfied:', $str, $page);
 			$str = "";
-			$rs = $this->selectSources();
+			$rs = $this->selectSources($projectid);
 			if($rs) {
 				foreach($rs as $source)
 					if($source["id"] == $data["source"])

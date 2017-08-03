@@ -8,11 +8,11 @@
 	include_once "php/Object/Object.php";
 	include_once "php/Object/Requirement.php";
 
-	/*if(empty($_SESSION))
-		header("Location: index.html");*/
+	if(empty($_SESSION))
+		header("Location: index.html");
 
 	$requirementDAO = new RequirementDAO();
-	$rs = $requirementDAO->select($_POST);
+	$rs = $requirementDAO->select($_SESSION["id"]);
 	if($rs) {
 		$str = '<table id="allR">';
 		$str .= '<thead>';

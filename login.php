@@ -1,6 +1,6 @@
 <?php
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
+	/*error_reporting(E_ALL);
+	ini_set('display_errors', 1);*/
 	session_start();
 	include_once "php/Database/Database.php";
 	include_once "php/DAO/DAO.php";
@@ -8,7 +8,7 @@
 	include_once "php/Object/Object.php";
 	include_once "php/Object/User.php";
 
-	if(!empty($_SESSION))
+	if(!empty($_SESSION) && array_key_exists('groupname', $_SESSION) && $_SESSION["groupname"] != "")
 		header("Location: home.html");
 
 	if(empty($_POST)) {

@@ -1,6 +1,6 @@
 <?php
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
+	/*error_reporting(E_ALL);
+	ini_set('display_errors', 1);*/
 	session_start();
 	include_once "php/Database/Database.php";
 	include_once "php/DAO/DAO.php";
@@ -8,8 +8,8 @@
 	include_once "php/Object/Object.php";
 	include_once "php/Object/Usecase.php";
 
-	/*if(empty($_SESSION))
-		header("Location: index.html");*/
+	if(empty($_SESSION))
+		header("Location: index.html");
 
 	if(empty($_POST)) {
 		render_page();
@@ -29,6 +29,6 @@
 	function render_page($data = null) {
 		$page = file_get_contents("template/insertTracking.html");
 		$usecaseDAO = new UsecaseDAO();
-		echo $usecaseDAO->adjustTrackingForm($page, $data);
+		echo $usecaseDAO->adjustTrackingForm($page, $data, $_SESSION["id"]);
 	}
 ?>

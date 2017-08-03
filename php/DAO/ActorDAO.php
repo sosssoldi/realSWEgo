@@ -5,8 +5,8 @@
 			parent::__construct($connection);
 		}
 
-		public function insert($obj) {
-			$this->query("INSERT INTO actors VALUES (id, '{$obj['name']}', '{$obj['description']}');");
+		public function insert($obj, $projectid) {
+			$this->query("INSERT INTO actors VALUES (id, '{$obj['name']}', '{$obj['description']}', {$projectid});");
 			$this->resultSet();
 		}
 
@@ -20,18 +20,18 @@
 			return $this->resultSet();
 		}
 
-		public function select() {
-			$this->query('SELECT * FROM actors ORDER BY name;');
+		public function select($projectid) {
+			$this->query("SELECT * FROM actors WHERE projectid = {$projectid} ORDER BY name;");
 			return $this->resultSet();
 		}
 
-		public function getActor($id) {
-			$this->query("SELECT * FROM actors WHERE id={$id};");
+		public function getActor($id, $projectid) {
+			$this->query("SELECT * FROM actors WHERE id={$id} AND projectid = {$projectid};");
 			return $this->resultSet();
 		}
 
-		public function adjustForm($page, $data) {
-			$rs = $this->select();
+		public function adjustForm($page, $data, $projectid) {
+			$rs = $this->select($projectid);
 			$str = "";
 			if($rs) {
 				foreach($rs as $actor) {

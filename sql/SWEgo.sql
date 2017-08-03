@@ -14,7 +14,7 @@ use swego;
 create table if not exists users (
 	id int auto_increment primary key,
 	groupname varchar(100) not null unique,
-	projectname varchar(100) not null,
+	projectname varchar(100) not null unique,
 	password varchar(100) not null
 )engine=INNODB;
 
@@ -30,14 +30,18 @@ create table if not exists usecase (
 	alternativescenario varchar(1000),
 	generalization boolean not null,
 	parent int,
-	foreign key(parent) references usecase(id) on delete cascade on update cascade 
+	projectid int,
+	foreign key(parent) references usecase(id) on delete cascade on update cascade,
+	foreign key(projectid) references users(id) on delete cascade on update cascade
 )engine=INNODB;
 
 -- Table: sources
 create table if not exists sources (
 	id int auto_increment primary key,
 	name varchar(100) not null,
-	description varchar(1000) not null
+	description varchar(1000) not null,
+	projectid int,
+	foreign key(projectid) references users(id) on delete cascade on update cascade
 )engine=INNODB;
 
 -- Table: requirements
@@ -50,15 +54,19 @@ create table if not exists requirements (
 	satisfied varchar(100) not null,
 	parent int,
 	source int,
+	projectid int,
 	foreign key(parent) references requirements(id) on delete cascade on update cascade,
-	foreign key(source) references sources(id) on delete cascade on update cascade
+	foreign key(source) references sources(id) on delete cascade on update cascade,
+	foreign key(projectid) references users(id) on delete cascade on update cascade
 )engine=INNODB;
 
 -- Table: actors
 create table if not exists actors (
 	id int auto_increment primary key,
 	name varchar(100) not null,
-	description varchar(1000) not null
+	description varchar(1000) not null,
+	projectid int,
+	foreign key(projectid) references users(id) on delete cascade on update cascade
 )engine=INNODB;
 
 -- Table: usecaseactors

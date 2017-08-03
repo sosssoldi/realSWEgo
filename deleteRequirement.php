@@ -1,6 +1,6 @@
 <?php
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
+	/*error_reporting(E_ALL);
+	ini_set('display_errors', 1);*/
 	session_start();
 	include_once "php/Database/Database.php";
 	include_once "php/DAO/DAO.php";
@@ -8,11 +8,17 @@
 	include_once "php/Object/Object.php";
 	include_once "php/Object/Requirement.php";
 
-	/*if(empty($_SESSION))
-		header("Location: index.html");*/
+	if(empty($_SESSION))
+		header("Location: index.html");
 
 	if(empty($_GET) || !array_key_exists('id', $_GET) || $_GET['id'] == "")
 		header("Location: home.html");
+
+	$requirementDAO = new RequirementDAO();
+	if(!$requirementDAO->getRequirement($_GET["id"], $_SESSION["id"])) {
+		header("Location: viewRequirement.php");
+		exit();
+	}
 
 	if(empty($_POST)) {
 		render_page($_GET['id']);
@@ -32,7 +38,7 @@
 	function render_page($id = null) {
 		$page = file_get_contents("template/deleteRequirement.html");
 		$requirementDAO = new RequirementDAO();
-		$requirement = $requirementDAO->getRequirement($id);
+		$requirement = $requirementDAO->getRequirement($id, $_SESSION["id"]);
 		if($requirement) {
 			$requirement = $requirement[0];
 			$page = str_replace(':id:', $requirement['requirementid'], $page);
