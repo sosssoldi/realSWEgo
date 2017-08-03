@@ -13,14 +13,9 @@ use swego;
 -- Table: users
 create table if not exists users (
 	id int auto_increment primary key,
-	groupname varchar(100) not null,
+	groupname varchar(100) not null unique,
+	projectname varchar(100) not null,
 	password varchar(100) not null
-)engine=INNODB;
-
--- Table: projects
-create table if not exists projects (
-	id int auto_increment primary key,
-	name varchar(100) not null
 )engine=INNODB;
 
 -- Table: usecase
@@ -33,10 +28,9 @@ create table if not exists usecase (
 	postcondition varchar(1000) not null,
 	mainscenario varchar(1000) not null,
 	alternativescenario varchar(1000),
-	generalization int,
+	generalization boolean not null,
 	parent int,
-	foreign key(generalization) references usecase(id),
-	foreign key(parent) references usecase(id) 
+	foreign key(parent) references usecase(id) on delete cascade on update cascade 
 )engine=INNODB;
 
 -- Table: sources
@@ -56,8 +50,8 @@ create table if not exists requirements (
 	satisfied varchar(100) not null,
 	parent int,
 	source int,
-	foreign key(parent) references requirements(id),
-	foreign key(source) references sources(id)
+	foreign key(parent) references requirements(id) on delete cascade on update cascade,
+	foreign key(source) references sources(id) on delete cascade on update cascade
 )engine=INNODB;
 
 -- Table: actors
@@ -72,8 +66,8 @@ create table if not exists usecaseactors (
 	usecaseid int,
 	actorsid int,
 	primary key(usecaseid, actorsid),
-	foreign key(usecaseid) references usecase(id),
-	foreign key(actorsid) references actors(id)
+	foreign key(usecaseid) references usecase(id) on delete cascade on update cascade,
+	foreign key(actorsid) references actors(id) on delete cascade on update cascade
 )engine=INNODB;
 
 -- Table usecaseextensions
@@ -81,8 +75,8 @@ create table if not exists usecaseextensions (
 	usecaseid int,
 	extendedusecaseid int,
 	primary key(usecaseid, extendedusecaseid),
-	foreign key(usecaseid) references usecase(id),
-	foreign key(extendedusecaseid) references usecase(id)
+	foreign key(usecaseid) references usecase(id) on delete cascade on update cascade,
+	foreign key(extendedusecaseid) references usecase(id) on delete cascade on update cascade
 )engine=INNODB;
 
 -- Table usecaseinclusions
@@ -90,8 +84,8 @@ create table if not exists usecaseinclusions (
 	usecaseid int,
 	includedusecaseid int,
 	primary key(usecaseid, includedusecaseid),
-	foreign key(usecaseid) references usecase(id),
-	foreign key(includedusecaseid) references usecase(id)
+	foreign key(usecaseid) references usecase(id) on delete cascade on update cascade,
+	foreign key(includedusecaseid) references usecase(id) on delete cascade on update cascade
 )engine=INNODB;
 
 -- Table: usecaserequirements
@@ -99,7 +93,7 @@ create table if not exists usecaserequirements (
 	usecaseid int,
 	requirementid int,
 	primary key(usecaseid, requirementid),
-	foreign key(usecaseid) references usecase(id),
-	foreign key(requirementid) references requirements(id)
+	foreign key(usecaseid) references usecase(id) on delete cascade on update cascade,
+	foreign key(requirementid) references requirements(id) on delete cascade on update cascade
 )engine=INNODB;
 

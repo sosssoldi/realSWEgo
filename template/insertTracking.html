@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>SWEgo - Tracciamento Use Case Requisiti</title>
+		<meta name="title" content="SWEgo - Tracciamento Use Case Requisiti" />
+		<meta name="description" content="Traccia gli Use Case con i Requisiti." />
+		<meta name="keywords" content="SWEgo, Use Case, Requisiti, Tracciamento" />
+		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="script/nav.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<div id="mobileMenu" class="hideButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li lang="en"><a href="index.html">HOMEPAGE</a></li>
+					<li><a href="#">FONTI</a></li>
+					<li><a href="actors.html">ATTORI</a></li>
+					<li><a href="requirements.html">REQUISITI</a></li>
+					<li lang="en"><a href="viewAllUC.html">USE CASE</a></li>
+					<li><a href="user.html">PROFILO</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="breadcrumb">
+			<p>Ti trovi in: TRACCIAMENTO &gt; USE CASE - REQUISITI</p>
+		</div>
+		<div id="content">
+			<form name="tracking" method="POST" action="tracking.php" id="insert_UC">
+				<fieldset form="tracking">
+					<legend>Tracciamento</legend>
+					<label for="usecase">Usecase</label>
+					<select id="usecase" name="usecase" required="required">
+						:usecaseoptions:
+					</select>
+					<label for="requirement">Requisiti</label>
+					<select id="requirement" name="requirement[]" multiple="multiple" required="required">
+						:requirementoptions:
+					</select>
+					<input type="submit" name="track" value="TRACCIA" />
+				</fieldset>
+			</form>
+		</div>
+		<footer>
+			<span lang="en">SWEgo	&copy;</span>
+		</footer>
+	</body>
+</html>

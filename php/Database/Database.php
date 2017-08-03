@@ -13,6 +13,7 @@
 
 		public function query($query) {
 			$this->stmt = $this->dbc->prepare($query);
+			return $this->stmt;
 		}
 
 		public function bind($param, $value) {
@@ -30,8 +31,13 @@
 		}
 
 		public function resultset() {
-			$this->execute();
-			return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+			try {
+				$this->execute();
+				return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+			}
+			catch(PDOException $ex) {
+				return 0;
+			}
 		}
 
 		public function rowCount() {

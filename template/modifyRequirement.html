@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>SWEgo - Modifica Requisiti</title>
+		<meta name="title" content="SWEgo - Modifica Requisiti" />
+		<meta name="description" content="Modifica un nuovo Requisito." />
+		<meta name="keywords" content="SWEgo, Requisiti, Modifica" />
+		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="script/nav.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<div id="mobileMenu" class="hideButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li lang="en"><a href="index.html">HOMEPAGE</a></li>
+					<li><a href="#">FONTI</a></li>
+					<li><a href="actors.html">ATTORI</a></li>
+					<li class="here">REQUISITI</li>
+					<li lang="en"><a href="viewAllUC.html">USE CASE</a></li>
+					<li><a href="user.html">PROFILO</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="breadcrumb">
+			<p>Ti trovi in: REQUISITI &gt; MODIFICA REQUISITI</p>
+		</div>
+		<div id="content">
+			<div id="insertUC">
+				<p>Modifica un Requisito.</p>
+				<p>Le informazioni che potrai modificare sono la descrizione, l'importanza, il tipo, lo stato di implementazione e la fonte di cui deriva il Requisito.</p>
+			</div>
+			<form name="modify" method="POST" action="#" id="insert_R">
+				<fieldset form="modify">
+					<legend>Modifica Requisito</legend>
+					<input type="hidden" id="requirementid" name="requirementid" value=":requirementid:" />
+					<label for="description">Descrizione</label>
+					<textarea id="description" name="description" required="required">:description:</textarea>
+					<label for="type">Tipo</label>
+					<select id="type" name="type" required="required">
+						:type:
+					</select>
+					<label for="importance">Importanza</label>
+					<select id="importance" name="importance" required="required">
+						:importance:
+					</select>
+					<label for="satisfied">Stato d'implementazione</label>
+					<select id="satisfied" name="satisfied" required="required">
+						:satisfied:
+					</select>
+					<label for="parent">Requisito padre</label>
+					<select id="parent" name="parent" required="required">
+						<option value="NULL" selected="selected">Nessuno</option>
+						:parentoptions:
+					</select>
+					<label for="sourceForm">Fonti</label>
+					<select id="sourceForm" name="source" required="required">
+						<option value="NULL" selected="selected">Nessuno</option>
+						:sourceoptions:
+					</select>
+					<input type="submit" name="insert" value="INSERISCI" />
+				</fieldset>
+			</form>
+		</div>
+		<footer>
+			<span lang="en">SWEgo	&copy;</span>
+		</footer>
+	</body>
+</html>

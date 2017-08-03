@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>SWEgo - Modifica Attore</title>
+		<meta name="title" content="SWEgo - Modifica Attore" />
+		<meta name="description" content="Modifica un attore del sistema." />
+		<meta name="keywords" content="SWEgo, Attori, Sistema, SWE" />
+		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="script/nav.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<div id="mobileMenu" class="hideButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li lang="en"><a href="index.html">HOMEPAGE</a></li>
+					<li><a href="#">FONTI</a></li>
+					<li class="here">ATTORI</li>
+					<li><a href="requirements.html">REQUISITI</a></li>
+					<li lang="en"><a href="viewAllUC.html">USE CASE</a></li>
+					<li><a href="user.html">PROFILO</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="breadcrumb">
+			<p>Ti trovi in: ATTORI &gt; MODIFICA ATTORI</p>
+		</div>
+		<div id="content">
+			<div id="actorsDescription">
+				<p>Modifica le informazioni dell'attore selezionato.</p>
+			</div>
+			<form name="modify" method="POST" action="#" id="insertActor">
+				<fieldset form="modify">
+					<legend>Modifica attori</legend>
+					<label for="name">Nome</label>
+					<input id="name" name="name" type="text" value=":name:" required="required" maxlength="50" />
+					<label for="description">Descrizione</label>
+					<textarea id="description" name="description" required="required">:description:</textarea>
+					<input type="submit" name="insert" value="INSERISCI" />
+				</fieldset>
+			</form>
+		</div>
+		<footer>
+			<span lang="en">SWEgo	&copy;</span>
+		</footer>
+	</body>
+</html>

@@ -2,75 +2,40 @@
 	include_once "Object.php";
 
 	class Usecase extends Object {
-
-		private $id = null;
-		private $usecaseid = null;
-		private $name = null;
-		private $description = null;
-		private $precondition = null;
-		private $postcondition = null;
-		private $mainscenario = null;
-		private $alternativescenario = null;
-		private $generalization = null;
-		private $parent = null;
-		
-		public function __construct($obj) {
-			if(array_key_exists('id', $obj))
-				$this->id = $obj['id'];
-			if(array_key_exists('usecaseid', $obj));
-				$this->usecaseid = $obj['usecaseid'];
-			if(array_key_exists('name', $obj))
-				$this->name = $obj['name'];  
-			if(array_key_exists('description', $obj));
-				$this->description = $obj['description'];
-			if(array_key_exists('precondition', $obj))
-				$this->precondition = $obj['precondition'];
-			if(array_key_exists('postcondition', $obj));
-				$this->postcondition = $obj['postcondition'];
-			if(array_key_exists('mainscenario', $obj));
-				$this->mainscenario = $obj['mainscenario'];
-			if(array_key_exists('alternativescenario', $obj));
-				$this->alternativescenario = $obj['alternativescenario'];
-			if(array_key_exists('generalization', $obj));
-				$this->generalization = $obj['generalization'];
-			if(array_key_exists('parent', $obj));
-				$this->parent = $obj['parent'];
+		public static function check_input($obj) {
+			if(!array_key_exists('name', $obj) || $obj["name"] == "")
+				return false;
+			if(!array_key_exists('description', $obj) || $obj["description"] == "")
+				return false;
+			if(!array_key_exists('precondition', $obj) || $obj["precondition"] == "")
+				return false;
+			if(!array_key_exists('postcondition', $obj) || $obj["postcondition"] == "")
+				return false;
+			if(!array_key_exists('mainscenario', $obj) || $obj["mainscenario"] == "")
+				return false;
+			if(!array_key_exists('generalization', $obj) || $obj["generalization"] == "")
+				return false;
+			if(!array_key_exists('inclusion', $obj) || $obj["inclusion"] == "")
+				return false;
+			if(!array_key_exists('extension', $obj) || $obj["extension"] == "")
+				return false;
+			if(!array_key_exists('parent', $obj) || $obj["parent"] == "")
+				return false;
+			return true;
 		}
 
-		public function getId() {
-			return $this->id;
+		public static function check_tracking_input($obj) {
+			if(!array_key_exists('usecase', $obj) || $obj["usecase"] == "")
+				return false;
+			if(!array_key_exists('requirement', $obj) || $obj["requirement"] == "")
+				return false;
+			return true;
 		}
 
-		public function getRequirementId() {
-			return $this->requirementid;
-		}
-
-		public function getDescription() {
-			return $this->description;
-		}
-
-		public function getPrecondition() {
-			return $this->precondition;
-		}
-
-		public function getPostcondition() {
-			return $this->postcondition;
-		}
-
-		public function getMainscenario() {
-			return $this->mainscenario;
-		}
-
-		public function getAlternativescenario() {
-			return $this->alternativescenario;
-		}
-
-		public function getGeneralization() {
-			return $this->generalization;
-		}
-
-		public function getParent() {
-			return $this->parent;
+		public static function parse_input($obj) {
+			foreach($obj as $key => &$value)
+				$value = str_replace("'", "\'", $value);
+			return $obj;
 		}
 	}
 ?>

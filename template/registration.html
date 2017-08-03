@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>SWEgo - Registrazione</title>
+		<meta name="title" content="SWEgo - Registrazione" />
+		<meta name="description" content="Form di registrazione" />
+		<meta name="keywords" content="SWEgo, Registrazione" />
+		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="script/nav.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<div id="mobileMenu" class="hideButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li lang="en"><a href="index.html">HOMEPAGE</a></li>
+					<li><a href="contacts.html">CONTATTI</a></li>
+					<li><a href="login.html">ACCEDI</a></li>
+					<li class="here">REGISTRATI</li>
+				</ul>
+			</nav>
+		</header>
+		<div id="breadcrumb">
+			<p>Ti trovi in: REGISTRATI</p>
+		</div>
+		<div id="content">
+			<div id="registrationDescription">
+				<p>&Egrave; molto semplice registrarsi: compila il form con i dati richiesti. In questo modo potrai accedere alle funzionalit&agrave; di <span lang="en">SWEgo</span>.</p>
+				<p>Sei gi&agrave; un utente? Allora esegui l'accesso: <a href="login.html" lang="en">Login</a>!</p>
+			</div>
+			<form method="post" action="registration.php" id="user_registration">
+				<fieldset form="user_registration">
+					<legend>Form di registrazione</legend>
+					<label for="groupname">Nome del gruppo</label>
+					<input id="groupname" name="groupname" type="text" value=":groupname:" required="required" autocomplete="off" />
+					<label for="projectname">Nome del progetto</label>
+					<input id="projectname" name="projectname" type="text" value=":projectname:" required="required" autocomplete="off" />
+					<label for="password">Password</label>
+					<input id="password" name="password" type="password" required="required" autocomplete="off" />
+					<label for="checkPassword">Conferma password</label>
+					<input id="checkPassword" name="confirmpassword" type="password" required="required" autocomplete="off" />
+					<input type="submit" name="registra" value="REGISTRATI" />
+				</fieldset>
+			</form>
+		</div>
+		<footer>
+			<span lang="en">SWEgo	&copy;</span>
+		</footer>
+	</body>
+</html>
