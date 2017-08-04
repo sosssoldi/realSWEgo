@@ -3,7 +3,7 @@ $(function() {
 
 	for(let i=0; i < features; i++) {
 
-		let link = 'a[href="#feature' + (i+1) + '"]';
+		let link = 'a[href="#readFeature' + (i+1) + '"]';
 		let info = '#feature' + (i+1);
 
 		$(info).hide();

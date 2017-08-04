@@ -534,6 +534,11 @@
 		font-weight: bold;
 	}
 	
+	#allUC td:nth-of-type(6):before {
+		content: "Scenario principale";
+		font-weight: bold;
+	}
+	
 	.codUC {
 		background-color: #c40000;
 		color: white;
