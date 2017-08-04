@@ -43,7 +43,7 @@
 				}
 				$page = str_replace(':actors:', $str, $page);
 			} else {
-				$page = str_replace(':actors:', '', $page);
+				$page = str_replace(':actors:', 'Non ci sono attori.', $page);
 			}
 			if($data) {
 				if(array_key_exists('name', $data))

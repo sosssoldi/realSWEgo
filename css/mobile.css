@@ -325,14 +325,7 @@
 		display: block;
 		margin-top: 4%;
 		margin-bottom: 3%;
-		font-size: 0.68em;
-	}
-	
-	.gmail {
-		display: block;
-		margin-top: 4%;
-		margin-bottom: 3%;
-		font-size: 0.68em;
+		text-decoration: none;
 	}
 
 	/* INDEX */
@@ -464,7 +457,7 @@
 		background-size: 100% 100%;
 		width: 2.5em;
 		padding: 0.5em 0em;
-		float: inline;
+		display: inline;
 	}
 
 	/* Tabella responsive USE CASE*/
@@ -485,6 +478,7 @@
 	}
 
 	#allUC tr {
+		background-color: rgba(255, 255, 255, 0.7);
 		border: 0.1em solid black;
 		border-collapse: collapse;
 		margin: 4% 0%;
@@ -504,7 +498,7 @@
 	}
 	
 	.operation {
-		padding-bottom: 3em;
+		padding-bottom: 1.5em;
 	}
 	
 	#allUC td:before {
@@ -546,6 +540,13 @@
 		content: "Scenario principale";
 		font-weight: bold;
 	}
+
+	#noResult {
+		text-align: center;
+ 		font-size: 0.92em;
+ 		color: #c40000;
+ 		margin-top: 2%;
+ 	}
 	
 	.codUC {
 		background-color: #c40000;
@@ -569,10 +570,6 @@
 		width: 94%;
 		margin: 6% 3%;
 		text-align: center;
-	}
-
-	#insertActor legend {
-		text-transform: uppercase;
 	}
 
 	#insertActor label {
@@ -603,6 +600,7 @@
 
 	#actors {
 		background-color: lightgray;
+		text-align: center;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
 		padding: 3% 0%;
@@ -625,6 +623,7 @@
 	}
 
 	.actor p {
+		text-align: left;
 		font-size: 0.92em;
 		padding: 2%;
 		border-bottom: 0.1em solid lightgray;
@@ -669,10 +668,6 @@
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
-	}
-
-	#modify_actor legend {
-		text-transform: uppercase;
 	}
 
 	#modify_actor label {
@@ -722,10 +717,6 @@
 		background-size: 100%;
 	}
 
-	#delete_actor legend {
-		text-transform: uppercase;
-	}
-
 	#delete_actor input[type="submit"] {
 		width: 20%;
 		padding: 0.3em;
@@ -750,10 +741,6 @@
 		width: 94%;
 		margin: 6% 3%;
 		text-align: center;
-	}
-
-	#insertSource legend {
-		text-transform: uppercase;
 	}
 
 	#insertSource label {
@@ -783,6 +770,7 @@
 	}
 
 	#source {
+		text-align: center;
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
@@ -806,6 +794,7 @@
 	}
 
 	.source p {
+		text-align: left;
 		font-size: 0.92em;
 		padding: 2%;
 		border-bottom: 0.1em solid lightgray;
@@ -852,11 +841,8 @@
 		background-size: 100%;
 	}
 
-	#delete_source legend {
-		text-transform: uppercase;
-	}
-
-	#delete_source input[type="submit"] {	
+	#delete_source input[type="submit"] {
+		float: left;
 		width: 20%;
 		padding: 0.3em;
 		margin: 5% 15%;
@@ -979,10 +965,6 @@
 		background-size: 100%;
 	}
 
-	#delete_UC legend {
-		text-transform: uppercase;
-	}
-
 	#delete_UC input[type="submit"] {	
 		width: 20%;
 		padding: 0.3em;
@@ -1088,7 +1070,9 @@
 		background-color: white;
 		background-image: url('../image/search.png');
 		background-size: 100% 100%;
-		float: inline;
+		width: 2.5em;
+		padding: 0.5em 0em;
+		display: inline;
 	}
 
 	/* Tabella responsive */
@@ -1109,6 +1093,7 @@
 	}
 
 	#allR tr {
+		background-color: rgba(255, 255, 255, 0.7);
 		border: 0.1em solid black;
 		border-collapse: collapse;
 		margin: 4% 0%;
@@ -1123,7 +1108,8 @@
 	#allR td {
 		position: relative;		/* Creiamo lo spazio per l'intestazione */
 		border: 0em;
-		padding: 2% 0% 1% 30%;
+		padding-top: 2%;
+		padding-left: 30%;
 	}
 
 	#allR td:before {
@@ -1157,7 +1143,7 @@
 	}
 
 	#allR td:nth-of-type(5):before {
-		content: "Stato d'implementazione";
+		content: "Stato";
 		font-weight: bold;
 	}
 
@@ -1190,10 +1176,6 @@
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
-	}
-
-	#delete_R legend {
-		text-transform: uppercase;
 	}
 
 	#delete_R input[type="submit"] {

@@ -154,17 +154,17 @@
 			if($rs) {
 				foreach($rs as $requirement)
 					$str .= '<option value="'.$requirement['id'].'">'.$requirement['requirementid'].'-'.$requirement['description'].'</option>';
-				$page = str_replace(":requirementoptions", $str, $page);
+				$page = str_replace(":requirementoptions:", $str, $page);
 			} else
-				$page = str_replace(":requirementoptions", "", $page);
+				$page = str_replace(":requirementoptions:", "", $page);
 			$rs = $this->selectSources($projectid);
 			$str = "";
 			if($rs) {
 				foreach($rs as $source)
 					$str .= '<option value="'.$source['id'].'">'.$source['name'].'</option>';
-				$page = str_replace(":sourceoptions", $str, $page);
+				$page = str_replace(":sourceoptions:", $str, $page);
 			} else
-				$page = str_replace(":sourceoptions", "", $page);
+				$page = str_replace(":sourceoptions:", "", $page);
 			if($data) {
 				if(array_key_exists('description', $data))
 					$page = str_replace(':description:', $data['description'], $page);
@@ -193,9 +193,9 @@
 						$str .= '<option value="'.$requirement['id'].'" selected="selected">'.$requirement['requirementid'].'-'.$requirement['description'].'</option>';
 					else
 						$str .= '<option value="'.$requirement['id'].'">'.$requirement['requirementid'].'-'.$requirement['description'].'</option>';
-				$page = str_replace(":parentoptions", $str, $page);
+				$page = str_replace(":parentoptions:", $str, $page);
 			} else
-				$page = str_replace(":parentoptions", "", $page);
+				$page = str_replace(":parentoptions:", "", $page);
 			$str = "";
 			if($data["type"] == "Funzionale") {
 				$str = '<option value="F" selected="selected">F - Funzionale</option>';
@@ -251,9 +251,9 @@
 						$str .= '<option value="'.$source['id'].'" selected="selected">'.$source['name'].'</option>';
 					else
 						$str .= '<option value="'.$source['id'].'">'.$source['name'].'</option>';
-				$page = str_replace(":sourceoptions", $str, $page);
+				$page = str_replace(":sourceoptions:", $str, $page);
 			} else
-				$page = str_replace(":sourceoptions", "", $page);
+				$page = str_replace(":sourceoptions:", "", $page);
 			return $page;
 		}
 	}

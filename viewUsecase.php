@@ -1,4 +1,4 @@
-<?php
+ <?php
 	/*error_reporting(E_ALL);
 	ini_set('display_errors', 1);*/
 	session_start();
@@ -40,7 +40,7 @@
 		$str .= '</tbody>';
 		$str .= '</table>';
 	} else {
-		$str = '<p id="noResult">Non ci sono usecase.</p>';
+		$str = '<p id="noResult">Non ci sono Use Case.</p>';
 	}
 	render_page($str);
 ?>

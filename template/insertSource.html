@@ -5,7 +5,7 @@
 		<meta charset="utf-8" />
 		<title>SWEgo - Fonti</title>
 		<meta name="title" content="SWEgo - Fonti" />
-		<meta name="description" content="Inserimento e elenco delle fonti del sistema." />
+		<meta name="description" content="Inserimento ed elenco delle fonti del sistema." />
 		<meta name="keywords" content="SWEgo, Fonti, Sistema, SWE, Inserisci, Visualizza" />
 		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,8 +27,8 @@
 					<li lang="en"><a href="home.html">HOMEPAGE</a></li>
 					<li class="here">FONTI</li>
 					<li><a href="insertActor.php">ATTORI</a></li>
-					<li><a href="insertRequirement.php">REQUISITI</a></li>
-					<li lang="en"><a href="insertUsecase.php">USE CASE</a></li>
+					<li><a href="viewRequirement.php">REQUISITI</a></li>
+					<li lang="en"><a href="viewUsecase.php">USE CASE</a></li>
 					<li><a href="tracking.php">TRACCIAMENTO</a></li>
 					<li><a href="user.html">PROFILO</a></li>
 				</ul>
@@ -41,22 +41,22 @@
 			<div id="sourcesDescription">
 				<p>Visualizza le fonti del tuo sistema ordinante dalla A alla Z. Puoi modificarle, eliminarle o inserirne di nuove.</p>
 			</div>
-			<div id="sources">
+			<div id="source">
 				:sources:
 			</div>
 			<form name="insert" method="POST" action="insertSource.php" id="insertSource">
-				<fieldset form="insert">
+				<fieldset form="insertSource">
 					<legend>Inserimento fonti</legend>
 					<label for="name">Nome</label>
-					<input id="name" name="name" type="text" value=":name:" required="required" maxlength="50" />
+					<input id="name" name="name" type="text" value=":name:" required="required" maxlength="100" />
 					<label for="description">Descrizione</label>
-					<textarea id="description" name="description" required="required">:description:</textarea>
+					<textarea id="description" name="description" required="required" maxlength="1000">:description:</textarea>
 					<input type="submit" name="insert" value="INSERISCI" />
 				</fieldset>
 			</form>
 		</div>
 		<footer>
-			<span lang="en">SWEgo	&copy;</span>
+			<span lang="en">SWEgo &copy;</span>
 		</footer>
 	</body>
 </html>

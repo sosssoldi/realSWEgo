@@ -19,7 +19,7 @@
 				return false;
 			if(!array_key_exists('extension', $obj) || $obj["extension"] == "")
 				return false;
-			if(!array_key_exists('parent', $obj) || $obj["parent"] == "")
+			if(!array_key_exists('parent', $obj))
 				return false;
 			return true;
 		}

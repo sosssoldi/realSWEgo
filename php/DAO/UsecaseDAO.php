@@ -6,9 +6,11 @@
 		}
 
 		public function insert($obj, $projectid) {
-			if($obj['parent'] == 'NULL')
+			if($obj["parent"] == '')
+				$obj["parent"] = 'NULL'; 
+			if($obj['parent'] == 'NULL') {
 				$id = $this->getIdWithoutParent($projectid);
-			else
+			} else
 				$id = $this->getIdWithParent($obj['parent'], $projectid);
 			$this->query("INSERT INTO usecase VALUES (id, '{$id}', '{$obj['name']}', '{$obj['description']}', '{$obj['precondition']}', '{$obj['postcondition']}', '{$obj['mainscenario']}', '{$obj['alternativescenario']}', {$obj['generalization']}, {$obj['parent']}, {$projectid})");
 			$this->resultSet();
@@ -66,6 +68,8 @@
 		public function update($id, $obj, $projectid) {
 			$lid = $obj["usecaseid"];
 			$nid = "";
+			if($obj['parent'] == '')
+				$obj["parent"] = 'NULL';
 			if($obj["parent"] != $this->getParent($id))
 				if($obj['parent'] == 'NULL')
 					$nid = $this->getIdWithoutParent($projectid);
@@ -151,9 +155,12 @@
 			$rs = $this->resultSet();
 			if($rs) {
 				$usecase = $rs[0];
-				return $usecase["parent"];
+				if($usecase["parent"] == "")
+					return 'NULL';
+				else
+					return $usecase["parent"];
 			} else
-				return NULL;	
+				return 'NULL';	
 		}
 
 		public function getInclusions($id) {
@@ -196,18 +203,18 @@
 			$str = "";
 			if($rs) {
 				foreach($rs as $uc)
-					$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
-				$page = str_replace(":usecaseoptions", $str, $page);
+					$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].' - '.$uc['name'].'</option>';
+				$page = str_replace(":usecaseoptions:", $str, $page);
 			} else
-				$page = str_replace(":usecaseoptions", "", $page);
+				$page = str_replace(":usecaseoptions:", "", $page);
 			$rs = $this->selectActors($projectid);
 			$str = "";
 			if($rs) {
 				foreach($rs as $actor)
 					$str .= '<option value="'.$actor['id'].'">'.$actor['name'].'</option>';
-				$page = str_replace(":actoroptions", $str, $page);
+				$page = str_replace(":actoroptions:", $str, $page);
 			} else
-				$page = str_replace(":actoroptions", "", $page);
+				$page = str_replace(":actoroptions:", "", $page);
 			if($data) {
 				if(array_key_exists('name', $data))
 					$page = str_replace(':name:', $data['name'], $page);
@@ -238,17 +245,17 @@
 			if($rs) {
 				foreach($rs as $uc)
 					$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
-				$page = str_replace(":usecaseoptions", $str, $page);
+				$page = str_replace(":usecaseoptions:", $str, $page);
 			} else
-				$page = str_replace(":usecaseoptions", "", $page);
+				$page = str_replace(":usecaseoptions:", "", $page);
 			$rs = $this->selectRequirements($projectid);
 			$str = "";
 			if($rs) {
 				foreach($rs as $r)
 					$str .= '<option value="'.$r['id'].'">'.$r['requirementid'].'-'.$r['description'].'</option>';
-				$page = str_replace(":requirementoptions", $str, $page);
+				$page = str_replace(":requirementoptions:", $str, $page);
 			} else
-				$page = str_replace(":requirementoptions", "", $page);
+				$page = str_replace(":requirementoptions:", "", $page);
 			return $page;
 		}
 
@@ -285,9 +292,9 @@
 						$str .= '<option value="'.$uc['id'].'" selected="selected">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
 					else
 						$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
-				$page = str_replace(":parentoptions", $str, $page);
+				$page = str_replace(":parentoptions:", $str, $page);
 			} else
-				$page = str_replace(":parentoptions", "", $page);
+				$page = str_replace(":parentoptions:", "", $page);
 			if($data["generalization"]) {
 				$str = '<option value="false">No</option>';
 				$str .= '<option value="true" selected="selected">Si</option>';
@@ -295,7 +302,7 @@
 				$str = '<option value="false" selected="selected">No</option>';
 				$str .= '<option value="true">Si</option>';
 			}
-			$page = str_replace(':generalizationoptions', $str, $page);
+			$page = str_replace(':generalizationoptions:', $str, $page);
 			$rs = $this->getMyInclusions($data["id"]);
 			$str = "";
 			$array = array();
@@ -308,9 +315,9 @@
 						$str .= '<option value="'.$uc['id'].'" selected="selected">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
 					else
 						$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
-				$page = str_replace(":inclusionoptions", $str, $page);
+				$page = str_replace(":inclusionoptions:", $str, $page);
 			} else
-				$page = str_replace(":inclusionoptions", "", $page);
+				$page = str_replace(":inclusionoptions:", "", $page);
 			$rs = $this->getMyExtensions($data["id"]);
 			$str = "";
 			$array = array();
@@ -323,9 +330,9 @@
 						$str .= '<option value="'.$uc['id'].'" selected="selected">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
 					else
 						$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
-				$page = str_replace(":extensionoptions", $str, $page);
+				$page = str_replace(":extensionoptions:", $str, $page);
 			} else
-				$page = str_replace(":extensionoptions", "", $page);
+				$page = str_replace(":extensionoptions:", "", $page);
 			$rs = $this->getActors($data["id"]);
 			$str = "";
 			$array = array();
@@ -338,9 +345,9 @@
 						$str .= '<option value="'.$actor['id'].'" selected="selected">'.$actor['name'].'</option>';
 					else
 						$str .= '<option value="'.$actor['id'].'">'.$actor['name'].'</option>';
-				$page = str_replace(":actoroptions", $str, $page);
+				$page = str_replace(":actoroptions:", $str, $page);
 			} else
-				$page = str_replace(":actoroptions", "", $page);
+				$page = str_replace(":actoroptions:", "", $page);
 			return $page;
 		}
 	}

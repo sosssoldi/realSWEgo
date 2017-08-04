@@ -47,11 +47,14 @@
 			header("Location: home.html");
 		}
 		$list = $requirementDAO->getHierarchy($id);
-		$str = "<ul>";
+		$str = "";
 		foreach($list as $requirement) {
 			$str .= "<li>".$requirement['requirementid'].' - '.$requirement['description']."</li>";
 		}
-		$page = str_replace(':requirement:', $str, $page);
+		if($str != "")
+			$page = str_replace(':requirement:', $str, $page);
+		else
+			$page = str_replace(':requirement:', "<p>Nessun'altro requisito verr&agrave; eliminato</p>", $page);
 		echo $page;
 	}
 ?>

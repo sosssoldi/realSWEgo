@@ -43,7 +43,7 @@
 				}
 				$page = str_replace(':sources:', $str, $page);
 			} else {
-				$page = str_replace(':sources:', '', $page);
+				$page = str_replace(':sources:', 'Non ci sono fonti.', $page);
 			}
 			if($data) {
 				if(array_key_exists('name', $data))

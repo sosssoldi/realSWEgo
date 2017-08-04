@@ -47,7 +47,7 @@
 			header("Location: home.html");
 		}
 		$list = $usecaseDAO->getHierarchy($id);
-		$str = "<ul>";
+		$str = "";
 		foreach($list as $uc) {
 			$str .= "<li>".$uc['usecaseid'].' - '.$uc['name']."</li>";
 		}
@@ -67,7 +67,10 @@
 			$uc2 = $uc2[0];
 			$str .= "<li>Estensione tra ".$uc1['usecaseid'].' e '.$uc2['usecaseid']."</li>";
 		}
-		$page = str_replace(':usecase:', $str, $page);
+		if($str != "")
+			$page = str_replace(':usecase:', '<ul>'.$str.'</ul>', $page);
+		else
+			$page = str_replace(':usecase:', "<p>Nessun'altro <span lang=\"en\">Use Case</span> verr&agrave; rimosso.</p>", $page);
 		echo $page;
 	}
 ?>

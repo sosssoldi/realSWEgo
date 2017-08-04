@@ -27,46 +27,46 @@
 					<li lang="en"><a href="home.html">HOMEPAGE</a></li>
 					<li><a href="insertSource.php">FONTI</a></li>
 					<li><a href="insertActor.php">ATTORI</a></li>
-					<li><a href="insertRequirement.php">REQUISITI</a></li>
-					<li lang="en"><a href="insertUsecase.php">USE CASE</a></li>
+					<li><a href="viewRequirement.php">REQUISITI</a></li>
+					<li lang="en"><a href="viewUsecase.php">USE CASE</a></li>
 					<li><a href="tracking.php">TRACCIAMENTO</a></li>
 					<li><a href="user.html">PROFILO</a></li>
 				</ul>
 			</nav>
 		</header>
 		<div id="breadcrumb" class="noSpaceHeader">
-			<p>Ti trovi in: REQUISITI &gt; MODIFICA REQUISITO</p>
+			<p>Ti trovi in: <a href="viewRequirement.php">REQUISITI</a> &gt; MODIFICA :requirementid:</p>
 		</div>
 		<div id="content">
 			<div id="insertUC">
 				<p>Modifica un Requisito.</p>
-				<p>Le informazioni che potrai modificare sono la descrizione, l'importanza, il tipo, lo stato di implementazione e la fonte di cui deriva il Requisito.</p>
+				<p>Le informazioni che potrai modificare sono la descrizione, l'importanza, il tipo, lo stato di implementazione e la fonte da cui deriva il Requisito.</p>
 			</div>
 			<form name="modify" method="POST" action="#" id="insert_R">
-				<fieldset form="modify">
-					<legend>Modifica Requisito</legend>
+				<fieldset form="insert_R">
+					<legend>Modifica :requirementid:</legend>
 					<input type="hidden" id="requirementid" name="requirementid" value=":requirementid:" />
 					<label for="description">Descrizione</label>
-					<textarea id="description" name="description" required="required">:description:</textarea>
+					<textarea id="description" name="description" required="required" maxlength="1000">:description:</textarea>
 					<label for="type">Tipo</label>
-					<select id="type" name="type" required="required">
+					<select id="type" name="type">
 						:type:
 					</select>
 					<label for="importance">Importanza</label>
-					<select id="importance" name="importance" required="required">
+					<select id="importance" name="importance">
 						:importance:
 					</select>
 					<label for="satisfied">Stato d'implementazione</label>
-					<select id="satisfied" name="satisfied" required="required">
+					<select id="satisfied" name="satisfied">
 						:satisfied:
 					</select>
 					<label for="parent">Requisito padre</label>
-					<select id="parent" name="parent" required="required">
+					<select id="parent" name="parent">
 						<option value="NULL" selected="selected">Nessuno</option>
 						:parentoptions:
 					</select>
 					<label for="sourceForm">Fonti</label>
-					<select id="sourceForm" name="source" required="required">
+					<select id="sourceForm" name="source">
 						<option value="NULL" selected="selected">Nessuno</option>
 						:sourceoptions:
 					</select>
@@ -75,7 +75,7 @@
 			</form>
 		</div>
 		<footer>
-			<span lang="en">SWEgo	&copy;</span>
+			<span lang="en">SWEgo &copy;</span>
 		</footer>
 	</body>
 </html>

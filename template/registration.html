@@ -36,25 +36,25 @@
 		<div id="content">
 			<div id="registrationDescription">
 				<p>&Egrave; molto semplice registrarsi: compila il form con i dati richiesti. In questo modo potrai accedere alle funzionalit&agrave; di <span lang="en">SWEgo</span>.</p>
-				<p>Sei gi&agrave; un utente? Allora esegui l'accesso: <a href="login.php" lang="en">Login</a>!</p>
+				<p>Sei gi&agrave; un utente? Allora esegui l'accesso: <a href="login.php">Accedi</a>!</p>
 			</div>
 			<form method="post" action="registration.php" id="user_registration">
 				<fieldset form="user_registration">
 					<legend>Form di registrazione</legend>
 					<label for="groupname">Nome del gruppo</label>
-					<input id="groupname" name="groupname" type="text" value=":groupname:" required="required" autocomplete="off" />
+					<input id="groupname" name="groupname" type="text" value=":groupname:" required="required" autocomplete="off" maxlength="100" />
 					<label for="projectname">Nome del progetto</label>
-					<input id="projectname" name="projectname" type="text" value=":projectname:" required="required" autocomplete="off" />
+					<input id="projectname" name="projectname" type="text" value=":projectname:" required="required" autocomplete="off" maxlength="100" />
 					<label for="password">Password</label>
-					<input id="password" name="password" type="password" required="required" autocomplete="off" />
+					<input id="password" name="password" type="password" required="required" autocomplete="off" maxlength="100" />
 					<label for="checkPassword">Conferma password</label>
-					<input id="checkPassword" name="confirmpassword" type="password" required="required" autocomplete="off" />
-					<input type="submit" name="registra" value="REGISTRATI" />
+					<input id="checkPassword" name="confirmpassword" type="password" required="required" autocomplete="off" maxlength="100" />
+					<input type="submit" name="enter" value="REGISTRATI" />
 				</fieldset>
 			</form>
 		</div>
 		<footer>
-			<span lang="en">SWEgo	&copy;</span>
+			<span lang="en">SWEgo &copy;</span>
 		</footer>
 	</body>
 </html>
