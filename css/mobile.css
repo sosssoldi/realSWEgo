@@ -452,7 +452,7 @@ nav ul li a:hover {
 	border: none;
 }
 
-/* Tabella responsive */
+/* Tabella responsive USE CASE*/
 
 #allUC {
 	width: 100%;
@@ -513,12 +513,17 @@ nav ul li a:hover {
 }
 
 #allUC td:nth-of-type(4):before {
-	content: "Pre";
+	content: "Pre-condizione";
 	font-weight: bold;
 }
 
 #allUC td:nth-of-type(5):before {
-	content: "Post";
+	content: "Post-condizione";
+	font-weight: bold;
+}
+
+#allUC td:nth-of-type(6):before {
+	content: "Scenario Principale";
 	font-weight: bold;
 }
 
@@ -760,6 +765,165 @@ nav ul li a:hover {
 	background-color: #9d0404;
 }
 
+/* SOURCES */
+
+#sourcesDescription {
+	width: 94%;
+	margin-top: 5%;
+	margin-left: 3%;
+	font-size: 0.92em;
+}
+
+#sourcesDescription p {
+	margin-bottom: 2%;
+}
+
+#insertSource {
+	width: 94%;
+	margin: 6% 3%;
+	text-align: center;
+}
+
+#insertSource fieldset {
+	border: none;
+}
+
+#insertSource legend {
+	text-transform: uppercase;
+}
+
+#insertSource label {
+	display: block;
+	margin-top: 5%;
+}
+
+#insertSource input[type="text"] {
+	padding: 0.5em;
+	width: 60%;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+#insertSource input[type="submit"] {
+	display: block;
+	width: 64%;
+	padding: 0.7em;
+	margin: 5% 0% 5% 18%;
+	background-color: #8b0000;
+	color: white;
+	font-weight: bold;
+	font-size: 0.8em;
+	border: none;
+	border-radius: 0.3em;
+	cursor: pointer;
+}
+
+#insertSource input[type="submit"]:hover {
+	background-color: #9d0404;
+}
+
+#insertSource textarea {
+	padding: 0.5em;
+	width: 60%;
+	height: 5em;
+	font-size: 0.8em;
+	resize: none;
+}
+
+#source {
+	background-color: lightgray;
+	background-image: url('../image/background.jpg');
+	background-size: 100%;
+	padding: 3% 0%;
+	margin: 4% 0%;
+}
+
+.source {
+	display: inline-block;
+	width: 90%;
+	margin: 3% 5%;
+	background-color: #fefabc
+}
+
+.source h2 {
+	font-size: 1.5em;
+	margin-top: 2%;
+	font-weight: normal;
+	color: #8b0000;
+	text-align: center;
+}
+
+.source p {
+	font-size: 0.92em;
+	padding: 2%;
+	border-bottom: 0.1em solid lightgray;
+}
+
+.delete {
+	display: block;
+	background-image: url('../image/delete.png');
+	background-size: 100% 100%;
+	width: 1.5em;
+	float: right;
+	margin: 0.3em;
+	padding: 0.2em;
+}
+
+.modify {
+	display: block;
+	background-image: url('../image/modify.png');
+	background-size: 100% 100%;
+	width: 1.5em;
+	float: right;
+	margin: 0.5em;
+	padding: 0.2em;
+}
+
+/* DELETE SOURCE */
+
+#deleteSource {
+	width: 94%;
+	margin: 5% 3% 4% 3%;
+	font-size: 0.92em;
+}
+
+#deleteSource p {
+	margin-bottom: 2%;
+}
+
+#delete_source {
+	width: 94%;
+	padding: 3% 3%;
+	text-align: center;
+	background-color: lightgray;
+	background-image: url('../image/background.jpg');
+	background-size: 100%;
+}
+
+#delete_source fieldset {
+	border: none;
+}
+
+#delete_source legend {
+	text-transform: uppercase;
+}
+
+#delete_source input[type="submit"] {
+	background-color: #8b0000;
+	color: white;	
+	width: 20%;
+	padding: 0.3em;
+	margin: 5% 3%;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 0.3em;
+	cursor: pointer;
+}
+
+#delete_source input[type="submit"]:hover {
+	background-color: #9d0404;
+}
+
 /* INSERT USE CASE */
 
 #insertUC {
@@ -930,6 +1094,254 @@ nav ul li a:hover {
 }
 
 #delete_UC input[type="submit"]:hover {
+	background-color: #9d0404;
+}
+
+/* INSERT REQUIREMENT */
+
+#insertR {
+	width: 94%;
+	margin-top: 5%;
+	margin-left: 3%;
+	font-size: 0.92em;
+}
+
+#insertR p {
+	margin-bottom: 2%;
+}
+
+#insert_R {
+	background-color: lightgray;
+	background-image: url('../image/background.jpg');
+	background-size: 100%;
+	margin: 4% 0%;
+	text-align: center;
+}
+
+#insert_R fieldset {
+	border: none;
+}
+
+#insert_R legend {
+	height: 0em;
+	overflow: hidden;
+}
+
+#insert_R label {
+	display: block;
+	margin-top: 4%;
+}
+
+#insert_R input[type="text"] {
+	padding: 0.5em;
+	width: 60%;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+#insert_R textarea {
+	padding: 0.5em;
+	width: 60%;
+	height: 5em;
+	font-size: 0.8em;
+	resize: none;
+}
+
+#insert_R select {
+	width: 63%;
+	padding: 0.5em;
+	font-size: 0.8em;
+	margin-bottom: 1%;
+}
+
+#insert_R input[type="submit"] {
+	display: block;
+	width: 64%;
+	padding: 0.7em;
+	margin: 5% 0% 5% 18%;
+	background-color: #8b0000;
+	color: white;
+	font-weight: bold;
+	font-size: 0.8em;
+	border: none;
+	border-radius: 0.3em;
+	cursor: pointer;
+}
+
+#insert_R input[type="submit"]:hover {
+	background-color: #9d0404;
+}
+
+/* REQUIREMENT */
+
+#viewAllRDescription {
+	width: 94%;
+	margin-top: 5%;
+	margin-left: 3%;
+	font-size: 0.92em;
+}
+
+#viewAllRDescription p {
+	margin-bottom: 2%;
+}
+
+#search_R {
+	width: 94%;
+	margin: 5% 3%;
+	text-align: center;
+}
+
+#search_R fieldset {
+	border: none;
+}
+
+#search_R legend {
+	height: 0em;
+	overflow: hidden;
+}
+
+#search_R label {
+	display: none;
+}
+
+#search_R input[type="text"] {
+	width: 70%;
+	font-size: 0.8em;
+	padding: 0.5em;
+	border: 0.1em solid lightgray;
+}
+
+#search_R input[type="submit"] {
+	background-color: white;
+	background-image: url('../image/search.png');
+	background-size: 100% 100%;
+	width: 2.5em;
+	padding: 0.5em 0em;
+	border: none;
+}
+
+/* Tabella responsive */
+
+#allR {
+	width: 100%;
+	margin-top: 2%;
+	padding-left: 3%;
+	padding-right: 3%;
+	font-size: 0.9em;
+	background-color: lightgray;
+	background-image: url('../image/background.jpg');
+	background-size: 100%;
+}
+
+#allR thead, tbody, th, td, tr {
+	display: block;
+}
+
+#allR tr {
+	border: 0.1em solid black;
+	border-collapse: collapse;
+	margin: 4% 0%;
+}
+
+#allR thead tr {
+	position: absolute;    /* Nascondiamo la testata */
+  top: -9999px;
+  left: -9999px;
+}
+
+#allR td {
+	position: relative;		/* Creiamo lo spazio per l'intestazione */
+	border: 0em;
+	padding: 2% 0% 1% 30%;
+}
+
+#allR td:before {
+	position: absolute;		/* Creiamo le altre celle per la descrizione */
+	top: 0.8em;
+	left: 0%;
+	width: 30%;
+	line-height: 0em;
+	text-align: center;
+	padding: 2% 0% 1% 0%;
+}
+
+#allR td:nth-of-type(1):before {
+	content: "Codice";
+	font-weight: bold;
+}
+
+#allR td:nth-of-type(2):before {
+	content: "Descrizione";
+	font-weight: bold;
+}
+
+#allR td:nth-of-type(3):before {
+	content: "Tipo";
+	font-weight: bold;
+}
+
+#allR td:nth-of-type(4):before {
+	content: "Importanza";
+	font-weight: bold;
+}
+
+#allR td:nth-of-type(5):before {
+	content: "Stato d'implementazione";
+	font-weight: bold;
+}
+
+.codR {
+	background-color: #c40000;
+	color: white;
+}
+
+/* ELIMINA REQUIREMENT */
+
+#deleteR {
+	width: 94%;
+	margin: 5% 3% 4% 3%;
+	font-size: 0.92em;
+}
+
+#deleteR p {
+	margin-bottom: 2%;
+}
+
+#deleteR ul {
+	width: 95%;
+	margin-left: 5%;
+}
+
+#delete_R {
+	width: 94%;
+	padding: 3% 3%;
+	text-align: center;
+	background-color: lightgray;
+	background-image: url('../image/background.jpg');
+	background-size: 100%;
+}
+
+#delete_R fieldset {
+	border: none;
+}
+
+#delete_R legend {
+	text-transform: uppercase;
+}
+
+#delete_R input[type="submit"] {
+	background-color: #8b0000;
+	color: white;	
+	width: 20%;
+	padding: 0.3em;
+	margin: 5% 3%;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 0.3em;
+	cursor: pointer;
+}
+
+#delete_R input[type="submit"]:hover {
 	background-color: #9d0404;
 }
 

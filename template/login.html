@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>SWEgo - Login</title>
+		<meta name="title" content="SWEgo - Login" />
+		<meta name="description" content="Form di autenticazione" />
+		<meta name="keywords" content="SWEgo, Login, Autenticazione" />
+		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="script/nav.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<div id="mobileMenu" class="hideButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li lang="en"><a href="index.html">HOMEPAGE</a></li>
+					<li><a href="contacts.html">CONTATTI</a></li>
+					<li class="here">ACCEDI</li>
+					<li><a href="registration.php">REGISTRATI</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="breadcrumb">
+			<p>Ti trovi in: ACCEDI</p>
+		</div>
+		<div id="content">
+			<div id="whyAccount">
+				<p>Non hai un account? <a href="registration.php">Registrati!</a></p>
+				<p>Accedendo al tuo profilo potrai sfruttare le seguenti funzionalit&agrave;:</p>
+				<ul>
+					<li>tracciare gli <span lang="en">Use Case</span> con i requisiti;</li>
+					<li>richiedere aiuto nel forum agli altri utenti;</li>
+					<li>avere automaticamente i tuoi <span lang="en">Use Case Diagram</span> generati con <span lang="en">PlantUML</span>.</li>
+				</ul>
+			</div>
+			<form method="post" action="login.php" id="user_login">
+				<fieldset form="user_login">
+					<legend>Form di login</legend>
+					<label for="groupname_login">Nome del gruppo</label>
+					<input id="groupname_login" name="groupname" value=":groupname:" type="text" required="required" />
+					<label for="password_login">Password</label>
+					<input id="password_login" name="password" type="password" required="required" />
+					<input type="submit" name="login" value="ACCEDI" />
+				</fieldset>
+			</form>
+		</div>
+		<footer>
+			<span lang="en">SWEgo	&copy;</span>
+		</footer>
+	</body>
+</html>
