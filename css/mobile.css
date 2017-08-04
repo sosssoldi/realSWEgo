@@ -140,7 +140,7 @@
 	}
 
 	nav ul li a {
-		color: white;
+		color: lightgray;
 		text-decoration: none;
 	}
 
@@ -150,7 +150,7 @@
 
 	.here {
 		font-weight: bold;
-		color: lightgray;
+		color: white;
 	}
 
 	/* LOGIN */
@@ -325,6 +325,14 @@
 		display: block;
 		margin-top: 4%;
 		margin-bottom: 3%;
+		font-size: 0.68em;
+	}
+	
+	.gmail {
+		display: block;
+		margin-top: 4%;
+		margin-bottom: 3%;
+		font-size: 0.68em;
 	}
 
 	/* INDEX */
