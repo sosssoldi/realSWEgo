@@ -15,1465 +15,1302 @@
 	font-family: primaryFont, Verdana;
 }
 
-strong {
-	font-weight: normal;
-}
-
-#breadcrumb {
-	background-color: lightgray;
-	font-size: 0.75em;
-	padding: 2% 3% 2%;
-}
-
-/* HEADER */
-
-header {
-	background-color: #0060b6;
-	padding-top: 2%;
-	padding-bottom: 2%;
-}
-
-#logo {
-	display: block;
-	float: left;
-	margin-left: 2%;
-	font-size: 2em;
-	color: white;
-	margin-bottom: 3%;
-}
-
-#mobileMenu {
-	background-color: white;
-	float: right;
-	width: 32px;
-	height: auto;
-	border: none;
-	border-radius: 0.25em;
-	margin-top: 2%;
-	margin-right: 2%;
-	text-align: center;
-	cursor: pointer;
-}
-
-.showButton {
-	display: block;
-}
-
-.hideButton {
-	display: none;
-}
-
-#mobileMenu span {
-	display: block;
-	margin: 0.31em 0.5em 0.31em 0.5em;
-	border: 1px solid #0060b6;
-}
-
-nav {
-	width: 100%;
-	display: block;
-	clear: both;
-	text-align: center;
-}
-
-.hideNav {
-	height: 0em;
-	overflow: hidden;
-}
-
-nav ul {
-	list-style-type: none;
-}
-
-nav ul li {
-	display: block;
-	margin-top: 0.4em;
-	margin-bottom: 0.4em;
-	font-size: 0.9em;
-}
-
-nav ul li a {
-	color: white;
-	text-decoration: none;
-}
-
-nav ul li a:hover {
-	text-decoration: underline;
-}
-
-.here {
-	font-weight: bold;
-	color: lightgray;
-}
-
-.warning {
-	color: red;
-}
-
-/* LOGIN */
-
-#whyAccount {
-	width: 94%;
-	margin-top: 5%;
-	margin-left: 3%;
-	font-size: 0.92em;
-}
-
-#whyAccount p {
-	margin-bottom: 2%;
-}
-
-#whyAccount ul {
-	margin-left: 5%;
-	width: 93%;
-}
-
-#user_login {
-	width: 100%;
-	text-align: center;
-	margin-top: 5%;
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-}
-
-#user_login fieldset {
-	border: none;
-}
-
-#user_login legend {
-	height: 0em;
-	overflow: hidden;
-}
-
-#user_login label {
-	display: block;
-	margin-top: 3%;
-}
-
-#user_login input[type="text"] {
-	padding: 0.5em;
-	width: 60%;
-	font-size: 0.8em;
-	text-align: center;
-}
-
-#user_login input[type="password"] {
-	padding: 0.5em;
-	width: 60%;
-	font-size: 0.8em;
-	text-align: center;
-}
-
-#user_login input[type="submit"] {
-	display: block;
-	width: 64%;
-	padding: 0.7em;
-	margin: 5% 0% 5% 18%;
-	background-color: #8b0000;
-	color: white;
-	font-weight: bold;
-	font-size: 0.8em;
-	border: none;
-	border-radius: 0.3em;
-	cursor: pointer;
-}
-
-#user_login input[type="submit"]:hover {
-	background-color: #9d0404;
-}
-
-/* REGISTRATION */
-
-#registrationDescription {
-	width: 94%;
-	margin-top: 5%;
-	margin-left: 3%;
-	font-size: 0.92em;
-}
-
-#registrationDescription p {
-	margin-top: 2%;
-}
-
-#user_registration {
-	width: 100%;
-	text-align: center;
-	margin-top: 5%;
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-}
-
-#user_registration fieldset {
-	border: none;
-}
-
-#user_registration legend {
-	height: 0em;
-	overflow: hidden;
-}
-
-#user_registration label {
-	display: block;
-	margin-top: 3%;
-}
-
-#user_registration input[type="text"] {
-	padding: 0.5em;
-	width: 60%;
-	font-size: 0.8em;
-	text-align: center;
-}
-
-#user_registration input[type="password"] {
-	padding: 0.5em;
-	width: 60%;
-	font-size: 0.8em;
-	text-align: center;
-}
-
-#user_registration input[type="submit"] {
-	display: block;
-	width: 64%;
-	padding: 0.7em;
-	margin: 5% 0% 5% 18%;
-	background-color: #8b0000;
-	color: white;
-	font-weight: bold;
-	font-size: 0.8em;
-	border: none;
-	border-radius: 0.3em;
-	cursor: pointer;
-}
-
-#user_registration input[type="submit"]:hover {
-	background-color: #9d0404;
-}
-
-/* CONTACTS */
-
-#contactsDescription {
-	width: 94%;
-	margin-top: 5%;
-	margin-left: 3%;
-	font-size: 0.92em;
-}
-
-#contactsDescription p {
-	margin-top: 2%;
-}
-
-#socialContacts {
-	width: 100%;
-	text-align: center;
-	margin-top: 5%;
-	padding-top: 5%;
-	padding-bottom: 5%;
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-}
-
-.socialContact {
-	display: inline-block;
-	width: 94%;
-	margin: 3% 3% 5% 3%;
-	background-color: white;
-	overflow: auto;
-	position: relative;
-}
-
-.socialContact img {
-	width: 3em;
-	float: left;
-	position: absolute;
-	left: 3%;
-	top: 30%;
-	bottom: 30%;
-}
-
-.socialContact h2 {
-	font-size: 1.25em;
-	margin-top: 2%;
-	margin-bottom: 2%;
-	font-weight: normal;
-	color: #8b0000;
-}
-
-.socialContact div {
-	margin-right: 0.75em;
-	margin-left: 4.5em;
-}
-
-.socialContact p {
-	font-size: 0.85em;
-}
-
-.socialContact a {
-	display: block;
-	margin-top: 4%;
-	margin-bottom: 3%;
-}
-
-/* INDEX */
-
-#intro {
-	width: 94%;
-	margin-top: 5%;
-	margin-left: 3%;
-	font-size: 0.92em;
-}
-
-#features {
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-	margin-top: 5%;
-	padding-top: 5%;
-	padding-bottom: 5%;
-}
-
-.info {
-	display: inline-block;
-	width: 96%;
-	margin: 3% 2%;
-	background-color: white;
-}
-
-.info h2 {
-	display: block;
-	width: 94%;
-	font-size: 1.15em;
-	text-align: center;
-	font-weight: normal;
-	margin-top: 4%;
-	margin-left: 3%;
-}
-
-.info img { 
-	width: 70%;
-	margin: 4% 15%;
-}
-
-.info h3 {
-	font-size: 1.2em;
-	color: #8b0000;
-	font-weight: normal;
-}
-
-.info p {
-	font-size: 0.92em;
-	margin-bottom: 3%;
-}
-
-.info dl {
-	font-size: 0.92em;
-}
-
-.info dl dt {
-	font-weight: bold;
-}
-
-.info dl dt strong {
-	font-weight: bold;
-}
-
-.info dl dd {
-	margin-bottom: 3%;
-}
-
-.hideMoreInfo {
-	display: none;
-}
-
-.showMoreInfo {
-	display: block;
-	color: blue;
-	text-decoration: none;
-}
-
-.info a {
-	text-align: center;
-	margin-bottom: 4%;
-}
-
-.info div {
-	width: 94%;
-	margin-left: 3%;
-	margin-bottom: 5%;
-}
-
-/* USE CASE */
-
-#viewAllUCDescription {
-	width: 94%;
-	margin-top: 5%;
-	margin-left: 3%;
-	font-size: 0.92em;
-}
-
-#viewAllUCDescription p {
-	margin-bottom: 2%;
-}
-
-#search_UC {
-	width: 94%;
-	margin: 5% 3%;
-	text-align: center;
-}
-
-#search_UC fieldset {
-	border: none;
-}
-
-#search_UC legend {
-	height: 0em;
-	overflow: hidden;
-}
-
-#search_UC label {
-	display: none;
-}
-
-#search_UC input[type="text"] {
-	width: 70%;
-	font-size: 0.8em;
-	padding: 0.5em;
-	border: 0.1em solid lightgray;
-}
-
-#search_UC input[type="submit"] {
-	background-color: white;
-	background-image: url('../image/search.png');
-	background-size: 100% 100%;
-	width: 2.5em;
-	padding: 0.5em 0em;
-	border: none;
-}
-
-/* Tabella responsive USE CASE*/
-
-#allUC {
-	width: 100%;
-	margin-top: 2%;
-	padding-left: 3%;
-	padding-right: 3%;
-	font-size: 0.9em;
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-}
-
-#allUC thead, tbody, th, td, tr {
-	display: block;
-}
-
-#allUC tr {
-	border: 0.1em solid black;
-	border-collapse: collapse;
-	margin: 4% 0%;
-}
-
-#allUC thead tr {
-	position: absolute;    /* Nascondiamo la testata */
-  top: -9999px;
-  left: -9999px;
-}
-
-#allUC td {
-	position: relative;		/* Creiamo lo spazio per l'intestazione */
-	border: 0em;
-	padding: 2% 0% 1% 30%;
-}
-
-#allUC td:before {
-	position: absolute;		/* Creiamo le altre celle per la descrizione */
-	top: 0.8em;
-	left: 0%;
-	width: 30%;
-	line-height: 0em;
-	text-align: center;
-	padding: 2% 0% 1% 0%;
-}
-
-#allUC td:nth-of-type(1):before {
-	content: "Codice";
-	font-weight: bold;
-}
-
-#allUC td:nth-of-type(2):before {
-	content: "Nome";
-	font-weight: bold;
-}
-
-#allUC td:nth-of-type(3):before {
-	content: "Descrizione";
-	font-weight: bold;
-}
-
-#allUC td:nth-of-type(4):before {
-	content: "Pre-condizione";
-	font-weight: bold;
-}
-
-#allUC td:nth-of-type(5):before {
-	content: "Post-condizione";
-	font-weight: bold;
-}
-
-#allUC td:nth-of-type(6):before {
-	content: "Scenario Principale";
-	font-weight: bold;
-}
-
-.codUC {
-	background-color: #c40000;
-	color: white;
-}
-
-#noResult {
-	text-align: center;
-	font-size: 0.92em;
-	color: #c40000;
-	margin-top: 2%;
-}
-
-/* ACTORS */
-
-#actorsDescription {
-	width: 94%;
-	margin-top: 5%;
-	margin-left: 3%;
-	font-size: 0.92em;
-}
-
-#actorsDescription p {
-	margin-bottom: 2%;
-}
-
-#insertActor {
-	width: 94%;
-	margin: 6% 3%;
-	text-align: center;
-}
-
-#insertActor fieldset {
-	border: none;
-}
-
-#insertActor legend {
-	text-transform: uppercase;
-}
-
-#insertActor label {
-	display: block;
-	margin-top: 5%;
-}
-
-#insertActor input[type="text"] {
-	padding: 0.5em;
-	width: 60%;
-	font-size: 0.8em;
-	text-align: center;
-}
-
-#insertActor input[type="submit"] {
-	display: block;
-	width: 64%;
-	padding: 0.7em;
-	margin: 5% 0% 5% 18%;
-	background-color: #8b0000;
-	color: white;
-	font-weight: bold;
-	font-size: 0.8em;
-	border: none;
-	border-radius: 0.3em;
-	cursor: pointer;
-}
-
-#insertActor input[type="submit"]:hover {
-	background-color: #9d0404;
-}
-
-#insertActor textarea {
-	padding: 0.5em;
-	width: 60%;
-	height: 5em;
-	font-size: 0.8em;
-	resize: none;
-}
-
-#actors {
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-	padding: 3% 0%;
-	margin: 4% 0%;
-}
-
-.actor {
-	display: inline-block;
-	width: 90%;
-	margin: 3% 5%;
-	background-color: #fefabc
-}
-
-.actor h2 {
-	font-size: 1.5em;
-	margin-top: 2%;
-	font-weight: normal;
-	color: #8b0000;
-	text-align: center;
-}
-
-.actor p {
-	font-size: 0.92em;
-	padding: 2%;
-	border-bottom: 0.1em solid lightgray;
-}
-
-.delete {
-	display: block;
-	background-image: url('../image/delete.png');
-	background-size: 100% 100%;
-	width: 1.5em;
-	float: right;
-	margin: 0.3em;
-	padding: 0.2em;
-}
-
-.modify {
-	display: block;
-	background-image: url('../image/modify.png');
-	background-size: 100% 100%;
-	width: 1.5em;
-	float: right;
-	margin: 0.5em;
-	padding: 0.2em;
-}
-
-/* MODIFICA ATTORE */
-
-#modifyActor {
-	width: 94%;
-	margin: 5% 3% 4% 3%;
-	font-size: 0.92em;
-}
-
-#modifyActor p {
-	margin-bottom: 2%;
-}
-
-#modify_actor {
-	width: 94%;
-	padding: 3% 3%;
-	text-align: center;
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-}
-
-#modify_actor fieldset {
-	border: none;
-}
-
-#modify_actor legend {
-	text-transform: uppercase;
-}
-
-#modify_actor label {
-	display: block;
-	margin-top: 4%;
-}
-
-#modify_actor input[type="text"] {
-	padding: 0.5em;
-	width: 60%;
-	font-size: 0.8em;
-	text-align: center;
-}
-
-#modify_actor input[type="submit"] {
-	display: block;
-	width: 64%;
-	padding: 0.7em;
-	margin: 5% 0% 1% 18%;
-	background-color: #8b0000;
-	color: white;
-	font-weight: bold;
-	font-size: 0.8em;
-	border: none;
-	border-radius: 0.3em;
-	cursor: pointer;
-}
-
-#modify_actor input[type="submit"]:hover {
-	background-color: #9d0404;
-}
-
-#modify_actor textarea {
-	padding: 0.5em;
-	width: 60%;
-	height: 5em;
-	font-size: 0.8em;
-	resize: none;
-}
-
-/* DELETE ACTOR */
-
-#deleteActor {
-	width: 94%;
-	margin: 5% 3% 4% 3%;
-	font-size: 0.92em;
-}
-
-#deleteActor p {
-	margin-bottom: 2%;
-}
-
-#delete_actor {
-	width: 94%;
-	padding: 3% 3%;
-	text-align: center;
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-}
-
-#delete_actor fieldset {
-	border: none;
-}
-
-#delete_actor legend {
-	text-transform: uppercase;
-}
-
-#delete_actor input[type="submit"] {
-	background-color: #8b0000;
-	color: white;	
-	width: 20%;
-	padding: 0.3em;
-	margin: 5% 3%;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 0.3em;
-	cursor: pointer;
-}
-
-#delete_actor input[type="submit"]:hover {
-	background-color: #9d0404;
-}
-
-/* SOURCES */
-
-#sourcesDescription {
-	width: 94%;
-	margin-top: 5%;
-	margin-left: 3%;
-	font-size: 0.92em;
-}
-
-#sourcesDescription p {
-	margin-bottom: 2%;
-}
-
-#insertSource {
-	width: 94%;
-	margin: 6% 3%;
-	text-align: center;
-}
-
-#insertSource fieldset {
-	border: none;
-}
-
-#insertSource legend {
-	text-transform: uppercase;
-}
-
-#insertSource label {
-	display: block;
-	margin-top: 5%;
-}
-
-#insertSource input[type="text"] {
-	padding: 0.5em;
-	width: 60%;
-	font-size: 0.8em;
-	text-align: center;
-}
-
-#insertSource input[type="submit"] {
-	display: block;
-	width: 64%;
-	padding: 0.7em;
-	margin: 5% 0% 5% 18%;
-	background-color: #8b0000;
-	color: white;
-	font-weight: bold;
-	font-size: 0.8em;
-	border: none;
-	border-radius: 0.3em;
-	cursor: pointer;
-}
-
-#insertSource input[type="submit"]:hover {
-	background-color: #9d0404;
-}
-
-#insertSource textarea {
-	padding: 0.5em;
-	width: 60%;
-	height: 5em;
-	font-size: 0.8em;
-	resize: none;
-}
-
-#source {
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-	padding: 3% 0%;
-	margin: 4% 0%;
-}
-
-.source {
-	display: inline-block;
-	width: 90%;
-	margin: 3% 5%;
-	background-color: #fefabc
-}
-
-.source h2 {
-	font-size: 1.5em;
-	margin-top: 2%;
-	font-weight: normal;
-	color: #8b0000;
-	text-align: center;
-}
-
-.source p {
-	font-size: 0.92em;
-	padding: 2%;
-	border-bottom: 0.1em solid lightgray;
-}
-
-.delete {
-	display: block;
-	background-image: url('../image/delete.png');
-	background-size: 100% 100%;
-	width: 1.5em;
-	float: right;
-	margin: 0.3em;
-	padding: 0.2em;
-}
-
-.modify {
-	display: block;
-	background-image: url('../image/modify.png');
-	background-size: 100% 100%;
-	width: 1.5em;
-	float: right;
-	margin: 0.5em;
-	padding: 0.2em;
-}
-
-/* DELETE SOURCE */
-
-#deleteSource {
-	width: 94%;
-	margin: 5% 3% 4% 3%;
-	font-size: 0.92em;
-}
-
-#deleteSource p {
-	margin-bottom: 2%;
-}
-
-#delete_source {
-	width: 94%;
-	padding: 3% 3%;
-	text-align: center;
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-}
-
-#delete_source fieldset {
-	border: none;
-}
-
-#delete_source legend {
-	text-transform: uppercase;
-}
-
-#delete_source input[type="submit"] {
-	background-color: #8b0000;
-	color: white;	
-	width: 20%;
-	padding: 0.3em;
-	margin: 5% 3%;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 0.3em;
-	cursor: pointer;
-}
-
-#delete_source input[type="submit"]:hover {
-	background-color: #9d0404;
-}
-
-/* INSERT USE CASE */
-
-#insertUC {
-	width: 94%;
-	margin-top: 5%;
-	margin-left: 3%;
-	font-size: 0.92em;
-}
-
-#insertUC p {
-	margin-bottom: 2%;
-}
-
-#insert_UC {
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-	margin: 4% 0%;
-	text-align: center;
-}
-
-#insert_UC fieldset {
-	border: none;
-}
-
-#insert_UC legend {
-	height: 0em;
-	overflow: hidden;
-}
-
-#insert_UC label {
-	display: block;
-	margin-top: 4%;
-}
-
-#insert_UC input[type="text"] {
-	padding: 0.5em;
-	width: 60%;
-	font-size: 0.8em;
-	text-align: center;
-}
-
-#insert_UC textarea {
-	padding: 0.5em;
-	width: 60%;
-	height: 5em;
-	font-size: 0.8em;
-	resize: none;
-}
-
-#insert_UC select {
-	width: 63%;
-	padding: 0.5em;
-	font-size: 0.8em;
-	margin-bottom: 1%;
-}
-
-#insert_UC input[type="submit"] {
-	display: block;
-	width: 64%;
-	padding: 0.7em;
-	margin: 5% 0% 5% 18%;
-	background-color: #8b0000;
-	color: white;
-	font-weight: bold;
-	font-size: 0.8em;
-	border: none;
-	border-radius: 0.3em;
-	cursor: pointer;
-}
-
-#insert_UC input[type="submit"]:hover {
-	background-color: #9d0404;
-}
-
-#trackingUC {
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-	margin: 4% 0%;
-	padding: 3% 0%;
-}
-
-#trackingUC fieldset {
-	border: none;
-}
-
-#trackingUC legend {
-	text-transform: uppercase;
-	margin: 2% 0%;
-	text-align: center;
-}
-
-#trackingUC input[type="checkbox"] {
-	display: block;
-	float: left;
-	margin-bottom: 5%;
-	margin-left: 10%;
-}
-
-#trackingUC label {
-	display: block;
-	margin: 0% 10% 5% 15%;
-}
-
-#trackingUC input[type="submit"] {
-	display: block;
-	width: 64%;
-	padding: 0.7em;
-	margin: 5% 0% 5% 18%;
-	background-color: #8b0000;
-	color: white;
-	font-weight: bold;
-	font-size: 0.8em;
-	border: none;
-	border-radius: 0.3em;
-	cursor: pointer;
-}
-
-#trackingUC input[type="submit"]:hover {
-	background-color: #9d0404;
-}
-
-/* ELIMINA USE CASE */
-
-#deleteUC {
-	width: 94%;
-	margin: 5% 3% 4% 3%;
-	font-size: 0.92em;
-}
-
-#deleteUC p {
-	margin-bottom: 2%;
-}
-
-#deleteUC ul {
-	width: 95%;
-	margin-left: 5%;
-}
-
-#delete_UC {
-	width: 94%;
-	padding: 3% 3%;
-	text-align: center;
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-}
-
-#delete_UC fieldset {
-	border: none;
-}
-
-#delete_UC legend {
-	text-transform: uppercase;
-}
-
-#delete_UC input[type="submit"] {
-	background-color: #8b0000;
-	color: white;	
-	width: 20%;
-	padding: 0.3em;
-	margin: 5% 3%;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 0.3em;
-	cursor: pointer;
-}
-
-#delete_UC input[type="submit"]:hover {
-	background-color: #9d0404;
-}
-
-/* INSERT REQUIREMENT */
-
-#insertR {
-	width: 94%;
-	margin-top: 5%;
-	margin-left: 3%;
-	font-size: 0.92em;
-}
-
-#insertR p {
-	margin-bottom: 2%;
-}
-
-#insert_R {
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-	margin: 4% 0%;
-	text-align: center;
-}
-
-#insert_R fieldset {
-	border: none;
-}
-
-#insert_R legend {
-	height: 0em;
-	overflow: hidden;
-}
-
-#insert_R label {
-	display: block;
-	margin-top: 4%;
-}
-
-#insert_R input[type="text"] {
-	padding: 0.5em;
-	width: 60%;
-	font-size: 0.8em;
-	text-align: center;
-}
-
-#insert_R textarea {
-	padding: 0.5em;
-	width: 60%;
-	height: 5em;
-	font-size: 0.8em;
-	resize: none;
-}
-
-#insert_R select {
-	width: 63%;
-	padding: 0.5em;
-	font-size: 0.8em;
-	margin-bottom: 1%;
-}
-
-#insert_R input[type="submit"] {
-	display: block;
-	width: 64%;
-	padding: 0.7em;
-	margin: 5% 0% 5% 18%;
-	background-color: #8b0000;
-	color: white;
-	font-weight: bold;
-	font-size: 0.8em;
-	border: none;
-	border-radius: 0.3em;
-	cursor: pointer;
-}
-
-#insert_R input[type="submit"]:hover {
-	background-color: #9d0404;
-}
-
-/* REQUIREMENT */
-
-#viewAllRDescription {
-	width: 94%;
-	margin-top: 5%;
-	margin-left: 3%;
-	font-size: 0.92em;
-}
-
-#viewAllRDescription p {
-	margin-bottom: 2%;
-}
-
-#search_R {
-	width: 94%;
-	margin: 5% 3%;
-	text-align: center;
-}
-
-#search_R fieldset {
-	border: none;
-}
-
-#search_R legend {
-	height: 0em;
-	overflow: hidden;
-}
-
-#search_R label {
-	display: none;
-}
-
-#search_R input[type="text"] {
-	width: 70%;
-	font-size: 0.8em;
-	padding: 0.5em;
-	border: 0.1em solid lightgray;
-}
-
-#search_R input[type="submit"] {
-	background-color: white;
-	background-image: url('../image/search.png');
-	background-size: 100% 100%;
-	width: 2.5em;
-	padding: 0.5em 0em;
-	border: none;
-}
-
-/* Tabella responsive */
-
-#allR {
-	width: 100%;
-	margin-top: 2%;
-	padding-left: 3%;
-	padding-right: 3%;
-	font-size: 0.9em;
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-}
-
-#allR thead, tbody, th, td, tr {
-	display: block;
-}
-
-#allR tr {
-	border: 0.1em solid black;
-	border-collapse: collapse;
-	margin: 4% 0%;
-}
-
-#allR thead tr {
-	position: absolute;    /* Nascondiamo la testata */
-  top: -9999px;
-  left: -9999px;
-}
-
-#allR td {
-	position: relative;		/* Creiamo lo spazio per l'intestazione */
-	border: 0em;
-	padding: 2% 0% 1% 30%;
-}
-
-#allR td:before {
-	position: absolute;		/* Creiamo le altre celle per la descrizione */
-	top: 0.8em;
-	left: 0%;
-	width: 30%;
-	line-height: 0em;
-	text-align: center;
-	padding: 2% 0% 1% 0%;
-}
-
-#allR td:nth-of-type(1):before {
-	content: "Codice";
-	font-weight: bold;
-}
-
-#allR td:nth-of-type(2):before {
-	content: "Descrizione";
-	font-weight: bold;
-}
-
-#allR td:nth-of-type(3):before {
-	content: "Tipo";
-	font-weight: bold;
-}
-
-#allR td:nth-of-type(4):before {
-	content: "Importanza";
-	font-weight: bold;
-}
-
-#allR td:nth-of-type(5):before {
-	content: "Stato d'implementazione";
-	font-weight: bold;
-}
-
-.codR {
-	background-color: #c40000;
-	color: white;
-}
-
-/* ELIMINA REQUIREMENT */
-
-#deleteR {
-	width: 94%;
-	margin: 5% 3% 4% 3%;
-	font-size: 0.92em;
-}
-
-#deleteR p {
-	margin-bottom: 2%;
-}
-
-#deleteR ul {
-	width: 95%;
-	margin-left: 5%;
-}
-
-#delete_R {
-	width: 94%;
-	padding: 3% 3%;
-	text-align: center;
-	background-color: lightgray;
-	background-image: url('../image/background.jpg');
-	background-size: 100%;
-}
-
-#delete_R fieldset {
-	border: none;
-}
-
-#delete_R legend {
-	text-transform: uppercase;
-}
-
-#delete_R input[type="submit"] {
-	background-color: #8b0000;
-	color: white;	
-	width: 20%;
-	padding: 0.3em;
-	margin: 5% 3%;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 0.3em;
-	cursor: pointer;
-}
-
-#delete_R input[type="submit"]:hover {
-	background-color: #9d0404;
-}
-
-/* PROFILO */
-
-#userDescription {
-	width: 94%;
-	margin: 5% 3% 4% 3%;
-	font-size: 0.92em;
-}
-
-#userDescription p {
-	margin-bottom: 2%;
-}
-
-#changePassword {
-	text-align: center;
-	margin-top: 2%;
-}
-
-#change_password {
-	margin: 2% 0% 0% 0%;
-	text-align: center;
-}
-
-#change_password fieldset {
-	border: none;
-}
-
-#change_password legend {
-	height: 0em;
-	overflow: hidden;
-}
-
-#change_password label {
-	display: block;
-	margin-top: 2%;
-}
-
-#change_password input[type="password"] {
-	padding: 0.5em;
-	width: 60%;
-	font-size: 0.8em;
-	text-align: center;
-}
-
-#change_password input[type="submit"] {
-	display: block;
-	width: 64%;
-	padding: 0.7em;
-	margin: 5% 0% 5% 18%;
-	background-color: #8b0000;
-	color: white;
-	font-weight: bold;
-	font-size: 0.8em;
-	border: none;
-	border-radius: 0.3em;
-	cursor: pointer;
-}
-
-#change_password input[type="submit"]:hover {
-	background-color: #9d0404;
-}
-
-#graphics {
-	text-align: center;
-	margin-top: 6%;
-}
-
-#graphics a {
-	margin-top: 2%;
-}
-
-#graphics h2 {
-	text-align: center;
-	font-weight: normal;
-	margin-top: 4%;
-}
-
-#graphics ul {
-	padding-top: 3%;
-	list-style-type: none;
-}
-
-#graphicObb {
-	width: 96%;
-	height: 200px;
-	margin: 0 auto;
-	border: 0.05em solid gray;
-	text-align: center;
-}
-
-#graphicDes {
-	width: 96%;
-	height: 200px;
-	margin: 0 auto;
-	background-color: #3f3f4f;
-	text-align: center;
-	color: white;
-}
-
-#graphicOpz {
-	width: 96%;
-	height: 200px;
-	margin: 0 auto;
-	border: 0.05em solid gray;
-	text-align: center;
-}
-
-#logout {
-	text-align: center;
-	margin-top: 5%;
-}
-
-#logout a {
-	color: blue;
-	text-decoration: none;
-}
-
-#logout div {
-	display: inline-block;
-	width: 0.45em;
-	height: 0.45em;
-	background-image: url('../image/logout.jpg');
-	background-size: 100% 100%;
-	padding: 0.3em;
-}
-
-/* FOOTER */
-
-footer {
-	display: block;
-	clear: both;
-	margin: 2%;
+/* Portrait smartphone */
+@media screen and (max-width: 520px) {
+
+	strong {
+		font-weight: normal;
+	}
+
+	#breadcrumb {
+		background-color: lightgray;
+		font-size: 0.75em;
+		padding-left: 3%;
+		padding-bottom: 2%;
+	}
+	
+	#breadcrumb a {
+		color: black;
+	}
+	
+	fieldset {
+		border: none;
+	}
+	
+	input[type="submit"] {
+		display: block;
+		color: white;
+		background-color: #8b0000;
+		font-weight: bold;
+		font-size: 0.8em;
+		border: none;
+		border-radius: 0.3em;
+		cursor: pointer;
+		text-transform: uppercase;
+	}
+
+	input[type="submit"]:hover {
+		background-color: #9d0404;
+	}
+	
+	.warning {
+		color: red;
+	}
+
+	/* HEADER */
+
+	header {
+		background-color: #0060b6;
+		padding-top: 2%;
+		padding-bottom: 2%;
+	}
+
+	.fix {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		z-index: 100;
+	}
+
+	.noSpaceHeader {
+		padding-top: 2%;
+	}
+	
+	.spaceHeader {
+		padding-top: 7.4em;
+	}
+	
+	#logo {
+		display: block;
+		float: left;
+		margin-left: 2%;
+		font-size: 2em;
+		color: white;
+		margin-bottom: 3%;
+	}
+
+	#mobileMenu {
+		background-color: white;
+		float: right;
+		width: 32px;
+		height: auto;
+		border: none;
+		border-radius: 0.25em;
+		margin-top: 2%;
+		margin-right: 2%;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.showButton {
+		display: block;
+	}
+
+	.hideButton {
+		display: none;
+	}
+
+	#mobileMenu span {
+		display: block;
+		margin: 0.31em 0.5em 0.31em 0.5em;
+		border: 1px solid #0060b6;
+	}
+
+	nav {
+		width: 100%;
+		display: block;
+		clear: both;
+		text-align: center;
+	}
+
+	.hideNav {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	nav ul {
+		list-style-type: none;
+	}
+
+	nav ul li {
+		display: block;
+		margin-top: 0.4em;
+		margin-bottom: 0.4em;
+		font-size: 0.9em;
+	}
+
+	nav ul li a {
+		color: white;
+		text-decoration: none;
+	}
+
+	nav ul li a:hover {
+		text-decoration: underline;
+	}
+
+	.here {
+		font-weight: bold;
+		color: lightgray;
+	}
+
+	/* LOGIN */
+
+	#whyAccount {
+		width: 94%;
+		margin-top: 5%;
+		margin-left: 3%;
+		font-size: 0.92em;
+	}
+
+	#whyAccount p {
+		margin-bottom: 2%;
+	}
+
+	#whyAccount ul {
+		margin-left: 5%;
+		width: 93%;
+	}
+
+	#user_login {
+		width: 100%;
+		text-align: center;
+		margin-top: 5%;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#user_login legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#user_login label {
+		display: block;
+		margin-top: 3%;
+	}
+
+	#user_login input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#user_login input[type="password"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#user_login input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	/* REGISTRATION */
+
+	#registrationDescription {
+		width: 94%;
+		margin-top: 5%;
+		margin-left: 3%;
+		font-size: 0.92em;
+	}
+
+	#registrationDescription p {
+		margin-top: 2%;
+	}
+
+	#user_registration {
+		width: 100%;
+		text-align: center;
+		margin-top: 5%;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#user_registration legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#user_registration label {
+		display: block;
+		margin-top: 3%;
+	}
+
+	#user_registration input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#user_registration input[type="password"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#user_registration input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	/* CONTACTS */
+
+	#contactsDescription {
+		width: 94%;
+		margin-top: 5%;
+		margin-left: 3%;
+		font-size: 0.92em;
+	}
+
+	#contactsDescription p {
+		margin-top: 2%;
+	}
+
+	#socialContacts {
+		width: 100%;
+		text-align: center;
+		margin-top: 5%;
+		padding-top: 5%;
+		padding-bottom: 5%;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	.socialContact {
+		display: inline-block;
+		width: 94%;
+		margin: 3% 3% 5% 3%;
+		background-color: white;
+		overflow: auto;
+		position: relative;
+	}
+
+	.socialContact img {
+		width: 3em;
+		float: left;
+		position: absolute;
+		left: 3%;
+		top: 30%;
+		bottom: 30%;
+	}
+
+	.socialContact h2 {
+		font-size: 1.25em;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		font-weight: normal;
+		color: #8b0000;
+	}
+
+	.socialContact div {
+		margin-right: 0.75em;
+		margin-left: 4.5em;
+	}
+
+	.socialContact p {
+		font-size: 0.85em;
+	}
+
+	.socialContact a {
+		display: block;
+		margin-top: 4%;
+		margin-bottom: 3%;
+	}
+
+	/* INDEX */
+
+	#intro {
+		width: 94%;
+		margin-top: 5%;
+		margin-left: 3%;
+		font-size: 0.92em;
+	}
+
+	#features {
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+		margin-top: 5%;
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+
+	.info {
+		display: inline-block;
+		width: 96%;
+		margin: 3% 2%;
+		background-color: white;
+	}
+
+	.info h2 {
+		display: block;
+		width: 94%;
+		font-size: 1.15em;
+		text-align: center;
+		font-weight: normal;
+		margin-top: 4%;
+		margin-left: 3%;
+	}
+
+	.info img { 
+		width: 70%;
+		margin: 4% 15%;
+	}
+
+	.info h3 {
+		font-size: 1.2em;
+		color: #8b0000;
+		font-weight: normal;
+	}
+
+	.info p {
+		font-size: 0.92em;
+		margin-bottom: 3%;
+	}
+
+	.info dl {
+		font-size: 0.92em;
+	}
+
+	.info dl dt {
+		font-weight: bold;
+	}
+
+	.info dl dt strong {
+		font-weight: bold;
+	}
+
+	.info dl dd {
+		margin-bottom: 3%;
+	}
+
+	.hideMoreInfo {
+		display: none;
+	}
+
+	.showMoreInfo {
+		display: block;
+		color: blue;
+		text-decoration: none;
+	}
+
+	.info a {
+		text-align: center;
+		margin-bottom: 4%;
+	}
+
+	.info div {
+		width: 94%;
+		margin-left: 3%;
+		margin-bottom: 5%;
+	}
+
+	/* USE CASE */
+
+	#viewAllUCDescription {
+		width: 94%;
+		margin-top: 5%;
+		margin-left: 3%;
+		font-size: 0.92em;
+	}
+
+	#viewAllUCDescription p {
+		margin-bottom: 2%;
+	}
+
+	#search_UC {
+		width: 94%;
+		margin: 5% 3%;
+		text-align: center;
+	}
+
+	#search_UC legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#search_UC label {
+		display: none;
+	}
+
+	#search_UC input[type="text"] {
+		width: 70%;
+		font-size: 0.8em;
+		padding: 0.5em;
+		border: 0.1em solid lightgray;
+	}
+
+	#search_UC input[type="submit"] {
+		background-color: white;
+		background-image: url('../image/search.png');
+		background-size: 100% 100%;
+		width: 2.5em;
+		padding: 0.5em 0em;
+		float: inline;
+	}
+
+	/* Tabella responsive USE CASE*/
+
+	#allUC {
+		width: 100%;
+		margin-top: 2%;
+		padding-left: 3%;
+		padding-right: 3%;
+		font-size: 0.9em;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#allUC thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	#allUC tr {
+		border: 0.1em solid black;
+		border-collapse: collapse;
+		margin: 4% 0%;
+	}
+
+	#allUC thead tr {
+		position: absolute;    /* Nascondiamo la testata */
+		top: -9999px;
+		left: -9999px;
+	}
+
+	#allUC td {
+		position: relative;		/* Creiamo lo spazio per l'intestazione */
+		border: 0em;
+		padding: 2% 0% 1% 30%;
+	}
+
+	#allUC td:before {
+		position: absolute;		/* Creiamo le altre celle per la descrizione */
+		top: 0.8em;
+		left: 0%;
+		width: 30%;
+		line-height: 0em;
+		text-align: center;
+		padding: 2% 0% 1% 0%;
+	}
+
+	#allUC td:nth-of-type(1):before {
+		content: "Codice";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(2):before {
+		content: "Nome";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(3):before {
+		content: "Descrizione";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(4):before {
+		content: "Pre-condizione";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(5):before {
+		content: "Post-condizione";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(6):before {
+		content: "Scenario Principale";
+		font-weight: bold;
+	}
+
+	.codUC {
+		background-color: #c40000;
+		color: white;
+	}
+
+	#noResult {
+		text-align: center;
+		font-size: 0.92em;
+		color: #c40000;
+		margin-top: 2%;
+	}
+
+	/* ACTORS */
+
+	#actorsDescription {
+		width: 94%;
+		margin-top: 5%;
+		margin-left: 3%;
+		font-size: 0.92em;
+	}
+
+	#actorsDescription p {
+		margin-bottom: 2%;
+	}
+
+	#insertActor {
+		width: 94%;
+		margin: 6% 3%;
+		text-align: center;
+	}
+
+	#insertActor legend {
+		text-transform: uppercase;
+	}
+
+	#insertActor label {
+		display: block;
+		margin-top: 5%;
+	}
+
+	#insertActor input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#insertActor input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	#insertActor textarea {
+		padding: 0.5em;
+		width: 60%;
+		height: 5em;
+		font-size: 0.8em;
+		resize: none;
+	}
+
+	#actors {
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+		padding: 3% 0%;
+		margin: 4% 0%;
+	}
+
+	.actor {
+		display: inline-block;
+		width: 90%;
+		margin: 3% 5%;
+		background-color: #fefabc
+	}
+
+	.actor h2 {
+		font-size: 1.5em;
+		margin-top: 2%;
+		font-weight: normal;
+		color: #8b0000;
+		text-align: center;
+	}
+
+	.actor p {
+		font-size: 0.92em;
+		padding: 2%;
+		border-bottom: 0.1em solid lightgray;
+	}
+
+	.delete {
+		display: block;
+		background-image: url('../image/delete.png');
+		background-size: 100% 100%;
+		width: 1.5em;
+		float: right;
+		margin: 0.3em;
+		padding: 0.2em;
+	}
+
+	.modify {
+		display: block;
+		background-image: url('../image/modify.png');
+		background-size: 100% 100%;
+		width: 1.5em;
+		float: right;
+		margin: 0.5em;
+		padding: 0.2em;
+	}
+
+	/* MODIFICA ATTORE */
+
+	#modifyActor {
+		width: 94%;
+		margin: 5% 3% 4% 3%;
+		font-size: 0.92em;
+	}
+
+	#modifyActor p {
+		margin-bottom: 2%;
+	}
+
+	#modify_actor {
+		width: 94%;
+		padding: 3% 3%;
+		text-align: center;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#modify_actor legend {
+		text-transform: uppercase;
+	}
+
+	#modify_actor label {
+		display: block;
+		margin-top: 4%;
+	}
+
+	#modify_actor input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#modify_actor input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 1% 18%;
+	}
+
+	#modify_actor textarea {
+		padding: 0.5em;
+		width: 60%;
+		height: 5em;
+		font-size: 0.8em;
+		resize: none;
+	}
+
+	/* DELETE ACTOR */
+
+	#deleteActor {
+		width: 94%;
+		margin: 5% 3% 4% 3%;
+		font-size: 0.92em;
+	}
+
+	#deleteActor p {
+		margin-bottom: 2%;
+	}
+
+	#delete_actor {
+		width: 94%;
+		padding: 3% 3%;
+		text-align: center;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#delete_actor legend {
+		text-transform: uppercase;
+	}
+
+	#delete_actor input[type="submit"] {
+		width: 20%;
+		padding: 0.3em;
+		margin: 5% 15%;
+		float: left;
+	}
+
+	/* SOURCES */
+
+	#sourcesDescription {
+		width: 94%;
+		margin-top: 5%;
+		margin-left: 3%;
+		font-size: 0.92em;
+	}
+
+	#sourcesDescription p {
+		margin-bottom: 2%;
+	}
+
+	#insertSource {
+		width: 94%;
+		margin: 6% 3%;
+		text-align: center;
+	}
+
+	#insertSource legend {
+		text-transform: uppercase;
+	}
+
+	#insertSource label {
+		display: block;
+		margin-top: 5%;
+	}
+
+	#insertSource input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#insertSource input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	#insertSource textarea {
+		padding: 0.5em;
+		width: 60%;
+		height: 5em;
+		font-size: 0.8em;
+		resize: none;
+	}
+
+	#source {
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+		padding: 3% 0%;
+		margin: 4% 0%;
+	}
+
+	.source {
+		display: inline-block;
+		width: 90%;
+		margin: 3% 5%;
+		background-color: #fefabc
+	}
+
+	.source h2 {
+		font-size: 1.5em;
+		margin-top: 2%;
+		font-weight: normal;
+		color: #8b0000;
+		text-align: center;
+	}
+
+	.source p {
+		font-size: 0.92em;
+		padding: 2%;
+		border-bottom: 0.1em solid lightgray;
+	}
+
+	.delete {
+		display: block;
+		background-image: url('../image/delete.png');
+		background-size: 100% 100%;
+		width: 1.5em;
+		float: right;
+		margin: 0.3em;
+		padding: 0.2em;
+	}
+
+	.modify {
+		display: block;
+		background-image: url('../image/modify.png');
+		background-size: 100% 100%;
+		width: 1.5em;
+		float: right;
+		margin: 0.5em;
+		padding: 0.2em;
+	}
+
+	/* DELETE SOURCE */
+
+	#deleteSource {
+		width: 94%;
+		margin: 5% 3% 4% 3%;
+		font-size: 0.92em;
+	}
+
+	#deleteSource p {
+		margin-bottom: 2%;
+	}
+
+	#delete_source {
+		width: 94%;
+		padding: 3% 3%;
+		text-align: center;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#delete_source legend {
+		text-transform: uppercase;
+	}
+
+	#delete_source input[type="submit"] {	
+		width: 20%;
+		padding: 0.3em;
+		margin: 5% 15%;
+	}
+
+	/* INSERT USE CASE */
+
+	#insertUC {
+		width: 94%;
+		margin-top: 5%;
+		margin-left: 3%;
+		font-size: 0.92em;
+	}
+
+	#insertUC p {
+		margin-bottom: 2%;
+	}
+
+	#insert_UC {
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+		margin: 4% 0%;
+		text-align: center;
+	}
+
+	#insert_UC legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#insert_UC label {
+		display: block;
+		margin-top: 4%;
+	}
+
+	#insert_UC input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#insert_UC textarea {
+		padding: 0.5em;
+		width: 60%;
+		height: 5em;
+		font-size: 0.8em;
+		resize: none;
+	}
+
+	#insert_UC select {
+		width: 63%;
+		padding: 0.5em;
+		font-size: 0.8em;
+		margin-bottom: 1%;
+	}
+
+	#insert_UC input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	#trackingUC {
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+		margin: 4% 0%;
+		padding: 3% 0%;
+	}
+
+	#trackingUC legend {
+		text-transform: uppercase;
+		margin: 2% 0%;
+		text-align: center;
+	}
+
+	#trackingUC input[type="checkbox"] {
+		display: block;
+		float: left;
+		margin-bottom: 5%;
+		margin-left: 10%;
+	}
+
+	#trackingUC label {
+		display: block;
+		margin: 0% 10% 5% 15%;
+	}
+
+	#trackingUC input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	/* ELIMINA USE CASE */
+
+	#deleteUC {
+		width: 94%;
+		margin: 5% 3% 4% 3%;
+		font-size: 0.92em;
+	}
+
+	#deleteUC p {
+		margin-bottom: 2%;
+	}
+
+	#deleteUC ul {
+		width: 95%;
+		margin-left: 5%;
+	}
+
+	#delete_UC {
+		width: 94%;
+		padding: 3% 3%;
+		text-align: center;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#delete_UC legend {
+		text-transform: uppercase;
+	}
+
+	#delete_UC input[type="submit"] {	
+		width: 20%;
+		padding: 0.3em;
+		margin: 5% 15%;
+		float: left;
+	}
+
+	/* INSERT REQUIREMENT */
+
+	#insertR {
+		width: 94%;
+		margin-top: 5%;
+		margin-left: 3%;
+		font-size: 0.92em;
+	}
+
+	#insertR p {
+		margin-bottom: 2%;
+	}
+
+	#insert_R {
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+		margin: 4% 0%;
+		text-align: center;
+	}
+
+	#insert_R legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#insert_R label {
+		display: block;
+		margin-top: 4%;
+	}
+
+	#insert_R input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#insert_R textarea {
+		padding: 0.5em;
+		width: 60%;
+		height: 5em;
+		font-size: 0.8em;
+		resize: none;
+	}
+
+	#insert_R select {
+		width: 63%;
+		padding: 0.5em;
+		font-size: 0.8em;
+		margin-bottom: 1%;
+	}
+
+	#insert_R input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	/* REQUIREMENT */
+
+	#viewAllRDescription {
+		width: 94%;
+		margin-top: 5%;
+		margin-left: 3%;
+		font-size: 0.92em;
+	}
+
+	#viewAllRDescription p {
+		margin-bottom: 2%;
+	}
+
+	#search_R {
+		width: 94%;
+		margin: 5% 3%;
+		text-align: center;
+	}
+
+	#search_R legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#search_R label {
+		display: none;
+	}
+
+	#search_R input[type="text"] {
+		width: 70%;
+		font-size: 0.8em;
+		padding: 0.5em;
+		border: 0.1em solid lightgray;
+	}
+
+	#search_R input[type="submit"] {
+		background-color: white;
+		background-image: url('../image/search.png');
+		background-size: 100% 100%;
+		float: inline;
+	}
+
+	/* Tabella responsive */
+
+	#allR {
+		width: 100%;
+		margin-top: 2%;
+		padding-left: 3%;
+		padding-right: 3%;
+		font-size: 0.9em;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#allR thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	#allR tr {
+		border: 0.1em solid black;
+		border-collapse: collapse;
+		margin: 4% 0%;
+	}
+
+	#allR thead tr {
+		position: absolute;    /* Nascondiamo la testata */
+		top: -9999px;
+		left: -9999px;
+	}
+
+	#allR td {
+		position: relative;		/* Creiamo lo spazio per l'intestazione */
+		border: 0em;
+		padding: 2% 0% 1% 30%;
+	}
+
+	#allR td:before {
+		position: absolute;		/* Creiamo le altre celle per la descrizione */
+		top: 0.8em;
+		left: 0%;
+		width: 30%;
+		line-height: 0em;
+		text-align: center;
+		padding: 2% 0% 1% 0%;
+	}
+
+	#allR td:nth-of-type(1):before {
+		content: "Codice";
+		font-weight: bold;
+	}
+
+	#allR td:nth-of-type(2):before {
+		content: "Descrizione";
+		font-weight: bold;
+	}
+
+	#allR td:nth-of-type(3):before {
+		content: "Tipo";
+		font-weight: bold;
+	}
+
+	#allR td:nth-of-type(4):before {
+		content: "Importanza";
+		font-weight: bold;
+	}
+
+	#allR td:nth-of-type(5):before {
+		content: "Stato d'implementazione";
+		font-weight: bold;
+	}
+
+	.codR {
+		background-color: #c40000;
+		color: white;
+	}
+
+	/* ELIMINA REQUIREMENT */
+
+	#deleteR {
+		width: 94%;
+		margin: 5% 3% 4% 3%;
+		font-size: 0.92em;
+	}
+
+	#deleteR p {
+		margin-bottom: 2%;
+	}
+
+	#deleteR ul {
+		width: 95%;
+		margin-left: 5%;
+	}
+
+	#delete_R {
+		width: 94%;
+		padding: 3% 3%;
+		text-align: center;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#delete_R legend {
+		text-transform: uppercase;
+	}
+
+	#delete_R input[type="submit"] {
+		width: 20%;
+		padding: 0.3em;
+		margin: 5% 15%;
+		float: left;
+	}
+
+	/* PROFILO */
+
+	#userDescription {
+		width: 94%;
+		margin: 5% 3% 4% 3%;
+		font-size: 0.92em;
+	}
+
+	#userDescription p {
+		margin-bottom: 2%;
+	}
+
+	#changePassword {
+		text-align: center;
+		margin-top: 2%;
+	}
+
+	#change_password {
+		margin: 2% 0% 0% 0%;
+		text-align: center;
+	}
+
+	#change_password legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#change_password label {
+		display: block;
+		margin-top: 2%;
+	}
+
+	#change_password input[type="password"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#change_password input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	#graphics {
+		text-align: center;
+		margin-top: 6%;
+	}
+
+	#graphics a {
+		margin-top: 2%;
+	}
+
+	#graphics h2 {
+		text-align: center;
+		font-weight: normal;
+		margin-top: 4%;
+	}
+
+	#graphics ul {
+		padding-top: 3%;
+		list-style-type: none;
+	}
+
+	#graphicObb {
+		width: 96%;
+		height: 200px;
+		margin: 0 auto;
+		border: 0.05em solid gray;
+		text-align: center;
+	}
+
+	#graphicDes {
+		width: 96%;
+		height: 200px;
+		margin: 0 auto;
+		background-color: #3f3f4f;
+		text-align: center;
+		color: white;
+	}
+
+	#graphicOpz {
+		width: 96%;
+		height: 200px;
+		margin: 0 auto;
+		border: 0.05em solid gray;
+		text-align: center;
+	}
+
+	#logout {
+		text-align: center;
+		margin-top: 5%;
+	}
+
+	#logout a {
+		color: blue;
+		text-decoration: none;
+	}
+
+	#logout div {
+		display: inline-block;
+		width: 0.45em;
+		height: 0.45em;
+		background-image: url('../image/logout.jpg');
+		background-size: 100% 100%;
+		padding: 0.3em;
+	}
+
+	/* FOOTER */
+
+	footer {
+		display: block;
+		clear: both;
+		margin: 2%;
+	}
 }

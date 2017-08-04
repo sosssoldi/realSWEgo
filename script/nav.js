@@ -1,5 +1,9 @@
 $(function() {
 	
+	$('header').addClass('fix');
+	$('#breadcrumb').removeClass('noSpaceHeader');
+	$('#breadcrumb').addClass('spaceHeader');
+	
 	let menu = $('nav').eq(0);	
 	let button = $('#mobileMenu');
 	
