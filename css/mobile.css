@@ -472,7 +472,7 @@
 		background-size: 100%;
 	}
 
-	#allUC thead, tbody, th, td, tr {
+	#allUC thead, #allUC tbody, #allUC th, #allUC td, #allUC tr {
 		display: block;
 	}
 
@@ -491,9 +491,14 @@
 	#allUC td {
 		position: relative;		/* Creiamo lo spazio per l'intestazione */
 		border: 0em;
-		padding: 2% 0% 1% 30%;
+		padding-top: 2%;
+		padding-left: 30%;
 	}
-
+	
+	.operation {
+		padding-bottom: 3em;
+	}
+	
 	#allUC td:before {
 		position: absolute;		/* Creiamo le altre celle per la descrizione */
 		top: 0.8em;
@@ -501,9 +506,9 @@
 		width: 30%;
 		line-height: 0em;
 		text-align: center;
-		padding: 2% 0% 1% 0%;
+		padding-top: 2%;
 	}
-
+		
 	#allUC td:nth-of-type(1):before {
 		content: "Codice";
 		font-weight: bold;
@@ -520,30 +525,18 @@
 	}
 
 	#allUC td:nth-of-type(4):before {
-		content: "Pre-condizione";
+		content: "Pre";
 		font-weight: bold;
 	}
 
 	#allUC td:nth-of-type(5):before {
-		content: "Post-condizione";
+		content: "Post";
 		font-weight: bold;
 	}
-
-	#allUC td:nth-of-type(6):before {
-		content: "Scenario Principale";
-		font-weight: bold;
-	}
-
+	
 	.codUC {
 		background-color: #c40000;
 		color: white;
-	}
-
-	#noResult {
-		text-align: center;
-		font-size: 0.92em;
-		color: #c40000;
-		margin-top: 2%;
 	}
 
 	/* ACTORS */

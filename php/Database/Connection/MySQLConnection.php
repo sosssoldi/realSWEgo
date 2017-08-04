@@ -8,7 +8,7 @@
 		private $pwd = "";
 		private $options = "";
 
-		public function __construct($host = "localhost", $dbname = "swego", $user = "root", $pwd = "root") {
+		public function __construct($host = "localhost", $dbname = "swego", $user = "root", $pwd = "") {
 			$this->host = $host;
 			$this->dbname = $dbname;
 			$this->user = $user;
