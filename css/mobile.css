@@ -1088,7 +1088,7 @@
 		background-size: 100%;
 	}
 
-	#allR thead, tbody, th, td, tr {
+	#allR thead, #allR tbody, #allR th, #allR td, #allR tr {
 		display: block;
 	}
 
