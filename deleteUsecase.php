@@ -12,7 +12,7 @@
 		header("Location: index.html");
 
 	if(empty($_GET) || !array_key_exists('id', $_GET) || $_GET['id'] == "")
-		header("Location: home.html");
+		header("Location: viewUsecase.php");
 
 	$usecaseDAO = new UsecaseDAO();
 	if(!$usecaseDAO->getUsecase($_GET["id"], $_SESSION["id"])) {
@@ -44,7 +44,7 @@
 			$page = str_replace(':id:', $usecase['usecaseid'], $page);
 			$page = str_replace(':name:', $usecase['name'], $page);
 		} else {
-			header("Location: home.html");
+			header("Location: viewUsecase.php");
 		}
 		$list = $usecaseDAO->getHierarchy($id);
 		$str = "";

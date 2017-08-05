@@ -12,7 +12,7 @@
 		header("Location: index.html");
 
 	if(empty($_GET) || !array_key_exists('id', $_GET) || $_GET['id'] == "")
-		header("Location: home.html");
+		header("Location: viewRequirement.php");
 
 	$requirementDAO = new RequirementDAO();
 	if(!$requirementDAO->getRequirement($_GET["id"], $_SESSION["id"])) {
@@ -44,7 +44,7 @@
 			$page = str_replace(':id:', $requirement['requirementid'], $page);
 			$page = str_replace(':description:', $requirement['description'], $page);
 		} else {
-			header("Location: home.html");
+			header("Location: viewRequirement.php");
 		}
 		$list = $requirementDAO->getHierarchy($id);
 		$str = "";

@@ -12,7 +12,7 @@
 		header("Location: index.html");
 
 	if(empty($_GET) || !array_key_exists('id', $_GET) || $_GET['id'] == "")
-		header("Location: home.html");
+		header("Location: insertSource.php");
 
 	$sourceDAO = new SourceDAO();
 	if(!$sourceDAO->getSource($_GET["id"], $_SESSION["id"])) {

@@ -268,6 +268,25 @@
 			}
 		}
 
+		public function selectTracking($projectid) {
+			$this->query("SELECT id, usecaseid FROM usecase WHERE projectid = {$projectid};");
+			$rs = $this->resultSet();
+			if($rs) {
+				$array = array();
+				foreach($rs as $uc) {
+					$str = "";
+					$this->query("SELECT * FROM usecaserequirements, requirements WHERE usecaserequirements.requirementid = requirements.id AND usecaseid = {$uc['id']};");
+					$rsTracking = $this->resultSet();
+					foreach($rsTracking as $t) {
+						$str .= $t["requirementid"].' ';
+					}
+					$array[$uc['usecaseid']] = $str;
+				}
+				return $array;
+			} else
+				return array();
+		}
+
 		public function find($value, $array) {
 			$found = false;
 			for($i = 0; $i < count($array) && !$found; ++$i)

@@ -12,7 +12,7 @@
 		header("Location: index.html");
 
 	if(empty($_GET) || !array_key_exists('id', $_GET) || $_GET['id'] == "")
-		header("Location: home.html");
+		header("Location: insertActor.php");
 
 	$actorDAO = new ActorDAO();
 	if(!$actorDAO->getActor($_GET["id"], $_SESSION["id"])) {
