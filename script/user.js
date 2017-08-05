@@ -95,35 +95,38 @@ function createGraphics(obb, des, opz) {
 
 // Hide/show features user
 $(function() {
-	$('#change_password').hide();
-	$('#graphics a').html('Nascondi copertura dei requisiti');
-	
-	$('#changePassword a').click(function() {
-		if($('#change_password').is(':visible'))
-		{
-			$('#change_password').hide();
-			$('#changePassword a').html('Cambia passoword');
-		}
-		else
-		{
-			$('#change_password').show();
-			$('#changePassword a').html('Nascondi cambia password');
-			
-		}
-	});
-	
-	$('#graphics a').click(function() {
-		if($('#graphics div').is(':visible'))
-		{
-			$('#graphics h3').hide();
-			$('#graphics div').hide();
-			$('#graphics a').html('Mostra copertura dei requisiti');
-		}
-		else
-		{
-			$('#graphics h3').show();
-			$('#graphics div').show();
-			$('#graphics a').html('Nascondi copertura dei requisiti');
-		}
+	setTimeout(function() {
+		$('#change_password').hide();
+		$('#graphics h3').hide();
+		$('#graphics div').hide();
+		
+		$('#changePassword a').click(function() {
+			if($('#change_password').is(':visible'))
+			{
+				$('#change_password').hide();
+				$('#changePassword a').html('Cambia passoword');
+			}
+			else
+			{
+				$('#change_password').show();
+				$('#changePassword a').html('Nascondi cambia password');
+				
+			}
+		});
+		
+		$('#graphics a').click(function() {
+			if($('#graphics div').is(':visible'))
+			{
+				$('#graphics h3').hide();
+				$('#graphics div').hide();
+				$('#graphics a').html('Mostra copertura dei requisiti');
+			}
+			else
+			{
+				$('#graphics h3').show();
+				$('#graphics div').show();
+				$('#graphics a').html('Nascondi copertura dei requisiti');
+			}
+		});
 	});
 });
