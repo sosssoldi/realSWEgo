@@ -280,7 +280,8 @@
 					foreach($rsTracking as $t) {
 						$str .= $t["requirementid"].' ';
 					}
-					$array[$uc['usecaseid']] = $str;
+					if($str != "")
+						$array[$uc['usecaseid']] = $str;
 				}
 				return $array;
 			} else
