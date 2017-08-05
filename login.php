@@ -9,7 +9,7 @@
 	include_once "php/Object/User.php";
 
 	if(!empty($_SESSION) && array_key_exists('groupname', $_SESSION) && $_SESSION["groupname"] != "")
-		header("Location: viewUsecase.php");
+		header("Location: user.php");
 
 	if(empty($_POST)) {
 		render_page();
@@ -24,7 +24,7 @@
 				$_SESSION["id"] = $user["id"];
 				$_SESSION["groupname"] = $user["groupname"];
 				$_SESSION["projectname"] = $user["projectname"];
-				header("Location: viewUsecase.php");
+				header("Location: user.php");
 			} else 
 				render_page($_POST);
 		}

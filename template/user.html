@@ -2,7 +2,7 @@
 <html lang="it">
 	<head>
 		<meta charset="utf-8" />
-		<title>SWEgo - Profilo</title>
+		<title>SWEgo - Profilo :groupname:</title>
 		<meta name="title" content="SWEgo - Profilo" />
 		<meta name="description" content="Visualizza il profilo di un utente." />
 		<meta name="keywords" content="SWEgo, Utente, Profilo" />
@@ -11,14 +11,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-		<script src="https://www.amcharts.com/lib/3/pie.js"></script>
-		<script src="https://www.amcharts.com/lib/3/themes/dark.js"></script>
-		<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 		<script src="script/nav.js"></script>
 		<script src="script/user.js"></script>
 	</head>
-	<body onLoad="createGraphics([{'sodd':'Soddisfatto', 'req': 52}, {'sodd':'Non soddisfatto', 'req': 27}], [{'sodd':'Soddisfatto', 'req': 52}, {'sodd':'Non soddisfatto', 'req': 27}], [{'sodd':'Soddisfatto', 'req': 52}, {'sodd':'Non soddisfatto', 'req': 27}]);">
+	<body onLoad="createGraphics({s::s0p:,u::u0p:},{s::s1p:,u::u1p:},{s::s2p:,u::u2p:});">
 		<header>
 			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
 			<div id="mobileMenu" class="hideButton">
@@ -28,35 +25,45 @@
 			</div>
 			<nav>
 				<ul>
-					<li lang="en"><a href="home.html">HOMEPAGE</a></li>
 					<li><a href="insertSource.php">FONTI</a></li>
 					<li><a href="insertActor.php">ATTORI</a></li>
 					<li><a href="insertRequirement.php">REQUISITI</a></li>
 					<li lang="en"><a href="insertUsecase.php">USE CASE</a></li>
-					<li><a href="tracking.php">TRACCIAMENTO</a></li>
+					<li><a href="viewTracking.php">TRACCIAMENTO</a></li>
 					<li class="here">PROFILO</li>
 				</ul>
 			</nav>
 		</header>
 		<div id="breadcrumb" class="noSpaceHeader">
-			<p>Ti trovi in: PROFILO</p>
+			<p>Ti trovi in: PROFILO :groupname:</p>
 		</div>
 		<div id="content">
 			<div id="userDescription">
 				<p>In questa pagina potrai cambiare la tua password, vedere un riassunto delle tue metriche oppure effettuare il logout.</p>
 				<p class="warning">ATTENZIONE: attivare JavaScript per il corretto funzionamento della pagina!</p>
 			</div>
+			<div id="summary">
+				<ul>
+					<li>Numero di Attori: :nactors:</li>
+					<li>Numero di Fonti: :nsources:</li>
+					<li>Numero di <span lang="en">Use Case</span>: :nusecase:</li>
+					<li>Numero di Requisiti: :nrequirements:</li>
+					<li>Numero di <span lang="en">Use Case</span> tracciati: :ntrackedusecase:</li>
+					<li>Numero di Requisiti tracciati: :ntrackedrequirements:</li>
+				</ul>
+				<p>Non perdere tempo per fare i Diagrammi <abbr lang="en" title="Unified Modeling Language">UML</abbr> degli <span lang="en">Use Case</span>. <a href="generateUML.php">Genera i diagrammi</a> automaticamente con <span lang="en">PlantUML</span>.</p>
+			</div>
 			<div id="changePassword">
-				<a href="#changPassword" class="showMoreInfo">Cambia password</a>
+				<a href="#changePassword" class="showMoreInfo">Cambia password</a>
 				<form method="post" action="#" id="change_password">
 					<fieldset form="change_password">
 						<legend>Form per il cambio password</legend>
 						<label for="oldPassword">Vecchia password</label>
-						<input type="password" name="old" id="oldPassword" required="required" />
+						<input type="password" name="oldpassword" id="oldPassword" required="required" maxlength="100" />
 						<label for="newPassoword">Nuova password</label>
-						<input type="password" name="new" id="newPassoword" required="required" />
+						<input type="password" name="password" id="newPassoword" required="required" maxlength="100" />
 						<label for="confirmPassword">Conferma password</label>
-						<input type="password" name="confirm" id="confirmPassword" required="required" />
+						<input type="password" name="confirmpassword" id="confirmPassword" required="required" maxlength="100" />
 						<input type="submit" value="CAMBIA" />
 					</fieldset>
 				</form>
@@ -65,23 +72,26 @@
 				<a href="#graphics" class="showMoreInfo">Mostra copertura dei requisiti</a>
 				<h2>REQUISITI OBBLIGATORI</h2>
 				<div id="graphicObb">
+					<canvas id="graphObb"></canvas>
 					<ul>
-						<li>Soddisfatti: 73% (38)</li>
-						<li>Non soddisfatti: 27% (18)</li>
+						<li>Soddisfatti: :s0p:% (:s0n:)</li>
+						<li>Non soddisfatti: :u0p:% (:u0n:)</li>
 					</ul>
 				</div>
 				<h2>REQUISITI DESIDERABILI</h2>
 				<div id="graphicDes">
+					<canvas id="graphDes"></canvas>
 					<ul>
-						<li>Soddisfatti: 73% (38)</li>
-						<li>Non soddisfatti: 27% (18)</li>
+						<li>Soddisfatti: :s1p:% (:s1n:)</li>
+						<li>Non soddisfatti: :u1p:% (:u1n:)</li>
 					</ul>
 				</div>
 				<h2>REQUISITI OPZIONALI</h2>
 				<div id="graphicOpz">
+					<canvas id="graphOpz"></canvas>
 					<ul>
-						<li>Soddisfatti: 73% (38)</li>
-						<li>Non soddisfatti: 27% (18)</li>
+						<li>Soddisfatti: :s2p:% (:s2n:)</li>
+						<li>Non soddisfatti: :u2p:% (:u2n:)</li>
 					</ul>
 				</div>
 			</div>
@@ -91,7 +101,7 @@
 			</div>
 		</div>
 		<footer>
-			<span lang="en">SWEgo	&copy;</span>
+			<span lang="en">SWEgo &copy;</span>
 		</footer>
 	</body>
 </html>

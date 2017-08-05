@@ -107,9 +107,30 @@
 			return $this->resultSet();
 		}
 
+		public function selectTrackedRequirements($projectid) {
+			$this->query("SELECT requirementid FROM usecaserequirements WHERE requirementid IN (SELECT id FROM requirements WHERE projectid = {$projectid});");
+			return $this->resultSet();
+		}
+
 		public function getRequirement($id, $projectid) {
 			$this->query("SELECT * FROM requirements WHERE id = {$id} AND projectid = {$projectid};");
 			return $this->resultSet();
+		}
+
+		public function getRequirementImportanceCount($projectid) {
+			$this->query("SELECT * FROM requirements WHERE importance='Obbligatorio' AND satisfied='Non implementato' AND projectid = {$projectid};");
+			$u0n = count($this->resultSet());
+			$this->query("SELECT * FROM requirements WHERE importance='Obbligatorio' AND satisfied='Implementato' AND projectid = {$projectid};");
+			$s0n = count($this->resultSet());
+			$this->query("SELECT * FROM requirements WHERE importance='Desiderabile' AND satisfied='Non implementato' AND projectid = {$projectid};");
+			$u1n = count($this->resultSet());
+			$this->query("SELECT * FROM requirements WHERE importance='Desiderabile' AND satisfied='Implementato' AND projectid = {$projectid};");
+			$s1n = count($this->resultSet());
+			$this->query("SELECT * FROM requirements WHERE importance='Opzionale' AND satisfied='Non implementato' AND projectid = {$projectid};");
+			$u2n = count($this->resultSet());
+			$this->query("SELECT * FROM requirements WHERE importance='Opzionale' AND satisfied='Implementato' AND projectid = {$projectid};");
+			$s2n = count($this->resultSet());
+			return array($s0n, $u0n, $s1n, $u1n, $s2n, $u2n);
 		}
 
 		function getParent($id) {

@@ -38,6 +38,22 @@
 			return null;
 		}
 
+		public function updatePassword($obj, $userid) {
+			$this->query("SELECT password FROM users WHERE id = {$userid};");
+			$rs = $this->resultSet();
+			if($rs) {
+				$rs = $rs[0];
+				$pwd = $rs['password'];
+				if(hash('sha256', $obj["oldpassword"]."let's salt") == $pwd) {
+					$newpwd = hash('sha256', $obj["password"]."let's salt");
+					$this->query("UPDATE users SET password = '{$newpwd}' WHERE id = {$userid};");
+					$this->resultSet();
+					return true;
+				}
+			} else
+				return false;
+		}
+
 		public function select() {
 			$this->query('SELECT * FROM users ORDER BY groupname;');
 			return $this->resultSet();

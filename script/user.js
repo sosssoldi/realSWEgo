@@ -1,73 +1,92 @@
 function createGraphics(obb, des, opz) {
 	
 	// Grafico per i requisiti obbligatori
-	let obbligatori = AmCharts.makeChart('graphicObb', {
-		"type": "pie",
-		"theme": "light",
-		"titleField": "Soddisfacimento",
-		"valueField": "Requisiti",
-		"colorField": "color",
-		"fontSize": 9,
-		"tabIndex": 2,
-		"dataProvider": [
-		{
-			"Soddisfacimento": obb[0].sodd,
-			"Requisiti": obb[0].req,
-			"color": "#4572c1"
+	let obbligatori = {
+		type: 'doughnut',
+		data: {
+		    datasets: [{
+		        data: [obb['s'],obb['u']],
+		        backgroundColor: ["#4572c1","#eb7b34"],
+		        label: 'Requisiti obbligatori'
+		    }],
+		    labels: ["Implementati","Non Implementati"]
 		},
-		{
-			"Soddisfacimento": obb[1].sodd,
-			"Requisiti": obb[1].req,
-			"color": "#eb7b34"
+		options: {
+		    responsive: true,
+		    legend: {
+		        position: 'top',
+		    },
+		    title: {
+		        display: true,
+		        text: 'Requisiti Obbligatori'
+		    },
+		    animation: {
+		        animateScale: true,
+		        animateRotate: true
+		    }
 		}
-		]
-	});
+	};
 	
 	// Grafico per i requisiti desiderabili
-	let desiderabili = AmCharts.makeChart('graphicDes', {
-		"type": "pie",
-		"theme": "dark",
-		"titleField": "Soddisfacimento",
-		"valueField": "Requisiti",
-		"colorField": "color",
-		"fontSize": 9,
-		"tabIndex": 4,
-		"dataProvider": [
-		{
-			"Soddisfacimento": des[0].sodd,
-			"Requisiti": des[0].req,
-			"color": "#629b6d"
+	let desiderabili = {
+		type: 'doughnut',
+		data: {
+		    datasets: [{
+		        data: [des['s'],des['u']],
+		        backgroundColor: ["#629b6d","#e8d685"],
+		        label: 'Requisiti desiderabili'
+		    }],
+		    labels: ["Implementati","Non Implementati"]
 		},
-		{
-			"Soddisfacimento": des[1].sodd,
-			"Requisiti": des[1].req,
-			"color": "#e8d685"
+		options: {
+		    responsive: true,
+		    legend: {
+		        position: 'top',
+		    },
+		    title: {
+		        display: true,
+		        text: 'Requisiti desiderabili'
+		    },
+		    animation: {
+		        animateScale: true,
+		        animateRotate: true
+		    }
 		}
-		]
-	});
+	};
 
 	// Grafico per i requisiti opzionali
-	let opzionali = AmCharts.makeChart('graphicOpz', {
-		"type": "pie",
-		"theme": "light",
-		"titleField": "Soddisfacimento",
-		"valueField": "Requisiti",
-		"colorField": "color",
-		"fontSize": 9,
-		"tabIndex": 6,
-		"dataProvider": [
-		{
-			"Soddisfacimento": obb[0].sodd,
-			"Requisiti": obb[0].req,
-			"color": "#84b761"
+	let opzionali = {
+		type: 'doughnut',
+		data: {
+		    datasets: [{
+		        data: [opz['s'],opz['u']],
+		        backgroundColor: ["#84b761","#cc4748"],
+		        label: 'Requisiti opzionali'
+		    }],
+		    labels: ["Implementati","Non Implementati"]
 		},
-		{
-			"Soddisfacimento": obb[1].sodd,
-			"Requisiti": obb[1].req,
-			"color": "#cc4748"
+		options: {
+		    responsive: true,
+		    legend: {
+		        position: 'top',
+		    },
+		    title: {
+		        display: true,
+		        text: 'Requisiti opzionali'
+		    },
+		    animation: {
+		        animateScale: true,
+		        animateRotate: true
+		    }
 		}
-		]
-	});
+	};
+
+	var ctxobb = document.getElementById("graphObb").getContext("2d");
+	window.myDoughnut1 = new Chart(ctxobb, obbligatori);
+	var ctxdes = document.getElementById("graphDes").getContext("2d");
+	window.myDoughnut2 = new Chart(ctxdes, desiderabili);
+	var ctxopz = document.getElementById("graphOpz").getContext("2d");
+	window.myDoughnut3 = new Chart(ctxopz, opzionali);
 }
 
 // Hide/show features user
@@ -100,6 +119,7 @@ $(function() {
 		else
 		{
 			$('#graphics h2').show();
+			$('#graphics canvas').show();
 			$('#graphics div').show();
 			$('#graphics a').html('Nascondi copertura dei requisiti');
 		}
