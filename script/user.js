@@ -92,8 +92,7 @@ function createGraphics(obb, des, opz) {
 // Hide/show features user
 $(function() {
 	$('#change_password').hide();
-	$('#graphics h2').hide();
-	$('#graphics div').hide();
+	$('#graphics a').html('Nascondi copertura dei requisiti');
 	
 	$('#changePassword a').click(function() {
 		if($('#change_password').is(':visible'))
@@ -112,14 +111,13 @@ $(function() {
 	$('#graphics a').click(function() {
 		if($('#graphics div').is(':visible'))
 		{
-			$('#graphics h2').hide();
+			$('#graphics h3').hide();
 			$('#graphics div').hide();
 			$('#graphics a').html('Mostra copertura dei requisiti');
 		}
 		else
 		{
-			$('#graphics h2').show();
-			$('#graphics canvas').show();
+			$('#graphics h3').show();
 			$('#graphics div').show();
 			$('#graphics a').html('Nascondi copertura dei requisiti');
 		}

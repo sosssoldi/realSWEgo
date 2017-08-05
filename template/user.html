@@ -27,8 +27,8 @@
 				<ul>
 					<li><a href="insertSource.php">FONTI</a></li>
 					<li><a href="insertActor.php">ATTORI</a></li>
-					<li><a href="insertRequirement.php">REQUISITI</a></li>
-					<li lang="en"><a href="insertUsecase.php">USE CASE</a></li>
+					<li><a href="viewRequirement.php">REQUISITI</a></li>
+					<li lang="en"><a href="viewUsecase.php">USE CASE</a></li>
 					<li><a href="viewTracking.php">TRACCIAMENTO</a></li>
 					<li class="here">PROFILO</li>
 				</ul>
@@ -43,6 +43,7 @@
 				<p class="warning">ATTENZIONE: attivare JavaScript per il corretto funzionamento della pagina!</p>
 			</div>
 			<div id="summary">
+				<h2>Riassunto dei tuoi dati</h2>
 				<ul>
 					<li>Numero di Attori: :nactors:</li>
 					<li>Numero di Fonti: :nsources:</li>
@@ -51,10 +52,10 @@
 					<li>Numero di <span lang="en">Use Case</span> tracciati: :ntrackedusecase:</li>
 					<li>Numero di Requisiti tracciati: :ntrackedrequirements:</li>
 				</ul>
-				<p>Non perdere tempo per fare i Diagrammi <abbr lang="en" title="Unified Modeling Language">UML</abbr> degli <span lang="en">Use Case</span>. <a href="generateUML.php">Genera i diagrammi</a> automaticamente con <span lang="en">PlantUML</span>.</p>
 			</div>
+			<h2 id="operationHeader">Operazioni</h2>
 			<div id="changePassword">
-				<a href="#changePassword" class="showMoreInfo">Cambia password</a>
+				<a href="#operationHeader" class="showMoreInfo">Cambia password</a>
 				<form method="post" action="#" id="change_password">
 					<fieldset form="change_password">
 						<legend>Form per il cambio password</legend>
@@ -70,7 +71,7 @@
 			</div>
 			<div id="graphics">
 				<a href="#graphics" class="showMoreInfo">Mostra copertura dei requisiti</a>
-				<h2>REQUISITI OBBLIGATORI</h2>
+				<h3>REQUISITI OBBLIGATORI</h3>
 				<div id="graphicObb">
 					<canvas id="graphObb"></canvas>
 					<ul>
@@ -78,7 +79,7 @@
 						<li>Non soddisfatti: :u0p:% (:u0n:)</li>
 					</ul>
 				</div>
-				<h2>REQUISITI DESIDERABILI</h2>
+				<h3>REQUISITI DESIDERABILI</h3>
 				<div id="graphicDes">
 					<canvas id="graphDes"></canvas>
 					<ul>
@@ -86,7 +87,7 @@
 						<li>Non soddisfatti: :u1p:% (:u1n:)</li>
 					</ul>
 				</div>
-				<h2>REQUISITI OPZIONALI</h2>
+				<h3>REQUISITI OPZIONALI</h3>
 				<div id="graphicOpz">
 					<canvas id="graphOpz"></canvas>
 					<ul>
@@ -94,6 +95,9 @@
 						<li>Non soddisfatti: :u2p:% (:u2n:)</li>
 					</ul>
 				</div>
+			</div>
+			<div id="createUML">
+				<a href="#">Genera i diagrammi <abbr lang="en" title="Unified Modeling Language">UML</abbr> con PlantUML</a>
 			</div>
 			<div id="logout">
 				<a href="logout.php">Logout</a>

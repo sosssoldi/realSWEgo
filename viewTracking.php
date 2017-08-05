@@ -14,11 +14,11 @@
 	$usecaseDAO = new UsecaseDAO();
 	$rs = $usecaseDAO->selectTracking($_SESSION["id"]);
 	if(!empty($rs)) {
-		$str = '<table>';
+		$str = '<table id="allTracking">';
 		$str .= '<thead>';
 		$str .= '<tr>';
 		$str .= '<th scope="col">Codice Use Case</th>';
-		$str .= '<th scope="col">Codice Requisiti</th>';;
+		$str .= '<th scope="col">Codice Requisiti</th>';
 		$str .= '</tr>';
 		$str .= '</thead>';
 		$str .= '<tbody>';
