@@ -42,10 +42,14 @@ function createGraphics(obb, des, opz) {
 		    responsive: true,
 		    legend: {
 		        position: 'top',
+						labels: {
+							fontColor: 'white'
+						}
 		    },
 		    title: {
 		        display: true,
-		        text: 'Requisiti desiderabili'
+		        text: 'Requisiti desiderabili',
+						fontColor: 'white'
 		    },
 		    animation: {
 		        animateScale: true,
