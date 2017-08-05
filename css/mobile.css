@@ -56,6 +56,11 @@
 	.warning {
 		color: red;
 	}
+	
+	.message {
+		text-align: center;
+		margin-top: 4%;
+	}
 
 	/* HEADER */
 

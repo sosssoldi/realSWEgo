@@ -63,8 +63,10 @@
 			if($data) {
 				if(array_key_exists('groupname', $data))
 					$page = str_replace(':groupname:', $data['groupname'], $page);
+				$page = str_replace(':message:', '<p class="message warning">Username e/o password errati!</p>', $page);
 			} else {
 				$page = str_replace(':groupname:', '', $page);
+				$page = str_replace(':message:', '', $page);
 			}
 			return $page;
 		}
