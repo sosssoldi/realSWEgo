@@ -65,13 +65,29 @@
 		text-align: center;
 		margin-top: 4%;
 	}
+	
+	#intro {
+		width: 94%;
+		padding: 4% 3% 2% 3%;
+		font-size: 0.92em;
+	}
+
+	#intro p {
+		padding-bottom: 2%;
+	}
+
+	#intro ul {
+		margin-left: 5%;
+		width: 93%;
+		margin-top: 2%;
+	}
 
 	/* HEADER */
 
 	header {
 		background-color: #0060b6;
 		padding-top: 1%;
-		padding-bottom: 1%;
+		padding-bottom: 2%;
 	}
 
 	.fix {
@@ -166,24 +182,24 @@
 
 	#whyAccount {
 		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
+		padding: 4% 3% 2% 3%;
 		font-size: 0.92em;
 	}
 
 	#whyAccount p {
-		margin-bottom: 2%;
+		padding-bottom: 2%;
 	}
 
 	#whyAccount ul {
 		margin-left: 5%;
 		width: 93%;
+		margin-top: 2%;
 	}
 
 	#user_login {
 		width: 100%;
 		text-align: center;
-		margin-top: 5%;
+		margin-top: 2%;
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
@@ -222,20 +238,19 @@
 	/* REGISTRATION */
 
 	#registrationDescription {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
+			width: 94%;
+			padding: 4% 3% 0% 3%;
+			font-size: 0.92em;
+		}
 
 	#registrationDescription p {
-		margin-bottom: 2%;
+		padding-bottom: 2%;
 	}
 
 	#user_registration {
 		width: 100%;
 		text-align: center;
-		margin-top: 5%;
+		margin-top: 2%;
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
@@ -272,22 +287,10 @@
 	}
 
 	/* CONTACTS */
-
-	#contactsDescription {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#contactsDescription p {
-		margin-top: 2%;
-	}
-
+	
 	#socialContacts {
 		width: 100%;
 		text-align: center;
-		margin-top: 5%;
 		padding-top: 5%;
 		padding-bottom: 5%;
 		background-color: lightgray;
@@ -339,28 +342,10 @@
 
 	/* INDEX */
 
-	#intro {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-	
-	#intro p {
-		margin-bottom: 2%;
-	}
-	
-	#intro ul {
-		margin-left: 5%;
-		width: 93%;
-		margin-bottom: 2%;
-	}
-
 	#features {
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
-		margin-top: 5%;
 		padding-top: 5%;
 		padding-bottom: 5%;
 	}
@@ -437,20 +422,9 @@
 
 	/* USE CASE */
 
-	#viewAllUCDescription {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#viewAllUCDescription p {
-		margin-bottom: 2%;
-	}
-
 	#search_UC {
 		width: 94%;
-		margin: 5% 3%;
+		margin: 2% auto;
 		text-align: center;
 	}
 
@@ -574,21 +548,13 @@
 
 	/* ACTORS */
 
-	#actorsDescription {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#actorsDescription p {
-		margin-bottom: 2%;
-	}
-
 	#insertActor {
 		width: 94%;
-		margin: 6% 3%;
+		padding: 3% 3%;
 		text-align: center;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
 	}
 
 	#insertActor label {
@@ -623,7 +589,6 @@
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
 		padding: 3% 0%;
-		margin: 4% 0%;
 	}
 
 	.actor {
@@ -670,16 +635,6 @@
 
 	/* MODIFICA ATTORE */
 
-	#modifyActor {
-		width: 94%;
-		margin: 5% 3% 4% 3%;
-		font-size: 0.92em;
-	}
-
-	#modifyActor p {
-		margin-bottom: 2%;
-	}
-
 	#modify_actor {
 		width: 94%;
 		padding: 3% 3%;
@@ -717,16 +672,6 @@
 
 	/* DELETE ACTOR */
 
-	#deleteActor {
-		width: 94%;
-		margin: 5% 3% 4% 3%;
-		font-size: 0.92em;
-	}
-
-	#deleteActor p {
-		margin-bottom: 2%;
-	}
-
 	#delete_actor {
 		width: 94%;
 		padding: 3% 3%;
@@ -745,21 +690,13 @@
 
 	/* SOURCES */
 
-	#sourcesDescription {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#sourcesDescription p {
-		margin-bottom: 2%;
-	}
-
 	#insertSource {
 		width: 94%;
-		margin: 6% 3%;
+		padding: 3% 3%;
 		text-align: center;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
 	}
 
 	#insertSource label {
@@ -794,7 +731,6 @@
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
 		padding: 3% 0%;
-		margin: 4% 0%;
 	}
 
 	.source {
@@ -841,16 +777,6 @@
 
 	/* DELETE SOURCE */
 
-	#deleteSource {
-		width: 94%;
-		margin: 5% 3% 4% 3%;
-		font-size: 0.92em;
-	}
-
-	#deleteSource p {
-		margin-bottom: 2%;
-	}
-
 	#delete_source {
 		width: 94%;
 		padding: 3% 3%;
@@ -869,22 +795,10 @@
 
 	/* INSERT USE CASE */
 
-	#insertUC {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#insertUC p {
-		margin-bottom: 2%;
-	}
-
 	#insert_UC {
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
-		margin: 4% 0%;
 		text-align: center;
 	}
 
@@ -960,16 +874,6 @@
 
 	/* ELIMINA USE CASE */
 
-	#deleteUC {
-		width: 94%;
-		margin: 5% 3% 4% 3%;
-		font-size: 0.92em;
-	}
-
-	#deleteUC p {
-		margin-bottom: 2%;
-	}
-
 	#deleteUC ul {
 		width: 95%;
 		margin-left: 5%;
@@ -993,22 +897,10 @@
 
 	/* INSERT REQUIREMENT */
 
-	#insertR {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#insertR p {
-		margin-bottom: 2%;
-	}
-
 	#insert_R {
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
-		margin: 4% 0%;
 		text-align: center;
 	}
 
@@ -1052,20 +944,9 @@
 
 	/* REQUIREMENT */
 
-	#viewAllRDescription {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#viewAllRDescription p {
-		margin-bottom: 2%;
-	}
-
 	#search_R {
 		width: 94%;
-		margin: 5% 3%;
+		margin: 2% auto;
 		text-align: center;
 	}
 
@@ -1173,21 +1054,6 @@
 
 	/* ELIMINA REQUIREMENT */
 
-	#deleteR {
-		width: 94%;
-		margin: 5% 3% 4% 3%;
-		font-size: 0.92em;
-	}
-
-	#deleteR p {
-		margin-bottom: 2%;
-	}
-
-	#deleteR ul {
-		width: 95%;
-		margin-left: 5%;
-	}
-
 	#delete_R {
 		width: 94%;
 		padding: 3% 3%;
@@ -1205,16 +1071,6 @@
 	}
 
 	/* PROFILO */
-
-	#userDescription {
-		width: 94%;
-		margin: 5% 3% 4% 3%;
-		font-size: 0.92em;
-	}
-
-	#userDescription p {
-		margin-bottom: 2%;
-	}
 
 	#changePassword {
 		text-align: center;
@@ -1316,7 +1172,7 @@
 	
 	#summary {
 		width: 80%;
-		margin: 4% auto;
+		margin: 0% auto;
 		text-align: center;
 	}
 	
@@ -1340,7 +1196,6 @@
 
 	#allTracking {
 		width: 100%;
-		margin-top: 2%;
 		padding-left: 3%;
 		padding-right: 3%;
 		font-size: 0.9em;
