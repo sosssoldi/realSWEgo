@@ -188,9 +188,17 @@
 				$page = str_replace(":sourceoptions:", "", $page);
 			if($data) {
 				if(array_key_exists('description', $data))
-					$page = str_replace(':description:', $data['description'], $page);
+					if($data['description'] != '') {
+						$page = str_replace(':description:', '', $page);
+						$page = str_replace(':message:', '<p class="message success">Requisito inserito!</p>', $page);
+					}
+					else {
+						$page = str_replace(':description:', $data['description'], $page);
+						$page = str_replace(':message:', '<p class="message warning">Riempire tutti i campi!</p>', $page);
+					}
 			} else {
 				$page = str_replace(':description:', '', $page);
+				$page = str_replace(':message:', '', $page);
 			}
 			return $page;
 		}

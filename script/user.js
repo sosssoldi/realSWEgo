@@ -128,5 +128,5 @@ $(function() {
 				$('#graphics a').html('Nascondi copertura dei requisiti');
 			}
 		});
-	});
+	},50);
 });

@@ -20,7 +20,7 @@
 			$_POST = Requirement::parse_input($_POST);
 			$requirementDAO = new RequirementDAO();
 			$requirementDAO->insert($_POST, $_SESSION["id"]);
-			header("Location: insertRequirement.php");
+			render_page($_POST);
 		}
 	}
 ?>

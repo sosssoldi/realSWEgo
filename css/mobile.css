@@ -57,6 +57,10 @@
 		color: red;
 	}
 	
+	.success {
+		color: green;
+	}
+	
 	.message {
 		text-align: center;
 		margin-top: 4%;
