@@ -23,6 +23,7 @@
 		$str .= '<th scope="col">Precondizione</th>';
 		$str .= '<th scope="col">Postcondizione</th>';
 		$str .= '<th scope="col">ScenarioPrincipale</th>';
+		$str .= '<th scope="col">Operazioni</th>';
 		$str .= '</tr>';
 		$str .= '</thead>';
 		$str .= '<tbody>';
