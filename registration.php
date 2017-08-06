@@ -25,8 +25,12 @@
 				$_SESSION["groupname"] = $user["groupname"];
 				$_SESSION["projectname"] = $user["projectname"];
 				header("Location: user.php");
-			} else 
-				render_page($_POST);
+			} else {
+				$post = $_POST;
+				if($post['password'] == $post['confirmpassword'])
+					unset($post['groupname']);
+				render_page($post);
+			}
 		}
 	}
 ?>

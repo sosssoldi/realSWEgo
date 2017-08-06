@@ -73,13 +73,20 @@
 
 		public function adjustRegistrationForm($page, $data) {
 			if($data) {
-				if(array_key_exists('groupname', $data))
+				if(array_key_exists('groupname', $data)) {
 					$page = str_replace(':groupname:', $data['groupname'], $page);
+					$page = str_replace(':message:', '<p class="message warning">Le due password non coincidono!</p>', $page);
+				}
+				else {
+					$page = str_replace(':groupname:', '', $page);
+					$page = str_replace(':message:', '<p class="message warning">Nome del gruppo già in uso!</p>', $page);
+				}
 				if(array_key_exists('projectname', $data))
 					$page = str_replace(':projectname:', $data['projectname'], $page);
 			} else {
 				$page = str_replace(':groupname:', '', $page);
 				$page = str_replace(':projectname:', '', $page);
+				$page = str_replace(':message:', '', $page);
 			}
 			return $page;
 		}
