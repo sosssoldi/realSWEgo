@@ -81,7 +81,7 @@
 		width: 93%;
 		margin-top: 2%;
 	}
-
+	
 	/* HEADER */
 
 	header {
@@ -176,6 +176,13 @@
 	.here {
 		font-weight: bold;
 		color: white;
+	}
+	
+	#skipNavbar {
+		display: block;
+		float: left;
+		height: 0;
+		overflow: hidden;
 	}
 
 	/* LOGIN */
