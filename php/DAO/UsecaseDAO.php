@@ -216,18 +216,30 @@
 			} else
 				$page = str_replace(":actoroptions:", "", $page);
 			if($data) {
-				if(array_key_exists('name', $data))
-					$page = str_replace(':name:', $data['name'], $page);
-				if(array_key_exists('description', $data))
-					$page = str_replace(':description:', $data['description'], $page);
-				if(array_key_exists('precondition', $data))
-					$page = str_replace(':precondition:', $data['precondition'], $page);
-				if(array_key_exists('postcondition', $data))
-					$page = str_replace(':postcondition:', $data['postcondition'], $page);
-				if(array_key_exists('mainscenario', $data))
-					$page = str_replace(':mainscenario:', $data['mainscenario'], $page);
-				if(array_key_exists('alternativescenario', $data))
-					$page = str_replace(':alternativescenario:', $data['alternativescenario'], $page);
+				if(array_key_exists('name', $data) && $data['name'] != '' && array_key_exists('description', $data) && $data['description'] != '' && array_key_exists('precondition', $data) && $data['precondition'] != '' && array_key_exists('postcondition', $data) && $data['postcondition'] != '' && array_key_exists('mainscenario', $data) && $data['mainscenario'] != '') {
+					$page = str_replace(':name:', '', $page);
+					$page = str_replace(':description:', '', $page);
+					$page = str_replace(':precondition:', '', $page);
+					$page = str_replace(':postcondition:', '', $page);
+					$page = str_replace(':mainscenario:', '', $page);
+					$page = str_replace(':alternativescenario:', '', $page);
+					$page = str_replace(':message:', '<p class="message success"><span lang="en">Use Case</span> inserito!</p>', $page);
+				} 
+				else {
+					if(array_key_exists('name', $data))
+						$page = str_replace(':name:', $data['name'], $page);
+					if(array_key_exists('description', $data))
+						$page = str_replace(':description:', $data['description'], $page);
+					if(array_key_exists('precondition', $data))
+						$page = str_replace(':precondition:', $data['precondition'], $page);
+					if(array_key_exists('postcondition', $data))
+						$page = str_replace(':postcondition:', $data['postcondition'], $page);
+					if(array_key_exists('mainscenario', $data))
+						$page = str_replace(':mainscenario:', $data['mainscenario'], $page);
+					if(array_key_exists('alternativescenario', $data))
+						$page = str_replace(':alternativescenario:', $data['alternativescenario'], $page);
+					$page = str_replace(':message:', '<p class="message warning">Riempire tutti i campi!</p>', $page);
+				}
 			} else {
 				$page = str_replace(':name:', '', $page);
 				$page = str_replace(':description:', '', $page);
@@ -235,6 +247,7 @@
 				$page = str_replace(':postcondition:', '', $page);
 				$page = str_replace(':mainscenario:', '', $page);
 				$page = str_replace(':alternativescenario:', '', $page);
+				$page = str_replace(':message:', '', $page);
 			}
 			return $page;
 		}

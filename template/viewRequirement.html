@@ -38,9 +38,16 @@
 			<p>Ti trovi in: REQUISITI</p>
 		</div>
 		<div id="content">
-			<div id="viewAllRDescription">
-				<p>Visualizza tutti i tuoi Requisiti ordinati per numero crescente. Puoi modificarli, eliminarli o <a href="insertRequirement.php">inserirne</a> di nuovi.</p>
-				<p>Utilizzando la barra di ricerca potrai anche filtrare i tuoi Requisiti per codice o descrizione.</p>
+			<div id="intro">
+				<p>Visualizza tutti i tuoi Requisiti. Puoi modificarli, eliminarli o <a href="insertRequirement.php">inserirne</a> di nuovi.</p>
+				<p>Ogni Requisito &egrave; identificato da un codice, costruito come descritto di seguito:</p>
+				<ul>
+					<li>la prima lettera &egrave; l'abbreviazione di Requisito;</li>
+					<li>il secondo valore indica l'importanza. Assume valore 0 se si tratta di un Requisito obbligatorio, 1 se si tratta di un Requisito desiderabile e 2 se si tratta di un Requisito opzionale;</li>
+					<li>la terza lettera indica il tipo. Assume valore F se si tratta di un Requisito funzionale, Q se di qualit&agrave;, P se prestazionale e V se di vincolo;</li>
+					<li>l'ultimo numero indica il numero di vincolo.</li>
+				</ul>
+				<p>Utilizzando la barra di ricerca potrai filtrare i tuoi Requisiti per codice o descrizione. Non hai ancora inserito quel Requisito? <a href="insertRequirement.php">Inseriscilo!</a></p>
 			</div>
 			<form method="get" action="viewRequirement.php" id="search_R">
 				<fieldset form="search_R">
