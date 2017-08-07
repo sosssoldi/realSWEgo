@@ -624,9 +624,6 @@
 		width: 94%;
 		padding: 3% 3%;
 		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
 	}
 
 	#insertActor label {
@@ -711,9 +708,6 @@
 		width: 94%;
 		padding: 3% 3%;
 		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
 	}
 
 	#insertSource label {
