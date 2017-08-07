@@ -66,6 +66,13 @@
 		margin-top: 4%;
 	}
 
+	#noResult {
+		text-align: center;
+ 		font-size: 0.92em;
+ 		color: #c40000;
+ 		margin-top: 2%;
+ 	}
+
 	#intro {
 		width: 94%;
 		padding: 4% 3% 2% 3%;
@@ -80,6 +87,71 @@
 		margin-left: 5%;
 		width: 93%;
 		margin-top: 2%;
+	}
+
+	/* INSERT */
+
+	#insert {
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+		text-align: center;
+	}
+
+	#insert legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#insert label {
+		display: block;
+		margin-top: 4%;
+	}
+
+	#insert input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#insert textarea {
+		padding: 0.5em;
+		width: 60%;
+		height: 5em;
+		font-size: 0.8em;
+		resize: none;
+	}
+
+	#insert select {
+		width: 63%;
+		padding: 0.5em;
+		font-size: 0.8em;
+		margin-bottom: 1%;
+	}
+
+	#insert input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	/* DELETE */
+
+	#delete {
+		width: 94%;
+		padding: 3% 3%;
+		text-align: center;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#delete input[type="submit"] {
+		width: 20%;
+		padding: 0.3em;
+		margin: 5% 15%;
+		float: left;
 	}
 
 	/* HEADER */
@@ -460,7 +532,7 @@
 		display: inline;
 	}
 
-	/* Tabella responsive USE CASE*/
+	/* TABELLA RESPONSIVE USE CASE*/
 
 	#allUC {
 		width: 100%;
@@ -540,13 +612,6 @@
 		content: "Principale";
 		font-weight: bold;
 	}
-
-	#noResult {
-		text-align: center;
- 		font-size: 0.92em;
- 		color: #c40000;
- 		margin-top: 2%;
- 	}
 
 	.codUC {
 		background-color: #c40000;
@@ -640,61 +705,6 @@
 		padding: 0.2em;
 	}
 
-	/* MODIFICA ATTORE */
-
-	#modify_actor {
-		width: 94%;
-		padding: 3% 3%;
-		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#modify_actor label {
-		display: block;
-		margin-top: 4%;
-	}
-
-	#modify_actor input[type="text"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#modify_actor input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 1% 18%;
-	}
-
-	#modify_actor textarea {
-		padding: 0.5em;
-		width: 60%;
-		height: 5em;
-		font-size: 0.8em;
-		resize: none;
-	}
-
-	/* DELETE ACTOR */
-
-	#delete_actor {
-		width: 94%;
-		padding: 3% 3%;
-		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#delete_actor input[type="submit"] {
-		width: 20%;
-		padding: 0.3em;
-		margin: 5% 15%;
-		float: left;
-	}
-
 	/* SOURCES */
 
 	#insertSource {
@@ -762,193 +772,6 @@
 		border-bottom: 0.1em solid lightgray;
 	}
 
-	.delete {
-		display: block;
-		background-image: url('../image/delete.png');
-		background-size: 100% 100%;
-		width: 1.5em;
-		float: right;
-		margin: 0.3em;
-		padding: 0.2em;
-	}
-
-	.modify {
-		display: block;
-		background-image: url('../image/modify.png');
-		background-size: 100% 100%;
-		width: 1.5em;
-		float: right;
-		margin: 0.5em;
-		padding: 0.2em;
-	}
-
-	/* DELETE SOURCE */
-
-	#delete_source {
-		width: 94%;
-		padding: 3% 3%;
-		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#delete_source input[type="submit"] {
-		float: left;
-		width: 20%;
-		padding: 0.3em;
-		margin: 5% 15%;
-	}
-
-	/* INSERT USE CASE */
-
-	#insert_UC {
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-		text-align: center;
-	}
-
-	#insert_UC legend {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	#insert_UC label {
-		display: block;
-		margin-top: 4%;
-	}
-
-	#insert_UC input[type="text"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#insert_UC textarea {
-		padding: 0.5em;
-		width: 60%;
-		height: 5em;
-		font-size: 0.8em;
-		resize: none;
-	}
-
-	#insert_UC select {
-		width: 63%;
-		padding: 0.5em;
-		font-size: 0.8em;
-		margin-bottom: 1%;
-	}
-
-	#insert_UC input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
-	}
-
-	#trackingUC {
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-		margin: 4% 0%;
-		padding: 3% 0%;
-	}
-
-	#trackingUC legend {
-		text-transform: uppercase;
-		margin: 2% 0%;
-		text-align: center;
-	}
-
-	#trackingUC input[type="checkbox"] {
-		display: block;
-		float: left;
-		margin-bottom: 5%;
-		margin-left: 10%;
-	}
-
-	#trackingUC label {
-		display: block;
-		margin: 0% 10% 5% 15%;
-	}
-
-	#trackingUC input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
-	}
-
-	/* ELIMINA USE CASE */
-
-	#deleteUC ul {
-		width: 95%;
-		margin-left: 5%;
-	}
-
-	#delete_UC {
-		width: 94%;
-		padding: 3% 3%;
-		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#delete_UC input[type="submit"] {
-		width: 20%;
-		padding: 0.3em;
-		margin: 5% 15%;
-		float: left;
-	}
-
-	/* INSERT REQUIREMENT */
-
-	#insert_R {
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-		text-align: center;
-	}
-
-	#insert_R legend {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	#insert_R label {
-		display: block;
-		margin-top: 4%;
-	}
-
-	#insert_R input[type="text"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#insert_R textarea {
-		padding: 0.5em;
-		width: 60%;
-		height: 5em;
-		font-size: 0.8em;
-		resize: none;
-	}
-
-	#insert_R select {
-		width: 63%;
-		padding: 0.5em;
-		font-size: 0.8em;
-		margin-bottom: 1%;
-	}
-
-	#insert_R input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
-	}
-
 	/* REQUIREMENT */
 
 	#search_R {
@@ -982,7 +805,7 @@
 		display: inline;
 	}
 
-	/* Tabella responsive */
+	/* TABELLA RESPONSIVE REQUISITI */
 
 	#allR {
 		width: 100%;
@@ -1057,24 +880,6 @@
 	.codR {
 		background-color: #c40000;
 		color: white;
-	}
-
-	/* ELIMINA REQUIREMENT */
-
-	#delete_R {
-		width: 94%;
-		padding: 3% 3%;
-		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#delete_R input[type="submit"] {
-		width: 20%;
-		padding: 0.3em;
-		margin: 5% 15%;
-		float: left;
 	}
 
 	/* PROFILO */
@@ -1197,9 +1002,7 @@
 		text-decoration: none;
 	}
 
-	/* TRACKING */
-
-	/* Tabella responsive USE CASE*/
+	/* TABELLA RESPONSIVE TRACKING */
 
 	#allTracking {
 		width: 100%;
