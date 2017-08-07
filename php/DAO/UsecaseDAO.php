@@ -14,7 +14,7 @@
 				$id = $this->getIdWithParent($obj['parent'], $projectid);
 			$this->query("INSERT INTO usecase VALUES (id, '{$id}', '{$obj['name']}', '{$obj['description']}', '{$obj['precondition']}', '{$obj['postcondition']}', '{$obj['mainscenario']}', '{$obj['alternativescenario']}', {$obj['generalization']}, {$obj['parent']}, {$projectid})");
 			$this->resultSet();
-			$this->query("SELECT id FROM usecase WHERE usecaseid='{$id}';");
+			$this->query("SELECT id FROM usecase WHERE usecaseid='{$id}' AND projectid = {$projectid};");
 			$rs = $this->resultSet();
 			if($rs)
 				$id = $rs[0]['id'];
@@ -46,7 +46,7 @@
 		}
 
 		public function getIdWithParent($parent, $projectid) {
-			$this->query("SELECT usecaseid FROM usecase WHERE parent={$parent} AND projectid = {$projectid}ORDER BY length(usecaseid) desc, usecaseid DESC LIMIT 1;");
+			$this->query("SELECT usecaseid FROM usecase WHERE parent={$parent} AND projectid = {$projectid} ORDER BY length(usecaseid) desc, usecaseid DESC LIMIT 1;");
 			$rs = $this->resultSet();
 			if(!$rs) {
 				$this->query("SELECT usecaseid FROM usecase WHERE id={$parent};");
@@ -68,6 +68,8 @@
 		public function update($id, $obj, $projectid) {
 			$lid = $obj["usecaseid"];
 			$nid = "";
+			if($id == $obj["parent"])
+				$obj["parent"] = 'NULL';
 			if($obj['parent'] == '')
 				$obj["parent"] = 'NULL';
 			if($obj["parent"] != $this->getParent($id))
@@ -298,11 +300,21 @@
 						$str .= $t["requirementid"].' ';
 					}
 					if($str != "")
-						$array[$uc['usecaseid']] = $str;
+						$array[$uc['usecaseid']] = array($str, $uc['id']);
 				}
 				return $array;
 			} else
 				return array();
+		}
+
+		public function getTracking($id) {
+			$this->query("SELECT id, requirements.requirementid as requirementid, description FROM requirements, usecaserequirements WHERE requirements.id = usecaserequirements.requirementid AND usecaseid = {$id};");
+			return $this->resultSet();
+		}
+
+		public function deleteTracking($id) {
+			$this->query("DELETE FROM usecaserequirements WHERE usecaseid = {$id};");
+			return $this->resultSet();
 		}
 
 		public function find($value, $array) {
@@ -385,6 +397,28 @@
 				$page = str_replace(":actoroptions:", $str, $page);
 			} else
 				$page = str_replace(":actoroptions:", "", $page);
+			return $page;
+		}
+
+		public function fillTrackingForm($page, $data, $projectid) {
+			$page = str_replace(':id:', $data["id"], $page);
+			$page = str_replace(':usecaseid:', $data["usecaseid"], $page);
+			$page = str_replace(':name:', $data["name"], $page);
+			$rs = $this->getTracking($data["id"]);
+			$str = "";
+			$array = array();
+			foreach($rs as $t)
+				$array[] = $t["id"];
+			$rs = $this->selectRequirements($projectid);
+			if($rs) {
+				foreach($rs as $requirement)
+					if($this->find($requirement['id'], $array))
+						$str .= '<option value="'.$requirement['id'].'" selected="selected">'.$requirement['requirementid'].'</option>';
+					else
+						$str .= '<option value="'.$requirement['id'].'">'.$requirement['requirementid'].'</option>';
+				$page = str_replace(":requirementoptions:", $str, $page);
+			} else
+				$page = str_replace(":requirementoptions:", "", $page);
 			return $page;
 		}
 	}

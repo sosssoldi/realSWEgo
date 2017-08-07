@@ -53,17 +53,17 @@
 		}
 		$list = $usecaseDAO->getInclusions($id);
 		foreach($list as $inclusion) {
-			$uc1 = $usecaseDAO->getUsecase($inclusion['usecaseid']);
+			$uc1 = $usecaseDAO->getUsecase($inclusion['usecaseid'], $_SESSION["id"]);
 			$uc1 = $uc1[0];
-			$uc2 = $usecaseDAO->getUsecase($inclusion['includedusecaseid']);
+			$uc2 = $usecaseDAO->getUsecase($inclusion['includedusecaseid'], $_SESSION["id"]);
 			$uc2 = $uc2[0];
 			$str .= "<li>Inclusione tra ".$uc1['usecaseid'].' e '.$uc2['usecaseid']."</li>";
 		}
 		$list = $usecaseDAO->getExtensions($id);
 		foreach($list as $extension) {
-			$uc1 = $usecaseDAO->getUsecase($extension['usecaseid']);
+			$uc1 = $usecaseDAO->getUsecase($extension['usecaseid'], $_SESSION["id"]);
 			$uc1 = $uc1[0];
-			$uc2 = $usecaseDAO->getUsecase($extension['extendedusecaseid']);
+			$uc2 = $usecaseDAO->getUsecase($extension['extendedusecaseid'], $_SESSION["id"]);
 			$uc2 = $uc2[0];
 			$str .= "<li>Estensione tra ".$uc1['usecaseid'].' e '.$uc2['usecaseid']."</li>";
 		}

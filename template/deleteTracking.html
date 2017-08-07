@@ -1,16 +1,15 @@
 
 <!DOCTYPE html>
-<html lang="it">
+<html>
 	<head>
 		<meta charset="utf-8" />
-		<title>SWEgo - Tracciamento Use Case Requisiti</title>
-		<meta name="title" content="SWEgo - Tracciamento Use Case Requisiti" />
-		<meta name="description" content="Traccia gli Use Case con i Requisiti." />
-		<meta name="keywords" content="SWEgo, Use Case, Requisiti, Tracciamento" />
+		<title>SWEgo - Elimina tracciamento Use Case Requisiti</title>
+		<meta name="title" content="SWEgo - Elimina tracciamento Use Case Requisiti" />
+		<meta name="description" content="Elimina il tracciamento tra uno Use Case e i suoi Requisiti." />
+		<meta name="keywords" content="SWEgo, Use Case, Requisiti, Elimina, Tracciamento" />
 		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<link rel="icon" href="image/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="script/nav.js"></script>
@@ -18,7 +17,6 @@
 	<body>
 		<header>
 			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
-			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
 			<div id="mobileMenu" class="hideButton">
 				<span></span>
 				<span></span>
@@ -36,24 +34,19 @@
 			</nav>
 		</header>
 		<div id="breadcrumb" class="noSpaceHeader">
-			<p>Ti trovi in: <a href="viewTracking.php">TRACCIAMENTO</a> &gt; INSERISCI TRACCIAMENTO</p>
+			<p>Ti trovi in: <a href="viewTracking.php">TRACCIAMENTO</a> &gt; ELIMINA TRACCIAMENTO :usecaseid: - :name:</p>
 		</div>
 		<div id="content">
-			<div id="intro">
-				<p>Seleziona lo <span lang="en">Use Case</span> e traccialo con i rispettivi requisiti.</p>
+			<div id="deleteUC">
+				<p>Rispondi alla domanda e conferma la tua decisione di eliminare o meno il tracciamento dello <span lang="en">Use Case:</span> :id: - :name: con i suoi relativi Requisiti.</p>
+				<p class="warning">ATTENZIONE: verr&egrave; eliminato il tracciamento tra lo <span lang="en">Use Case</span> di cui sopra e i Requisiti riportati qui di seguito:</p>
+				:requirement:
 			</div>
-			<form name="tracking" method="POST" action="tracking.php" id="insert">
-				<fieldset form="insert">
-					<legend>Tracciamento</legend>
-					<label for="usecase">Usecase</label>
-					<select id="usecase" name="usecase">
-						:usecaseoptions:
-					</select>
-					<label for="requirement">Requisiti</label>
-					<select id="requirement" name="requirement[]" multiple="multiple" required="required">
-						:requirementoptions:
-					</select>
-					<input type="submit" name="track" value="TRACCIA" />
+			<form method="post" action="#" id="delete_UC">
+				<fieldset form="delete_UC">
+					<legend>Eliminare tracciamento :id: - :name:</legend>
+					<input type="submit" name="confirm" value="si" />
+					<input type="submit" name="confirm" value="no" />
 				</fieldset>
 			</form>
 		</div>

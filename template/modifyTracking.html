@@ -3,14 +3,13 @@
 <html lang="it">
 	<head>
 		<meta charset="utf-8" />
-		<title>SWEgo - Tracciamento Use Case Requisiti</title>
-		<meta name="title" content="SWEgo - Tracciamento Use Case Requisiti" />
-		<meta name="description" content="Traccia gli Use Case con i Requisiti." />
-		<meta name="keywords" content="SWEgo, Use Case, Requisiti, Tracciamento" />
+		<title>SWEgo - Modifica tracciamento Use Case Requisiti</title>
+		<meta name="title" content="SWEgo - Modifica tracciamento Use Case Requisiti" />
+		<meta name="description" content="Modifica il tracciamento degli Use Case con i Requisiti." />
+		<meta name="keywords" content="SWEgo, Use Case, Requisiti, Modifica, Tracciamento" />
 		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<link rel="icon" href="image/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="script/nav.js"></script>
@@ -18,7 +17,6 @@
 	<body>
 		<header>
 			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
-			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
 			<div id="mobileMenu" class="hideButton">
 				<span></span>
 				<span></span>
@@ -36,24 +34,21 @@
 			</nav>
 		</header>
 		<div id="breadcrumb" class="noSpaceHeader">
-			<p>Ti trovi in: <a href="viewTracking.php">TRACCIAMENTO</a> &gt; INSERISCI TRACCIAMENTO</p>
+			<p>Ti trovi in: <a href="viewTracking.php">TRACCIAMENTO</a> &gt; MODIFICA TRACCIAMENTO :usecaseid: - :name:</p>
 		</div>
 		<div id="content">
 			<div id="intro">
-				<p>Seleziona lo <span lang="en">Use Case</span> e traccialo con i rispettivi requisiti.</p>
+				<p>Modifica il tracciamento dello <span lang="en">Use Case</span> :usecaseid: selezionando i rispettivi Requisiti.</p>
 			</div>
-			<form name="tracking" method="POST" action="tracking.php" id="insert">
-				<fieldset form="insert">
-					<legend>Tracciamento</legend>
-					<label for="usecase">Usecase</label>
-					<select id="usecase" name="usecase">
-						:usecaseoptions:
-					</select>
+			<form name="tracking" method="POST" action="#" id="insert_UC">
+				<fieldset form="insert_UC">
+					<legend>Modifica tracciamento :usecaseid: - :name:</legend>
+					<input type="hidden" id="usecase" name="usecase" value=":id:" />
 					<label for="requirement">Requisiti</label>
 					<select id="requirement" name="requirement[]" multiple="multiple" required="required">
 						:requirementoptions:
 					</select>
-					<input type="submit" name="track" value="TRACCIA" />
+					<input type="submit" name="track" value="MODIFICA" />
 				</fieldset>
 			</form>
 		</div>
