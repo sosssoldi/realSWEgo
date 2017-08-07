@@ -22,11 +22,11 @@
 		$str .= '</tr>';
 		$str .= '</thead>';
 		$str .= '<tbody>';
-		foreach($rs as $ucid => $rid) {
-			$html = '<tr>';
-			$html .= '<td>'.$ucid.'</td>';
-			$html .= '<td>'.$rid.'</td>';
-			$html .= '</tr>';
+		foreach($rs as $ucid => $value) {
+			$html = file_get_contents('template/TrackingTableRow.html');
+			$html = str_replace(':usecase:', $ucid, $html);
+			$html = str_replace(':requirement:', $value[0], $html);
+			$html = str_replace(':id:', $value[1], $html);
 			$str .= $html;
 		}
 		$str .= '</tbody>';

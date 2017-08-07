@@ -63,6 +63,8 @@
 		public function update($id, $obj, $projectid) {
 			$lid = $obj["requirementid"];
 			$nid = "";
+			if($id == $obj["parent"])
+				$obj["parent"] = 'NULL';
 			if($obj["parent"] != $this->getParent($id))
 				if($obj['parent'] == 'NULL')
 					$nid = $this->getIdWithoutParent($obj['importance'], $obj['type'], $projectid);
