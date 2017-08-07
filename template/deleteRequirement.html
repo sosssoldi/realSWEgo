@@ -17,6 +17,7 @@
 	<body>
 		<header>
 			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
 			<div id="mobileMenu" class="hideButton">
 				<span></span>
 				<span></span>
@@ -37,13 +38,13 @@
 			<p>Ti trovi in: <a href="viewRequirement.php">REQUISITI</a> &gt; ELIMINA :id:</p>
 		</div>
 		<div id="content">
-			<div id="deleteR">
+			<div id="intro">
 				<p>Rispondi alla domanda e conferma la tua decisione di eliminare o meno il Requisito: :id: - :description:</p>
 				<p class="warning">ATTENZIONE: verranno eliminati anche tutti i Requisiti figli riportati qui di seguito:</p>
 				:requirement:
 			</div>
-			<form method="post" action="#" id="delete_R">
-				<fieldset form="delete_R">
+			<form method="post" action="#" id="delete">
+				<fieldset form="delete">
 					<legend>Eliminare :id: - :description:</legend>
 					<input type="submit" name="confirm" value="si" />
 					<input type="submit" name="confirm" value="no" />

@@ -17,6 +17,7 @@
 	<body>
 		<header>
 			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
 			<div id="mobileMenu" class="hideButton">
 				<span></span>
 				<span></span>
@@ -37,12 +38,12 @@
 			<p>Ti trovi in: <a href="viewRequirement.php">REQUISITI</a> &gt; MODIFICA :requirementid:</p>
 		</div>
 		<div id="content">
-			<div id="insertUC">
+			<div id="intro">
 				<p>Modifica un Requisito.</p>
 				<p>Le informazioni che potrai modificare sono la descrizione, l'importanza, il tipo, lo stato di implementazione e la fonte da cui deriva il Requisito.</p>
 			</div>
-			<form name="modify" method="POST" action="#" id="insert_R">
-				<fieldset form="insert_R">
+			<form name="modify" method="POST" action="#" id="insert">
+				<fieldset form="insert">
 					<legend>Modifica :requirementid:</legend>
 					<input type="hidden" id="requirementid" name="requirementid" value=":requirementid:" />
 					<label for="description">Descrizione</label>

@@ -17,6 +17,7 @@
 	<body>
 		<header>
 			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
 			<div id="mobileMenu" class="hideButton">
 				<span></span>
 				<span></span>
@@ -37,13 +38,13 @@
 			<p>Ti trovi in: <a href="viewRequirement.php">REQUISITI</a> &gt; INSERISCI REQUISITI</p>
 		</div>
 		<div id="content">
-			<div id="insertUC">
+			<div id="intro">
 				<p>Inserisci un nuovo Requisito.</p>
 				<p>Le informazioni che dovrai inserire sono la descrizione, l'importanza, il tipo, lo stato di implementazione e la fonte da cui deriva il Requisito.</p>
 				:message:
 			</div>
-			<form name="insert" method="POST" action="insertRequirement.php" id="insert_R">
-				<fieldset form="insert_R">
+			<form name="insert" method="POST" action="insertRequirement.php" id="insert">
+				<fieldset form="insert">
 					<legend>Inserimento Requisito</legend>
 					<label for="description">Descrizione</label>
 					<textarea id="description" name="description" required="required" maxlength="1000">:description:</textarea>

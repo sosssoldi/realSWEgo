@@ -17,6 +17,7 @@
 	<body>
 		<header>
 			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
 			<div id="mobileMenu" class="hideButton">
 				<span></span>
 				<span></span>
@@ -37,11 +38,11 @@
 			<p>Ti trovi in: <a href="insertActor.php">ATTORI</a> &gt; MODIFICA :name:</p>
 		</div>
 		<div id="content">
-			<div id="actorsDescription">
+			<div id="intro">
 				<p>Modifica le informazioni dell'attore selezionato.</p>
 			</div>
-			<form name="modify" method="POST" action="#" id="insertActor">
-				<fieldset form="insertActor">
+			<form name="modify" method="POST" action="#" id="insert">
+				<fieldset form="insert">
 					<legend>Modifica :name:</legend>
 					<label for="name">Nome</label>
 					<input id="name" name="name" type="text" value=":name:" required="required" maxlength="100" />

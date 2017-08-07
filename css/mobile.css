@@ -17,7 +17,7 @@
 
 /* Portrait smartphone */
 @media screen and (max-width: 520px) {
-
+	
 	strong {
 		font-weight: normal;
 	}
@@ -65,13 +65,101 @@
 		text-align: center;
 		margin-top: 4%;
 	}
+	
+	#noResult {
+		text-align: center;
+ 		font-size: 0.92em;
+ 		color: #c40000;
+ 		margin-top: 2%;
+ 	}
+	
+	#intro {
+		width: 94%;
+		padding: 4% 3% 2% 3%;
+		font-size: 0.92em;
+	}
 
+	#intro p {
+		padding-bottom: 2%;
+	}
+
+	#intro ul {
+		margin-left: 5%;
+		width: 93%;
+		margin-top: 2%;
+	}
+	
+	/* INSERT */
+	
+	#insert {
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+		text-align: center;
+	}
+
+	#insert legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#insert label {
+		display: block;
+		margin-top: 4%;
+	}
+
+	#insert input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#insert textarea {
+		padding: 0.5em;
+		width: 60%;
+		height: 5em;
+		font-size: 0.8em;
+		resize: none;
+	}
+
+	#insert select {
+		width: 63%;
+		padding: 0.5em;
+		font-size: 0.8em;
+		margin-bottom: 1%;
+	}
+
+	#insert input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+	
+	/* DELETE */
+
+	#delete {
+		width: 94%;
+		padding: 3% 3%;
+		text-align: center;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#delete input[type="submit"] {
+		width: 20%;
+		padding: 0.3em;
+		margin: 5% 15%;
+		float: left;
+	}
+	
 	/* HEADER */
 
 	header {
 		background-color: #0060b6;
 		padding-top: 1%;
-		padding-bottom: 1%;
+		padding-bottom: 2%;
 	}
 
 	.fix {
@@ -161,29 +249,36 @@
 		font-weight: bold;
 		color: white;
 	}
+	
+	#skipNavbar {
+		display: block;
+		float: left;
+		height: 0;
+		overflow: hidden;
+	}
 
 	/* LOGIN */
 
 	#whyAccount {
 		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
+		padding: 4% 3% 2% 3%;
 		font-size: 0.92em;
 	}
 
 	#whyAccount p {
-		margin-bottom: 2%;
+		padding-bottom: 2%;
 	}
 
 	#whyAccount ul {
 		margin-left: 5%;
 		width: 93%;
+		margin-top: 2%;
 	}
 
 	#user_login {
 		width: 100%;
 		text-align: center;
-		margin-top: 5%;
+		margin-top: 2%;
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
@@ -222,20 +317,19 @@
 	/* REGISTRATION */
 
 	#registrationDescription {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
+			width: 94%;
+			padding: 4% 3% 0% 3%;
+			font-size: 0.92em;
+		}
 
 	#registrationDescription p {
-		margin-bottom: 2%;
+		padding-bottom: 2%;
 	}
 
 	#user_registration {
 		width: 100%;
 		text-align: center;
-		margin-top: 5%;
+		margin-top: 2%;
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
@@ -272,22 +366,10 @@
 	}
 
 	/* CONTACTS */
-
-	#contactsDescription {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#contactsDescription p {
-		margin-top: 2%;
-	}
-
+	
 	#socialContacts {
 		width: 100%;
 		text-align: center;
-		margin-top: 5%;
 		padding-top: 5%;
 		padding-bottom: 5%;
 		background-color: lightgray;
@@ -339,28 +421,10 @@
 
 	/* INDEX */
 
-	#intro {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-	
-	#intro p {
-		margin-bottom: 2%;
-	}
-	
-	#intro ul {
-		margin-left: 5%;
-		width: 93%;
-		margin-bottom: 2%;
-	}
-
 	#features {
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
-		margin-top: 5%;
 		padding-top: 5%;
 		padding-bottom: 5%;
 	}
@@ -437,20 +501,9 @@
 
 	/* USE CASE */
 
-	#viewAllUCDescription {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#viewAllUCDescription p {
-		margin-bottom: 2%;
-	}
-
 	#search_UC {
 		width: 94%;
-		margin: 5% 3%;
+		margin: 2% auto;
 		text-align: center;
 	}
 
@@ -479,7 +532,7 @@
 		display: inline;
 	}
 
-	/* Tabella responsive USE CASE*/
+	/* TABELLA RESPONSIVE USE CASE*/
 
 	#allUC {
 		width: 100%;
@@ -559,13 +612,6 @@
 		content: "Principale";
 		font-weight: bold;
 	}
-
-	#noResult {
-		text-align: center;
- 		font-size: 0.92em;
- 		color: #c40000;
- 		margin-top: 2%;
- 	}
 	
 	.codUC {
 		background-color: #c40000;
@@ -574,20 +620,9 @@
 
 	/* ACTORS */
 
-	#actorsDescription {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#actorsDescription p {
-		margin-bottom: 2%;
-	}
-
 	#insertActor {
 		width: 94%;
-		margin: 6% 3%;
+		padding: 3% 3%;
 		text-align: center;
 	}
 
@@ -623,7 +658,6 @@
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
 		padding: 3% 0%;
-		margin: 4% 0%;
 	}
 
 	.actor {
@@ -668,97 +702,11 @@
 		padding: 0.2em;
 	}
 
-	/* MODIFICA ATTORE */
-
-	#modifyActor {
-		width: 94%;
-		margin: 5% 3% 4% 3%;
-		font-size: 0.92em;
-	}
-
-	#modifyActor p {
-		margin-bottom: 2%;
-	}
-
-	#modify_actor {
-		width: 94%;
-		padding: 3% 3%;
-		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#modify_actor label {
-		display: block;
-		margin-top: 4%;
-	}
-
-	#modify_actor input[type="text"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#modify_actor input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 1% 18%;
-	}
-
-	#modify_actor textarea {
-		padding: 0.5em;
-		width: 60%;
-		height: 5em;
-		font-size: 0.8em;
-		resize: none;
-	}
-
-	/* DELETE ACTOR */
-
-	#deleteActor {
-		width: 94%;
-		margin: 5% 3% 4% 3%;
-		font-size: 0.92em;
-	}
-
-	#deleteActor p {
-		margin-bottom: 2%;
-	}
-
-	#delete_actor {
-		width: 94%;
-		padding: 3% 3%;
-		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#delete_actor input[type="submit"] {
-		width: 20%;
-		padding: 0.3em;
-		margin: 5% 15%;
-		float: left;
-	}
-
 	/* SOURCES */
-
-	#sourcesDescription {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#sourcesDescription p {
-		margin-bottom: 2%;
-	}
 
 	#insertSource {
 		width: 94%;
-		margin: 6% 3%;
+		padding: 3% 3%;
 		text-align: center;
 	}
 
@@ -794,7 +742,6 @@
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
 		padding: 3% 0%;
-		margin: 4% 0%;
 	}
 
 	.source {
@@ -819,253 +766,11 @@
 		border-bottom: 0.1em solid lightgray;
 	}
 
-	.delete {
-		display: block;
-		background-image: url('../image/delete.png');
-		background-size: 100% 100%;
-		width: 1.5em;
-		float: right;
-		margin: 0.3em;
-		padding: 0.2em;
-	}
-
-	.modify {
-		display: block;
-		background-image: url('../image/modify.png');
-		background-size: 100% 100%;
-		width: 1.5em;
-		float: right;
-		margin: 0.5em;
-		padding: 0.2em;
-	}
-
-	/* DELETE SOURCE */
-
-	#deleteSource {
-		width: 94%;
-		margin: 5% 3% 4% 3%;
-		font-size: 0.92em;
-	}
-
-	#deleteSource p {
-		margin-bottom: 2%;
-	}
-
-	#delete_source {
-		width: 94%;
-		padding: 3% 3%;
-		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#delete_source input[type="submit"] {
-		float: left;
-		width: 20%;
-		padding: 0.3em;
-		margin: 5% 15%;
-	}
-
-	/* INSERT USE CASE */
-
-	#insertUC {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#insertUC p {
-		margin-bottom: 2%;
-	}
-
-	#insert_UC {
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-		margin: 4% 0%;
-		text-align: center;
-	}
-
-	#insert_UC legend {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	#insert_UC label {
-		display: block;
-		margin-top: 4%;
-	}
-
-	#insert_UC input[type="text"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#insert_UC textarea {
-		padding: 0.5em;
-		width: 60%;
-		height: 5em;
-		font-size: 0.8em;
-		resize: none;
-	}
-
-	#insert_UC select {
-		width: 63%;
-		padding: 0.5em;
-		font-size: 0.8em;
-		margin-bottom: 1%;
-	}
-
-	#insert_UC input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
-	}
-
-	#trackingUC {
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-		margin: 4% 0%;
-		padding: 3% 0%;
-	}
-
-	#trackingUC legend {
-		text-transform: uppercase;
-		margin: 2% 0%;
-		text-align: center;
-	}
-
-	#trackingUC input[type="checkbox"] {
-		display: block;
-		float: left;
-		margin-bottom: 5%;
-		margin-left: 10%;
-	}
-
-	#trackingUC label {
-		display: block;
-		margin: 0% 10% 5% 15%;
-	}
-
-	#trackingUC input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
-	}
-
-	/* ELIMINA USE CASE */
-
-	#deleteUC {
-		width: 94%;
-		margin: 5% 3% 4% 3%;
-		font-size: 0.92em;
-	}
-
-	#deleteUC p {
-		margin-bottom: 2%;
-	}
-
-	#deleteUC ul {
-		width: 95%;
-		margin-left: 5%;
-	}
-
-	#delete_UC {
-		width: 94%;
-		padding: 3% 3%;
-		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#delete_UC input[type="submit"] {	
-		width: 20%;
-		padding: 0.3em;
-		margin: 5% 15%;
-		float: left;
-	}
-
-	/* INSERT REQUIREMENT */
-
-	#insertR {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#insertR p {
-		margin-bottom: 2%;
-	}
-
-	#insert_R {
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-		margin: 4% 0%;
-		text-align: center;
-	}
-
-	#insert_R legend {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	#insert_R label {
-		display: block;
-		margin-top: 4%;
-	}
-
-	#insert_R input[type="text"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#insert_R textarea {
-		padding: 0.5em;
-		width: 60%;
-		height: 5em;
-		font-size: 0.8em;
-		resize: none;
-	}
-
-	#insert_R select {
-		width: 63%;
-		padding: 0.5em;
-		font-size: 0.8em;
-		margin-bottom: 1%;
-	}
-
-	#insert_R input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
-	}
-
 	/* REQUIREMENT */
-
-	#viewAllRDescription {
-		width: 94%;
-		margin-top: 5%;
-		margin-left: 3%;
-		font-size: 0.92em;
-	}
-
-	#viewAllRDescription p {
-		margin-bottom: 2%;
-	}
 
 	#search_R {
 		width: 94%;
-		margin: 5% 3%;
+		margin: 2% auto;
 		text-align: center;
 	}
 
@@ -1094,7 +799,7 @@
 		display: inline;
 	}
 
-	/* Tabella responsive */
+	/* TABELLA RESPONSIVE REQUISITI */
 
 	#allR {
 		width: 100%;
@@ -1171,50 +876,7 @@
 		color: white;
 	}
 
-	/* ELIMINA REQUIREMENT */
-
-	#deleteR {
-		width: 94%;
-		margin: 5% 3% 4% 3%;
-		font-size: 0.92em;
-	}
-
-	#deleteR p {
-		margin-bottom: 2%;
-	}
-
-	#deleteR ul {
-		width: 95%;
-		margin-left: 5%;
-	}
-
-	#delete_R {
-		width: 94%;
-		padding: 3% 3%;
-		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#delete_R input[type="submit"] {
-		width: 20%;
-		padding: 0.3em;
-		margin: 5% 15%;
-		float: left;
-	}
-
 	/* PROFILO */
-
-	#userDescription {
-		width: 94%;
-		margin: 5% 3% 4% 3%;
-		font-size: 0.92em;
-	}
-
-	#userDescription p {
-		margin-bottom: 2%;
-	}
 
 	#changePassword {
 		text-align: center;
@@ -1316,7 +978,7 @@
 	
 	#summary {
 		width: 80%;
-		margin: 4% auto;
+		margin: 0% auto;
 		text-align: center;
 	}
 	
@@ -1333,14 +995,11 @@
 		color: blue;
 		text-decoration: none;
 	}
-	
-	/* TRACKING */
-	
-	/* Tabella responsive USE CASE*/
+
+	/* TABELLA RESPONSIVE TRACKING */
 
 	#allTracking {
 		width: 100%;
-		margin-top: 2%;
 		padding-left: 3%;
 		padding-right: 3%;
 		font-size: 0.9em;

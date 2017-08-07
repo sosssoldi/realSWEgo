@@ -271,6 +271,10 @@
 				$page = str_replace(":requirementoptions:", $str, $page);
 			} else
 				$page = str_replace(":requirementoptions:", "", $page);
+			if($data)
+				$page = str_replace(":message:", '<p class="message success">Tracciamento inserito!</p>', $page);
+			else
+				$page = str_replace(":message:", '', $page);
 			return $page;
 		}
 

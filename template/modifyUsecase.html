@@ -17,6 +17,7 @@
 	<body>
 		<header>
 			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
 			<div id="mobileMenu" class="hideButton">
 				<span></span>
 				<span></span>
@@ -37,11 +38,11 @@
 			<p>Ti trovi in: <a href="viewUsecase.php" lang="en">USE CASE</a> &gt; MODIFICA :usecaseid: - :name:</p>
 		</div>
 		<div id="content">
-			<div id="insertUC">
+			<div id="intro">
 				<p>Modifica uno <span lang="en">Use Case</span>. La modifica permette di ridefinire le informazioni dello <span lang="en">Use Case</span> quali il nome, la descrizione, le condizioni, gli scenari ed eventuali inclusioni e/o estensioni.</p>
 			</div>
-			<form name="modify" method="POST" action="#" id="insert_UC">
-				<fieldset form="insert_UC">
+			<form name="modify" method="POST" action="#" id="insert">
+				<fieldset form="insert">
 					<legend>Modifica usecase</legend>
 					<input id="usecaseid" name="usecaseid" type="hidden" value=":usecaseid:" />
 					<label for="name">Nome</label>
