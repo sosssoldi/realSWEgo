@@ -1156,7 +1156,7 @@ footer {
 	font-size: 1em;
 }
 
-#allUC thead, tbody, th, td, tr {
+#allUC thead, #allUC tbody, #allUC th, #allUC td, #allUC tr {
 	display: block;
 }
 
@@ -1417,7 +1417,7 @@ footer {
 	font-size: 1em;
 }
 
-#allR thead, tbody, th, td, tr {
+#allR thead, #allR tbody, #allR th, #allR td, #allR tr {
 	display: block;
 }
 
@@ -1511,4 +1511,54 @@ footer {
 	color: #c40000;
 	padding-top: 2em;
 	padding-bottom: 2em;
+}
+
+/* TRACKING */
+
+#allTracking
+{
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 2%;
+	padding-bottom: 3%;
+}
+
+#allTracking thead
+{
+	background-color: #c40000;
+	color: #fff;
+}
+
+#allTracking thead tr th
+{
+	padding: 1%;
+	font-size: 1.3em;
+}
+
+#allTracking td
+{
+	font-size: 1.1em;
+	padding: 0.3%;
+	text-align: center;
+}
+
+
+#allTracking thead tr th:first-of-type
+{
+	width: 30%;
+}
+
+#allTracking tbody tr td:nth-of-type(even)
+{
+	background-color: rgb(217, 211, 211);
+}
+
+#allTracking tbody tr td:nth-of-type(odd)
+{
+	background-color: rgb(246, 244, 244);
+}
+
+#allTracking tbody tr td:last-of-type
+{
+	width: 10%;
 }
