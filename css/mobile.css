@@ -613,6 +613,21 @@
 		content: "Principale";
 		font-weight: bold;
 	}
+	
+	#allUC td:nth-of-type(7):before {
+		content: "Inclusioni";
+		font-weight: bold;
+	}
+	
+	#allUC td:nth-of-type(8):before {
+		content: "Estensioni";
+		font-weight: bold;
+	}
+	
+	#allUC td:nth-of-type(9):before {
+		content: "Attori";
+		font-weight: bold;
+	}
 
 	.codUC {
 		background-color: #c40000;

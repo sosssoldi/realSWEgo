@@ -21,7 +21,7 @@
 		}
 
 		public function select($projectid) {
-			$this->query("SELECT * FROM actors WHERE projectid = {$projectid} ORDER BY name;");
+			$this->query("SELECT * FROM actors WHERE id = {$projectid} ORDER BY name;");
 			return $this->resultSet();
 		}
 
