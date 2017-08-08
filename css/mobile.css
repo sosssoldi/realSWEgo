@@ -16,7 +16,7 @@
 }
 
 /* Portrait smartphone */
-@media screen and (max-width: 521px) {
+@media screen and (max-width: 520px) {
 
 	strong {
 		font-weight: normal;

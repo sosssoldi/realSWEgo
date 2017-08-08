@@ -15,7 +15,7 @@
 	overflow: hidden;
 }
 
-@media screen and (min-width: 520px) {
+@media screen and (min-width: 521px) {
 	body {
 		background-color: lightgray;
 		background-image: url("../image/background.jpg");
