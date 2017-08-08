@@ -9,7 +9,7 @@
 	include_once "php/Object/Usecase.php";
 
 	if(empty($_SESSION))
-		header("Location: index.html");
+		header("Location: index.php");
 
 	$usecaseDAO = new UsecaseDAO();
 	$rs = $usecaseDAO->selectTracking($_SESSION["id"]);
@@ -19,6 +19,7 @@
 		$str .= '<tr>';
 		$str .= '<th scope="col">Codice Use Case</th>';
 		$str .= '<th scope="col">Codice Requisiti</th>';
+		$str .= '<th scope="col">Operazioni</th>';
 		$str .= '</tr>';
 		$str .= '</thead>';
 		$str .= '<tbody>';
