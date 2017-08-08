@@ -8,5 +8,5 @@
 	unset($_SESSION["projectname"]);
 	unset($_SESSION);
 	session_destroy();
-	header("Location: index.html");
+	header("Location: index.php");
 ?>

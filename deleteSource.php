@@ -9,7 +9,7 @@
 	include_once "php/Object/Source.php";
 
 	if(empty($_SESSION))
-		header("Location: index.html");
+		header("Location: index.php");
 
 	if(empty($_GET) || !array_key_exists('id', $_GET) || $_GET['id'] == "")
 		header("Location: insertSource.php");
