@@ -977,6 +977,7 @@
 	#logout {
 		text-align: center;
 		margin-top: 5%;
+		margin-bottom: 3%;
 	}
 
 	#logout a {
@@ -1088,11 +1089,11 @@
 
   #siteMap > li {
     list-style-image: url("../image/folder_icon.png");
+		margin-bottom: 5%;
   }
 
-  #siteMap > li > ul {
+  #siteMap > li > ul{
     margin-left: 10%;
-    margin-bottom: 10%;
   }
 
   #siteMap > li > ul > li {
@@ -1108,26 +1109,27 @@
 	footer {
 		display: inline-block;
 		clear: both;
-		margin-top: 2%;
-		margin-left: 2%;
+		padding: 2%;
+		background-color: #0060b6;
+		width: 96%;
 	}
 
   footer span {
     float: left;
+		color: white;
   }
 
   footer a {
     display: block;
-    margin-bottom: 2%;
     margin-left: 4%;
     float: left;
+		color: lightgray;
   }
 
   .valid {
     display: block;
     width: 15%;
     margin-left: 4%;
-    margin-bottom: 2%;
     float: right;
   }
 }

@@ -9,6 +9,7 @@
 		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="icon" href="image/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
 		<link rel="stylesheet" type="text/css" href="css/desktop.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -31,6 +32,7 @@
 					<li lang="en"><a href="viewUsecase.php">USE CASE</a></li>
 					<li><a href="viewTracking.php">TRACCIAMENTO</a></li>
 					<li><a href="user.php">PROFILO</a></li>
+					<li><a href="contacts.php">CONTATTI</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -38,18 +40,16 @@
       <p>Ti trovi in: MAPPA DEL SITO</p>
     </div>
     <div id="content">
-			<div id="intro">
-				<p>Mappa del sito.</p>
-			</div>
       <ul id="siteMap">
-        <li><a href="/insertSource.php">FONTI</a>
+				<li lang="en"><a href="index.php">HOMEPAGE</a></li>
+				<li><a href="insertSource.php">FONTI</a>
 					<ul>
 						<li><a href="insertSource.php">INSERISCI FONTE</a></li>
           	<li>MODIFICA FONTE</li>
           	<li>ELIMINA FONTE</li>
         	</ul>
 				</li>
-        <li><a href="/insertActor.php">ATTORI</a>
+        <li><a href="insertActor.php">ATTORI</a>
 					<ul>
 						<li><a href="insertActor.php">INSERISCI ATTORE</a></li>
           	<li>MODIFICA ATTORE</li>
@@ -72,24 +72,18 @@
 				</li>
         <li><a href="viewTracking.php">TRACCIAMENTO</a>
 					<ul>
-	          <li><a href="insertTracking.php">INSERISCI TRACCIAMENTO</a></li>
+	          <li><a href="tracking.php">INSERISCI TRACCIAMENTO</a></li>
 	          <li>MODIFICA TRACCIAMENTO</li>
 	          <li>ELIMINA TRACCIAMENTO</li>
         	</ul>
 				</li>
-        <li><a href="user.php">PROFILO</a>
-					<ul>
-	          <li><a href="user.php#operationHeader">CAMBIA PASSWORD</a></li>
-	          <li><a href="user.php#graphics">MOSTRA COPERTURA DEI REQUISITI</a></li>
-	          <li><a href="user.php#">GENERA I DIAGRAMMI <abbr lang="en" title="Unified Modeling Language">UML</abbr> CON PlantUML</a></li>
-	          <li><a href="logout.php">LOGOUT</a></li>
-        	</ul>
-				</li>
+        <li><a href="user.php">PROFILO</a></li>
+				<li><a href="contacts.php">CONTATTI</a></li>
       </ul>
     </div>
     <footer>
 			<span lang="en">SWEgo &copy;</span>
-			<a href="map.html">Mappa del sito</a>
+			<a href="#">Mappa del sito</a>
 			<img src="image/html5valid.png" class="valid" alt="HTML5 Valid!"/>
 			<img src="image/cssvalid.png" class="valid" alt="CSS Valid!"/>
 		</footer>
