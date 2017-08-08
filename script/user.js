@@ -85,12 +85,35 @@ function createGraphics(obb, des, opz) {
 		}
 	};
 
-	var ctxobb = document.getElementById("graphObb").getContext("2d");
-	window.myDoughnut1 = new Chart(ctxobb, obbligatori);
-	var ctxdes = document.getElementById("graphDes").getContext("2d");
-	window.myDoughnut2 = new Chart(ctxdes, desiderabili);
-	var ctxopz = document.getElementById("graphOpz").getContext("2d");
-	window.myDoughnut3 = new Chart(ctxopz, opzionali);
+	if(obb['s'] > 0 || obb['u'] > 0) {
+		var ctxobb = document.getElementById("graphObb").getContext("2d");
+		window.myDoughnut1 = new Chart(ctxobb, obbligatori);
+	}
+	else {
+		$("#graphObb").remove();
+		$("#graphicObb ul").remove();
+		$("#graphicObb").prepend('<p class="noRequirement">Nessun requisito obbligatorio inserito.</p>');
+	}
+	
+	if(des['s'] > 0 || des['u'] > 0) {
+		var ctxdes = document.getElementById("graphDes").getContext("2d");
+		window.myDoughnut2 = new Chart(ctxdes, desiderabili);
+	}
+	else {
+		$("#graphDes").remove();
+		$("#graphicDes ul").remove();
+		$("#graphicDes").prepend('<p class="noRequirement">Nessun requisito desiderabile inserito.</p>');
+	}
+	
+	if(opz['s'] > 0 || opz['u'] > 0) {
+		var ctxopz = document.getElementById("graphOpz").getContext("2d");
+		window.myDoughnut3 = new Chart(ctxopz, opzionali);
+	}
+	else {
+		$("#graphOpz").remove();
+		$("#graphicOpz ul").remove();
+		$("#graphicOpz").prepend('<p class="noRequirement">Nessun requisito opzionale inserito.</p>');
+	}
 }
 
 // Hide/show features user
