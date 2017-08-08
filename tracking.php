@@ -20,7 +20,7 @@
 			$_POST = Usecase::parse_input($_POST);
 			$usecaseDAO = new UsecaseDAO();
 			$usecaseDAO->track($_POST);
-			header("Location: tracking.php");
+			render_page($_POST);
 		}
 	}
 ?>
