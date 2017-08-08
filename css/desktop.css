@@ -222,10 +222,38 @@
 
 	/* FOOTER */
 	footer {
+		display: block;
 		color: #fff;
-		padding: 0.2% 10%;
+		padding-left: 10%;
+		padding-top: 1%;
+		padding-bottom: 4%;
 		background-color: #0060b6;
 		clear: both;
+	}
+
+  footer span {
+    float: left;
+		font-size: 1.1em;
+  }
+
+  footer a {
+    margin-left: 4%;
+    float: left;
+		font-size: 1.3em;
+  }
+
+  .valid:first-of-type
+	{
+    width: 6%;
+    float: right;
+		margin-right: 11%;
+  }
+
+	.valid:last-of-type
+	{
+		width: 6%;
+		float: right;
+		margin-right: 3%;
 	}
 
 	/* LOGIN */
@@ -1157,7 +1185,7 @@
 		font-size: 1em;
 	}
 
-	#allUC thead, tbody, th, td, tr {
+	#allUC thead, #allUC tbody, #allUC th, #allUC td, #allUC tr {
 		display: block;
 	}
 
@@ -1418,7 +1446,7 @@
 		font-size: 1em;
 	}
 
-	#allR thead, tbody, th, td, tr {
+	#allR thead, #allR tbody, #allR th, #allR td, #allR tr {
 		display: block;
 	}
 
@@ -1513,54 +1541,79 @@
 		padding-top: 2em;
 		padding-bottom: 2em;
 	}
-}
+	/* TRACKING */
 
-/* TRACKING */
+	#allTracking
+	{
+		width: 95%;
+		margin: 0 auto;
+		margin-top: 2%;
+		padding-bottom: 3%;
+	}
 
-#allTracking
-{
-	width: 95%;
-	margin: 0 auto;
-	margin-top: 2%;
-	padding-bottom: 3%;
-}
+	#allTracking thead
+	{
+		background-color: #c40000;
+		color: #fff;
+	}
 
-#allTracking thead
-{
-	background-color: #c40000;
-	color: #fff;
-}
+	#allTracking thead tr th
+	{
+		padding: 1%;
+		font-size: 1.3em;
+	}
 
-#allTracking thead tr th
-{
-	padding: 1%;
-	font-size: 1.3em;
-}
-
-#allTracking td
-{
-	font-size: 1.1em;
-	padding: 0.3%;
-	text-align: center;
-}
+	#allTracking td
+	{
+		font-size: 1.1em;
+		padding: 0.3%;
+		text-align: center;
+	}
 
 
-#allTracking thead tr th:first-of-type
-{
-	width: 30%;
-}
+	#allTracking thead tr th:first-of-type
+	{
+		width: 30%;
+	}
 
-#allTracking tbody tr td:nth-of-type(even)
-{
-	background-color: rgb(217, 211, 211);
-}
+	#allTracking tbody tr td:nth-of-type(even)
+	{
+		background-color: rgb(217, 211, 211);
+	}
 
-#allTracking tbody tr td:nth-of-type(odd)
-{
-	background-color: rgb(246, 244, 244);
-}
+	#allTracking tbody tr td:nth-of-type(odd)
+	{
+		background-color: rgb(246, 244, 244);
+	}
 
-#allTracking tbody tr td:last-of-type
-{
-	width: 10%;
+	#allTracking tbody tr td:last-of-type
+	{
+		width: 10%;
+	}
+
+	/* MAPPA DEL SITO */
+
+	#siteMap {
+		display: block;
+		width: 90%;
+		padding: 3% 0 5% 8%;
+		font-size: 1.5em;
+	}
+
+	#siteMap > li {
+		list-style-image: url("../image/folder_icon.png");
+	}
+
+	#siteMap > li > ul {
+		margin-left: 5%;
+		margin-bottom: 5%;
+	}
+
+	#siteMap > li > ul > li {
+		list-style-image: url("../image/li_central.png");
+	}
+
+	#siteMap > li > ul > li:last-of-type {
+		list-style-image: url("../image/li_up.png");
+	}
 }
