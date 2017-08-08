@@ -17,7 +17,7 @@
 
 /* Portrait smartphone */
 @media screen and (max-width: 520px) {
-	
+
 	strong {
 		font-weight: normal;
 	}
@@ -28,15 +28,15 @@
 		padding-left: 3%;
 		padding-bottom: 2%;
 	}
-	
+
 	#breadcrumb a {
 		color: black;
 	}
-	
+
 	fieldset {
 		border: none;
 	}
-	
+
 	input[type="submit"] {
 		display: block;
 		color: white;
@@ -52,27 +52,27 @@
 	input[type="submit"]:hover {
 		background-color: #9d0404;
 	}
-	
+
 	.warning {
 		color: red;
 	}
-	
+
 	.success {
 		color: green;
 	}
-	
+
 	.message {
 		text-align: center;
 		margin-top: 4%;
 	}
-	
+
 	#noResult {
 		text-align: center;
  		font-size: 0.92em;
  		color: #c40000;
  		margin-top: 2%;
  	}
-	
+
 	#intro {
 		width: 94%;
 		padding: 4% 3% 2% 3%;
@@ -88,9 +88,9 @@
 		width: 93%;
 		margin-top: 2%;
 	}
-	
+
 	/* INSERT */
-	
+
 	#insert {
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
@@ -135,7 +135,7 @@
 		padding: 0.7em;
 		margin: 5% 0% 5% 18%;
 	}
-	
+
 	/* DELETE */
 
 	#delete {
@@ -153,7 +153,7 @@
 		margin: 5% 15%;
 		float: left;
 	}
-	
+
 	/* HEADER */
 
 	header {
@@ -172,11 +172,11 @@
 	.noSpaceHeader {
 		padding-top: 2%;
 	}
-	
+
 	.spaceHeader {
 		padding-top: 6.7em;
 	}
-	
+
 	#logo {
 		display: block;
 		float: left;
@@ -249,7 +249,7 @@
 		font-weight: bold;
 		color: white;
 	}
-	
+
 	#skipNavbar {
 		display: block;
 		float: left;
@@ -366,7 +366,7 @@
 	}
 
 	/* CONTACTS */
-	
+
 	#socialContacts {
 		width: 100%;
 		text-align: center;
@@ -446,7 +446,7 @@
 		margin-left: 3%;
 	}
 
-	.info img { 
+	.info img {
 		width: 70%;
 		margin: 4% 15%;
 	}
@@ -568,11 +568,11 @@
 		padding-top: 2%;
 		padding-left: 30%;
 	}
-	
+
 	.operation {
 		padding-bottom: 3em;
 	}
-	
+
 	#allUC td:before {
 		position: absolute;		/* Creiamo le altre celle per la descrizione */
 		top: 0.8em;
@@ -582,7 +582,7 @@
 		text-align: center;
 		padding-top: 2%;
 	}
-		
+
 	#allUC td:nth-of-type(1):before {
 		content: "Codice";
 		font-weight: bold;
@@ -607,12 +607,12 @@
 		content: "Post";
 		font-weight: bold;
 	}
-	
+
 	#allUC td:nth-of-type(6):before {
 		content: "Principale";
 		font-weight: bold;
 	}
-	
+
 	.codUC {
 		background-color: #c40000;
 		color: white;
@@ -882,7 +882,7 @@
 		text-align: center;
 		margin-top: 2%;
 	}
-	
+
 	#operationHeader {
 		margin-bottom: 2%;
 		text-align: center;
@@ -920,7 +920,7 @@
 		text-align: center;
 		margin-top: 6%;
 	}
-	
+
 	#graphics a {
 		margin-top: 2%;
 	}
@@ -975,22 +975,22 @@
 		background-size: 100% 100%;
 		padding: 0.3em;
 	}
-	
+
 	#summary {
 		width: 80%;
 		margin: 0% auto;
 		text-align: center;
 	}
-	
+
 	#summary ul {
 		list-style-type: none;
 	}
-	
+
 	#createUML {
 		text-align: center;
 		margin-top: 6%;
 	}
-	
+
 	#createUML a {
 		color: blue;
 		text-decoration: none;
@@ -1031,7 +1031,7 @@
 		padding-top: 2%;
 		padding-left: 30%;
 	}
-	
+
 	#allTracking td:before {
 		position: absolute;		/* Creiamo le altre celle per la descrizione */
 		top: 0.8em;
@@ -1041,7 +1041,7 @@
 		text-align: center;
 		padding-top: 2%;
 	}
-		
+
 	#allTracking td:nth-of-type(1):before {
 		content: "Use Case";
 		font-weight: bold;
@@ -1051,7 +1051,42 @@
 		content: "Requisiti";
 		font-weight: bold;
 	}
-	
+
+  /* MAPPA DEL SITO */
+
+  #siteMap
+  {
+    display: block;
+    width: 90%;
+    margin: 5% 0 5% 10%;
+  }
+
+  #siteMap > li
+  {
+    list-style-image: url("../image/folder_icon.png");
+  }
+
+  #siteMap  li a:visited
+  {
+    color: blue;
+  }
+
+  #siteMap > li > ul
+  {
+    margin-left: 10%;
+    margin-bottom: 10%;
+  }
+
+  #siteMap > li > ul > li
+  {
+    list-style-image: url("../image/li_central.png");
+  }
+
+  #siteMap > li > ul > li:last-of-type
+  {
+    list-style-image: url("../image/li_up.png");
+  }
+
 	/* FOOTER */
 
 	footer {
@@ -1059,4 +1094,26 @@
 		clear: both;
 		margin: 2%;
 	}
+
+  footer span
+  {
+    float: left;
+  }
+
+  footer a
+  {
+    display: block;
+    margin-bottom: 2%;
+    margin-left: 4%;
+    float: left;
+  }
+
+  .valid
+  {
+    display: block;
+    width: 15%;
+    margin-left: 4%;
+    margin-bottom: 2%;
+    float: right;
+  }
 }
