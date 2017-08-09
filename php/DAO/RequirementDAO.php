@@ -222,7 +222,7 @@
 				foreach($rs as $requirement)
 					if($requirement["id"] == $data["parent"])
 						$str .= '<option value="'.$requirement['id'].'" selected="selected">'.$requirement['requirementid'].'-'.$requirement['description'].'</option>';
-					else
+					else if($requirement["id"] != $data["id"])
 						$str .= '<option value="'.$requirement['id'].'">'.$requirement['requirementid'].'-'.$requirement['description'].'</option>';
 				$page = str_replace(":parentoptions:", $str, $page);
 			} else

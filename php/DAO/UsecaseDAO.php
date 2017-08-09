@@ -339,7 +339,7 @@
 				foreach($rs as $uc)
 					if($uc["id"] == $data["parent"])
 						$str .= '<option value="'.$uc['id'].'" selected="selected">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
-					else
+					else if($uc["id"] != $data["id"])
 						$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
 				$page = str_replace(":parentoptions:", $str, $page);
 			} else
@@ -362,7 +362,7 @@
 				foreach($rs as $uc)
 					if($this->find($uc["id"], $array))
 						$str .= '<option value="'.$uc['id'].'" selected="selected">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
-					else
+					else if($uc["id"] != $data["id"])
 						$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
 				$page = str_replace(":inclusionoptions:", $str, $page);
 			} else
@@ -377,7 +377,7 @@
 				foreach($rs as $uc)
 					if($this->find($uc["id"], $array))
 						$str .= '<option value="'.$uc['id'].'" selected="selected">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
-					else
+					else if($uc["id"] != $data["id"])
 						$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
 				$page = str_replace(":extensionoptions:", $str, $page);
 			} else
