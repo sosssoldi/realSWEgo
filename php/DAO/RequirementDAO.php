@@ -219,10 +219,16 @@
 			$rs = $this->select($projectid);
 			$str = "";
 			if($rs) {
+				
+				$rs_hierarchy = $this->getHierarchy($data["id"]);
+				$hierarchy = [];
+				foreach($rs_hierarchy as $requirement)
+					array_push($hierarchy, $requirement['id']);
+				
 				foreach($rs as $requirement)
 					if($requirement["id"] == $data["parent"])
 						$str .= '<option value="'.$requirement['id'].'" selected="selected">'.$requirement['requirementid'].'-'.$requirement['description'].'</option>';
-					else if($requirement["id"] != $data["id"])
+					else if($requirement["id"] != $data["id"] && !in_array($requirement["id"], $hierarchy))
 						$str .= '<option value="'.$requirement['id'].'">'.$requirement['requirementid'].'-'.$requirement['description'].'</option>';
 				$page = str_replace(":parentoptions:", $str, $page);
 			} else
