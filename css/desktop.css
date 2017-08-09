@@ -36,6 +36,7 @@
 		width: 100%;
 		position: fixed;
 		top: 0;
+		z-index: 100;
 	}
 
 	#skipNavbar
@@ -85,7 +86,7 @@
 	nav ul li a {
 		color: lightgray;
 		text-decoration: none;
-		padding: 1.55em 0.6em;
+		padding: 0.7em 0.6em;
 	}
 
 	nav ul li a:hover {
@@ -218,6 +219,8 @@
 		width: 80%;
 		margin: 0 auto;
 		background-color: #fff;
+		min-height: 30em;
+		z-index: 200;
 	}
 
 	/* FOOTER */
@@ -231,16 +234,24 @@
 		clear: both;
 	}
 
-  footer span {
+  footer span
+	{
     float: left;
 		font-size: 1.1em;
   }
 
-  footer a {
+  footer a
+	{
     margin-left: 4%;
     float: left;
 		font-size: 1.3em;
+		color: lightgray;
   }
+
+	footer a:visited
+	{
+ 		color: lightgray;
+ }
 
   .valid:first-of-type
 	{
@@ -450,9 +461,8 @@
 		background-image: url('../image/delete.png');
 		background-size: 100% 100%;
 		width: 1.5em;
-		float: right;
-		margin: 1%;
-		padding: 1%;
+		float: left;
+		margin-right: 5%;
 	}
 
 	.modify {
@@ -460,9 +470,6 @@
 		background-image: url('../image/modify.png');
 		background-size: 100% 100%;
 		width: 1.5em;
-		float: right;
-		margin: 1%;
-		padding: 1%;
 	}
 
 	#insertActor
@@ -714,7 +721,6 @@
 	{
 		padding: 1em;
 		background-color: #fff;
-		width: 95%;
 		margin: 0 auto;
 		font-size: 1.5em;
 		text-align: center;
@@ -745,7 +751,6 @@
 		width: 50%;
 		margin: 3% 0 3% 25%;
 	}
-
 
 	.info h2
 	{
@@ -809,21 +814,39 @@
 		text-align: center;
 	}
 
-	#summary ul
+	#summary > ul
 	{
 		list-style-type: none;
+		padding-top: 2em;
 	}
 
-	#summary ul li
+	#summary > ul li
 	{
 		padding-top: 1em;
+		width: 33%;
+		float: left;
+		text-align: center;
+		font-size: 1.3em;
+	}
+
+	#summary > ul li span
+	{
+		display: block;
+		color: red;
+	}
+
+	#summary > ul li span[lang='en']
+	{
+		display: inline;
+		color: black;
 	}
 
 	#operationHeader
 	{
-		margin-top: 2em;
+		padding-top: 2em;
 		text-align: center;
 		width: 100%;
+		clear: both;
 	}
 
 	#change_password fieldset {
@@ -1125,21 +1148,6 @@
 	}
 
 	/* VIEW_ALL_UC */
-	#viewAllUCDescription {
-		font-size: 1.5em;
-		padding: 1em;
-		background-color: #fff;
-	}
-
-	#viewAllUCDescription p {
-		text-align: center;
-
-		padding-bottom: 0.5em;
-	}
-
-	#viewAllUCDescription p:last-of-type {
-		border-bottom: 0.05em solid #000;
-	}
 
 	#search_UC {
 		width: 94%;
@@ -1279,6 +1287,11 @@
 		color: #c40000;
 		padding-top: 2em;
 		padding-bottom: 2em;
+	}
+
+	.operation
+	{
+		text-align: right;
 	}
 
 	/* INSERT UC */
@@ -1570,10 +1583,14 @@
 		text-align: center;
 	}
 
-
 	#allTracking thead tr th:first-of-type
 	{
 		width: 30%;
+	}
+
+	#allTracking thead tr th:last-of-type
+	{
+		width: 15%;
 	}
 
 	#allTracking tbody tr td:nth-of-type(even)
@@ -1616,4 +1633,5 @@
 	#siteMap > li > ul > li:last-of-type {
 		list-style-image: url("../image/li_up.png");
 	}
+
 }

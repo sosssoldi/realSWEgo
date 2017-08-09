@@ -1,0 +1,716 @@
+* {
+	margin: 0em;
+	padding: 0em;
+	font-family: Verdana;
+  font-size:12pt;
+  background-color:#fff;
+}
+
+a{
+  color:#520;
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+span
+{
+  font-size: 100%;
+}
+
+footer, #skipNavbar
+{
+	display: none;
+}
+
+#mobileMenu, nav, .info > a, .info img
+{
+  display: none;
+}
+
+#logo
+{
+  font-size: 180%;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+#breadcrumb
+{
+  margin: 2em auto;
+  width: 95%;
+}
+
+#content
+{
+  width: 95%;
+  margin: 0 auto;
+}
+
+#intro
+{
+  margin-bottom: 1em;
+}
+
+#intro p
+{
+	margin: 1em 0;
+}
+
+#intro ul
+{
+
+	margin: 1em 5%;
+}
+
+#intro ul li
+{
+	padding: 0.5em 0;
+}
+
+/* INDEX */
+
+.info
+{
+  margin: 2.5em 0;
+}
+
+.info h2
+{
+  font-size: 130%
+}
+
+.info>div
+{
+  margin-top: 1.5em;
+}
+
+.info>div>h3
+{
+  margin: 0.5em 0;
+  font-size: 120%;
+}
+
+.info p
+{
+  margin-left: 2%;
+}
+
+.info dl
+{
+  margin: 1em 0;
+  margin-left: 4%;
+}
+
+.info dl dd
+{
+  margin-left: 2%;
+}
+
+.info dl dt,dd
+{
+  margin: 0.3em 0;
+}
+
+/* ACTORS e SOURCE*/
+
+#actors, #sources
+{
+  width: 95%;
+  margin: 2em 0 2em 2.5%;
+	text-align: left;
+}
+
+.actor, .source
+{
+	padding: 1%;
+	border: 0.1em solid black;
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 4em;
+}
+
+.actor a, .source a
+{
+	display: none;
+}
+
+.actor h2, .source h2
+{
+	text-align: center;
+}
+
+.actor h2, .actor p, .source h2, .source p
+{
+  margin-bottom: 1em;
+}
+
+/*SEARCH FORM*/
+#search_R, #search_UC
+{
+	display: none;
+}
+
+
+/*DELETE FORM*/
+
+#delete
+{
+	display: block;
+	margin: 0 auto;
+	width: 80%;
+	margin-left: 10%;
+	text-align: center;
+}
+
+#delete fieldset
+{
+	margin: 3em 0;
+	border: none;
+}
+
+#delete legend
+{
+	margin-bottom: 2em;
+	font-size: 120%;
+}
+
+#delete input[type="submit"]
+{
+	border: 0.1em solid black;
+	padding: 0.5em;
+}
+
+/*MODIFY AND INSERT FORM*/
+
+#insert, #insertActor, #insertSource
+{
+	margin: 2em auto;
+	display: block;
+	text-align: center;
+}
+
+#insert legend, #insertActor legend, #insertSource legend
+{
+	font-size: 120%;
+	margin-bottom: 1em;
+}
+
+#insert fieldset, #insertActor fieldset, #insertSource fieldset
+{
+	border: none;
+}
+
+#insert label, #insertActor label, #insertSource label
+{
+	display: block;
+	margin: 1.2em 0;
+}
+
+#insert input[type="submit"], #insertActor input[type="submit"], #insertSource input[type="submit"]
+{
+	display: block;
+	margin: 1em auto;
+	padding: 0.5em;
+}
+
+/*DELETE  & MODIFY ACTOR*/
+
+#deleteActor, #modifyActor
+{
+	margin-bottom: 1em;
+}
+
+/*VISUALIZZA REQUIRMENT*/
+
+#allR, #allUC
+{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 2%;
+	font-size: 1em;
+}
+
+#allR thead, #allR tbody, #allR th, #allR td, #allR tr
+#allUC thead, #allUC tbody, #allUC th, #allUC td, #allUC tr
+ {
+	display: block;
+}
+
+#allR tr, #allUC tr {
+	border: 0.1em solid black;
+	border-collapse: collapse;
+	margin: 1em 0%;
+}
+
+#allR thead tr, #allUC thead tr {
+	position: absolute;    /* Nascondiamo la testata */
+	top: -9999px;
+	left: -9999px;
+}
+
+#allR td, #allUC td  {
+	position: relative;		/* Creiamo lo spazio per l'intestazione */
+	border: 0em;
+	padding: 0.7em 0% 0.7em 30%;
+}
+
+#allR td:before, #allUC  td:before{
+	position: absolute;		/* Creiamo le altre celle per la descrizione */
+	top: 0.8em;
+	left: 0%;
+	width: 30%;
+	line-height: 0em;
+	text-align: center;
+	padding: 0.7em 0% 0.7em 0%;
+}
+
+#allR td:nth-of-type(1):before {
+	content: "Codice";
+	font-weight: bold;
+}
+
+#allR td:nth-of-type(2):before {
+	content: "Descrizione";
+	font-weight: bold;
+}
+
+#allR td:nth-of-type(3):before {
+	content: "Tipo";
+	font-weight: bold;
+}
+
+#allR td:nth-of-type(4):before {
+	content: "Importanza";
+	font-weight: bold;
+}
+
+#allR td:nth-of-type(5):before {
+	content: "Implementazione";
+	font-weight: bold;
+}
+
+#allR td:nth-of-type(6):before {
+	content: "Operazioni";
+	font-weight: bold;
+}
+
+.codR {
+	background-color: #000;
+	color: white;
+	font-size: 1.2em;
+}
+
+/* VISUALIZZA UC */
+
+#allUC td:nth-of-type(1):before {
+	content: "Codice";
+	font-weight: bold;
+}
+
+#allUC td:nth-of-type(2):before {
+	content: "Nome";
+	font-weight: bold;
+}
+
+#allUC td:nth-of-type(3):before {
+	content: "Descrizione";
+	font-weight: bold;
+}
+
+#allUC td:nth-of-type(4):before {
+	content: "Pre";
+	font-weight: bold;
+}
+
+#allUC td:nth-of-type(5):before {
+	content: "Post";
+	font-weight: bold;
+}
+
+#allUC td:nth-of-type(6):before {
+	content: "Operazioni";
+	font-weight: bold;
+}
+
+/* CONTACTS */
+
+.socialContacts img
+{
+	display: none;
+}
+
+.socialContact
+{
+	margin-top: 3em;
+}
+
+
+/* INIZIO MAURO */
+
+/* DELETE UC */
+
+.warning {
+  font-weight: bold;
+}
+
+
+/* TRACKING UC */
+#trackingUC {
+	margin: 2em 0%;
+}
+
+#trackingUC fieldset {
+	border: none;
+}
+
+#trackingUC legend {
+	text-transform: uppercase;
+	margin: 2% 0%;
+	text-align: center;
+  font-weight: bold;
+}
+
+#trackingUC input[type="checkbox"] {
+	display: block;
+	float: left;
+	margin-bottom: 1em;
+	margin-left: 3%;
+}
+
+#trackingUC label {
+	display: block;
+	margin: 0% 0% 1em 8%;
+}
+
+#trackingUC input[type="submit"] {
+  display: block;
+	width: 64%;
+	padding: 0.7em;
+  background-color: white;
+  margin: 2em 18%;
+	font-weight: bold;
+	font-size: 0.8em;
+	border-radius: 0.3em;
+}
+
+/* LOGIN */
+#whyAccount {
+	margin-bottom: 2em;
+}
+
+#whyAccount p {
+	font-size: 1em;
+  padding-bottom: 0.6em;
+}
+
+#whyAccount ul {
+	margin-left: 5%;
+	font-size: 1em;
+}
+
+#user_login {
+	text-align: center;
+  margin-top: 3em;
+}
+
+#user_login fieldset {
+	border: none;
+}
+
+#user_login legend {
+	font-size: 1.2em;
+  font-weight: bold;
+}
+
+#user_login label {
+	display: block;
+	margin-top: 1em;
+	font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+#user_login input {
+	padding: 0.5em;
+	width: 60%;
+	font-size: 0.8em;
+}
+
+#user_login input[type="submit"] {
+	display: block;
+	width: 64%;
+	padding: 0.7em;
+  background-color: white;
+  margin: 2em 18%;
+	font-weight: bold;
+	font-size: 0.8em;
+	border-radius: 0.3em;
+}
+
+/* REGISTRATION */
+#registrationDescription {
+	font-size: 1em;
+  margin-bottom: 2em;
+}
+
+#registrationDescription p {
+	margin-bottom: 0.7em;
+	font-size: 1em;
+}
+
+#user_registration {
+	text-align: center;
+}
+
+#user_registration fieldset {
+	border: none;
+}
+
+#user_registration legend {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#user_registration label {
+	display: block;
+	margin-top: 1.5em;
+	font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+#user_registration input {
+	padding: 0.5em;
+	width: 60%;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+#user_registration input[type="submit"] {
+  display: block;
+	width: 64%;
+	padding: 0.7em;
+  background-color: white;
+  margin: 2em 18%;
+	font-weight: bold;
+	font-size: 0.8em;
+	border-radius: 0.3em;
+}
+
+/* VIEW TRACKING*/
+
+#allTracking
+{
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 2%;
+	padding-bottom: 3%;
+}
+
+#allTracking thead
+{
+	background-color: #c40000;
+	color: #fff;
+}
+
+#allTracking thead tr th
+{
+	padding: 1%;
+	font-size: 1.3em;
+}
+
+#allTracking td
+{
+	font-size: 1.1em;
+	padding: 0.3%;
+	text-align: center;
+}
+
+#allTracking thead tr th:first-of-type
+{
+	width: 30%;
+}
+
+#allTracking thead tr th:last-of-type
+{
+	width: 15%;
+}
+
+#allTracking tbody tr td:nth-of-type(even)
+{
+	background-color: rgb(217, 211, 211);
+}
+
+#allTracking tbody tr td:nth-of-type(odd)
+{
+	background-color: rgb(246, 244, 244);
+}
+
+#allTracking tbody tr td:last-of-type
+{
+	width: 10%;
+}
+
+#allTracking td
+{
+	border:0.1em solid black;
+}
+
+/* USER */
+
+#summary
+{
+	margin: 2em auto;
+	width: 80%;
+	text-align: center;
+}
+
+#summary > ul
+{
+	list-style-type: none;
+	padding-top: 2em;
+}
+
+#summary > ul li
+{
+	padding-top: 1em;
+	width: 33%;
+	float: left;
+	text-align: center;
+	font-size: 1.3em;
+}
+
+#summary > ul li span
+{
+	display: block;
+	color: red;
+}
+
+#summary > ul li span[lang='en']
+{
+	display: inline;
+	color: black;
+}
+
+#operationHeader
+{
+	padding-top: 2em;
+	text-align: center;
+	width: 100%;
+	clear: both;
+}
+
+#change_password fieldset {
+	border: none;
+}
+
+#change_password legend {
+	text-transform: uppercase;
+	width: 100%;
+	font-size: 1.5em;
+	text-align: center;
+	padding: 2% 2%;
+	word-break: break-all;
+}
+
+#change_password label {
+	display: block;
+	margin-top: 5%;
+	margin-left: 25%;
+	font-size: 1.3em;
+	color: #8b0000;
+}
+
+#change_password input[type="password"] {
+	padding: 0.5em;
+	width: 50%;
+	font-size: 1.2em;
+	margin-left: 25%;
+}
+
+#change_password input[type="submit"] {
+	display: block;
+	width: 20%;
+	padding: 0.5em;
+	font-weight: bold;
+	font-size: 1.3em;
+	border: 0.05em solid black;
+	border-radius: 0.3em;
+	margin: 4% auto;
+}
+
+.hideMoreInfo, .showMoreInfo, #logout>a, #createUML
+{
+	display: block;
+	font-size: 1.4em;
+	text-align: center;
+	padding-top: 2em;
+}
+
+ #logout>a
+{
+	padding-bottom: 2em;
+}
+
+#graphics {
+	text-align: center;
+}
+
+#graphics h3 {
+	text-align: center;
+	font-weight: normal;
+	margin-top: 4%;
+}
+
+#graphics ul {
+	padding-top: 3%;
+	list-style-type: none;
+}
+
+#graphicObb {
+	width: 60%;
+	margin: 0 auto;
+	border: 0.05em solid gray;
+	text-align: center;
+}
+
+#graphicDes {
+	width: 60%;
+	margin: 0 auto;
+	background-color: #3f3f4f;
+	text-align: center;
+	color: white;
+}
+
+#graphicOpz {
+	width: 60%;
+	margin: 0 auto;
+	border: 0.05em solid gray;
+	text-align: center;
+}
+
+/* MAPPA DEL SITO */
+
+#siteMap {
+	display: block;
+	width: 90%;
+	padding: 3% 0 5% 8%;
+	font-size: 1.5em;
+}
+
+#siteMap > li {
+	list-style-image: url("../image/folder_icon.png");
+	padding-bottom: 1em;
+}
+
+#siteMap > li > ul {
+	margin-left: 5%;
+	margin-bottom: 5%;
+}
+
+#siteMap > li > ul > li {
+	list-style-image: url("../image/li_central.png");
+}
+
+#siteMap > li > ul > li:last-of-type {
+	list-style-image: url("../image/li_up.png");
+}
