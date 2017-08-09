@@ -22,7 +22,7 @@
 		$str .= '<th scope="col">Tipo</th>';
 		$str .= '<th scope="col">Importanza</th>';
 		$str .= '<th scope="col">Stato d\'implementazione</th>';
-		$str .= '<th scope="col">Fonti</th>';
+		$str .= '<th scope="col">Fonte</th>';
 		$str .= '<th scope="col">Operazioni</th>';
 		$str .= '</tr>';
 		$str .= '</thead>';

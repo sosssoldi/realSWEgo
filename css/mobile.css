@@ -890,7 +890,7 @@
 	}
 	
 	#allR td:nth-of-type(6):before {
-		content: "Fonti";
+		content: "Fonte";
 		font-weight: bold;
 	}
 
