@@ -1193,7 +1193,7 @@
 		text-align: right;
 	}
 
-	/* INSERT UC */
+	/* INSERT */
 
 	#insert {
 		margin-top: 1em;
@@ -1548,18 +1548,16 @@
 		font-family: primaryFont;
 	}
 
-	.multiple label {
-		margin: 0em;
+	#insert .multiple label {
 		color: black;
+		margin-top: 0.3em;
+		font-size: 1em;
 	}
-
+	
 	.multiple input[type="checkbox"] {
 		display: block;
 		float: left;
 		margin: 0.3em;
 	}
 
-	.multiple label {
-		display: block;
-	}
 }
