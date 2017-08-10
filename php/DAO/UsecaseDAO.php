@@ -346,10 +346,16 @@
 			$rs = $this->select($projectid);
 			$str = "";
 			if($rs) {
+				
+				$rs_hierarchy = $this->getHierarchy($data["id"]);
+				$hierarchy = [];
+				foreach($rs_hierarchy as $uc)
+					array_push($hierarchy, $uc["id"]);
+				
 				foreach($rs as $uc)
 					if($uc["id"] == $data["parent"])
 						$str .= '<option value="'.$uc['id'].'" selected="selected">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
-					else
+					else if($uc["id"] != $data["id"] && !in_array($uc["id"], $hierarchy))
 						$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
 				$page = str_replace(":parentoptions:", $str, $page);
 			} else

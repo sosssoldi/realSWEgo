@@ -5,6 +5,7 @@
 	include_once "php/Database/Database.php";
 	include_once "php/DAO/DAO.php";
 	include_once "php/DAO/UsecaseDAO.php";
+	include_once "php/DAO/ActorDAO.php";
 	include_once "php/Object/Object.php";
 	include_once "php/Object/Usecase.php";
 
@@ -19,6 +20,7 @@
 	}
 
 	$usecaseDAO = new UsecaseDAO();
+	$actorDAO = new ActorDAO();
 	$rs = $usecaseDAO->select($_SESSION["id"]);
 	if($rs) {
 		$str = '<table id="allUC">';
@@ -30,6 +32,7 @@
 		$str .= '<th scope="col">Precondizione</th>';
 		$str .= '<th scope="col">Postcondizione</th>';
 		$str .= '<th scope="col">ScenarioPrincipale</th>';
+		$str .= '<th scope="col">Attori</th>';
 		$str .= '<th scope="col">Operazioni</th>';
 		$str .= '</tr>';
 		$str .= '</thead>';
@@ -43,6 +46,55 @@
 			$html = str_replace(':postcondition:', $uc['postcondition'], $html);
 			$html = str_replace(':mainscenario:', $uc['mainscenario'], $html);
 			$html = str_replace(':id:', $uc['id'], $html);
+			
+			$inclusions = $usecaseDAO->getMyInclusions($uc['id']);
+			$htmlInclusions = '';
+			foreach($inclusions as $inclusion) {
+				$in = $usecaseDAO->getUsecase($inclusion['includedusecaseid'], $_SESSION["id"]);
+				if($in) {
+					$htmlInclusions .= $in[0]['usecaseid'];
+					$htmlInclusions .= ', ';
+				}
+			}
+			if($htmlInclusions == '')
+				$html = str_replace(':inclusions:', 'Nessuna inclusione', $html);
+			else {
+				$htmlInclusions = rtrim($htmlInclusions, ', ');
+				$html = str_replace(':inclusions:', $htmlInclusions, $html);
+			}
+			
+			$extensions = $usecaseDAO->getMyExtensions($uc['id']);
+			$htmlExtensions = '';
+			foreach($extensions as $extension) {
+				$ex = $usecaseDAO->getUsecase($extension['extendedusecaseid'], $_SESSION["id"]);
+				if($ex) {
+					$htmlExtensions .= $ex[0]['usecaseid'];
+					$htmlExtensions .= ', ';
+				}
+			}
+			if($htmlExtensions == '')
+				$html = str_replace(':extensions:', 'Nessuna estensione', $html);
+			else {
+				$htmlExtensions = rtrim($htmlExtensions, ', ');
+				$html = str_replace(':extensions:', $htmlExtensions, $html);
+			}		
+			
+			$actors = $usecaseDAO->getActors($uc['id']);
+			$htmlActor = '';
+			foreach($actors as $actor) {
+				$act = $actorDAO->select($actor['actorsid']);
+				if($act) {
+					$htmlActor .= $act[0]['name'];
+					$htmlActor .= ', ';
+				}
+			}
+			if($htmlActor == '')
+				$html = str_replace(':actors:', 'Nessun attore', $html);
+			else {
+				$htmlActor = rtrim($htmlActor, ', ');
+				$html = str_replace(':actors:', $htmlActor, $html);
+			}
+				
 			$str .= $html;
 		}
 		$str .= '</tbody>';

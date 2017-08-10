@@ -26,12 +26,12 @@
 		render_page();
 	} else {
 		if(!User::check_change_password_input($_POST)) {
-			render_page();
+			render_page('error_change');
 		} else {
 			$_POST = User::parse_input($_POST);
 			$userDAO = new UserDAO();
 			$userDAO->updatePassword($_POST, $_SESSION["id"]);
-			header("Location: user.php");
+			render_page('change');
 		}
 	}
 ?>
@@ -85,6 +85,12 @@
 			$page = str_replace(':s2p:', '0', $page);
 			$page = str_replace(':u2p:', '0', $page);
 		}
+		if($data == 'change')
+			$page = str_replace(':message:', '<p class="message success">Password cambiata!</p>', $page);
+		else if($data == 'error_change')
+			$page = str_replace(':message:', '<p class="message warning">La password non &egrave; stata cambiata. Inserire correttamente i dati nel form.</p>', $page);
+		else
+			$page = str_replace(':message:', '', $page);
 		echo $page;
 	}
 ?>

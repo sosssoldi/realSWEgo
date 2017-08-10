@@ -10,5 +10,5 @@
 	unset($_SESSION["type"]);
 	unset($_SESSION);
 	session_destroy();
-	header("Location: index.html");
+	header("Location: index.php");
 ?>

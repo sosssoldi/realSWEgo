@@ -12,6 +12,7 @@
 		<link rel="icon" href="image/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
 		<link rel="stylesheet" type="text/css" href="css/desktop.css" />
+		<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 		<script src="script/nav.js"></script>
@@ -19,7 +20,7 @@
 	</head>
 	<body onLoad="createGraphics({s::s0p:,u::u0p:},{s::s1p:,u::u1p:},{s::s2p:,u::u2p:});">
 		<header>
-			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<a href="index.php"><h1 id="logo" lang="en">SWEgo</h1></a>
 			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
 			<div id="mobileMenu" class="hideButton">
 				<span></span>
@@ -34,7 +35,7 @@
 					<li lang="en"><a href="viewUsecase.php">USE CASE</a></li>
 					<li><a href="viewTracking.php">TRACCIAMENTO</a></li>
 					<li class="here">PROFILO</li>
-					<li><a href="contacts.html">CONTATTI</a></li>
+					<li><a href="contacts.php">CONTATTI</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -44,16 +45,17 @@
 		<div id="content">
 			<div id="intro">
 				<p>In questa pagina potrai cambiare la tua password, vedere la copertura dei requisiti, generare automaticamente i diagrammi <abbr lang="en" title="Unified Modeling Language">UML</abbr> oppure effettuare il logout.</p>
+				:message:
 			</div>
 			<div id="summary">
 				<h2>Riassunto dei tuoi dati</h2>
 				<ul>
-					<li>Numero di Attori: :nactors:</li>
-					<li>Numero di Fonti: :nsources:</li>
-					<li>Numero di <span lang="en">Use Case</span>: :nusecase:</li>
-					<li>Numero di Requisiti: :nrequirements:</li>
-					<li>Numero di <span lang="en">Use Case</span> tracciati: :ntrackedusecase:</li>
-					<li>Numero di Requisiti tracciati: :ntrackedrequirements:</li>
+					<li>Numero di Attori: <span>:nactors:</span></li>
+					<li>Numero di Fonti: <span>:nsources:</span></li>
+					<li>Numero di <span lang="en">Use Case</span>: <span>:nusecase:</span></li>
+					<li>Numero di Requisiti: <span>:nrequirements:</span></li>
+					<li>Numero di <span lang="en">Use Case</span> tracciati: <span>:ntrackedusecase:</span></li>
+					<li>Numero di Requisiti tracciati: <span>:ntrackedrequirements:</span></li>
 				</ul>
 			</div>
 			<h2 id="operationHeader">Operazioni</h2>
@@ -109,6 +111,9 @@
 		</div>
 		<footer>
 			<span lang="en">SWEgo &copy;</span>
+			<a href="mapLogin.html">Mappa del sito</a>
+			<img src="image/html5valid.png" class="valid" alt="HTML5 Valid!"/>
+			<img src="image/cssvalid.png" class="valid" alt="CSS Valid!"/>
 		</footer>
 	</body>
 </html>

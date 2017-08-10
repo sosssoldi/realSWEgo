@@ -71,6 +71,7 @@
  		font-size: 0.92em;
  		color: #c40000;
  		margin-top: 2%;
+		margin-bottom: 5%;
  	}
 
 	#intro {
@@ -253,6 +254,7 @@
 	#skipNavbar {
 		display: block;
 		float: left;
+		width: 0;
 		height: 0;
 		overflow: hidden;
 	}
@@ -279,6 +281,7 @@
 		width: 100%;
 		text-align: center;
 		margin-top: 2%;
+		padding-bottom: 2%;	
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
@@ -330,6 +333,7 @@
 		width: 100%;
 		text-align: center;
 		margin-top: 2%;
+		padding-bottom: 2%;
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
@@ -371,7 +375,6 @@
 		width: 100%;
 		text-align: center;
 		padding-top: 5%;
-		padding-bottom: 5%;
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
@@ -610,6 +613,21 @@
 
 	#allUC td:nth-of-type(6):before {
 		content: "Principale";
+		font-weight: bold;
+	}
+	
+	#allUC td:nth-of-type(7):before {
+		content: "Inclusioni";
+		font-weight: bold;
+	}
+	
+	#allUC td:nth-of-type(8):before {
+		content: "Estensioni";
+		font-weight: bold;
+	}
+	
+	#allUC td:nth-of-type(9):before {
+		content: "Attori";
 		font-weight: bold;
 	}
 
@@ -870,6 +888,11 @@
 		content: "Stato";
 		font-weight: bold;
 	}
+	
+	#allR td:nth-of-type(6):before {
+		content: "Fonte";
+		font-weight: bold;
+	}
 
 	.codR {
 		background-color: #c40000;
@@ -884,7 +907,8 @@
 	}
 
 	#operationHeader {
-		margin-bottom: 2%;
+		margin-top: 3%;
+		margin-bottom: 3%;
 		text-align: center;
 	}
 
@@ -960,6 +984,7 @@
 	#logout {
 		text-align: center;
 		margin-top: 5%;
+		margin-bottom: 3%;
 	}
 
 	#logout a {
@@ -978,8 +1003,11 @@
 
 	#summary {
 		width: 80%;
-		margin: 0% auto;
+		padding: 2% 10%;
 		text-align: center;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
 	}
 
 	#summary ul {
@@ -996,6 +1024,11 @@
 		text-decoration: none;
 	}
 
+	.noRequirement {
+		padding: 1em;
+		font-size: 0.85em;
+	}
+	
 	/* TABELLA RESPONSIVE TRACKING */
 
 	#allTracking {
@@ -1054,66 +1087,56 @@
 
   /* MAPPA DEL SITO */
 
-  #siteMap
-  {
+  #siteMap {
     display: block;
     width: 90%;
     margin: 5% 0 5% 10%;
+		font-size: 0.85em;
   }
 
-  #siteMap > li
-  {
+  #siteMap > li {
     list-style-image: url("../image/folder_icon.png");
+		margin-bottom: 5%;
   }
 
-  #siteMap  li a:visited
-  {
-    color: blue;
-  }
-
-  #siteMap > li > ul
-  {
+  #siteMap > li > ul{
     margin-left: 10%;
-    margin-bottom: 10%;
   }
 
-  #siteMap > li > ul > li
-  {
+  #siteMap > li > ul > li {
     list-style-image: url("../image/li_central.png");
   }
 
-  #siteMap > li > ul > li:last-of-type
-  {
+  #siteMap > li > ul > li:last-of-type {
     list-style-image: url("../image/li_up.png");
   }
 
 	/* FOOTER */
 
 	footer {
-		display: block;
+		display: inline-block;
 		clear: both;
-		margin: 2%;
+		padding: 2%;
+		background-color: #0060b6;
+		width: 96%;
 	}
 
-  footer span
-  {
+  footer span {
     float: left;
+		color: white;
   }
 
-  footer a
-  {
+  footer a {
     display: block;
-    margin-bottom: 2%;
     margin-left: 4%;
     float: left;
+		color: lightgray;
   }
 
-  .valid
-  {
+  .valid {
     display: block;
     width: 15%;
     margin-left: 4%;
-    margin-bottom: 2%;
     float: right;
   }
 }

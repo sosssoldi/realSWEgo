@@ -29,6 +29,7 @@
 		$str .= '<th scope="col">Tipo</th>';
 		$str .= '<th scope="col">Importanza</th>';
 		$str .= '<th scope="col">Stato d\'implementazione</th>';
+		$str .= '<th scope="col">Fonte</th>';
 		$str .= '<th scope="col">Operazioni</th>';
 		$str .= '</tr>';
 		$str .= '</thead>';
@@ -41,6 +42,18 @@
 			$html = str_replace(':importance:', $requirement['importance'], $html);
 			$html = str_replace(':satisfied:', $requirement['satisfied'], $html);
 			$html = str_replace(':id:', $requirement['id'], $html);
+
+			$sources = $requirementDAO->selectSources($_SESSION['id']);
+			$htmlSource = '';
+			foreach($sources as $source) {
+				if($source['id'] == $requirement['source'])
+					$htmlSource = $source['name'];
+			}
+			if($htmlSource != '')
+				$html = str_replace(':sources:', $htmlSource, $html);
+			else
+				$html = str_replace(':sources:', 'Nessuna fonte', $html);
+	
 			$str .= $html;
 		}
 		$str .= '</tbody>';
