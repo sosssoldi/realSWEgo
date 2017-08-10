@@ -213,17 +213,50 @@
 		public function adjustForm($page, $data, $projectid) {
 			$rs = $this->select($projectid);
 			$str = "";
+			$i = 1;
 			if($rs) {
 				foreach($rs as $uc)
 					$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].' - '.$uc['name'].'</option>';
-				$page = str_replace(":usecaseoptions:", $str, $page);
-			} else
-				$page = str_replace(":usecaseoptions:", "", $page);
+				$page = str_replace(":parentoptions:", $str, $page);
+				$str = '<div class="multiple">';
+				$str .= '<input id="checkbox0" type="checkbox" name="inclusion[]" value="NULL" checked="checked" />';
+				$str .= '<label for="checkbox0">Nessuno</label>';
+				foreach($rs as $uc) {
+					$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"inclusion[]\" value=\"".$uc["id"]."\" />";
+					$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
+					++$i;
+				}
+				$str .= '</div>';
+				$page = str_replace(":inclusionoptions:", $str, $page);
+				$str = '<div class="multiple">';
+				$str .= "<input id=\"checkbox{$i}\" type=\"checkbox\" name=\"extension[]\" value=\"NULL\" checked=\"checked\" />";
+				$str .= "<label for=\"checkbox{$i}\">Nessuno</label>";
+				++$i;
+				foreach($rs as $uc) {
+					$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"extension[]\" value=\"".$uc["id"]."\" />";
+					$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
+					++$i;
+				}
+				$str .= '</div>';
+				$page = str_replace(":extensionoptions:", $str, $page);
+
+			} else {
+				$page = str_replace(":parentoptions:", "", $page);
+				$page = str_replace(":inclusionoptions:", "", $page);
+				$page = str_replace(":extensionoptions:", "", $page);
+			}
 			$rs = $this->selectActors($projectid);
-			$str = "";
 			if($rs) {
-				foreach($rs as $actor)
-					$str .= '<option value="'.$actor['id'].'">'.$actor['name'].'</option>';
+				$str = '<div class="multiple">';
+				$str .= "<input id=\"checkbox{$i}\" type=\"checkbox\" name=\"actor[]\" value=\"NULL\" checked=\"checked\" />";
+				$str .= "<label for=\"checkbox{$i}\">Nessuno</label>";
+				++$i;
+				foreach($rs as $actor) {
+					$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"actor[]\" value=\"".$actor["id"]."\" />";
+					$str .= "<label for=\"checkbox".$i."\">".$actor["name"]."</label>";
+					++$i;
+				}
+				$str .= "</div>";
 				$page = str_replace(":actoroptions:", $str, $page);
 			} else
 				$page = str_replace(":actoroptions:", "", $page);
@@ -274,10 +307,15 @@
 			} else
 				$page = str_replace(":usecaseoptions:", "", $page);
 			$rs = $this->selectRequirements($projectid);
-			$str = "";
+			$str = '<div class="multiple">';
+			$i = 0;
 			if($rs) {
-				foreach($rs as $r)
-					$str .= '<option value="'.$r['id'].'">'.$r['requirementid'].'-'.$r['description'].'</option>';
+				foreach($rs as $r) {
+					$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"requirement[]\" value=\"".$r["id"]."\" />";
+					$str .= "<label for=\"checkbox".$i."\">".$r["requirementid"]."</label>";
+					++$i;
+				}
+				$str .= '</div>';
 				$page = str_replace(":requirementoptions:", $str, $page);
 			} else
 				$page = str_replace(":requirementoptions:", "", $page);
@@ -369,47 +407,74 @@
 			}
 			$page = str_replace(':generalizationoptions:', $str, $page);
 			$rs = $this->getMyInclusions($data["id"]);
-			$str = "";
+			$str = '<div class="multiple">';
+			$str .= '<input id="checkbox0" type="checkbox" name="inclusion[]" value="NULL" checked="checked" />';
+			$str .= '<label for="checkbox0">Nessuno</label>';
+			$i = 1;
 			$array = array();
 			foreach($rs as $inclusion)
 				$array[] = $inclusion["includedusecaseid"];
 			$rs = $this->select($projectid);
 			if($rs) {
-				foreach($rs as $uc)
-					if($this->find($uc["id"], $array))
-						$str .= '<option value="'.$uc['id'].'" selected="selected">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
-					else
-						$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
+				foreach($rs as $uc) {
+					if($this->find($uc["id"], $array)) {
+						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"inclusion[]\" value=\"".$uc["id"]."\" checked=\"checked\" />";
+						$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
+					} else {
+						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"inclusion[]\" value=\"".$uc["id"]."\" />";
+						$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
+					}
+					++$i;
+				}
+				$str .= "</div>";
 				$page = str_replace(":inclusionoptions:", $str, $page);
 			} else
 				$page = str_replace(":inclusionoptions:", "", $page);
 			$rs = $this->getMyExtensions($data["id"]);
-			$str = "";
+			$str = '<div class="multiple">';
+			$str .= "<input id=\"checkbox{$i}\" type=\"checkbox\" name=\"extension[]\" value=\"NULL\" checked=\"checked\" />";
+			$str .= "<label for=\"checkbox{$i}\">Nessuno</label>";
+			$i++;
 			$array = array();
 			foreach($rs as $extension)
 				$array[] = $extension["extendedusecaseid"];
 			$rs = $this->select($projectid);
 			if($rs) {
-				foreach($rs as $uc)
-					if($this->find($uc["id"], $array))
-						$str .= '<option value="'.$uc['id'].'" selected="selected">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
-					else
-						$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
+				foreach($rs as $uc) {
+					if($this->find($uc["id"], $array)) {
+						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"extension[]\" value=\"".$uc["id"]."\" checked=\"checked\" />";
+						$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
+					} else {
+						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"extension[]\" value=\"".$uc["id"]."\" />";
+						$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
+					}
+					++$i;
+				}
+				$str .= "</div>";
 				$page = str_replace(":extensionoptions:", $str, $page);
 			} else
 				$page = str_replace(":extensionoptions:", "", $page);
 			$rs = $this->getActors($data["id"]);
-			$str = "";
+			$str = '<div class="multiple">';
+			$str .= "<input id=\"checkbox{$i}\" type=\"checkbox\" name=\"actor[]\" value=\"NULL\" checked=\"checked\" />";
+			$str .= "<label for=\"checkbox{$i}\">Nessuno</label>";
+			++$i;
 			$array = array();
 			foreach($rs as $actor)
 				$array[] = $actor["actorsid"];
 			$rs = $this->selectActors($projectid);
 			if($rs) {
-				foreach($rs as $actor)
-					if($this->find($actor["id"], $array))
-						$str .= '<option value="'.$actor['id'].'" selected="selected">'.$actor['name'].'</option>';
-					else
-						$str .= '<option value="'.$actor['id'].'">'.$actor['name'].'</option>';
+				foreach($rs as $actor) {
+					if($this->find($actor["id"], $array)) {
+						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"actor[]\" value=\"".$actor["id"]."\" checked=\"checked\" />";
+						$str .= "<label for=\"checkbox".$i."\">".$actor["name"]."</label>";
+					} else {
+						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"actor[]\" value=\"".$actor["id"]."\" />";
+						$str .= "<label for=\"checkbox".$i."\">".$actor["name"]."</label>";
+					}
+					++$i;
+				}
+				$str .= "</div>";
 				$page = str_replace(":actoroptions:", $str, $page);
 			} else
 				$page = str_replace(":actoroptions:", "", $page);
@@ -421,17 +486,24 @@
 			$page = str_replace(':usecaseid:', $data["usecaseid"], $page);
 			$page = str_replace(':name:', $data["name"], $page);
 			$rs = $this->getTracking($data["id"]);
-			$str = "";
+			$str = '<div class="multiple">';
+			$i = 0;
 			$array = array();
 			foreach($rs as $t)
 				$array[] = $t["id"];
 			$rs = $this->selectRequirements($projectid);
 			if($rs) {
-				foreach($rs as $requirement)
-					if($this->find($requirement['id'], $array))
-						$str .= '<option value="'.$requirement['id'].'" selected="selected">'.$requirement['requirementid'].'</option>';
-					else
-						$str .= '<option value="'.$requirement['id'].'">'.$requirement['requirementid'].'</option>';
+				foreach($rs as $requirement) {
+					if($this->find($requirement['id'], $array)) {
+						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"requirement[]\" value=\"".$requirement["id"]."\" checked=\"checked\" />";
+						$str .= "<label for=\"checkbox".$i."\">".$requirement["requirementid"]."</label>";
+					} else {
+						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"requirement[]\" value=\"".$requirement["id"]."\" />";
+						$str .= "<label for=\"checkbox".$i."\">".$requirement["requirementid"]."</label>";
+					}
+					++$i;
+				}
+				$str .= "</div>";
 				$page = str_replace(":requirementoptions:", $str, $page);
 			} else
 				$page = str_replace(":requirementoptions:", "", $page);

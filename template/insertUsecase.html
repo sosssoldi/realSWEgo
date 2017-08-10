@@ -66,28 +66,19 @@
 					<label for="parent">Use Case padre</label>
 					<select id="parent" name="parent">
 						<option value="" selected="selected">Nessuno</option>
-						:usecaseoptions:
+						:parentoptions:
 					</select>
 					<label for="generalization">Generalizzazione</label>
 					<select id="generalization" name="generalization">
 						<option value="false" selected="selected">No</option>
 						<option value="true">Si</option>
 					</select>
-					<label for="inclusion">Inclusioni</label>
-					<select id="inclusion" name="inclusion[]" multiple="multiple" required="required">
-						<option value="NULL" selected="selected">Nessuno</option>
-						:usecaseoptions:
-					</select>
-					<label for="extension">Estensioni</label>
-					<select id="extension" name="extension[]" multiple="multiple" required="required">
-						<option value="NULL" selected="selected">Nessuno</option>
-						:usecaseoptions:
-					</select>
-					<label for="actor">Attori</label>
-					<select id="actor" name="actor[]" multiple="multiple" required="required">
-						<option value="NULL" selected="selected">Nessuno</option>
+					<label>Inclusioni</label>
+						:inclusionoptions:
+					<label>Estensioni</label>
+						:extensionoptions:
+					<label>Attori</label>
 						:actoroptions:
-					</select>
 					<input type="submit" name="insert" value="INSERISCI" />
 				</fieldset>
 			</form>
