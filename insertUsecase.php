@@ -27,7 +27,7 @@
 			$_POST = Usecase::parse_input($_POST);
 			$usecaseDAO = new UsecaseDAO();
 			$usecaseDAO->insert($_POST, $_SESSION["id"]);
-			render_page($_POST);
+			render_page('insert');
 		}
 	}
 ?>

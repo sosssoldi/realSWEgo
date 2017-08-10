@@ -19,6 +19,8 @@
 				return false;
 			if(!array_key_exists('extension', $obj) || $obj["extension"] == "")
 				return false;
+			if(!array_key_exists('actor', $obj) || $obj["actor"] == "")
+				return false;
 			if(!array_key_exists('parent', $obj))
 				return false;
 			return true;
@@ -33,10 +35,11 @@
 		}
 
 		public static function parse_input($obj) {
-			foreach($obj as $key => &$value)
+			foreach($obj as $key => &$value) {
 				$value = str_replace("'", "\'", $value);
 				$value = str_replace("<", "&lt;", $value);
 				$value = str_replace(">", "&gt;", $value);
+			}
 			return $obj;
 		}
 	}

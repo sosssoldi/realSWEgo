@@ -260,7 +260,7 @@
 			$str .= "</div>";
 			$page = str_replace(":actoroptions:", $str, $page);
 			if($data) {
-				if(array_key_exists('name', $data) && $data['name'] != '' && array_key_exists('description', $data) && $data['description'] != '' && array_key_exists('precondition', $data) && $data['precondition'] != '' && array_key_exists('postcondition', $data) && $data['postcondition'] != '' && array_key_exists('mainscenario', $data) && $data['mainscenario'] != '') {
+				if($data == 'insert') {
 					$page = str_replace(':name:', '', $page);
 					$page = str_replace(':description:', '', $page);
 					$page = str_replace(':precondition:', '', $page);
@@ -319,7 +319,10 @@
 			} else
 				$page = str_replace(":requirementoptions:", "<a href=\"insertRequirement.php\">Inserisci</a> un requisito se vuoi effettuare il tracciamento.", $page);
 			if($data)
-				$page = str_replace(":message:", '<p class="message success">Tracciamento inserito!</p>', $page);
+				if($data == 'insert')
+					$page = str_replace(":message:", '<p class="message success">Tracciamento inserito!</p>', $page);
+				else
+					$page = str_replace(":message:", '<p class="message warning">Inserisci almeno un requisito!</p>', $page);
 			else
 				$page = str_replace(":message:", '', $page);
 			return $page;

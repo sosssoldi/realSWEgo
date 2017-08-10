@@ -11,10 +11,11 @@
 		}
 
 		public static function parse_input($obj) {
-			foreach($obj as $key => &$value)
+			foreach($obj as $key => &$value) {
 				$value = str_replace("'", "\'", $value);
 				$value = str_replace("<", "&lt;", $value);
 				$value = str_replace(">", "&gt;", $value);
+			}
 			return $obj;
 		}
 	}

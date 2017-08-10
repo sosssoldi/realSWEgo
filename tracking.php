@@ -22,12 +22,12 @@
 		render_page();
 	} else {
 		if(!Usecase::check_tracking_input($_POST)) {
-			render_page();
+			render_page($_POST);
 		} else {
 			$_POST = Usecase::parse_input($_POST);
 			$usecaseDAO = new UsecaseDAO();
 			$usecaseDAO->track($_POST);
-			render_page($_POST);
+			render_page('insert');
 		}
 	}
 ?>
