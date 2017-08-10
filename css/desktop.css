@@ -38,11 +38,12 @@
 		background-color: #0060b6;
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
-		height: 5em;
+		height: auto;
 		width: 100%;
 		position: fixed;
 		top: 0;
 		z-index: 100;
+		text-align: right;
 	}
 
 	#skipNavbar
@@ -54,18 +55,19 @@
 
 	#logo {
 		display: block;
+		width: 5%;
 		float: left;
 		margin-left: 10%;
 		font-size: 3em;
 		color: white;
-		margin-bottom: 2%;
+		margin-bottom: 1%;
 	}
 
 	#breadcrumb {
 	 background-color: lightgray;
 	 font-size: 1em;
 	 padding: 1% 10% 1%;
-	 margin-top: 6em;
+	 padding-top: 8.2em;
 	}
 
 	#breadcrumb a
@@ -77,17 +79,16 @@
 		display: none;
 	}
 
-
 	nav {
-		width: 100%;
 		font-size: 1em;
 		margin-top: 2em;
+		margin-left: 10%;
+		margin-right: 10%;
 	}
 
 	nav ul {
 		list-style-type: none;
-		float: right;
-		margin-right: 10%;
+		margin-left: 30%;
 	}
 
 	nav ul li {
@@ -229,10 +230,10 @@
 	/* CONTENT */
 	#content {
 		width: 80%;
+		height: auto;
 		margin: 0 auto;
 		background-color: #fff;
 		overflow: auto;
-		height: auto;
 	}
 
 	/* FOOTER */
