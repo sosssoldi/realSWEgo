@@ -246,20 +246,19 @@
 			$str .= '</div>';
 			$page = str_replace(":extensionoptions:", $str, $page);
 			$rs = $this->selectActors($projectid);
+			$str = '<div class="multiple">';
+			$str .= "<input id=\"checkbox{$i}\" type=\"checkbox\" name=\"actor[]\" value=\"NULL\" checked=\"checked\" />";
+			$str .= "<label for=\"checkbox{$i}\">Nessuno</label>";
+			++$i;
 			if($rs) {
-				$str = '<div class="multiple">';
-				$str .= "<input id=\"checkbox{$i}\" type=\"checkbox\" name=\"actor[]\" value=\"NULL\" checked=\"checked\" />";
-				$str .= "<label for=\"checkbox{$i}\">Nessuno</label>";
-				++$i;
 				foreach($rs as $actor) {
 					$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"actor[]\" value=\"".$actor["id"]."\" />";
 					$str .= "<label for=\"checkbox".$i."\">".$actor["name"]."</label>";
 					++$i;
 				}
-				$str .= "</div>";
-				$page = str_replace(":actoroptions:", $str, $page);
-			} else
-				$page = str_replace(":actoroptions:", "", $page);
+			}
+			$str .= "</div>";
+			$page = str_replace(":actoroptions:", $str, $page);
 			if($data) {
 				if(array_key_exists('name', $data) && $data['name'] != '' && array_key_exists('description', $data) && $data['description'] != '' && array_key_exists('precondition', $data) && $data['precondition'] != '' && array_key_exists('postcondition', $data) && $data['postcondition'] != '' && array_key_exists('mainscenario', $data) && $data['mainscenario'] != '') {
 					$page = str_replace(':name:', '', $page);
@@ -318,7 +317,7 @@
 				$str .= '</div>';
 				$page = str_replace(":requirementoptions:", $str, $page);
 			} else
-				$page = str_replace(":requirementoptions:", "", $page);
+				$page = str_replace(":requirementoptions:", "<a href=\"insertRequirement.php\">Inserisci</a> un requisito se vuoi effettuare il tracciamento.", $page);
 			if($data)
 				$page = str_replace(":message:", '<p class="message success">Tracciamento inserito!</p>', $page);
 			else
