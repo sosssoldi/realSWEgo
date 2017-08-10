@@ -8,8 +8,15 @@
 	include_once "php/Object/Object.php";
 	include_once "php/Object/User.php";
 
-	if(!empty($_SESSION) && array_key_exists('groupname', $_SESSION) && $_SESSION["groupname"] != "")
+	if(array_key_exists("type", $_SESSION) && $_SESSION["type"] == "admin") {
+		header("Location: admin.php");
+		exit();
+	}
+
+	if(!empty($_SESSION) && array_key_exists('groupname', $_SESSION) && $_SESSION["groupname"] != "") {
 		header("Location: user.php");
+		exit();
+	}
 
 	if(empty($_POST)) {
 		render_page();
@@ -24,6 +31,7 @@
 				$_SESSION["id"] = $user["id"];
 				$_SESSION["groupname"] = $user["groupname"];
 				$_SESSION["projectname"] = $user["projectname"];
+				$_SESSION["type"] = $user["type"];
 				header("Location: user.php");
 			} else {
 				$post = $_POST;

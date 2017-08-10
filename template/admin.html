@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>SWEgo - Profilo :groupname:</title>
-		<meta name="title" content="SWEgo - Profilo" />
-		<meta name="description" content="Visualizza il profilo di un utente." />
-		<meta name="keywords" content="SWEgo, Utente, Profilo" />
+		<meta name="title" content="SWEgo - Profilo amministratore" />
+		<meta name="description" content="Profilo dell'amministratore." />
+		<meta name="keywords" content="SWEgo, Utente, Profilo, Amministratore" />
 		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,7 +17,7 @@
 		<script src="script/nav.js"></script>
 		<script src="script/user.js"></script>
 	</head>
-	<body onLoad="createGraphics({s::s0p:,u::u0p:},{s::s1p:,u::u1p:},{s::s2p:,u::u2p:});">
+	<body onLoad="createGraphicsAdmin([:months:], [:accesses:]);">
 		<header>
 			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
 			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
@@ -28,13 +28,7 @@
 			</div>
 			<nav>
 				<ul>
-					<li><a href="insertSource.php">FONTI</a></li>
-					<li><a href="insertActor.php">ATTORI</a></li>
-					<li><a href="viewRequirement.php">REQUISITI</a></li>
-					<li lang="en"><a href="viewUsecase.php">USE CASE</a></li>
-					<li><a href="viewTracking.php">TRACCIAMENTO</a></li>
 					<li class="here">PROFILO</li>
-					<li><a href="contacts.html">CONTATTI</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -43,18 +37,18 @@
 		</div>
 		<div id="content">
 			<div id="intro">
-				<p>In questa pagina potrai cambiare la tua password, vedere la copertura dei requisiti, generare automaticamente i diagrammi <abbr lang="en" title="Unified Modeling Language">UML</abbr> oppure effettuare il logout.</p>
+				<p>In questa pagina potrai cambiare la tua password, vedere un riepilogo dei dati di <abbr lang="en" title="SoftWare Engineering Group Organizer">SWEgo</abbr> oppure effettuare il logout.</p>
 			</div>
 			<div id="summary">
-				<h2>Riassunto dei tuoi dati</h2>
+				<h2>Riepilogo dati <abbr lang="en" title="SoftWare Engineering Group Organizer">SWEgo</abbr>:</h2>
 				<ul>
-					<li>Numero di Attori: :nactors:</li>
-					<li>Numero di Fonti: :nsources:</li>
-					<li>Numero di <span lang="en">Use Case</span>: :nusecase:</li>
-					<li>Numero di Requisiti: :nrequirements:</li>
-					<li>Numero di <span lang="en">Use Case</span> tracciati: :ntrackedusecase:</li>
-					<li>Numero di Requisiti tracciati: :ntrackedrequirements:</li>
+					<li>Numero di utenti: :nusers:</li>
+					<li>Numero totale di Attori: :nactors:</li>
+					<li>Numero totale di Fonti: :nsources:</li>
+					<li>Numero totale di <span lang="en">Use Case</span>: :nusecase:</li>
+					<li>Numero totale di Requisiti: :nrequirements:</li>
 				</ul>
+				<canvas id="graph"></canvas>
 			</div>
 			<h2 id="operationHeader">Operazioni</h2>
 			<div id="changePassword">
@@ -71,36 +65,6 @@
 						<input type="submit" value="CAMBIA" />
 					</fieldset>
 				</form>
-			</div>
-			<div id="graphics">
-				<a href="#graphics" class="showMoreInfo">Mostra copertura dei requisiti</a>
-				<h3>REQUISITI OBBLIGATORI</h3>
-				<div id="graphicObb">
-					<canvas id="graphObb"></canvas>
-					<ul>
-						<li>Soddisfatti: :s0p:% (:s0n:)</li>
-						<li>Non soddisfatti: :u0p:% (:u0n:)</li>
-					</ul>
-				</div>
-				<h3>REQUISITI DESIDERABILI</h3>
-				<div id="graphicDes">
-					<canvas id="graphDes"></canvas>
-					<ul>
-						<li>Soddisfatti: :s1p:% (:s1n:)</li>
-						<li>Non soddisfatti: :u1p:% (:u1n:)</li>
-					</ul>
-				</div>
-				<h3>REQUISITI OPZIONALI</h3>
-				<div id="graphicOpz">
-					<canvas id="graphOpz"></canvas>
-					<ul>
-						<li>Soddisfatti: :s2p:% (:s2n:)</li>
-						<li>Non soddisfatti: :u2p:% (:u2n:)</li>
-					</ul>
-				</div>
-			</div>
-			<div id="createUML">
-				<a href="plantUML.php">Genera i diagrammi <abbr lang="en" title="Unified Modeling Language">UML</abbr> con PlantUML</a>
 			</div>
 			<div id="logout">
 				<a href="logout.php">Logout</a>

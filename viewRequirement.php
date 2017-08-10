@@ -8,8 +8,15 @@
 	include_once "php/Object/Object.php";
 	include_once "php/Object/Requirement.php";
 
-	if(empty($_SESSION))
+	if(empty($_SESSION)) {
 		header("Location: index.html");
+		exit();
+	}
+
+	if(array_key_exists("type", $_SESSION) && $_SESSION["type"] == "admin") {
+		header("Location: admin.php");
+		exit();
+	}
 
 	$requirementDAO = new RequirementDAO();
 	$rs = $requirementDAO->select($_SESSION["id"]);

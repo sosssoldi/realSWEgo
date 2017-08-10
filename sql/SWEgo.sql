@@ -15,7 +15,16 @@ create table if not exists users (
 	id int auto_increment primary key,
 	groupname varchar(100) not null unique,
 	projectname varchar(100) not null unique,
-	password varchar(100) not null
+	password varchar(100) not null,
+	type varchar(20) not null
+)engine=INNODB;
+
+-- Table: login
+create table if not exists login (
+	userid int not null,
+	date_time datetime not null,
+	primary key(userid, date_time),
+	foreign key(userid) references users(id) on delete cascade on update cascade
 )engine=INNODB;
 
 -- Table: usecase
@@ -105,3 +114,5 @@ create table if not exists usecaserequirements (
 	foreign key(requirementid) references requirements(id) on delete cascade on update cascade
 )engine=INNODB;
 
+-- Dump
+insert into users values (1, 'admin', 'admin', 'bb017ba90f714a59da19ebcfe41ff68db41c5ab40e4eb0d17f40b2db3cd4cbbf', 'admin');

@@ -8,11 +8,20 @@
 	include_once "php/Object/Object.php";
 	include_once "php/Object/Requirement.php";
 
-	if(empty($_SESSION))
+	if(empty($_SESSION)) {
 		header("Location: index.html");
+		exit();
+	}
 
-	if(empty($_GET) || !array_key_exists('id', $_GET) || $_GET['id'] == "")
+	if(array_key_exists("type", $_SESSION) && $_SESSION["type"] == "admin") {
+		header("Location: admin.php");
+		exit();
+	}
+
+	if(empty($_GET) || !array_key_exists('id', $_GET) || $_GET['id'] == "") {
 		header("Location: viewRequirement.php");
+		exit();
+	}
 
 	$requirementDAO = new RequirementDAO();
 	if(!$requirementDAO->getRequirement($_GET["id"], $_SESSION["id"])) {

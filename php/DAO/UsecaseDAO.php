@@ -180,8 +180,18 @@
 			return $this->resultSet();
 		}
 
+		public function getMyInclusionsInfo($id) {
+			$this->query("SELECT id, usecase.usecaseid as usecaseid, name FROM usecaseinclusions, usecase WHERE usecaseinclusions.usecaseid={$id} AND usecase.id = usecaseinclusions.includedusecaseid;");
+			return $this->resultSet();
+		}
+
 		public function getMyExtensions($id) {
 			$this->query("SELECT * FROM usecaseextensions WHERE usecaseid={$id};");
+			return $this->resultSet();
+		}
+
+		public function getMyExtensionsInfo($id) {
+			$this->query("SELECT id, usecase.usecaseid as usecaseid, name FROM usecaseextensions, usecase WHERE usecaseextensions.usecaseid={$id} AND usecase.id = usecaseextensions.extendedusecaseid;");
 			return $this->resultSet();
 		}
 
@@ -308,7 +318,7 @@
 		}
 
 		public function getTracking($id) {
-			$this->query("SELECT id, requirements.requirementid as requirementid, description FROM requirements, usecaserequirements WHERE requirements.id = usecaserequirements.requirementid AND usecaseid = {$id};");
+			$this->query("SELECT id, requirements.requirementid as requirementid, description FROM requirements, usecaserequirements WHERE requirements.id = usecaserequirements.requirementid AND usecaseid = {$id} ORDER BY requirementid;");
 			return $this->resultSet();
 		}
 

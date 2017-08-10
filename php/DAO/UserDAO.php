@@ -10,14 +10,16 @@
 			$rs = $this->resultSet();
 			if(!$rs) {
 				$pwd = hash('sha256', $obj["password"]."let's salt");
-				$this->query("INSERT INTO users VALUES (id, '{$obj["groupname"]}', '{$obj["projectname"]}', '{$pwd}');");
+				$this->query("INSERT INTO users VALUES (id, '{$obj["groupname"]}', '{$obj["projectname"]}', '{$pwd}', 'user');");
 				$this->resultSet();
 				$rs = $this->select();
 				if($rs) {
 					$found = null;
 					foreach($rs as $user) {
-						if($user["groupname"] == $obj["groupname"])
+						if($user["groupname"] == $obj["groupname"]) {
 							$found = $user;
+							$this->saveAccess($user);
+						}
 					}
 				}
 				return $found;
@@ -30,12 +32,19 @@
 			if($rs) {
 				$found = null;
 				foreach($rs as $user) {
-					if($obj["groupname"] == $user["groupname"] && hash("sha256", $obj["password"]."let's salt") == $user["password"])
+					if($obj["groupname"] == $user["groupname"] && hash("sha256", $obj["password"]."let's salt") == $user["password"]) {
 						$found = $user;
+						$this->saveAccess($user);
+					}
 				}
 				return $found;
 			}
 			return null;
+		}
+
+		public function saveAccess($user) {
+			$this->query("INSERT INTO login VALUES({$user["id"]},NOW());");
+			return $this->resultSet();
 		}
 
 		public function updatePassword($obj, $userid) {
@@ -57,6 +66,44 @@
 		public function select() {
 			$this->query('SELECT * FROM users ORDER BY groupname;');
 			return $this->resultSet();
+		}
+
+		public function getLogs() {
+			$year = Date("Y");
+			$month = Date("m");
+			$this->query("SELECT MONTH(date_time) as month, count(*) as naccess FROM login WHERE YEAR(date_time) = {$year} GROUP BY MONTH(date_time) ORDER BY month DESC;");
+			$rs = $this->resultSet();
+			for($i = 0; $i < $month; ++$i)
+				$login[$i] = 0;
+			foreach($rs as $log) {
+				$login[$log["month"] - 1] = $log["naccess"];
+			}
+			return $login;
+		}
+
+		public function countUsers() {
+			$this->query("SELECT * FROM users;");
+			return count($this->resultSet());
+		}
+
+		public function countActors() {
+			$this->query("SELECT * FROM actors;");
+			return count($this->resultSet());
+		}
+
+		public function countSources() {
+			$this->query("SELECT * FROM sources;");
+			return count($this->resultSet());
+		}
+
+		public function countUsecase() {
+			$this->query("SELECT * FROM usecase;");
+			return count($this->resultSet());
+		}
+
+		public function countRequirements() {
+			$this->query("SELECT * FROM requirements;");
+			return count($this->resultSet());
 		}
 
 		public function adjustLoginForm($page, $data) {

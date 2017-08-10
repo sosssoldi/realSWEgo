@@ -93,6 +93,56 @@ function createGraphics(obb, des, opz) {
 	window.myDoughnut3 = new Chart(ctxopz, opzionali);
 }
 
+function createGraphicsAdmin(month, logs) {
+	var logdata = {
+        type: 'line',
+        data: {
+            labels: month,
+            datasets: [{
+                label: "Accessi",
+                backgroundColor: "#f00",
+                borderColor: "#f00",
+                data: logs,
+                fill: false,
+            }]
+        },
+        options: {
+            responsive: true,
+            title:{
+                display:true,
+                text:'Chart.js Line Chart'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Settimana'
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Numero'
+                    }
+                }]
+            }
+        }
+	};
+	var ctxlog = document.getElementById("graph").getContext("2d");
+    window.myLine = new Chart(ctxlog, logdata);
+    console.log(window.myLine);
+}
+
 // Hide/show features user
 $(function() {
 	setTimeout(function() {
