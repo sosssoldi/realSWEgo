@@ -241,9 +241,9 @@ footer, #skipNavbar
 	font-size: 1em;
 }
 
-#allR thead, #allR tbody, #allR th, #allR td, #allR tr
+#allR thead, #allR tbody, #allR th, #allR td, #allR tr,
 #allUC thead, #allUC tbody, #allUC th, #allUC td, #allUC tr
- {
+{
 	display: block;
 }
 
@@ -296,7 +296,7 @@ footer, #skipNavbar
 }
 
 #allR td:nth-of-type(5):before {
-	content: "Stato d'implementazione";
+	content: "Implementazione";
 	font-weight: bold;
 }
 
