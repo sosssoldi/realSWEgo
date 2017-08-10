@@ -16,6 +16,7 @@
 }
 
 @media screen and (min-width: 521px) {
+
 	body {
 		background-color: lightgray;
 		background-image: url("../image/background.jpg");
@@ -25,6 +26,11 @@
 	.warning
 	{
 		color: #f00;
+	}
+
+	.success
+	{
+		color: green;
 	}
 
 	/* HEADER */
@@ -62,9 +68,15 @@
 	 margin-top: 6em;
 	}
 
+	#breadcrumb a
+	{
+		color: #000;
+	}
+
 	.mobileButton {
 		display: none;
 	}
+
 
 	nav {
 		width: 100%;
@@ -86,7 +98,7 @@
 	nav ul li a {
 		color: lightgray;
 		text-decoration: none;
-		padding: 0.7em 0.6em;
+		padding: 0.7em 0.5em;
 	}
 
 	nav ul li a:hover {
@@ -95,9 +107,9 @@
 	}
 
 	.here {
-	 font-weight: bold;
-	 color: white;
-		padding: 1.85em 1em;
+	  font-weight: bold;
+	  color: white;
+		padding: 1.85em 0.5em;
 	}
 
 	/* FORM MODIFY */
@@ -219,8 +231,8 @@
 		width: 80%;
 		margin: 0 auto;
 		background-color: #fff;
-		min-height: 30em;
-		z-index: 200;
+		overflow: auto;
+		height: auto;
 	}
 
 	/* FOOTER */
@@ -272,15 +284,18 @@
 		width: 50%;
 		font-size: 1em;
 		float: right;
-		padding-top: 6.5em;
-		background-color: white;
 	}
 
 	#whyAccount p {
 		font-size: 1.2em;
 		width: 80%;
-		padding: 0.5em 10% 1em 10%;
+		padding: 0.5em 10%;
 	}
+
+		#whyAccount p:first-of-type
+		{
+			padding-top: 1.5em;
+		}
 
 	#whyAccount ul {
 		margin-left: 14%;
@@ -289,16 +304,15 @@
 	}
 
 	#user_login {
+		padding-top: 2em;
 		width: 50%;
 		text-align: center;
-		background-color: lightgray;
 		background-color: white;
 	}
 
 	#user_login fieldset {
 		border: none;
 		width: 100%;
-		padding: 6.1em 0;
 	}
 
 	#user_login legend {
@@ -308,8 +322,13 @@
 
 	#user_login label {
 		display: block;
-		margin-top: 5%;
+		margin-bottom: 0.7em;
 		font-size: 1.2em;
+	}
+
+	#user_login label:last-of-type
+	{
+		margin-top: 1em;
 	}
 
 	#user_login input[type="text"] {
@@ -328,9 +347,9 @@
 
 	#user_login input[type="submit"] {
 		display: block;
-		width: 64%;
+		width: 40%;
 		padding: 0.7em;
-		margin: 3em 0% 3em 18%;
+		margin: 3em auto;
 		background-color: #8b0000;
 		color: white;
 		font-weight: bold;
@@ -350,12 +369,10 @@
 		font-size: 1em;
 		float: right;
 		background-color: white;
-		padding-top: 8em
 	}
 
 	#registrationDescription p {
-		margin-top: 2em;
-		padding: 0 10%;
+		padding: 2em 10% 0 10%;
 		font-size: 1.2em;
 	}
 
@@ -367,7 +384,7 @@
 
 	#user_registration fieldset {
 		border: none;
-		padding: 2.45em 0;
+		padding: 2em 0;
 		width: 100%;
 	}
 
@@ -378,8 +395,14 @@
 
 	#user_registration label {
 		display: block;
-		margin-top: 3%;
+		margin-top: 1em;
 		font-size: 1.2em;
+		margin-bottom: 0.5em;
+	}
+
+	#user_registration label:first-of-type
+	{
+		margin-top: 0;
 	}
 
 	#user_registration input[type="text"] {
@@ -398,9 +421,9 @@
 
 	#user_registration input[type="submit"] {
 		display: block;
-		width: 64%;
+		width: 40%;
 		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
+		margin: 5% auto;
 		background-color: #8b0000;
 		color: white;
 		font-weight: bold;
@@ -419,6 +442,7 @@
 	#actors
 	{
 		margin: 5% 0;
+		text-align: center;
 	}
 
 	.actor
@@ -514,7 +538,7 @@
 
 	#insertActor input[type="submit"] {
 		display: block;
-		width: 25%;
+		width: 40%;
 		padding: 0.2em;
 		background-color: #8b0000;
 		color: white;
@@ -583,6 +607,7 @@
 
 	#source
 	{
+		text-align: center;
 		margin: 5% 0;
 	}
 
@@ -653,7 +678,7 @@
 
 	#insertSource input[type="submit"] {
 		display: block;
-		width: 25%;
+		width: 40%;
 		padding: 0.2em;
 		background-color: #8b0000;
 		color: white;
@@ -728,11 +753,15 @@
 		padding-bottom: 0.5em;
 	}
 
+	#intro p
+	{
+		margin-bottom: 0.5em;
+	}
+
 	#intro ul
 	{
 		text-align: left;
 		margin: 3% 5%;
-		list-style-type: square;
 	}
 
 	#features
@@ -751,6 +780,8 @@
 		width: 50%;
 		margin: 3% 0 3% 25%;
 	}
+
+
 
 	.info h2
 	{
@@ -773,9 +804,9 @@
 		margin-left: 3%;
 	}
 
-	.info>div
+	.info > div
 	{
-		width: 60%;
+		width: 80%;
 		margin: 0 auto;
 	}
 
@@ -801,7 +832,6 @@
 		display: block;
 		width: 100%;
 		text-align: center;
-		margin-top: 2em;
 		margin-bottom: 4em;
 	}
 
@@ -826,7 +856,7 @@
 		width: 33%;
 		float: left;
 		text-align: center;
-		font-size: 1.3em;
+		font-size: 1.2em;
 	}
 
 	#summary > ul li span
@@ -996,157 +1026,6 @@
 		font-size: 1.5em;
 	}
 
-	/* INIZIO MAURO */
-
-	/* LOGIN */
-	#whyAccount {
-		width: 50%;
-		font-size: 1em;
-		float: right;
-		padding-top: 5.5em;
-		background-color: white;
-	}
-
-	#whyAccount p {
-		font-size: 1.2em;
-		width: 80%;
-		padding: 0.5em 10% 1em 10%;
-	}
-
-	#whyAccount ul {
-		margin-left: 14%;
-		font-size: 1.2em;
-		padding: 0.5em 10% 1em 0;
-	}
-
-	#user_login {
-		width: 50%;
-		text-align: center;
-		background-color: lightgray;
-		background-color: white;
-	}
-
-	#user_login fieldset {
-		border: none;
-		width: 100%;
-		padding: 4.6em 0;
-	}
-
-	#user_login legend {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	#user_login label {
-		display: block;
-		margin-top: 5%;
-		font-size: 1.3em;
-		color: #8b0000;
-	}
-
-	#user_login input[type="text"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#user_login input[type="password"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#user_login input[type="submit"] {
-		display: block;
-		width: 64%;
-		padding: 0.7em;
-		margin: 3em 0% 3em 18%;
-		background-color: #8b0000;
-		color: white;
-		font-weight: bold;
-		font-size: 0.8em;
-		border: none;
-		border-radius: 0.3em;
-		cursor: pointer;
-	}
-
-	#user_login input[type="submit"]:hover {
-		background-color: #9d0404;
-	}
-
-	/* REGISTRATION */
-	#registrationDescription {
-		width: 50%;
-		font-size: 1em;
-		float: right;
-		background-color: white;
-		padding-top: 6em
-	}
-
-	#registrationDescription p {
-		margin-top: 2em;
-		padding: 0 10%;
-		font-size: 1.2em;
-	}
-
-	#user_registration {
-		width: 50%;
-		text-align: center;
-		background-color: white;
-	}
-
-	#user_registration fieldset {
-		border: none;
-		padding: 0.78em 0;
-		width: 100%;
-	}
-
-	#user_registration legend {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	#user_registration label {
-		display: block;
-		margin-top: 3%;
-		font-size: 1.3em;
-		color: #8b0000;
-	}
-
-	#user_registration input[type="text"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#user_registration input[type="password"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#user_registration input[type="submit"] {
-		display: block;
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
-		background-color: #8b0000;
-		color: white;
-		font-weight: bold;
-		font-size: 0.8em;
-		border: none;
-		border-radius: 0.3em;
-		cursor: pointer;
-	}
-
-	#user_registration input[type="submit"]:hover {
-		background-color: #9d0404;
-	}
-
 	/* VIEW_ALL_UC */
 
 	#search_UC {
@@ -1251,6 +1130,26 @@
 	}
 
 	#allUC td:nth-of-type(6):before {
+		content: "Scenario Principale";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(7):before {
+		content: "Inclusioni";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(8):before {
+		content: "Estensioni";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(9):before {
+		content: "Attori";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(10):before {
 		content: "Operazioni";
 		font-weight: bold;
 	}
@@ -1517,6 +1416,11 @@
 	}
 
 	#allR td:nth-of-type(6):before {
+		content: "Fonti";
+		font-weight: bold;
+	}
+
+	#allR td:nth-of-type(7):before {
 		content: "Operazioni";
 		font-weight: bold;
 	}
@@ -1619,11 +1523,11 @@
 
 	#siteMap > li {
 		list-style-image: url("../image/folder_icon.png");
+		margin-bottom: 5%;
 	}
 
 	#siteMap > li > ul {
 		margin-left: 5%;
-		margin-bottom: 5%;
 	}
 
 	#siteMap > li > ul > li {
