@@ -218,33 +218,33 @@
 				foreach($rs as $uc)
 					$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].' - '.$uc['name'].'</option>';
 				$page = str_replace(":parentoptions:", $str, $page);
-				$str = '<div class="multiple">';
-				$str .= '<input id="checkbox0" type="checkbox" name="inclusion[]" value="NULL" checked="checked" />';
-				$str .= '<label for="checkbox0">Nessuno</label>';
+			} else 
+				$page = str_replace(":parentoptions:", "", $page);
+			$str = '<div class="multiple">';
+			$str .= '<input id="checkbox0" type="checkbox" name="inclusion[]" value="NULL" checked="checked" />';
+			$str .= '<label for="checkbox0">Nessuno</label>';
+			if($rs) {
 				foreach($rs as $uc) {
 					$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"inclusion[]\" value=\"".$uc["id"]."\" />";
 					$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
 					++$i;
 				}
-				$str .= '</div>';
-				$page = str_replace(":inclusionoptions:", $str, $page);
-				$str = '<div class="multiple">';
-				$str .= "<input id=\"checkbox{$i}\" type=\"checkbox\" name=\"extension[]\" value=\"NULL\" checked=\"checked\" />";
-				$str .= "<label for=\"checkbox{$i}\">Nessuno</label>";
-				++$i;
+			}
+			$str .= '</div>';
+			$page = str_replace(":inclusionoptions:", $str, $page);
+			$str = '<div class="multiple">';
+			$str .= "<input id=\"checkbox{$i}\" type=\"checkbox\" name=\"extension[]\" value=\"NULL\" checked=\"checked\" />";
+			$str .= "<label for=\"checkbox{$i}\">Nessuno</label>";
+			++$i;
+			if($rs) {
 				foreach($rs as $uc) {
 					$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"extension[]\" value=\"".$uc["id"]."\" />";
 					$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
 					++$i;
 				}
-				$str .= '</div>';
-				$page = str_replace(":extensionoptions:", $str, $page);
-
-			} else {
-				$page = str_replace(":parentoptions:", "", $page);
-				$page = str_replace(":inclusionoptions:", "", $page);
-				$page = str_replace(":extensionoptions:", "", $page);
 			}
+			$str .= '</div>';
+			$page = str_replace(":extensionoptions:", $str, $page);
 			$rs = $this->selectActors($projectid);
 			if($rs) {
 				$str = '<div class="multiple">';

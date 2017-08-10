@@ -9,7 +9,7 @@
 	include_once "php/Object/Actor.php";
 
 	if(empty($_SESSION)) {
-		header("Location: index.html");
+		header("Location: index.php");
 		exit();
 	}
 

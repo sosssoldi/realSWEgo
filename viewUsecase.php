@@ -10,7 +10,7 @@
 	include_once "php/Object/Usecase.php";
 
 	if(empty($_SESSION)) {
-		header("Location: index.html");
+		header("Location: index.php");
 		exit();
 	}
 

@@ -13,7 +13,7 @@
 	include_once "php/Object/User.php";
 
 	if(empty($_SESSION)) {
-		header("Location: index.html");
+		header("Location: index.php");
 		exit();
 	}
 

@@ -7,7 +7,7 @@
 	include_once "php/DAO/RequirementDAO.php";
 
 	if(empty($_SESSION)) {
-		header("Location: index.html");
+		header("Location: index.php");
 		exit();
 	}
 
