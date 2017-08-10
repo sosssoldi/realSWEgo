@@ -82,7 +82,7 @@
 			$actors = $usecaseDAO->getActors($uc['id']);
 			$htmlActor = '';
 			foreach($actors as $actor) {
-				$act = $actorDAO->select($actor['actorsid']);
+				$act = $actorDAO->getActor($actor['actorsid'], $_SESSION['id']);
 				if($act) {
 					$htmlActor .= $act[0]['name'];
 					$htmlActor .= ', ';
