@@ -8,11 +8,20 @@
 	include_once "php/Object/Object.php";
 	include_once "php/Object/Source.php";
 
-	if(empty($_SESSION))
-		header("Location: index.php");
+	if(empty($_SESSION)) {
+		header("Location: index.html");
+		exit();
+	}
 
-	if(empty($_GET) || !array_key_exists('id', $_GET) || $_GET['id'] == "")
+	if(array_key_exists("type", $_SESSION) && $_SESSION["type"] == "admin") {
+		header("Location: admin.php");
+		exit();
+	}
+
+	if(empty($_GET) || !array_key_exists('id', $_GET) || $_GET['id'] == "") {
 		header("Location: insertSource.php");
+		exit();
+	}
 
 	$sourceDAO = new SourceDAO();
 	if(!$sourceDAO->getSource($_GET["id"], $_SESSION["id"])) {

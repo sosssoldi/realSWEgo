@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>SWEgo - Profilo :groupname:</title>
+		<meta name="title" content="SWEgo - Profilo amministratore" />
+		<meta name="description" content="Profilo dell'amministratore." />
+		<meta name="keywords" content="SWEgo, Utente, Profilo, Amministratore" />
+		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="icon" href="image/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+		<link rel="stylesheet" type="text/css" href="css/desktop.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+		<script src="script/nav.js"></script>
+		<script src="script/user.js"></script>
+	</head>
+	<body onLoad="createGraphicsAdmin([:months:], [:accesses:]);">
+		<header>
+			<a href="index.html"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
+			<div id="mobileMenu" class="hideButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li class="here">PROFILO</li>
+				</ul>
+			</nav>
+		</header>
+		<div id="breadcrumb" class="noSpaceHeader">
+			<p>Ti trovi in: PROFILO :groupname:</p>
+		</div>
+		<div id="content">
+			<div id="intro">
+				<p>In questa pagina potrai cambiare la tua password, vedere un riepilogo dei dati di <abbr lang="en" title="SoftWare Engineering Group Organizer">SWEgo</abbr> oppure effettuare il logout.</p>
+			</div>
+			<div id="summary">
+				<h2>Riepilogo dati <abbr lang="en" title="SoftWare Engineering Group Organizer">SWEgo</abbr>:</h2>
+				<ul>
+					<li>Numero di utenti: :nusers:</li>
+					<li>Numero totale di Attori: :nactors:</li>
+					<li>Numero totale di Fonti: :nsources:</li>
+					<li>Numero totale di <span lang="en">Use Case</span>: :nusecase:</li>
+					<li>Numero totale di Requisiti: :nrequirements:</li>
+				</ul>
+				<canvas id="graph"></canvas>
+			</div>
+			<h2 id="operationHeader">Operazioni</h2>
+			<div id="changePassword">
+				<a href="#operationHeader" class="showMoreInfo">Cambia password</a>
+				<form method="post" action="#" id="change_password">
+					<fieldset form="change_password">
+						<legend>Form per il cambio password</legend>
+						<label for="oldPassword">Vecchia password</label>
+						<input type="password" name="oldpassword" id="oldPassword" required="required" maxlength="100" />
+						<label for="newPassoword">Nuova password</label>
+						<input type="password" name="password" id="newPassoword" required="required" maxlength="100" />
+						<label for="confirmPassword">Conferma password</label>
+						<input type="password" name="confirmpassword" id="confirmPassword" required="required" maxlength="100" />
+						<input type="submit" value="CAMBIA" />
+					</fieldset>
+				</form>
+			</div>
+			<div id="logout">
+				<a href="logout.php">Logout</a>
+				<div></div>
+			</div>
+		</div>
+		<footer>
+			<span lang="en">SWEgo &copy;</span>
+		</footer>
+	</body>
+</html>
