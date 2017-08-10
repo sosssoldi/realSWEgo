@@ -133,7 +133,7 @@ function createGraphicsAdmin(month, logs) {
             responsive: true,
             title:{
                 display:true,
-                text:'Chart.js Line Chart'
+                text:'Accessi'
             },
             tooltips: {
                 mode: 'index',
