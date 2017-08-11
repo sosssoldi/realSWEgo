@@ -206,6 +206,12 @@ $(function() {
 			$("#graphicObb iframe").remove();
 			$("#graphicDes iframe").remove();
 			$("#graphicOpz iframe").remove();
+			$("#graphicObb canvas").remove();
+			$("#graphicDes canvas").remove();
+			$("#graphicOpz canvas").remove();
+			$("#graphicObb").append('<canvas id="graphObb"></canvas>');
+			$("#graphicDes").append('<canvas id="graphDes"></canvas>');
+			$("#graphicOpz").append('<canvas id="graphOpz"></canvas>');
 		}
 		else
 		{
