@@ -22,6 +22,11 @@ footer, #skipNavbar
 	display: none;
 }
 
+table caption {
+	height: 0em;
+	overflow: hidden;
+}
+
 #mobileMenu, nav, .info > a, .info img
 {
   display: none;

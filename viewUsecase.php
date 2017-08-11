@@ -24,6 +24,7 @@
 	$rs = $usecaseDAO->select($_SESSION["id"]);
 	if($rs) {
 		$str = '<table id="allUC">';
+		$str .= '<caption>Tabella <span lang="en">Use Case</span></caption>';
 		$str .= '<thead>';
 		$str .= '<tr>';
 		$str .= '<th scope="col">Codice</th>';

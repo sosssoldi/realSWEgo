@@ -22,6 +22,7 @@
 	$rs = $usecaseDAO->selectTracking($_SESSION["id"]);
 	if(!empty($rs)) {
 		$str = '<table id="allTracking">';
+		$str .= '<caption>Tabella tracciamento <span lang="en">Use Case</span> - Requisiti</caption>';
 		$str .= '<thead>';
 		$str .= '<tr>';
 		$str .= '<th scope="col">Codice Use Case</th>';

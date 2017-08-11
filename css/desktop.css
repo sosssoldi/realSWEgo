@@ -15,12 +15,13 @@
 	overflow: hidden;
 }
 
-@media screen and (min-width: 521px) {
+@media screen and (min-width: 961px) {
 
 	body {
 		background-color: lightgray;
 		background-image: url("../image/background.jpg");
 		background-size: 100%;
+		height: auto;
 	}
 
 	.warning
@@ -33,6 +34,11 @@
 		color: green;
 	}
 
+	table caption {
+		height: 0em;
+		overflow: hidden;
+	}
+	
 	/* HEADER */
 	header {
 		background-color: #0060b6;
@@ -82,7 +88,6 @@
 	nav {
 		font-size: 1em;
 		margin-top: 2em;
-		margin-left: 10%;
 		margin-right: 10%;
 	}
 
@@ -103,7 +108,6 @@
 	}
 
 	nav ul li a:hover {
-		border-bottom: solid 0.2em white;
 		color: white;
 	}
 
