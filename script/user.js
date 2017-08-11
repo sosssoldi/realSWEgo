@@ -1,3 +1,11 @@
+let obbligatori, desiderabili, opzionali;
+
+function saveData(obb, des, opz) {
+	obbligatori = obb;
+	desiderabili = des;
+	opzionali = opz;
+}
+
 function createGraphics(obb, des, opz) {
 	
 	// Grafico per i requisiti obbligatori
@@ -168,38 +176,43 @@ function createGraphicsAdmin(month, logs) {
 
 // Hide/show features user
 $(function() {
-	setTimeout(function() {
-		$('#change_password').hide();
-		$('#graphics h3').hide();
-		$('#graphics div').hide();
-		
-		$('#changePassword a').click(function() {
-			if($('#change_password').is(':visible'))
-			{
-				$('#change_password').hide();
-				$('#changePassword a').html('Cambia passoword');
-			}
-			else
-			{
-				$('#change_password').show();
-				$('#changePassword a').html('Nascondi cambia password');
-				
-			}
-		});
-		
-		$('#graphics a').click(function() {
-			if($('#graphics div').is(':visible'))
-			{
-				$('#graphics h3').hide();
-				$('#graphics div').hide();
-				$('#graphics a').html('Mostra copertura dei requisiti');
-			}
-			else
-			{
-				$('#graphics h3').show();
-				$('#graphics div').show();
-				$('#graphics a').html('Nascondi copertura dei requisiti');
-			}
-		});
-	},200);
+	$('#change_password').hide();
+	$('#graphics h3').hide();
+	$('#graphics div').hide();
+	
+	$('#changePassword a').click(function() {
+		if($('#change_password').is(':visible'))
+		{
+			$('#change_password').hide();
+			$('#changePassword a').html('Cambia passoword');
+		}
+		else
+		{
+			$('#change_password').show();
+			$('#changePassword a').html('Nascondi cambia password');
+			
+		}
+	});
+	
+	$('#graphics a').click(function() {
+		if($('#graphics div').is(':visible'))
+		{
+			$('#graphics h3').hide();
+			$('#graphics div').hide();
+			$('#graphics a').html('Mostra copertura dei requisiti');
+			$("#graphicObb p").remove();
+			$("#graphicDes p").remove();
+			$("#graphicOpz p").remove();
+			$("#graphicObb iframe").remove();
+			$("#graphicDes iframe").remove();
+			$("#graphicOpz iframe").remove();
+		}
+		else
+		{
+			$('#graphics h3').show();
+			$('#graphics div').show();
+			$('#graphics a').html('Nascondi copertura dei requisiti');
+			setTimeout(createGraphics(obbligatori, desiderabili, opzionali), 200);
+		}
+	});
 });

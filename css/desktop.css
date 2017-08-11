@@ -933,12 +933,21 @@
 		background-color: #9d0404;
 	}
 
-	.hideMoreInfo, .showMoreInfo, #logout>a, #createUML
+	.hideMoreInfo, .showMoreInfo, #logout>a, #createUML>a
 	{
 		display: block;
 		font-size: 1.4em;
 		text-align: center;
 		padding-top: 2em;
+		width: 80%;
+		margin: 0 auto;
+		text-decoration: none;
+		color: blue;
+	}
+	
+	.noRequirement {
+		padding: 0.4em;
+		font-size: 1.2em;
 	}
 
 	 #logout>a
@@ -1561,7 +1570,7 @@
 		margin-top: 0.3em;
 		font-size: 1em;
 	}
-	
+		
 	.multiple input[type="checkbox"] {
 		display: block;
 		float: left;
