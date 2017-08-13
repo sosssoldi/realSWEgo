@@ -30,8 +30,11 @@
 		} else {
 			$_POST = User::parse_input($_POST);
 			$userDAO = new UserDAO();
-			$userDAO->updatePassword($_POST, $_SESSION["id"]);
-			render_page('change');
+			$change = $userDAO->updatePassword($_POST, $_SESSION["id"]);
+			if($change)
+				render_page('change');
+			else
+				render_page('error_change');
 		}
 	}
 ?>
