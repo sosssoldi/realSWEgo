@@ -44,6 +44,7 @@ table caption {
 {
   margin: 2em auto;
   width: 95%;
+	word-break: break-all;
 }
 
 #content
@@ -148,6 +149,7 @@ table caption {
 .actor h2, .actor p, .source h2, .source p
 {
   margin-bottom: 1em;
+	word-break: break-all;
 }
 
 /*SEARCH FORM*/
@@ -178,6 +180,7 @@ table caption {
 {
 	margin-bottom: 2em;
 	font-size: 120%;
+	word-break: break-all;
 }
 
 #delete input[type="submit"]
@@ -267,7 +270,8 @@ table caption {
 #allR td, #allUC td  {
 	position: relative;		/* Creiamo lo spazio per l'intestazione */
 	border: 0em;
-	padding: 0.7em 0% 0.7em 30%;
+	padding: 0.7em 5% 0.7em 30%;
+	word-break: break-all;
 }
 
 #allR td:before, #allUC td:before{

@@ -74,6 +74,7 @@
 	 font-size: 1em;
 	 padding: 1% 10% 1%;
 	 padding-top: 8.2em;
+	 word-break: break-all;
 	}
 
 	#breadcrumb a
@@ -202,7 +203,10 @@
 	{
 		font-size: 1.4em;
 		text-align: center;
-		padding: 2% 2%;
+		padding: 2% 0%;
+		width: 80%;
+		margin-left: 10%;
+    word-break: break-all;
 	}
 
 	#delete input:first-of-type
@@ -697,6 +701,7 @@
 		text-align: center;
 		border-bottom: 0.05em solid #000;
 		padding-bottom: 0.5em;
+    word-break: break-all;
 	}
 
 	#intro p
@@ -837,7 +842,7 @@
 		width: 100%;
 		font-size: 1.5em;
 		text-align: center;
-		padding: 2% 2%;
+		padding: 2% 0%;
 		word-break: break-all;
 	}
 
@@ -1049,7 +1054,8 @@
 	#allUC td {
 		position: relative;		/* Creiamo lo spazio per l'intestazione */
 		border: 0em;
-		padding: 0.7em 0% 0.7em 30%;
+		padding: 0.7em 5% 0.7em 30%;
+		word-break: break-all;
 	}
 
 	#allUC td:before {
@@ -1335,7 +1341,8 @@
 	#allR td {
 		position: relative;		/* Creiamo lo spazio per l'intestazione */
 		border: 0em;
-		padding: 0.7em 0% 0.7em 30%;
+		padding: 0.7em 5% 0.7em 30%;
+		word-break: break-all;
 	}
 
 	#allR td:before {
