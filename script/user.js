@@ -209,9 +209,9 @@ $(function() {
 			$("#graphicObb canvas").remove();
 			$("#graphicDes canvas").remove();
 			$("#graphicOpz canvas").remove();
-			$("#graphicObb").append('<canvas id="graphObb"></canvas>');
-			$("#graphicDes").append('<canvas id="graphDes"></canvas>');
-			$("#graphicOpz").append('<canvas id="graphOpz"></canvas>');
+			$("#graphicObb").prepend('<canvas id="graphObb"></canvas>');
+			$("#graphicDes").prepend('<canvas id="graphDes"></canvas>');
+			$("#graphicOpz").prepend('<canvas id="graphOpz"></canvas>');
 		}
 		else
 		{
