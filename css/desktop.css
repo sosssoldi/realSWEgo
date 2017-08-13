@@ -74,7 +74,6 @@
 	 font-size: 1em;
 	 padding: 1% 10% 1%;
 	 padding-top: 8.2em;
-	 word-break: break-all;
 	}
 
 	#breadcrumb a
@@ -141,7 +140,6 @@
 		font-size: 1.5em;
 		text-align: center;
 		padding: 2% 2%;
-		word-break: break-all;
 	}
 
 	#modify label {
@@ -206,7 +204,6 @@
 		padding: 2% 0%;
 		width: 80%;
 		margin-left: 10%;
-    word-break: break-all;
 	}
 
 	#delete input:first-of-type
@@ -701,7 +698,6 @@
 		text-align: center;
 		border-bottom: 0.05em solid #000;
 		padding-bottom: 0.5em;
-    word-break: break-all;
 	}
 
 	#intro p
@@ -843,7 +839,6 @@
 		font-size: 1.5em;
 		text-align: center;
 		padding: 2% 0%;
-		word-break: break-all;
 	}
 
 	#change_password label {
@@ -1055,7 +1050,6 @@
 		position: relative;		/* Creiamo lo spazio per l'intestazione */
 		border: 0em;
 		padding: 0.7em 5% 0.7em 30%;
-		word-break: break-all;
 	}
 
 	#allUC td:before {
@@ -1342,7 +1336,6 @@
 		position: relative;		/* Creiamo lo spazio per l'intestazione */
 		border: 0em;
 		padding: 0.7em 5% 0.7em 30%;
-		word-break: break-all;
 	}
 
 	#allR td:before {

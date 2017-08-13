@@ -28,7 +28,6 @@
 		padding-left: 3%;
 		padding-bottom: 2%;
     padding-right: 3%;
-    word-break: break-all;
 	}
 
 	#breadcrumb a {
@@ -85,7 +84,6 @@
 		width: 94%;
 		padding: 4% 3% 2% 3%;
 		font-size: 0.92em;
-    word-break: break-all;
 	}
 
 	#intro p {
@@ -154,7 +152,6 @@
 		background-color: lightgray;
 		background-image: url('../image/background.jpg');
 		background-size: 100%;
-    word-break: break-all;
 	}
 
 	#delete input[type="submit"] {
@@ -579,7 +576,6 @@
 		border: 0em;
 		padding-top: 2%;
 		padding-left: 30%;
-    word-break: break-all;
     padding-right: 5%;
 	}
 
@@ -702,7 +698,6 @@
 		font-weight: normal;
 		color: #8b0000;
 		text-align: center;
-    word-break: break-all;
 	}
 
 	.actor p {
@@ -710,7 +705,6 @@
 		font-size: 0.92em;
 		padding: 2%;
 		border-bottom: 0.1em solid lightgray;
-    word-break: break-all;
 	}
 
 	.delete {
@@ -788,7 +782,6 @@
 		font-weight: normal;
 		color: #8b0000;
 		text-align: center;
-    word-break: break-all;
 	}
 
 	.source p {
@@ -796,7 +789,6 @@
 		font-size: 0.92em;
 		padding: 2%;
 		border-bottom: 0.1em solid lightgray;
-    word-break: break-all;
 	}
 
 	/* REQUIREMENT */
@@ -867,7 +859,6 @@
 		border: 0em;
 		padding-top: 2%;
 		padding-left: 30%;
-    word-break: break-all;
     padding-right: 5%;
 	}
 
