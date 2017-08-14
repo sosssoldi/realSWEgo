@@ -1,6 +1,6 @@
 <?php
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
+	/*error_reporting(E_ALL);
+	ini_set('display_errors', 1);*/
 	session_start();
 	include_once "php/Database/Database.php";
 	include_once "php/DAO/UsecaseDAO.php";
@@ -23,6 +23,8 @@
 	create_folder($basedir."/Plantuml");
 	create_folder($basedir."/Requirement");
 	create_folder($basedir."/Tracking");
+	//Create readme file
+	create_readme_file($basedir);
 	//Creating usecase file
 	create_usecase_file($basedir."/Usecase");
 	//Creating requirement file
@@ -66,6 +68,12 @@ function delete_folder($path) {
 	rmdir($path."/Requirement");
 	rmdir($path."/Tracking");
 	rmdir($path."/Plantuml");
+}
+
+function create_readme_file($path) {
+	$readmef = fopen($path."/README","w");
+	fputs($readmef, "Questo file è stato generato automaticamente e serve per descrivere le informazioni che sono contenute in questa cartella.\nLa cartella contiene al suo interno 4 sotto-cartelle: Plantuml, Requirement, Tracking, Usecase.\n\nNella cartella 'Requirement' è contenuto il file 'requirement.tex' (scritto in Latex), questo file è stato generato automaticamente utilizzando le informazioni relative ai Requisiti, che il tuo team ha inserito utilizzando SWEgo.\nIl file 'requirement.tex' è formato da 4 tabelle una per ogni tipo di Requisito e ogni tabella specifica il codice, la descrizione e la fonte di ogni Requisito.\n\nNella cartella 'Usecase' è contenuto il file 'usecase.tex' (scritto in Latex), questo file è stato generato automaticamente utilizzando le informazioni relative agli Use Case che il tuo team ha inserito utilizzando SWEgo.\nIl file 'usecase.tex' è formato da sottosezioni in ognuna delle quali viene descritto uno use case specificando il codice, il nome, la descrizione, le condizioni, gli scenari, le inclusioni, le estensioni e nel caso in cui abbia dei figli viene inserito il relativo Use Case Diagram.\n\nNella cartella 'Tracking' è contenuto il file 'tracking.tex' (scritto in Latex), questo file è stato generato automaticamente utilizzando le informazioni relative al Tracciamento, che il tuo team ha inserito utilizzando SWEgo.\nIl file 'tracking.tex' è formato da 2 tabelle, la prima descrive il tracciamento tra i Requisiti e gli Use Case mentre la seconda descrive il tracciamento tra gli Use Case e i Requisiti.\n\nNella cartella 'Plantuml', nel caso in cui si siano verificate le condizinoi per farli, sono stati generati diversi file. I nomi dei file sono formati dal codice dello Use Case (separato da '-' nel caso in cui sia gerarchico) seguito dall'estensione '.txt'. Vengono generati i file solamente per gli Use Case che hanno degli Use Case figli. Ogni singolo file contiene al suo interno le regole di 'PlantUML' che permettono di generare in modo automatico i diagrammi degli Use Case. Passi per generare in modo automatico i diagrammi utilizzando PlantUML:\n\t- Scaricare l'ultima versione di plantUML (plantuml.jar versione compilata) dal sito http://www.plantuml.com/download cliccando sull'apposito link oppure recarsi nella cartella 'Plantuml' e lanciare il comando: wget -O plantuml.jar https://downloads.sourceforge.net/project/plantuml/plantuml.jar?r=http%3A%2F%2Fplantuml.com%2Fdownload&ts=1502716721&use_mirror=netcologne\n\t- Nel caso in cui il download sia stato fatto a mano spostare il file appena scaricato all'interno della cartella 'Plantuml'\n\t- lanciare il comando: java -jar plantuml.jar \".\"\n\nSe hai eseguito questi passi alla lettera senza fare errori, ora all'interno della cartella Plantuml dovresti trovare un file '.png' per ogni Use Case.");
+	fclose($readmef);
 }
 
 function create_usecase_file($path) {
