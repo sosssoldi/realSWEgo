@@ -140,6 +140,7 @@
 		font-size: 1.5em;
 		text-align: center;
 		padding: 2% 2%;
+		word-wrap: break-word;
 	}
 
 	#modify label {
@@ -606,6 +607,7 @@
 		width: 100%;
 		margin: 0 auto;
 		padding: 2% 0;
+
 	}
 
 	#insertSource label {
@@ -1050,6 +1052,7 @@
 		position: relative;		/* Creiamo lo spazio per l'intestazione */
 		border: 0em;
 		padding: 0.7em 5% 0.7em 30%;
+		word-break: break-all;
 	}
 
 	#allUC td:before {
@@ -1336,6 +1339,7 @@
 		position: relative;		/* Creiamo lo spazio per l'intestazione */
 		border: 0em;
 		padding: 0.7em 5% 0.7em 30%;
+		word-break: break-all;
 	}
 
 	#allR td:before {
