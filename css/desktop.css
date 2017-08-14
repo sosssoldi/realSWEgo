@@ -39,6 +39,14 @@
 		overflow: hidden;
 	}
 
+	/* ERROR */
+	#errorImg
+	{
+		width: 50%;
+		margin-left: 25%;
+		text-align: center;
+	}
+
 	/* HEADER */
 	header {
 		background-color: #0060b6;
