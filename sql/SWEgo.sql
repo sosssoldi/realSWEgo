@@ -115,4 +115,65 @@ create table if not exists usecaserequirements (
 )engine=INNODB;
 
 -- Dump
-insert into users values (1, 'admin', 'admin', 'bb017ba90f714a59da19ebcfe41ff68db41c5ab40e4eb0d17f40b2db3cd4cbbf', 'admin');
+--
+-- Dump dei dati per la tabella `users`
+--
+
+INSERT INTO `users` (`id`, `groupname`, `projectname`, `password`, `type`) VALUES
+(1, 'admin', 'admin', 'bb017ba90f714a59da19ebcfe41ff68db41c5ab40e4eb0d17f40b2db3cd4cbbf', 'admin'),
+(2, 'user', 'user', 'f2894c2d4e1b1ce6ccd9c7ff7111082f7204c3a64073f863f7a79954acfde891', 'user');
+
+--
+-- Dump dei dati per la tabella `sources`
+--
+
+INSERT INTO `sources` (`id`, `name`, `description`, `projectid`) VALUES
+(1, 'Capitolato', 'Capitolato d''appalto C3', 2),
+(2, 'Interno', 'Requisiti individuati dal gruppo', 2);
+
+--
+-- Dump dei dati per la tabella `actors`
+--
+
+INSERT INTO `actors` (`id`, `name`, `description`, `projectid`) VALUES
+(1, 'Utente autenticato', 'Utente autenticato all''interno del sistema', 2),
+(2, 'Amministratore', 'Amministratore del sistema', 2);
+
+--
+-- Dump dei dati per la tabella `usecase`
+--
+
+INSERT INTO `usecase` (`id`, `usecaseid`, `name`, `description`, `precondition`, `postcondition`, `mainscenario`, `alternativescenario`, `generalization`, `parent`, `projectid`) VALUES
+(1, 'UC1', 'Benvenuto', 'Il sistema dÃ  il benvenuto all''utente', 'Il sistema Ã¨ accesso e funzionante', 'L''utente ha ricevuto il benvenuto dal sistema', 'Il sistema mostra all''utente un messaggio di benvenuto', '', 0, NULL, 2),
+(2, 'UC2', 'Eliminazione utente', 'L''amministratore elimina un utente del sistema', 'L''amministratore si trova nella sezione dedicata all''eliminazione degli utenti', 'L''amministratore ha eliminato l''utente da lui deciso', 'L''amministratore elimina l''utente scelto dal sistema', '', 0, NULL, 2),
+(3, 'UC2.1', 'Scelta utente da eliminare', 'L''amministratore seleziona l''utente da eliminare', 'L''amministratore si trova nella sezione dedicata all''eliminazione degli utenti', 'L''amministratore ha eliminato l''utente da lui deciso', 'L''amministratore sceglie quale utente eliminare', '', 0, 2, 2),
+(4, 'UC3', 'Visualizzazione profilo', 'L''utente autenticato puÃ² visualizzare i dati del proprio profilo', 'L''utente si trova si trova in qualsiasi sezione del sistema, tranne la pagina del proprio profilo', 'L''utente ha visualizzato i dati del suo profilo', 'L''utente autenticato accede al proprio profilo e visualizza i dati', '', 0, NULL, 2);
+
+--
+-- Dump dei dati per la tabella `usecaseactors`
+--
+
+INSERT INTO `usecaseactors` (`usecaseid`, `actorsid`) VALUES
+(1, 1),
+(2, 2),
+(3, 2),
+(4, 1);
+
+--
+-- Dump dei dati per la tabella `requirements`
+--
+INSERT INTO `requirements` (`id`, `requirementid`, `description`, `type`, `importance`, `satisfied`, `parent`, `source`, `projectid`) VALUES
+(1, 'R0F1', 'L''utente autenticato deve poter visualizzare il proprio profilo', 'Funzionale', 'Obbligatorio', 'Implementato', NULL, 2, 2),
+(2, 'R0F2', 'L''amministratore deve poter eliminare gli utenti del sistema', 'Funzionale', 'Obbligatorio', 'Non implementato', NULL, 1, 2),
+(3, 'R1F2.1', 'L''amministratore deve poter scegliere l''utente da eliminare', 'Funzionale', 'Desiderabile', 'Non implementato', 2, 1, 2),
+(4, 'R0V1', 'Il sistema deve funzionare correttamente in tutti i dispositivi mobile.', 'Di Vincolo', 'Obbligatorio', 'Implementato', NULL, 1, 2);
+
+--
+-- Dump dei dati per la tabella `usecaserequirements`
+--
+
+INSERT INTO `usecaserequirements` (`usecaseid`, `requirementid`) VALUES
+(2, 2),
+(3, 2),
+(3, 3),
+(4, 1);
