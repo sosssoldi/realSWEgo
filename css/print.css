@@ -286,31 +286,36 @@ table caption {
 }
 
 #allR td:nth-of-type(2):before {
-	content: "Descrizione";
+	content: "Nome";
 	font-weight: bold;
 }
 
 #allR td:nth-of-type(3):before {
-	content: "Tipo";
+	content: "Descrizione";
 	font-weight: bold;
 }
 
 #allR td:nth-of-type(4):before {
-	content: "Importanza";
+	content: "Tipo";
 	font-weight: bold;
 }
 
 #allR td:nth-of-type(5):before {
-	content: "Implementazione";
+	content: "Importanza";
 	font-weight: bold;
 }
 
 #allR td:nth-of-type(6):before {
-	content: "Fonti";
+	content: "Implementazione";
 	font-weight: bold;
 }
 
 #allR td:nth-of-type(7):before {
+	content: "Fonti";
+	font-weight: bold;
+}
+
+#allR td:nth-of-type(8):before {
 	content: "Operazioni";
 	font-weight: bold;
 }

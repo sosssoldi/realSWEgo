@@ -26,6 +26,7 @@
 		$str .= '<thead>';
 		$str .= '<tr>';
 		$str .= '<th scope="col">Codice</th>';
+		$str .= '<th scope="col">Nome</th>';
 		$str .= '<th scope="col">Descrizione</th>';
 		$str .= '<th scope="col">Tipo</th>';
 		$str .= '<th scope="col">Importanza</th>';
@@ -38,6 +39,7 @@
 		foreach($rs as $requirement) {
 			$html = file_get_contents("template/RequirementTableRow.html");
 			$html = str_replace(':requirementid:', $requirement['requirementid'], $html);
+			$html = str_replace(':name:', $requirement['name'], $html);
 			$html = str_replace(':description:', $requirement['description'], $html);
 			$html = str_replace(':type:', $requirement['type'], $html);
 			$html = str_replace(':importance:', $requirement['importance'], $html);
@@ -54,7 +56,7 @@
 				$html = str_replace(':sources:', $htmlSource, $html);
 			else
 				$html = str_replace(':sources:', 'Nessuna fonte', $html);
-	
+
 			$str .= $html;
 		}
 		$str .= '</tbody>';

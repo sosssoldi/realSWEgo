@@ -51,14 +51,14 @@
 		if($requirement) {
 			$requirement = $requirement[0];
 			$page = str_replace(':id:', $requirement['requirementid'], $page);
-			$page = str_replace(':description:', $requirement['description'], $page);
+			$page = str_replace(':name:', $requirement['name'], $page);
 		} else {
 			header("Location: viewRequirement.php");
 		}
 		$list = $requirementDAO->getHierarchy($id);
 		$str = "";
 		foreach($list as $requirement) {
-			$str .= "<li>".$requirement['requirementid'].' - '.$requirement['description']."</li>";
+			$str .= "<li>".$requirement['requirementid'].' - '.$requirement['name']."</li>";
 		}
 		if($str != "")
 			$page = str_replace(':requirement:', $str, $page);

@@ -14,7 +14,7 @@
 			$type = array("F"=>"Funzionale","Q"=>"Di Qualità","P"=>"Prestazionale","V"=>"Di Vincolo");
 			$importance = $importance[$obj["importance"]];
 			$type = $type[$obj["type"]];
-			$this->query("INSERT INTO requirements VALUES (id, '{$id}', '{$obj['description']}', '{$type}', '{$importance}', '{$obj['satisfied']}', {$obj['parent']}, {$obj['source']}, {$projectid});");
+			$this->query("INSERT INTO requirements VALUES (id, '{$id}', '{$obj['name']}', '{$obj['description']}', '{$type}', '{$importance}', '{$obj['satisfied']}', {$obj['parent']}, {$obj['source']}, {$projectid});");
 			return $this->resultSet();
 		}
 
@@ -40,7 +40,7 @@
 				$requisito = $rs[0];
 				$requisito["requirementid"] = substr($requisito["requirementid"], 3);
 				$id = "R".$importance.$type.$requisito["requirementid"].".1";
-				
+
 			} else {
 				$maxnumber = -1;
 				$idreq = null;
@@ -78,8 +78,8 @@
 			$type = array("F"=>"Funzionale","Q"=>"Di Qualità","P"=>"Prestazionale","V"=>"Di Vincolo");
 			$importance = $importance[$obj["importance"]];
 			$type = $type[$obj["type"]];
-			$this->query("UPDATE requirements SET requirementid = '{$nid}', description = '{$obj['description']}', type = '{$type}', importance = '{$importance}', satisfied = '{$obj['satisfied']}', parent = {$obj['parent']}, source = {$obj['source']} WHERE id = {$id}");
-			echo "UPDATE requirements SET requirementid = '{$nid}', description = '{$obj['description']}', type = '{$type}', importance = '{$importance}', satisfied = '{$obj['satisfied']}', parent = {$obj['parent']}, source = {$obj['source']} WHERE id = {$id}";
+			$this->query("UPDATE requirements SET requirementid = '{$nid}', name = '{$obj['name']}', description = '{$obj['description']}', type = '{$type}', importance = '{$importance}', satisfied = '{$obj['satisfied']}', parent = {$obj['parent']}, source = {$obj['source']} WHERE id = {$id}");
+			echo "UPDATE requirements SET requirementid = '{$nid}', name = '{$obj['name']}', description = '{$obj['description']}', type = '{$type}', importance = '{$importance}', satisfied = '{$obj['satisfied']}', parent = {$obj['parent']}, source = {$obj['source']} WHERE id = {$id}";
 			$this->resultSet();
 			$this->fix($id, $lid, $nid);
 		}
@@ -142,7 +142,7 @@
 				$requirement = $rs[0];
 				return $requirement["parent"];
 			} else
-				return NULL;	
+				return NULL;
 		}
 
 		function getHierarchy($id) {
@@ -156,7 +156,7 @@
 			}
 			return $checked;
 		}
-		
+
 		function getDirectChildren($id) {
 			$this->query("SELECT * FROM requirements WHERE parent={$id};");
 			$rs = $this->resultSet();
@@ -189,16 +189,19 @@
 			} else
 				$page = str_replace(":sourceoptions:", "", $page);
 			if($data) {
-				if(array_key_exists('description', $data))
-					if($data['description'] != '') {
+				if(array_key_exists('description', $data) and array_key_exists('name', $data))
+					if($data['description'] != '' and $data['name'] != '') {
+						$page = str_replace(':name:', '', $page);
 						$page = str_replace(':description:', '', $page);
 						$page = str_replace(':message:', '<p class="message success">Requisito inserito!</p>', $page);
 					}
 					else {
+						$page = str_replace(':name:', $data['name'], $page);
 						$page = str_replace(':description:', $data['description'], $page);
 						$page = str_replace(':message:', '<p class="message warning">Riempire tutti i campi!</p>', $page);
 					}
 			} else {
+				$page = str_replace(':name:', '', $page);
 				$page = str_replace(':description:', '', $page);
 				$page = str_replace(':message:', '', $page);
 			}
@@ -215,16 +218,17 @@
 
 		public function fillForm($page, $data, $projectid) {
 			$page = str_replace(':requirementid:', $data["requirementid"], $page);
+			$page = str_replace(':name:', $data["name"], $page);
 			$page = str_replace(':description:', $data["description"], $page);
 			$rs = $this->select($projectid);
 			$str = "";
 			if($rs) {
-				
+
 				$rs_hierarchy = $this->getHierarchy($data["id"]);
 				$hierarchy = [];
 				foreach($rs_hierarchy as $requirement)
 					array_push($hierarchy, $requirement['id']);
-				
+
 				foreach($rs as $requirement)
 					if($requirement["id"] == $data["parent"])
 						$str .= '<option value="'.$requirement['id'].'" selected="selected">'.$requirement['requirementid'].'-'.$requirement['description'].'</option>';

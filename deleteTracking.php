@@ -58,7 +58,7 @@
 		$list = $usecaseDAO->getTracking($id);
 		$str = "";
 		foreach($list as $requirement) {
-			$str .= "<li>".$requirement['requirementid'].' - '.$requirement['description']."</li>";
+			$str .= "<li>".$requirement['requirementid'].' - '.$requirement['name']."</li>";
 		}
 		if($str != "")
 			$page = str_replace(':requirement:', '<ul>'.$str.'</ul>', $page);

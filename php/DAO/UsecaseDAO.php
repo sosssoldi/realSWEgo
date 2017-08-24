@@ -7,7 +7,7 @@
 
 		public function insert($obj, $projectid) {
 			if($obj["parent"] == '')
-				$obj["parent"] = 'NULL'; 
+				$obj["parent"] = 'NULL';
 			if($obj['parent'] == 'NULL') {
 				$id = $this->getIdWithoutParent($projectid);
 			} else
@@ -60,7 +60,7 @@
 				$id = "";
 				for($i = 0; $i < count($numbers) - 1; ++$i)
 					$id .= $numbers[$i].".";
-				$id .= $lastdigit; 
+				$id .= $lastdigit;
 			}
 			return $id;
 		}
@@ -142,7 +142,7 @@
 			}
 			return $checked;
 		}
-		
+
 		function getDirectChildren($id) {
 			$this->query("SELECT * FROM usecase WHERE parent={$id};");
 			$rs = $this->resultSet();
@@ -162,7 +162,7 @@
 				else
 					return $usecase["parent"];
 			} else
-				return 'NULL';	
+				return 'NULL';
 		}
 
 		public function getInclusions($id) {
@@ -218,7 +218,7 @@
 				foreach($rs as $uc)
 					$str .= '<option value="'.$uc['id'].'">'.$uc['usecaseid'].' - '.$uc['name'].'</option>';
 				$page = str_replace(":parentoptions:", $str, $page);
-			} else 
+			} else
 				$page = str_replace(":parentoptions:", "", $page);
 			$str = '<div class="multiple">';
 			$str .= '<input id="checkbox0" type="checkbox" name="inclusion[]" value="NULL" checked="checked" />';
@@ -268,7 +268,7 @@
 					$page = str_replace(':mainscenario:', '', $page);
 					$page = str_replace(':alternativescenario:', '', $page);
 					$page = str_replace(':message:', '<p class="message success"><span lang="en">Use Case</span> inserito!</p>', $page);
-				} 
+				}
 				else {
 					if(array_key_exists('name', $data))
 						$page = str_replace(':name:', $data['name'], $page);
@@ -311,7 +311,7 @@
 			if($rs) {
 				foreach($rs as $r) {
 					$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"requirement[]\" value=\"".$r["id"]."\" />";
-					$str .= "<label for=\"checkbox".$i."\">".$r["requirementid"]."</label>";
+					$str .= "<label for=\"checkbox".$i."\">".$r["requirementid"].' - '.$r['name']."</label>";
 					++$i;
 				}
 				$str .= '</div>';
@@ -358,7 +358,7 @@
 		}
 
 		public function getTracking($id) {
-			$this->query("SELECT id, requirements.requirementid as requirementid, description FROM requirements, usecaserequirements WHERE requirements.id = usecaserequirements.requirementid AND usecaseid = {$id} ORDER BY requirementid;");
+			$this->query("SELECT id, requirements.requirementid as requirementid, name FROM requirements, usecaserequirements WHERE requirements.id = usecaserequirements.requirementid AND usecaseid = {$id} ORDER BY requirementid;");
 			return $this->resultSet();
 		}
 
@@ -386,12 +386,12 @@
 			$rs = $this->select($projectid);
 			$str = "";
 			if($rs) {
-				
+
 				$rs_hierarchy = $this->getHierarchy($data["id"]);
 				$hierarchy = [];
 				foreach($rs_hierarchy as $uc)
 					array_push($hierarchy, $uc["id"]);
-				
+
 				foreach($rs as $uc)
 					if($uc["id"] == $data["parent"])
 						$str .= '<option value="'.$uc['id'].'" selected="selected">'.$uc['usecaseid'].'-'.$uc['name'].'</option>';
@@ -498,10 +498,10 @@
 				foreach($rs as $requirement) {
 					if($this->find($requirement['id'], $array)) {
 						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"requirement[]\" value=\"".$requirement["id"]."\" checked=\"checked\" />";
-						$str .= "<label for=\"checkbox".$i."\">".$requirement["requirementid"]."</label>";
+						$str .= "<label for=\"checkbox".$i."\">".$requirement["requirementid"].' - '.$requirement["name"]."</label>";
 					} else {
 						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"requirement[]\" value=\"".$requirement["id"]."\" />";
-						$str .= "<label for=\"checkbox".$i."\">".$requirement["requirementid"]."</label>";
+						$str .= "<label for=\"checkbox".$i."\">".$requirement["requirementid"].' - '.$requirement["name"]."</label>";
 					}
 					++$i;
 				}

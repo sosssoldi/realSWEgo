@@ -57,6 +57,7 @@ create table if not exists sources (
 create table if not exists requirements (
 	id int auto_increment primary key,
 	requirementid varchar(50) not null,
+	name varchar(200) not null,
 	description varchar(1000) not null,
 	type varchar(100) not null,
 	importance varchar(100) not null,
@@ -162,11 +163,11 @@ INSERT INTO `usecaseactors` (`usecaseid`, `actorsid`) VALUES
 --
 -- Dump dei dati per la tabella `requirements`
 --
-INSERT INTO `requirements` (`id`, `requirementid`, `description`, `type`, `importance`, `satisfied`, `parent`, `source`, `projectid`) VALUES
-(1, 'R0F1', 'L''utente autenticato deve poter visualizzare il proprio profilo', 'Funzionale', 'Obbligatorio', 'Implementato', NULL, 2, 2),
-(2, 'R0F2', 'L''amministratore deve poter eliminare gli utenti del sistema', 'Funzionale', 'Obbligatorio', 'Non implementato', NULL, 1, 2),
-(3, 'R1F2.1', 'L''amministratore deve poter scegliere l''utente da eliminare', 'Funzionale', 'Desiderabile', 'Non implementato', 2, 1, 2),
-(4, 'R0V1', 'Il sistema deve funzionare correttamente in tutti i dispositivi mobile.', 'Di Vincolo', 'Obbligatorio', 'Implementato', NULL, 1, 2);
+INSERT INTO `requirements` (`id`, `requirementid`, `name`, `description`, `type`, `importance`, `satisfied`, `parent`, `source`, `projectid`) VALUES
+(1, 'R0F1', 'Visualizzazione profilo', 'L''utente autenticato deve poter visualizzare il proprio profilo', 'Funzionale', 'Obbligatorio', 'Implementato', NULL, 2, 2),
+(2, 'R0F2', 'Eliminazione utenti', 'L''amministratore deve poter eliminare gli utenti del sistema', 'Funzionale', 'Obbligatorio', 'Non implementato', NULL, 1, 2),
+(3, 'R1F2.1', 'Selezione utente da eliminare', 'L''amministratore deve poter scegliere l''utente da eliminare', 'Funzionale', 'Desiderabile', 'Non implementato', 2, 1, 2),
+(4, 'R0V1', 'Funzionamento sistema', 'Il sistema deve funzionare correttamente in tutti i dispositivi mobile.', 'Di Vincolo', 'Obbligatorio', 'Implementato', NULL, 1, 2);
 
 --
 -- Dump dei dati per la tabella `usecaserequirements`
