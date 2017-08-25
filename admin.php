@@ -57,6 +57,13 @@
 			else
 				$accesses .= ",".$log[$i];
 		$page = str_replace(':accesses:', $accesses, $page);
+		
+		$list = "<ul>";
+		for($i = 0; $i < count($log); ++$i)
+			$list .= "<li>".$month[$i].": ".$accesses[2*$i]."</li>";
+		$list .= "</ul>";
+		$page = str_replace(':descriptionGraph:', $list, $page);
+		
 		echo $page;
 	}
 ?>
