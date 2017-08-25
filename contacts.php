@@ -1,6 +1,11 @@
 <?php
 	session_start();
 	
+	if(array_key_exists("type", $_SESSION) && $_SESSION["type"] == "admin") {
+		header("Location: admin.php");
+		exit();
+	}
+	
 	$page = file_get_contents("template/contacts.html");
 	if(empty($_SESSION)) {
 		$menu = file_get_contents("template/menuNoLogin.html");
