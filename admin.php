@@ -60,7 +60,7 @@
 		
 		$list = "<ul>";
 		for($i = 0; $i < count($log); ++$i)
-			$list .= "<li>".$month[$i].": ".$accesses[2*$i]."</li>";
+			$list .= "<li>".$month[$i].": ".$log[$i]."</li>";
 		$list .= "</ul>";
 		$page = str_replace(':descriptionGraph:', $list, $page);
 		
