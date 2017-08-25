@@ -189,8 +189,8 @@
 			} else
 				$page = str_replace(":sourceoptions:", "", $page);
 			if($data) {
-				if(array_key_exists('description', $data) and array_key_exists('name', $data))
-					if($data['description'] != '' and $data['name'] != '') {
+				if(array_key_exists('description', $data) && array_key_exists('name', $data))
+					if($data['description'] != '' && $data['name'] != '') {
 						$page = str_replace(':name:', '', $page);
 						$page = str_replace(':description:', '', $page);
 						$page = str_replace(':message:', '<p class="message success">Requisito inserito!</p>', $page);
