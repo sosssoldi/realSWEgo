@@ -125,74 +125,6 @@
 		padding: 1.85em 0.5em;
 	}
 
-	/* FORM MODIFY */
-
-	#modify
-	{
-		width: 70%;
-		display: inline-block;
-		clear: both;
-		background-color: #fff;
-		margin: 2em 0;
-		margin-left: 15%;
-		padding: 2% 0 2% 0;
-	}
-
-	#modify fieldset {
-		border: none;
-	}
-
-	#modify legend {
-		text-transform: uppercase;
-		width: 100%;
-		font-size: 1.5em;
-		text-align: center;
-		padding: 2% 2%;
-		word-wrap: break-word;
-	}
-
-	#modify label {
-		display: block;
-		margin-top: 5%;
-		margin-left: 15%;
-		font-size: 1.3em;
-		color: #8b0000;
-	}
-
-	#modify input[type="text"] {
-		padding: 0.5em;
-		width: 70%;
-		font-size: 1.2em;
-		margin-left: 15%;
-	}
-
-	#modify input[type="submit"] {
-		display: block;
-		width: 30%;
-		padding: 0.5em;
-		background-color: #8b0000;
-		color: white;
-		font-weight: bold;
-		font-size: 1.3em;
-		border: none;
-		border-radius: 0.3em;
-		cursor: pointer;
-		margin: 4% auto;
-	}
-
-	#modify input[type="submit"]:hover {
-		background-color: #9d0404;
-	}
-
-	#modify textarea {
-		padding: 0.5em;
-		width: 70%;
-		height: 5em;
-		font-size: 1.2em;
-		resize: none;
-		margin-left: 15%;
-	}
-
 	/* FORM DELETE */
 
 	#delete
@@ -468,6 +400,7 @@
 		background-color: #fefabc;
 		padding: 1%;
 		margin: 2em auto;
+		overflow: auto;
 	}
 
 	.actor h2, .source h2
@@ -492,8 +425,8 @@
 		background-image: url('../image/delete.png');
 		background-size: 100% 100%;
 		width: 1.5em;
-		float: left;
-		margin-right: 5%;
+		float: right;
+		margin: 0.3em;
 	}
 
 	.modify {
@@ -501,6 +434,8 @@
 		background-image: url('../image/modify.png');
 		background-size: 100% 100%;
 		width: 1.5em;
+		float: right;
+		margin: 0.5em;
 	}
 
 	#insertActor
@@ -1059,7 +994,9 @@
 	#allUC td {
 		position: relative;		/* Creiamo lo spazio per l'intestazione */
 		border: 0em;
-		padding: 0.7em 5% 0.7em 30%;
+		padding-top: 0.7em;
+		padding-left: 30%;
+		padding-right: 5%;
 	}
 
 	#allUC td:before {
@@ -1117,11 +1054,6 @@
 		font-weight: bold;
 	}
 
-	#allUC td:nth-of-type(10):before {
-		content: "Operazioni";
-		font-weight: bold;
-	}
-
 	.deleteUCImg {
 		display: block;
 		background-image: url('../image/delete.png');
@@ -1156,9 +1088,8 @@
 		padding-bottom: 2em;
 	}
 
-	.operation
-	{
-		text-align: right;
+	.operation {
+		padding-bottom: 3em;
 	}
 
 	/* INSERT */
@@ -1345,7 +1276,9 @@
 	#allR td {
 		position: relative;		/* Creiamo lo spazio per l'intestazione */
 		border: 0em;
-		padding: 0.7em 5% 0.7em 30%;
+		padding-top: 0.7em;
+		padding-left: 30%;
+		padding-right: 5%;
 	}
 
 	#allR td:before {
@@ -1390,11 +1323,6 @@
 
 	#allR td:nth-of-type(7):before {
 		content: "Fonti";
-		font-weight: bold;
-	}
-
-	#allR td:nth-of-type(8):before {
-		content: "Operazioni";
 		font-weight: bold;
 	}
 

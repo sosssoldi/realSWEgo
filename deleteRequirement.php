@@ -56,10 +56,11 @@
 			header("Location: viewRequirement.php");
 		}
 		$list = $requirementDAO->getHierarchy($id);
-		$str = "";
+		$str = "<ul>";
 		foreach($list as $requirement) {
 			$str .= "<li>".$requirement['requirementid'].' - '.$requirement['name']."</li>";
 		}
+		$str .= "</ul>";
 		if($str != "")
 			$page = str_replace(':requirement:', $str, $page);
 		else

@@ -170,8 +170,8 @@ function createGraphicsAdmin(month, logs) {
         }
 	};
 	var ctxlog = document.getElementById("graph").getContext("2d");
-    window.myLine = new Chart(ctxlog, logdata);
-    console.log(window.myLine);
+  window.myLine = new Chart(ctxlog, logdata);
+  console.log(window.myLine);
 }
 
 // Hide/show features user
