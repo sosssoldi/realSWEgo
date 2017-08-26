@@ -1,10 +1,10 @@
 <?php
 	class UserDAO extends Database {
-		
+		//Costruttore
 		public function __construct($connection = null) {
 			parent::__construct($connection);
 		}
-
+		//Metodo che inserisce un nuovo utente nel database
 		public function insert($obj) {
 			$this->query("SELECT * FROM users WHERE groupname = '{$obj["groupname"]}';");
 			$rs = $this->resultSet();
@@ -26,7 +26,7 @@
 			}
 			return null;
 		}
-
+		//Metodo che verifica se l'utente che sta cercando di autenticarsi esiste oppure no
 		public function login($obj) {
 			$rs = $this->select();
 			if($rs) {
@@ -41,12 +41,12 @@
 			}
 			return null;
 		}
-
+		//Metodo che salva nel database l'accesso (data, ora e username)
 		public function saveAccess($user) {
 			$this->query("INSERT INTO login VALUES({$user["id"]},NOW());");
 			return $this->resultSet();
 		}
-
+		//Metodo che permette di aggiornare una password
 		public function updatePassword($obj, $userid) {
 			$this->query("SELECT password FROM users WHERE id = {$userid};");
 			$rs = $this->resultSet();
@@ -62,12 +62,12 @@
 			} else
 				return false;
 		}
-
+		//Metodo che ritorna gli utenti presenti nel database
 		public function select() {
 			$this->query('SELECT * FROM users ORDER BY groupname;');
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna gli accessi effettuati dai vari utenti raggruppati per mese
 		public function getLogs() {
 			$year = Date("Y");
 			$month = Date("m");
@@ -80,32 +80,32 @@
 			}
 			return $login;
 		}
-
+		//Metodo che ritorna il numero di utenti presenti nel database
 		public function countUsers() {
 			$this->query("SELECT * FROM users;");
 			return count($this->resultSet());
 		}
-
+		//Metodo che ritorna il numero di attori presenti nel database
 		public function countActors() {
 			$this->query("SELECT * FROM actors;");
 			return count($this->resultSet());
 		}
-
+		//Metodo che ritorna il numero delle fonti presenti nel database
 		public function countSources() {
 			$this->query("SELECT * FROM sources;");
 			return count($this->resultSet());
 		}
-
+		//Metodo che ritorna il numero di usecase presenti nel database
 		public function countUsecase() {
 			$this->query("SELECT * FROM usecase;");
 			return count($this->resultSet());
 		}
-
+		//Metodo che ritorna il numero di requisiti presenti nel database
 		public function countRequirements() {
 			$this->query("SELECT * FROM requirements;");
 			return count($this->resultSet());
 		}
-
+		//Metodo che si occupa di fare il rendering del form con le informazioni dinamiche
 		public function adjustLoginForm($page, $data) {
 			if($data) {
 				if(array_key_exists('groupname', $data))
@@ -117,7 +117,7 @@
 			}
 			return $page;
 		}
-
+		//Metodo che si occupa di fare il rendering del form di registrazione con le informazioni dinamiche
 		public function adjustRegistrationForm($page, $data) {
 			if($data) {
 				if(array_key_exists('groupname', $data)) {

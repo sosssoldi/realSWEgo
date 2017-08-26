@@ -1,10 +1,10 @@
 <?php
 	class RequirementDAO extends Database {
-
+		//Costruttore
 		public function __construct($connection = null) {
 			parent::__construct($connection);
 		}
-
+		//Metodo che inserisce un requisito nel database
 		public function insert($obj, $projectid) {
 			if($obj['parent'] == 'NULL')
 				$id = $this->getIdWithoutParent($obj['importance'], $obj['type'], $projectid);
@@ -17,7 +17,7 @@
 			$this->query("INSERT INTO requirements VALUES (id, '{$id}', '{$obj['name']}', '{$obj['description']}', '{$type}', '{$importance}', '{$obj['satisfied']}', {$obj['parent']}, {$obj['source']}, {$projectid});");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna il nuovo id del requisito (senza padre)
 		public function getIdWithoutParent($importance, $type, $projectid) {
 			$this->query("SELECT requirementid FROM requirements WHERE parent IS NULL AND type LIKE '%{$type}%' AND projectid = {$projectid} ORDER BY id desc LIMIT 1;");
 			$rs = $this->resultSet();
@@ -30,7 +30,7 @@
 			}
 			return $id;
 		}
-
+		//Metodo che ritorna il nuovo id del requisito (con padre)
 		public function getIdWithParent($parent, $importance, $type, $projectid) {
 			$this->query("SELECT requirementid FROM requirements WHERE parent={$parent} AND projectid = {$projectid} ORDER BY length(requirementid) desc, requirementid DESC;");
 			$rs = $this->resultSet();
@@ -59,11 +59,13 @@
 			}
 			return $id;
 		}
-
+		//Metodo che modifica un requisito presente nel database
 		public function update($id, $obj, $projectid) {
 			$lid = $obj["requirementid"];
 			$nid = "";
 			if($id == $obj["parent"])
+				$obj["parent"] = 'NULL';
+			if($obj['parent'] == '')
 				$obj["parent"] = 'NULL';
 			if($obj["parent"] != $this->getParent($id))
 				if($obj['parent'] == 'NULL')
@@ -79,11 +81,10 @@
 			$importance = $importance[$obj["importance"]];
 			$type = $type[$obj["type"]];
 			$this->query("UPDATE requirements SET requirementid = '{$nid}', name = '{$obj['name']}', description = '{$obj['description']}', type = '{$type}', importance = '{$importance}', satisfied = '{$obj['satisfied']}', parent = {$obj['parent']}, source = {$obj['source']} WHERE id = {$id}");
-			echo "UPDATE requirements SET requirementid = '{$nid}', name = '{$obj['name']}', description = '{$obj['description']}', type = '{$type}', importance = '{$importance}', satisfied = '{$obj['satisfied']}', parent = {$obj['parent']}, source = {$obj['source']} WHERE id = {$id}";
 			$this->resultSet();
 			$this->fix($id, $lid, $nid);
 		}
-
+		//Metodo che ri-calcola gli id dei requisiti figli sulla base del requisito appena modificato
 		public function fix($id, $lid, $nid) {
 			if($nid != $lid) {
 				$length = strlen($lid);
@@ -98,27 +99,27 @@
 				}
 			}
 		}
-
+		//Metodo che elimina un requisito presente nel database
 		public function delete($id) {
 			$this->query("DELETE FROM requirements WHERE id = {$id};");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna i requisiti presenti nel database
 		public function select($projectid) {
 			$this->query("SELECT * FROM requirements WHERE projectid = {$projectid} ORDER BY requirementid;");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna i requisiti tracciati presenti nel database
 		public function selectTrackedRequirements($projectid) {
 			$this->query("SELECT requirementid FROM usecaserequirements WHERE requirementid IN (SELECT id FROM requirements WHERE projectid = {$projectid});");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna le informazioni di un requisito presente nel database
 		public function getRequirement($id, $projectid) {
 			$this->query("SELECT * FROM requirements WHERE id = {$id} AND projectid = {$projectid};");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna il numero di requisiti soddisfatti e insoddisfatti suddivisi per importanza
 		public function getRequirementImportanceCount($projectid) {
 			$this->query("SELECT * FROM requirements WHERE importance='Obbligatorio' AND satisfied='Non implementato' AND projectid = {$projectid};");
 			$u0n = count($this->resultSet());
@@ -134,17 +135,20 @@
 			$s2n = count($this->resultSet());
 			return array($s0n, $u0n, $s1n, $u1n, $s2n, $u2n);
 		}
-
+		//Metodo che ritorna l'id del requisito padre del requisito corrente
 		function getParent($id) {
 			$this->query("SELECT parent FROM requirements WHERE id={$id};");
 			$rs = $this->resultSet();
 			if($rs) {
 				$requirement = $rs[0];
-				return $requirement["parent"];
+				if($requirement["parent"] == "")
+					return 'NULL';
+				else
+					return $requirement["parent"];
 			} else
-				return NULL;
+				return 'NULL';
 		}
-
+		//Metodo che ritorna la gerarchia del requisito corrente (requisiti figli, figli dei figli ecc..)
 		function getHierarchy($id) {
 			$unchecked = array();
 			$checked = array();
@@ -156,7 +160,7 @@
 			}
 			return $checked;
 		}
-
+		//Metodo che ritorna i figli diretti del requisito corrente
 		function getDirectChildren($id) {
 			$this->query("SELECT * FROM requirements WHERE parent={$id};");
 			$rs = $this->resultSet();
@@ -165,12 +169,12 @@
 				$array[] = $requirement;
 			return $array;
 		}
-
+		//Metodo che ritorna le fonti presenti nel database
 		public function selectSources($projectid) {
 			$this->query("SELECT * FROM sources WHERE projectid = {$projectid} ORDER BY name;");
 			return $this->resultSet();
 		}
-
+		//Metodo che si occupa di fare il rendering del form con le informazioni dinamiche
 		public function adjustForm($page, $data, $projectid) {
 			$rs = $this->select($projectid);
 			$str = "";
@@ -207,7 +211,7 @@
 			}
 			return $page;
 		}
-
+		//Metodo che ritorna il valore se $value è presente in $array, altrimenti ritorna false
 		public function find($value, $array) {
 			$found = false;
 			for($i = 0; $i < count($array) && !$found; ++$i)
@@ -215,7 +219,7 @@
 					$found = true;
 			return $found;
 		}
-
+		//Metodo che riempie il form con le informazioni del requisito
 		public function fillForm($page, $data, $projectid) {
 			$page = str_replace(':requirementid:', $data["requirementid"], $page);
 			$page = str_replace(':name:', $data["name"], $page);

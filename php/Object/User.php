@@ -2,6 +2,7 @@
 	include_once "Object.php";
 
 	class User extends Object {
+		//Metodo che controlla se le informazioni inserite nel form di login riguardo all'utente sono complete
 		public static function check_login_input($obj) {
 			if(!array_key_exists('groupname', $obj) || $obj["groupname"] == "")
 				return false;
@@ -9,7 +10,7 @@
 				return false;
 			return true;
 		}
-
+		//Metodo che controlla se le informazioni inserite nel form di registrazione riguardo all'utente sono complete
 		public static function check_registration_input($obj) {
 			if(!array_key_exists('groupname', $obj) || $obj["groupname"] == "")
 				return false;
@@ -23,7 +24,7 @@
 				return false;
 			return true;
 		}
-
+		//Metodo che controlla se le informazioni inserite nel form di cambio password riguardo all'utente sono complete
 		public static function check_change_password_input($obj) {
 			if(!array_key_exists('oldpassword', $obj) || $obj["oldpassword"] == "")
 				return false;
@@ -35,7 +36,7 @@
 				return false;
 			return true;
 		}
-
+		//Metodo che fa il parsing delle informazioni inserite all'interno del form
 		public static function parse_input($obj) {
 			foreach($obj as $key => &$value) {
 				$value = str_replace("'", "\'", $value);

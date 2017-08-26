@@ -1,10 +1,10 @@
 <?php
 	class UsecaseDAO extends Database {
-
+		//Costruttore
 		public function __construct($connection = null) {
 			parent::__construct($connection);
 		}
-
+		//Metodo che inserisce uno usecase nel database
 		public function insert($obj, $projectid) {
 			if($obj["parent"] == '')
 				$obj["parent"] = 'NULL';
@@ -31,7 +31,7 @@
 				$this->resultSet();
 			}
 		}
-
+		//Metodo che ritorna il nuovo id dello usecase (senza padre)
 		public function getIdWithoutParent($projectid) {
 			$this->query("SELECT usecaseid FROM usecase WHERE parent IS NULL AND projectid = {$projectid} ORDER BY usecaseid DESC LIMIT 1;");
 			$rs = $this->resultSet();
@@ -44,7 +44,7 @@
 			}
 			return $id;
 		}
-
+		//Metodo che ritorna il nuovo id dello usecase (con padre)
 		public function getIdWithParent($parent, $projectid) {
 			$this->query("SELECT usecaseid FROM usecase WHERE parent={$parent} AND projectid = {$projectid} ORDER BY length(usecaseid) desc, usecaseid DESC LIMIT 1;");
 			$rs = $this->resultSet();
@@ -64,7 +64,7 @@
 			}
 			return $id;
 		}
-
+		//Metodo che modifica uno usecase presente nel database
 		public function update($id, $obj, $projectid) {
 			$lid = $obj["usecaseid"];
 			$nid = "";
@@ -101,7 +101,7 @@
 			}
 			$this->fix($id, $lid, $nid);
 		}
-
+		//Metodo che ri-calcola gli id degli usecase figli sulla base dello usecase appena modificato
 		public function fix($id, $lid, $nid) {
 			if($nid != $lid) {
 				$length = strlen($lid);
@@ -115,22 +115,22 @@
 				}
 			}
 		}
-
+		//Metodo che elimina uno usecase presente nel database
 		public function delete($id) {
 			$this->query("DELETE FROM usecase WHERE id = {$id};");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna gli usecase presenti nel database
 		public function select($projectid) {
 			$this->query("SELECT * FROM usecase WHERE projectid = {$projectid} ORDER BY usecaseid;");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna le informazioni di uno usecase presente nel database
 		public function getUsecase($id, $projectid) {
 			$this->query("SELECT * FROM usecase WHERE id={$id} AND projectid = {$projectid};");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna la gerarchia dello usecase corrente (usecase figli, figli dei figli, ecc...)
 		function getHierarchy($id) {
 			$unchecked = array();
 			$checked = array();
@@ -142,7 +142,7 @@
 			}
 			return $checked;
 		}
-
+		//Metodo che ritorna i figli diretti dello usecase corrente
 		function getDirectChildren($id) {
 			$this->query("SELECT * FROM usecase WHERE parent={$id};");
 			$rs = $this->resultSet();
@@ -151,7 +151,7 @@
 				$array[] = $uc;
 			return $array;
 		}
-
+		//Metodo che ritorna l'id del padre dello usecase corrente
 		function getParent($id) {
 			$this->query("SELECT parent FROM usecase WHERE id={$id};");
 			$rs = $this->resultSet();
@@ -164,52 +164,52 @@
 			} else
 				return 'NULL';
 		}
-
+		//Metodo che ritorna le inclusioni dello usecase corrente
 		public function getInclusions($id) {
 			$this->query("SELECT * FROM usecaseinclusions WHERE usecaseid={$id} OR includedusecaseid={$id};");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna le estensioni in cui è coinvolto lo usecase corrente
 		public function getExtensions($id) {
 			$this->query("SELECT * FROM usecaseextensions WHERE usecaseid={$id} OR extendedusecaseid={$id};");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna le inclusioni dello usecase corrente
 		public function getMyInclusions($id) {
 			$this->query("SELECT * FROM usecaseinclusions WHERE usecaseid={$id};");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna le informazioni delle inclusioni dello usecase corrente
 		public function getMyInclusionsInfo($id) {
 			$this->query("SELECT id, usecase.usecaseid as usecaseid, name FROM usecaseinclusions, usecase WHERE usecaseinclusions.usecaseid={$id} AND usecase.id = usecaseinclusions.includedusecaseid;");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna le estensioni dello usecase corrente
 		public function getMyExtensions($id) {
 			$this->query("SELECT * FROM usecaseextensions WHERE usecaseid={$id};");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna le informazioni delle estensioni dello usecase corrente
 		public function getMyExtensionsInfo($id) {
 			$this->query("SELECT id, usecase.usecaseid as usecaseid, name FROM usecaseextensions, usecase WHERE usecaseextensions.usecaseid={$id} AND usecase.id = usecaseextensions.extendedusecaseid;");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna gli attori relativi ad uno usecase presenti nel database
 		public function getActors($id) {
 			$this->query("SELECT * FROM usecaseactors WHERE usecaseid={$id};");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna gli attori presenti nel database
 		public function selectActors($projectid) {
 			$this->query("SELECT * FROM actors WHERE projectid = {$projectid} ORDER BY name;");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna i requisiti presenti nel database
 		public function selectRequirements($projectid) {
 			$this->query("SELECT * FROM requirements WHERE projectid = {$projectid} ORDER BY requirementid;");
 			return $this->resultSet();
 		}
-
+		//Metodo che si occupa di fare il rendering del form con le informazioni dinamiche
 		public function adjustForm($page, $data, $projectid) {
 			$rs = $this->select($projectid);
 			$str = "";
@@ -295,7 +295,7 @@
 			}
 			return $page;
 		}
-
+		//Metodo che si occupa di fare il rendering del form del tracciamento con le informazioni dinamiche
 		public function adjustTrackingForm($page, $data, $projectid) {
 			$rs = $this->select($projectid);
 			$str = "";
@@ -327,7 +327,7 @@
 				$page = str_replace(":message:", '', $page);
 			return $page;
 		}
-
+		//Metodo che si occupa di tracciare uno usecase con i suoi requisiti
 		public function track($obj) {
 			$this->query("DELETE FROM usecaserequirements WHERE usecaseid = {$obj["usecase"]};");
 			$this->resultSet();
@@ -336,7 +336,7 @@
 				$this->resultSet();
 			}
 		}
-
+		//Metodo che ritorna il tracciamento tra gli usecase e i vari requisiti
 		public function selectTracking($projectid) {
 			$this->query("SELECT id, usecaseid FROM usecase WHERE projectid = {$projectid};");
 			$rs = $this->resultSet();
@@ -356,17 +356,17 @@
 			} else
 				return array();
 		}
-
+		//Metodo che ritorna i requisiti tracciati con lo usecase corrente
 		public function getTracking($id) {
 			$this->query("SELECT id, requirements.requirementid as requirementid, name FROM requirements, usecaserequirements WHERE requirements.id = usecaserequirements.requirementid AND usecaseid = {$id} ORDER BY requirementid;");
 			return $this->resultSet();
 		}
-
+		//Metodo che elimina il tracciamento dello usecase corrente
 		public function deleteTracking($id) {
 			$this->query("DELETE FROM usecaserequirements WHERE usecaseid = {$id};");
 			return $this->resultSet();
 		}
-
+		//Metodo che ritorna il valore se $value è presente in $array, altrimenti ritorna false
 		public function find($value, $array) {
 			$found = false;
 			for($i = 0; $i < count($array) && !$found; ++$i)
@@ -374,7 +374,7 @@
 					$found = true;
 			return $found;
 		}
-
+		//Metodo che riempie il form con le informazioni dello usecase
 		public function fillForm($page, $data, $projectid) {
 			$page = str_replace(':usecaseid:', $data["usecaseid"], $page);
 			$page = str_replace(':name:', $data["name"], $page);
@@ -482,7 +482,7 @@
 				$page = str_replace(":actoroptions:", "", $page);
 			return $page;
 		}
-
+		//Metodo che riempie il form del tracciamento con le informazioni degli usecase e dei requisiti
 		public function fillTrackingForm($page, $data, $projectid) {
 			$page = str_replace(':id:', $data["id"], $page);
 			$page = str_replace(':usecaseid:', $data["usecaseid"], $page);
