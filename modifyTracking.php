@@ -3,7 +3,6 @@
 	ini_set('display_errors', 1);*/
 	session_start();
 	include_once "php/Database/Database.php";
-	include_once "php/DAO/DAO.php";
 	include_once "php/DAO/UsecaseDAO.php";
 	include_once "php/Object/Object.php";
 	include_once "php/Object/Usecase.php";
@@ -51,7 +50,7 @@
 		if($rs) {
 			$usecase = $rs[0];
 			echo $usecaseDAO->fillTrackingForm($page, $usecase, $_SESSION["id"]);
-		} else 
+		} else
 			header("Location: viewTracking.php");
 	}
 ?>

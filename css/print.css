@@ -6,6 +6,11 @@
   background-color:#fff;
 }
 
+@font-face {
+  font-family: codeFont;
+  src: url("../font/Cherry Monospace-Light.ttf");
+}
+
 a{
   color:#520;
 	font-weight:bold;
@@ -760,4 +765,37 @@ table caption {
 
 #siteMap > li > ul > li:last-of-type {
 	list-style-image: url("../image/li_up.png");
+}
+
+/*FAQ*/
+
+#faqQuestion {
+ width: 80%;
+ margin: 0 auto;
+}
+
+#faqQuestion dt {
+ margin-top: 1.5em;
+ font-size: 1.6em;
+ color: rgb(135, 30, 9);
+}
+
+#faqQuestion dd {
+ margin-left: 2em;
+ margin-top: 0.8em;
+ font-size: 1.2em;
+}
+
+#faqQuestion dd:last-of-type {
+ margin-bottom: 2em;
+}
+
+#faqQuestion ol {
+ margin-top: 0.5em;
+ margin-left: 2em;
+}
+
+.code {
+ font-family: codeFont;
+ font-weight: bold;
 }

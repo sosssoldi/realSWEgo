@@ -3,7 +3,7 @@
 	ini_set('display_errors', 1);*/
 	session_start();
 	include_once "php/Database/Database.php";
-	include_once "php/DAO/DAO.php";
+
 	include_once "php/DAO/ActorDAO.php";
 	include_once "php/DAO/SourceDAO.php";
 	include_once "php/DAO/UsecaseDAO.php";
@@ -57,13 +57,13 @@
 			else
 				$accesses .= ",".$log[$i];
 		$page = str_replace(':accesses:', $accesses, $page);
-		
+
 		$list = "<ul>";
 		for($i = 0; $i < count($log); ++$i)
 			$list .= "<li>".$month[$i].": ".$log[$i]."</li>";
 		$list .= "</ul>";
 		$page = str_replace(':descriptionGraph:', $list, $page);
-		
+
 		echo $page;
 	}
 ?>

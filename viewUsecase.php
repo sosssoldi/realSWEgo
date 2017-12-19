@@ -3,7 +3,6 @@
 	ini_set('display_errors', 1);*/
 	session_start();
 	include_once "php/Database/Database.php";
-	include_once "php/DAO/DAO.php";
 	include_once "php/DAO/UsecaseDAO.php";
 	include_once "php/DAO/ActorDAO.php";
 	include_once "php/Object/Object.php";
@@ -49,7 +48,7 @@
 			$html = str_replace(':postcondition:', $uc['postcondition'], $html);
 			$html = str_replace(':mainscenario:', $uc['mainscenario'], $html);
 			$html = str_replace(':id:', $uc['id'], $html);
-			
+
 			$inclusions = $usecaseDAO->getMyInclusions($uc['id']);
 			$htmlInclusions = '';
 			foreach($inclusions as $inclusion) {
@@ -65,7 +64,7 @@
 				$htmlInclusions = rtrim($htmlInclusions, ', ');
 				$html = str_replace(':inclusions:', $htmlInclusions, $html);
 			}
-			
+
 			$extensions = $usecaseDAO->getMyExtensions($uc['id']);
 			$htmlExtensions = '';
 			foreach($extensions as $extension) {
@@ -80,8 +79,8 @@
 			else {
 				$htmlExtensions = rtrim($htmlExtensions, ', ');
 				$html = str_replace(':extensions:', $htmlExtensions, $html);
-			}		
-			
+			}
+
 			$actors = $usecaseDAO->getActors($uc['id']);
 			$htmlActor = '';
 			foreach($actors as $actor) {
@@ -97,7 +96,7 @@
 				$htmlActor = rtrim($htmlActor, ', ');
 				$html = str_replace(':actors:', $htmlActor, $html);
 			}
-				
+
 			$str .= $html;
 		}
 		$str .= '</tbody>';

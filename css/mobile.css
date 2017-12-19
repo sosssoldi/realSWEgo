@@ -3,6 +3,11 @@
   src: url("../font/Lugos-Regular.otf");
 }
 
+@font-face {
+  font-family: codeFont;
+  src: url("../font/Cherry Monospace-Light.ttf");
+}
+
 .hide {
 	text-indent: 100%;
 	white-space: nowrap;
@@ -1024,7 +1029,7 @@
 		list-style-type: none;
 		margin-top: 2%;
 	}
-		
+
 	#createUML {
 		text-align: center;
 		margin-top: 6%;
@@ -1178,4 +1183,45 @@
     width: 50%;
     margin-left: 25%;
   }
+
+  /* Donations Page */
+
+  #donazione {
+    margin-bottom: 5em;
+    margin-top: 2em;
+    text-align: center;
+  }
+
+  /*FAQ*/
+
+ 	#faqQuestion {
+ 		width: 80%;
+ 		margin: 0 auto;
+ 	}
+
+ 	#faqQuestion dt {
+ 		margin-top: 1.5em;
+ 		font-size: 1.6em;
+ 		color: rgb(135, 30, 9);
+ 	}
+
+ 	#faqQuestion dd {
+ 		margin-top: 0.8em;
+ 		font-size: 1.2em;
+ 	}
+
+ 	#faqQuestion dd:last-of-type {
+ 		margin-bottom: 2em;
+ 	}
+
+ 	#faqQuestion ol {
+ 		margin-top: 0.5em;
+ 		margin-left: 2em;
+ 	}
+
+ 	.code {
+ 		font-family: codeFont;
+ 		font-weight: bold;
+    word-break: break-all;
+ 	}
 }

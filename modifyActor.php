@@ -3,7 +3,6 @@
 	ini_set('display_errors', 1);*/
 	session_start();
 	include_once "php/Database/Database.php";
-	include_once "php/DAO/DAO.php";
 	include_once "php/DAO/ActorDAO.php";
 	include_once "php/Object/Object.php";
 	include_once "php/Object/Actor.php";
@@ -51,7 +50,7 @@
 		if($rs) {
 			$actor = $rs[0];
 			echo $actorDAO->fillForm($page, $actor);
-		} else 
+		} else
 			header("Location: insertActor.php");
 	}
 ?>

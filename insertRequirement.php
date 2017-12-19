@@ -3,7 +3,6 @@
 	ini_set('display_errors', 1);*/
 	session_start();
 	include_once "php/Database/Database.php";
-	include_once "php/DAO/DAO.php";
 	include_once "php/DAO/RequirementDAO.php";
 	include_once "php/Object/Object.php";
 	include_once "php/Object/Requirement.php";

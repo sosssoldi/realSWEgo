@@ -3,7 +3,6 @@
 	ini_set('display_errors', 1);*/
 	session_start();
 	include_once "php/Database/Database.php";
-	include_once "php/DAO/DAO.php";
 	include_once "php/DAO/UserDAO.php";
 	include_once "php/Object/Object.php";
 	include_once "php/Object/User.php";
@@ -12,7 +11,7 @@
 		header("Location: admin.php");
 		exit();
 	}
-	
+
 	if(!empty($_SESSION) && array_key_exists('groupname', $_SESSION) && $_SESSION["groupname"] != "") {
 		header("Location: user.php");
 		exit();
@@ -33,7 +32,7 @@
 				$_SESSION["projectname"] = $user["projectname"];
 				$_SESSION["type"] = $user["type"];
 				header("Location: user.php");
-			} else 
+			} else
 				render_page($_POST);
 		}
 	}

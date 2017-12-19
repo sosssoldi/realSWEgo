@@ -3,7 +3,6 @@
 	ini_set('display_errors', 1);*/
 	session_start();
 	include_once "php/Database/Database.php";
-	include_once "php/DAO/DAO.php";
 	include_once "php/DAO/SourceDAO.php";
 	include_once "php/Object/Object.php";
 	include_once "php/Object/Source.php";
@@ -51,7 +50,7 @@
 		if($rs) {
 			$source = $rs[0];
 			echo $sourceDAO->fillForm($page, $source);
-		} else 
+		} else
 			header("Location: insertSource.php");
 	}
 ?>

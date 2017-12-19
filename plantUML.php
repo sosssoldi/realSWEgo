@@ -244,8 +244,10 @@ function create_tracking_file($path) {
 
 function create_plantuml_file($path) {
 	$db = new Database();
-	$db->query("SELECT DISTINCT parent FROM usecase WHERE parent IS NOT NULL");
+	$db->query("SELECT DISTINCT parent FROM usecase WHERE parent IS NOT NULL AND projectid = {$_SESSION["id"]};");
 	$rs = $db->resultSet();
+	if(empty($rs))
+		return;
 	foreach($rs as $parent) {
 		$db->query("SELECT * FROM usecase WHERE id = {$parent["parent"]};");
 		$info = $db->resultSet();
@@ -287,6 +289,8 @@ function create_plantuml_file($path) {
 function zip($name, $path) {
 	$zip = new ZipArchive();
 	$zip->open($name, ZipArchive::CREATE);
+	if(file_exists($path."/README"))
+		$zip->addFile($path."/README");
     if(file_exists($path."/Usecase/usecase.tex"))
     	$zip->addFile($path."/Usecase/usecase.tex");
     if(file_exists($path."/Requirement/requirement.tex"))
