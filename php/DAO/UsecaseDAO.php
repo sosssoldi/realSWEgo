@@ -225,21 +225,21 @@
 			$str .= '<label for="checkbox0">Nessuno</label>';
 			if($rs) {
 				foreach($rs as $uc) {
-					$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"inclusion[]\" value=\"".$uc["id"]."\" />";
-					$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
+					$str .= '<input id="checkbox'.$i.'" type="checkbox" name="inclusion[]" value="'.$uc["id"].'" />';
+					$str .= '<label for="checkbox'.$i.'">'.$uc["usecaseid"].' - '.$uc["name"].'</label>';
 					++$i;
 				}
 			}
 			$str .= '</div>';
 			$page = str_replace(":inclusionoptions:", $str, $page);
 			$str = '<div class="multiple">';
-			$str .= "<input id=\"checkbox{$i}\" type=\"checkbox\" name=\"extension[]\" value=\"NULL\" checked=\"checked\" />";
-			$str .= "<label for=\"checkbox{$i}\">Nessuno</label>";
+			$str .= '<input id="checkbox{$i}" type="checkbox" name="extension[]" value="NULL" checked="checked" />';
+			$str .= '<label for="checkbox{$i}">Nessuno</label>';
 			++$i;
 			if($rs) {
 				foreach($rs as $uc) {
-					$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"extension[]\" value=\"".$uc["id"]."\" />";
-					$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
+					$str .= '<input id="checkbox'.$i.'" type="checkbox" name="extension[]" value="'.$uc["id"].'" />';
+					$str .= '<label for="checkbox'.$i.'">'.$uc["usecaseid"].' - '.$uc["name"].'</label>';
 					++$i;
 				}
 			}
@@ -247,13 +247,13 @@
 			$page = str_replace(":extensionoptions:", $str, $page);
 			$rs = $this->selectActors($projectid);
 			$str = '<div class="multiple">';
-			$str .= "<input id=\"checkbox{$i}\" type=\"checkbox\" name=\"actor[]\" value=\"NULL\" checked=\"checked\" />";
-			$str .= "<label for=\"checkbox{$i}\">Nessuno</label>";
+			$str .= '<input id="checkbox{$i}" type="checkbox" name="actor[]" value="NULL" checked="checked" />';
+			$str .= '<label for="checkbox{$i}">Nessuno</label>';
 			++$i;
 			if($rs) {
 				foreach($rs as $actor) {
-					$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"actor[]\" value=\"".$actor["id"]."\" />";
-					$str .= "<label for=\"checkbox".$i."\">".$actor["name"]."</label>";
+					$str .= '<input id="checkbox'.$i.'" type="checkbox" name="actor[]" value="'.$actor["id"].'" />';
+					$str .= '<label for="checkbox'.$i.'">'.$actor["name"].'</label>';
 					++$i;
 				}
 			}
@@ -310,14 +310,14 @@
 			$i = 0;
 			if($rs) {
 				foreach($rs as $r) {
-					$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"requirement[]\" value=\"".$r["id"]."\" />";
-					$str .= "<label for=\"checkbox".$i."\">".$r["requirementid"].' - '.$r['name']."</label>";
+					$str .= '<input id="checkbox'.$i.'" type="checkbox" name="requirement[]" value="'.$r["id"].'" />';
+					$str .= '<label for="checkbox'.$i.'">'.$r["requirementid"].' - '.$r["name"].'</label>';
 					++$i;
 				}
 				$str .= '</div>';
 				$page = str_replace(":requirementoptions:", $str, $page);
 			} else
-				$page = str_replace(":requirementoptions:", "<a href=\"insertRequirement.php\">Inserisci</a> un requisito se vuoi effettuare il tracciamento.", $page);
+				$page = str_replace(":requirementoptions:", "<a href='insertRequirement.php'>Inserisci</a> un requisito se vuoi effettuare il tracciamento.", $page);
 			if($data)
 				if($data == 'insert')
 					$page = str_replace(":message:", '<p class="message success">Tracciamento inserito!</p>', $page);
@@ -420,11 +420,11 @@
 			if($rs) {
 				foreach($rs as $uc) {
 					if($this->find($uc["id"], $array)) {
-						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"inclusion[]\" value=\"".$uc["id"]."\" checked=\"checked\" />";
-						$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
+						$str .= '<input id="checkbox'.$i.'" type="checkbox" name="inclusion[]" value="'.$uc["id"].'" checked="checked" />';
+						$str .= '<label for="checkbox'.$i.'">'.$uc["usecaseid"].' - '.$uc["name"].'</label>';
 					} else {
-						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"inclusion[]\" value=\"".$uc["id"]."\" />";
-						$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
+						$str .= '<input id="checkbox'.$i.'" type="checkbox" name="inclusion[]" value="'.$uc["id"].'" />';
+						$str .= '<label for="checkbox'.$i.'">'.$uc["usecaseid"].' - '.$uc["name"].'</label>';
 					}
 					++$i;
 				}
@@ -434,8 +434,8 @@
 				$page = str_replace(":inclusionoptions:", "", $page);
 			$rs = $this->getMyExtensions($data["id"]);
 			$str = '<div class="multiple">';
-			$str .= "<input id=\"checkbox{$i}\" type=\"checkbox\" name=\"extension[]\" value=\"NULL\" checked=\"checked\" />";
-			$str .= "<label for=\"checkbox{$i}\">Nessuno</label>";
+			$str .= '<input id="checkbox{$i}" type="checkbox" name="extension[]" value="NULL" checked="checked" />';
+			$str .= '<label for="checkbox{$i}">Nessuno</label>';
 			$i++;
 			$array = array();
 			foreach($rs as $extension)
@@ -444,11 +444,11 @@
 			if($rs) {
 				foreach($rs as $uc) {
 					if($this->find($uc["id"], $array)) {
-						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"extension[]\" value=\"".$uc["id"]."\" checked=\"checked\" />";
-						$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
+						$str .= '<input id="checkbox"'.$i.'" type="checkbox" name="extension[]" value="'.$uc["id"].'" checked="checked" />';
+						$str .= '<label for="checkbox'.$i.'">'.$uc["usecaseid"].' - '.$uc["name"].'</label>';
 					} else {
-						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"extension[]\" value=\"".$uc["id"]."\" />";
-						$str .= "<label for=\"checkbox".$i."\">".$uc["usecaseid"]." - ".$uc["name"]."</label>";
+						$str .= '<input id="checkbox'.$i.'" type="checkbox" name="extension[]" value="'.$uc["id"].'" />';
+						$str .= '<label for="checkbox'.$i.'">'.$uc["usecaseid"].' - '.$uc["name"].'</label>';
 					}
 					++$i;
 				}
@@ -458,8 +458,8 @@
 				$page = str_replace(":extensionoptions:", "", $page);
 			$rs = $this->getActors($data["id"]);
 			$str = '<div class="multiple">';
-			$str .= "<input id=\"checkbox{$i}\" type=\"checkbox\" name=\"actor[]\" value=\"NULL\" checked=\"checked\" />";
-			$str .= "<label for=\"checkbox{$i}\">Nessuno</label>";
+			$str .= '<input id="checkbox{$i}" type="checkbox" name="actor[]" value="NULL" checked="checked" />';
+			$str .= '<label for="checkbox{$i}">Nessuno</label>';
 			++$i;
 			$array = array();
 			foreach($rs as $actor)
@@ -468,11 +468,11 @@
 			if($rs) {
 				foreach($rs as $actor) {
 					if($this->find($actor["id"], $array)) {
-						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"actor[]\" value=\"".$actor["id"]."\" checked=\"checked\" />";
-						$str .= "<label for=\"checkbox".$i."\">".$actor["name"]."</label>";
+						$str .= '<input id="checkbox'.$i.'" type="checkbox" name="actor[]" value="'.$actor["id"].'" checked="checked" />';
+						$str .= '<label for="checkbox'.$i.'">'.$actor["name"].'</label>';
 					} else {
-						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"actor[]\" value=\"".$actor["id"]."\" />";
-						$str .= "<label for=\"checkbox".$i."\">".$actor["name"]."</label>";
+						$str .= '<input id="checkbox'.$i.'" type="checkbox" name="actor[]" value="'.$actor["id"].'" />';
+						$str .= '<label for="checkbox'.$i.'">'.$actor["name"].'</label>';
 					}
 					++$i;
 				}
@@ -497,11 +497,11 @@
 			if($rs) {
 				foreach($rs as $requirement) {
 					if($this->find($requirement['id'], $array)) {
-						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"requirement[]\" value=\"".$requirement["id"]."\" checked=\"checked\" />";
-						$str .= "<label for=\"checkbox".$i."\">".$requirement["requirementid"].' - '.$requirement["name"]."</label>";
+						$str .= '<input id="checkbox'.$i.'" type="checkbox" name="requirement[]" value="'.$requirement["id"].'" checked="checked" />';
+						$str .= '<label for="checkbox'.$i.'">'.$requirement["requirementid"].' - '.$requirement["name"].'</label>';
 					} else {
-						$str .= "<input id=\"checkbox".$i."\" type=\"checkbox\" name=\"requirement[]\" value=\"".$requirement["id"]."\" />";
-						$str .= "<label for=\"checkbox".$i."\">".$requirement["requirementid"].' - '.$requirement["name"]."</label>";
+						$str .= '<input id="checkbox'.$i.'" type="checkbox" name="requirement[]" value="'.$requirement["id"].'" />';
+						$str .= '<label for="checkbox'.$i.'">'.$requirement["requirementid"].' - '.$requirement["name"].'</label>';
 					}
 					++$i;
 				}

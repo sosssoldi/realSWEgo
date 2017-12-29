@@ -157,6 +157,7 @@ function getActor($id) {
 
 function create_requirement_file($path) {
 	$requirementf = fopen($path."/requirement.tex","w");
+	fputs($requirementf, "\\newcolumntype{H}{>{\centering\arraybackslash}m{7cm}}\n");
 	$t = array("F","Q","P","V");
 	$tdesc = array("Funzionali", "Di Qualità", "Prestazionali", "Di Vincolo");
 	$i = 0;
@@ -167,7 +168,7 @@ function create_requirement_file($path) {
 		if($rs) {
 			fputs($requirementf, "\subsection{Requisiti {$tdesc{$i}}}\n");
 			fputs($requirementf, "\\normalsize\n");
-			fputs($requirementf, "\\begin{longtable}{|c|>{\\centering}m{7cm}|c|}\n");
+			fputs($requirementf, "\\begin{longtable}{|c|H|c|}\n");
 			fputs($requirementf, "\\hline\n");
 			fputs($requirementf, "\\textbf{Id Requisito} & \\textbf{Descrizione} & \\textbf{Fonte}\\\\\n");
 			fputs($requirementf, "\\hline\n");
@@ -175,7 +176,7 @@ function create_requirement_file($path) {
 			foreach($rs as $r) {
 				fputs($requirementf, "\\hypertarget{{$r['requirementid']}}{{$r['requirementid']}} & {$r['description']} & {$r["name"]} \\\\ \\hline \n");
 			}
-			fputs($requirementf, "\\caption[Requisiti {$tdesc{$i}}]{Requisiti {$tdesc{$i}}\n");
+			fputs($requirementf, "\\caption[Requisiti {$tdesc{$i}}]{Requisiti {$tdesc{$i}}}\n");
 			fputs($requirementf, "\\label{tabella:req{$i}}\n");
 			fputs($requirementf, "\\end{longtable}\n");
 			fputs($requirementf, "\\clearpage\n");
@@ -205,7 +206,7 @@ function create_tracking_file($path) {
 			if($usecases) {
 				$str = "\hyperlink{{$r["requirementid"]}}{{$r["requirementid"]}} ";
 				foreach($usecases as $usecase) {
-					$str .= "& \hyperlink{{$usecase['usecaseid']}}{{$usecase['usecaseid']}}\\\\\n"; 
+					$str .= "& \hyperlink{{$usecase['usecaseid']}}{{$usecase['usecaseid']}}\\\\\n";
 				}
 				$str .= "\\hline\n";
 				fputs($trackingf, $str);
@@ -228,7 +229,7 @@ function create_tracking_file($path) {
 			if($requirements) {
 				$str = "\hyperlink{{$usecase["usecaseid"]}}{{$usecase["usecaseid"]}} ";
 				foreach($requirements as $requirement) {
-					$str .= "& \hyperlink{{$requirement['requirementid']}}{{$requirement['requirementid']}}\\\\\n"; 
+					$str .= "& \hyperlink{{$requirement['requirementid']}}{{$requirement['requirementid']}}\\\\\n";
 				}
 				$str .= "\\hline\n";
 				fputs($trackingf, $str);
