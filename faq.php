@@ -83,6 +83,7 @@
 						<li>salva il diagramma creato.</li>
 					</ol>
 				</dd>
+				<dt>Quali pacchetti devo includere per compilare i file latex?</dt>
 			</dl>
     </div>
 		<footer>

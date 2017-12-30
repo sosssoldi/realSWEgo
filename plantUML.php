@@ -82,7 +82,7 @@ function create_usecase_file($path) {
 	$rs = $usecaseDAO->select($_SESSION["id"]);
 	$db = new Database();
 	foreach($rs as $usecase) {
-		$title = "\subsection{Caso d'uso \hypertarget{{$usecase['usecaseid']}}{{$usecase['usecaseid']}}: {$usecase['name']}}";
+		$title = "\subsection{Caso d'uso \hyperref{{$usecase['usecaseid']}}{{$usecase['usecaseid']}}: {$usecase['name']}}";
 		$actor = "\item \\textbf{Attori}: ".getActor($usecase["id"]);
 		$description = "\item \\textbf{Descrizione}: ".$usecase["description"];
 		$pre = "\item \\textbf{Precondizione}: ".$usecase["precondition"];
@@ -91,7 +91,7 @@ function create_usecase_file($path) {
 		$db->query("SELECT * FROM usecase WHERE parent = {$usecase["id"]} ORDER BY usecaseid;");
 		$sons = $db->resultSet();
 		if($sons) {
-			$image = "\begin{figure} [H]\n";
+			$image = "\begin{figure} [h]\n";
 			$image .= "\centering\n";
 			$imagetitle = str_replace(".", "-", $usecase["usecaseid"]);
 			$image .= "\includegraphics[scale=0.45]{./{$imagetitle}.png}\n";
