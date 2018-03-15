@@ -1,4 +1,4 @@
-<?php 
-	abstract class Object {
-	}
-?>
+<?php 
+	abstract class Object {
+	}
+?>

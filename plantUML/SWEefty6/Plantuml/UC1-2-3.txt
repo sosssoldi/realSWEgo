@@ -1,0 +1,9 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Utente
+rectangle UC1.2.3 {
+Utente <|-- (UC1.2.3.1 - Colorazione degli archi corrispondenti a tempi di risposta critici)
+Utente <|-- (UC1.2.3.2 - Colorazione degli archi corrispondenti a tempi di risposta regolari)
+}
+@enduml

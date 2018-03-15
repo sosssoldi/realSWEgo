@@ -12,7 +12,8 @@
 				$id = $this->getIdWithoutParent($projectid);
 			} else
 				$id = $this->getIdWithParent($obj['parent'], $projectid);
-			$this->query("INSERT INTO usecase VALUES (id, '{$id}', '{$obj['name']}', '{$obj['description']}', '{$obj['precondition']}', '{$obj['postcondition']}', '{$obj['mainscenario']}', '{$obj['alternativescenario']}', {$obj['generalization']}, {$obj['parent']}, {$projectid})");
+			$this->query("INSERT INTO usecase VALUES (id, '{$id}', '{$obj['name']}', '{$obj['description']}', '{$obj['precondition']}', '{$obj['postcondition']}', '{$obj['mainscenario']}', '{$obj['alternativescenario']}', {$obj['parent']}, {$projectid})");
+
 			$this->resultSet();
 			$this->query("SELECT id FROM usecase WHERE usecaseid='{$id}' AND projectid = {$projectid};");
 			$rs = $this->resultSet();
@@ -26,6 +27,10 @@
 				$this->query("INSERT INTO usecaseextensions VALUES ({$id}, {$extendedusecaseid})");
 				$this->resultSet();
 			}
+			foreach($obj['generalization'] as $usecasegeneralizationsid) {
+				$this->query("INSERT INTO usecasegeneralizations VALUES ({$id}, {$usecasegeneralizationsid})");
+				$this->resultSet();
+			}
 			foreach($obj['actor'] as $actorid) {
 				$this->query("INSERT INTO usecaseactors VALUES ({$id}, {$actorid})");
 				$this->resultSet();
@@ -33,7 +38,7 @@
 		}
 		//Metodo che ritorna il nuovo id dello usecase (senza padre)
 		public function getIdWithoutParent($projectid) {
-			$this->query("SELECT usecaseid FROM usecase WHERE parent IS NULL AND projectid = {$projectid} ORDER BY usecaseid DESC LIMIT 1;");
+			$this->query("SELECT usecaseid FROM usecase WHERE parent IS NULL AND projectid = {$projectid} ORDER BY LENGTH(usecaseid) DESC, usecaseid DESC LIMIT 1;");
 			$rs = $this->resultSet();
 			if(!$rs)
 				$id = "UC1";
@@ -91,6 +96,12 @@
 			$this->resultSet();
 			foreach($obj['extension'] as $extendedusecaseid) {
 				$this->query("INSERT INTO usecaseextensions VALUES ({$id}, {$extendedusecaseid})");
+				$this->resultSet();
+			}
+			$this->query("DELETE FROM usecasegeneralizations WHERE usecaseid = {$id};");
+			$this->resultSet();
+			foreach($obj['generalization'] as $usecasegeneralizationsid) {
+				$this->query("INSERT INTO usecasegeneralizations VALUES ({$id}, {$usecasegeneralizationsid})");
 				$this->resultSet();
 			}
 			$this->query("DELETE FROM usecaseactors WHERE usecaseid = {$id};");
@@ -164,12 +175,24 @@
 			} else
 				return 'NULL';
 		}
+
+		//Metodo che ritorna le generalization dello usecase corrente
+		public function getGeneralizations($id) {
+			$this->query("SELECT * FROM usecasegeneralizations WHERE usecaseid={$id} OR generalizationusecaseid={$id};");
+			return $this->resultSet();
+		}
+		//Metodo che ritorna le generalization dello usecase corrente
+		public function getMyGeneralizations($id) {
+			$this->query("SELECT * FROM usecasegeneralizations WHERE usecaseid={$id};");
+			return $this->resultSet();
+		}
+
 		//Metodo che ritorna le inclusioni dello usecase corrente
 		public function getInclusions($id) {
 			$this->query("SELECT * FROM usecaseinclusions WHERE usecaseid={$id} OR includedusecaseid={$id};");
 			return $this->resultSet();
 		}
-		//Metodo che ritorna le estensioni in cui è coinvolto lo usecase corrente
+		//Metodo che ritorna le estensioni in cui � coinvolto lo usecase corrente
 		public function getExtensions($id) {
 			$this->query("SELECT * FROM usecaseextensions WHERE usecaseid={$id} OR extendedusecaseid={$id};");
 			return $this->resultSet();
@@ -220,6 +243,19 @@
 				$page = str_replace(":parentoptions:", $str, $page);
 			} else
 				$page = str_replace(":parentoptions:", "", $page);
+			$str = '<div class="multiple">';
+			$str .= '<input id="checkbox0" type="checkbox" name="generalization[]" value="NULL" checked="checked" />';
+			$str .= '<label for="checkbox0">Nessuno</label>';
+			if($rs) {
+				foreach($rs as $uc) {
+					$str .= '<input id="checkbox'.$i.'" type="checkbox" name="generalization[]" value="'.$uc["id"].'" />';
+					$str .= '<label for="checkbox'.$i.'">'.$uc["usecaseid"].' - '.$uc["name"].'</label>';
+					++$i;
+				}
+			}
+			$str .= '</div>';
+			$page = str_replace(":generalizationoptions:", $str, $page);
+
 			$str = '<div class="multiple">';
 			$str .= '<input id="checkbox0" type="checkbox" name="inclusion[]" value="NULL" checked="checked" />';
 			$str .= '<label for="checkbox0">Nessuno</label>';
@@ -338,7 +374,7 @@
 		}
 		//Metodo che ritorna il tracciamento tra gli usecase e i vari requisiti
 		public function selectTracking($projectid) {
-			$this->query("SELECT id, usecaseid FROM usecase WHERE projectid = {$projectid};");
+			$this->query("SELECT id, usecaseid, name FROM usecase WHERE projectid = {$projectid};");
 			$rs = $this->resultSet();
 			if($rs) {
 				$array = array();
@@ -350,7 +386,7 @@
 						$str .= $t["requirementid"].' ';
 					}
 					if($str != "")
-						$array[$uc['usecaseid']] = array($str, $uc['id']);
+						$array[$uc['usecaseid']] = array($str, $uc['id'], $uc["name"]);
 				}
 				return $array;
 			} else
@@ -366,7 +402,7 @@
 			$this->query("DELETE FROM usecaserequirements WHERE usecaseid = {$id};");
 			return $this->resultSet();
 		}
-		//Metodo che ritorna il valore se $value è presente in $array, altrimenti ritorna false
+		//Metodo che ritorna il valore se $value � presente in $array, altrimenti ritorna false
 		public function find($value, $array) {
 			$found = false;
 			for($i = 0; $i < count($array) && !$found; ++$i)
@@ -400,14 +436,30 @@
 				$page = str_replace(":parentoptions:", $str, $page);
 			} else
 				$page = str_replace(":parentoptions:", "", $page);
-			if($data["generalization"]) {
-				$str = '<option value="false">No</option>';
-				$str .= '<option value="true" selected="selected">Si</option>';
-			} else {
-				$str = '<option value="false" selected="selected">No</option>';
-				$str .= '<option value="true">Si</option>';
-			}
-			$page = str_replace(':generalizationoptions:', $str, $page);
+			$rs = $this->getMyGeneralizations($data["id"]);
+			$str = '<div class="multiple">';
+			$str .= '<input id="checkbox0" type="checkbox" name="generalization[]" value="NULL" checked="checked" />';
+			$str .= '<label for="checkbox0">Nessuno</label>';
+			$i = 1;
+			$array = array();
+			foreach($rs as $generalization)
+				$array[] = $generalization["generalizationusecaseid"];
+			$rs = $this->select($projectid);
+			if($rs) {
+				foreach($rs as $uc) {
+					if($this->find($uc["id"], $array)) {
+						$str .= '<input id="checkbox'.$i.'" type="checkbox" name="generalization[]" value="'.$uc["id"].'" checked="checked" />';
+						$str .= '<label for="checkbox'.$i.'">'.$uc["usecaseid"].' - '.$uc["name"].'</label>';
+					} else {
+						$str .= '<input id="checkbox'.$i.'" type="checkbox" name="generalization[]" value="'.$uc["id"].'" />';
+						$str .= '<label for="checkbox'.$i.'">'.$uc["usecaseid"].' - '.$uc["name"].'</label>';
+					}
+					++$i;
+				}
+				$str .= "</div>";
+				$page = str_replace(":generalizationoptions:", $str, $page);
+			} else
+				$page = str_replace(":generalizationoptions:", "", $page);
 			$rs = $this->getMyInclusions($data["id"]);
 			$str = '<div class="multiple">';
 			$str .= '<input id="checkbox0" type="checkbox" name="inclusion[]" value="NULL" checked="checked" />';

@@ -1,0 +1,8 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Utente
+rectangle UC1.7 {
+Utente -- (UC1.7.1 - Rappresentazione cluster)
+}
+@enduml

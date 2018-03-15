@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Utente
+rectangle UC2.7 {
+Utente -- (UC2.7.1 - Visualizzazione numerazione delle trace)
+Utente -- (UC2.7.2 - Visualizzazione identificativo delle trace tramite richiesta HTTP)
+Utente -- (UC2.7.3 - Visualizzazione tempo di esecuzione delle trace)
+Utente -- (UC2.7.4 - Visualizzazione momento di esecuzione delle trace)
+Utente -- (UC2.7.5 - Visualizzazione codice di stato HTTP di ogni trace)
+}
+@enduml

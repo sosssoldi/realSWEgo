@@ -1,0 +1,9 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Utente
+rectangle UC6 {
+Utente -- (UC6.1 - Riposizionamento componente)
+Utente -- (UC6.2 - Riposizionamento automatico componenti)
+}
+@enduml

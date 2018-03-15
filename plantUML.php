@@ -18,6 +18,7 @@
 
 	//Creating groupname's folders
 	$basedir = 'plantUML/'.$_SESSION["groupname"].$_SESSION["id"];
+	delete_all($basedir);
 	create_folder($basedir);
 	create_folder($basedir."/Usecase");
 	create_folder($basedir."/Plantuml");
@@ -42,17 +43,13 @@
 <?php
 function create_folder($path) {
 	$oldmask = umask(0);
-	if(is_dir($path)) {
-		delete_folder($path);
-		rmdir($path);
-	}
 	$done = mkdir($path, 0777, true);
 	umask($oldmask);
 	//echo $done? $path." created" : $path." not created";
 	return $done;
 }
 
-function delete_folder($path) {
+/*function delete_folder($path) {
 	if(file_exists($path."/Usecase/usecase.tex"))
 		unlink($path."/Usecase/usecase.tex");
 	if(file_exists($path."/Requirement/requirement.tex"))
@@ -68,6 +65,11 @@ function delete_folder($path) {
 	rmdir($path."/Requirement");
 	rmdir($path."/Tracking");
 	rmdir($path."/Plantuml");
+}*/
+
+function delete_all($basedir) {
+	system("rm -rf ".$basedir.".zip");
+	system("rm -rf ".$basedir);
 }
 
 function create_readme_file($path) {
@@ -80,6 +82,8 @@ function create_usecase_file($path) {
 	$usecasef = fopen($path."/usecase.tex","w");
 	$usecaseDAO = new UsecaseDAO();
 	$rs = $usecaseDAO->select($_SESSION["id"]);
+	$rs = sortUsecase($rs);
+	$rs = decode_entities($rs);
 	$db = new Database();
 	foreach($rs as $usecase) {
 		$title = "\subsection{Caso d'uso \hyperref{{$usecase['usecaseid']}}{{$usecase['usecaseid']}}: {$usecase['name']}}";
@@ -90,8 +94,10 @@ function create_usecase_file($path) {
 		$image = "";
 		$db->query("SELECT * FROM usecase WHERE parent = {$usecase["id"]} ORDER BY usecaseid;");
 		$sons = $db->resultSet();
+		$sons = sortUsecase($sons);
+		$sons = decode_entities($sons);
 		if($sons) {
-			$image = "\begin{figure} [h]\n";
+			$image = "\begin{figure} [H]\n";
 			$image .= "\centering\n";
 			$imagetitle = str_replace(".", "-", $usecase["usecaseid"]);
 			$image .= "\includegraphics[scale=0.45]{./{$imagetitle}.png}\n";
@@ -108,6 +114,7 @@ function create_usecase_file($path) {
 			$alternativescenario = "\item \\textbf{Scenari alternativi}: ".$usecase["alternativescenario"]."\n";
 		$post = "\item \\textbf{Postcondizione}: ".$usecase["postcondition"];
 		$myincl = $usecaseDAO->getMyInclusionsInfo($usecase["id"]);
+		$myincl = decode_entities($myincl);
 		$inclusion = "";
 		if($myincl) {
 			$inclusion = "\item \\textbf{Inclusioni}:\n";
@@ -118,6 +125,7 @@ function create_usecase_file($path) {
 			$inclusion .= "\\end{itemize}\n";
 		}
 		$myext = $usecaseDAO->getMyExtensionsInfo($usecase["id"]);
+		$myext = decode_entities($myext);
 		$extension = "";
 		if($myext) {
 			$extension = "\item \\textbf{Estensioni}:\n";
@@ -143,6 +151,54 @@ function create_usecase_file($path) {
 	fclose($usecasef);
 }
 
+function decode_entities($rs) {
+	foreach($rs as &$value) {
+		if(is_array($value))
+			$value = decode_entities($value);
+		else
+			$value = html_entity_decode($value, ENT_QUOTES);
+	}
+	return $rs;
+}
+
+function sortUsecase($usecase) {
+	$array = array();
+	foreach($usecase as $uc) {
+		array_push($array, $uc);
+	}
+
+	for($j = 0; $j < count($array); ++$j)
+		for($i = 0; $i < count($array); ++$i)
+			if(usecaseComparator($array[$j]["usecaseid"], $array[$i]["usecaseid"]) == 1) {
+				$temp = $array[$j];
+				$array[$j] = $array[$i];
+				$array[$i] = $temp;
+			}
+	return $array;
+}
+
+function usecaseComparator($id1, $id2) {
+	if($id1 == $id2)
+		return 0;
+	$id1 = str_replace("UC", "", $id1);
+	$id2 = str_replace("UC", "", $id2);
+	$pieces1 = explode(".", $id1);
+	$pieces2 = explode(".", $id2);
+
+	for($i = 0; $i < min(count($pieces1), count($pieces2)); ++$i) {
+		if($pieces1[$i] != $pieces2[$i])
+			if($pieces1[$i] < $pieces2[$i])
+				return 1;
+			else
+				return -1;
+	}
+
+	if(count($pieces1) < count($pieces2))
+		return 1;
+	else
+		return -1;
+}
+
 function getActor($id) {
 	$db = new Database();
 	$db->query("SELECT name FROM usecaseactors,actors WHERE usecaseactors.actorsid=actors.id AND usecaseid={$id};");
@@ -157,7 +213,6 @@ function getActor($id) {
 
 function create_requirement_file($path) {
 	$requirementf = fopen($path."/requirement.tex","w");
-	fputs($requirementf, "\\newcolumntype{H}{>{\centering\arraybackslash}m{7cm}}\n");
 	$t = array("F","Q","P","V");
 	$tdesc = array("Funzionali", "Di Qualità", "Prestazionali", "Di Vincolo");
 	$i = 0;
@@ -165,7 +220,10 @@ function create_requirement_file($path) {
 	while($i < count($t)) {
 		$db->query("SELECT requirements.id as id, requirementid, requirements.description as description, sources.name as name FROM requirements, sources WHERE type LIKE '%{$t[$i]}%' AND requirements.source = sources.id AND requirements.projectid = {$_SESSION["id"]} ORDER BY requirementid ASC;");
 		$rs = $db->resultSet();
+		$rs = sortRequirements($rs);
+		$rs = decode_entities($rs);
 		if($rs) {
+			fputs($requirementf, "\\newcolumntype{H}{>{\centering\arraybackslash}m{7cm}}\n");
 			fputs($requirementf, "\subsection{Requisiti {$tdesc{$i}}}\n");
 			fputs($requirementf, "\\normalsize\n");
 			fputs($requirementf, "\\begin{longtable}{|c|H|c|}\n");
@@ -186,6 +244,58 @@ function create_requirement_file($path) {
 	fclose($requirementf);
 }
 
+function sortRequirements($requirement) {
+	$array = array("F" => array(), "Q" => array(), "V" => array(), "P" => array());
+	foreach($requirement as $r) {
+		switch(substr($r["requirementid"], 2, 1)) {
+			case "F":
+				array_push($array["F"], $r/*array($r["id"], $r["requirementid"], $r["parent"])*/);
+				break;
+			case "Q":
+				array_push($array["Q"], $r/*array($r["id"], $r["requirementid"], $r["parent"])*/);
+				break;
+			case "V":
+				array_push($array["V"], $r/*array($r["id"], $r["requirementid"], $r["parent"])*/);
+				break;
+			case "P":
+				array_push($array["P"], $r/*array($r["id"], $r["requirementid"], $r["parent"])*/);
+				break;
+		}
+	}
+
+	foreach($array as &$specificArray)
+		for($j = 0; $j < count($specificArray); ++$j)
+			for($i = 0; $i < count($specificArray); ++$i)
+				if(requirementsComparator($specificArray[$j]["requirementid"], $specificArray[$i]["requirementid"]) == 1) {
+					$temp = $specificArray[$j];
+					$specificArray[$j] = $specificArray[$i];
+					$specificArray[$i] = $temp;
+				}
+	return array_merge($array["F"], $array["Q"], $array["V"], $array["P"]);
+}
+
+function requirementsComparator($id1, $id2) {
+	if($id1 == $id2)
+		return 0;
+	$id1 = substr($id1, 3);
+	$id2 = substr($id2, 3);
+	$pieces1 = explode(".", $id1);
+	$pieces2 = explode(".", $id2);
+
+	for($i = 0; $i < min(count($pieces1), count($pieces2)); ++$i) {
+		if($pieces1[$i] != $pieces2[$i])
+			if($pieces1[$i] < $pieces2[$i])
+				return 1;
+			else
+				return -1;
+	}
+
+	if(count($pieces1) < count($pieces2))
+		return 1;
+	else
+		return -1;
+}
+
 function create_tracking_file($path) {
 	$trackingf = fopen($path."/tracking.tex","w");
 	$requirementDAO = new RequirementDAO();
@@ -200,9 +310,13 @@ function create_tracking_file($path) {
 		fputs($trackingf, "\\hline\n");
 		fputs($trackingf, "\\endhead\n");
 		$rs = $requirementDAO->select($_SESSION["id"]);
+		$rs = sortRequirements($rs);
+		$rs = decode_entities($rs);
 		foreach($rs as $r) {
 			$db->query("SELECT usecase.usecaseid as usecaseid FROM usecaserequirements, usecase WHERE usecaserequirements.usecaseid=usecase.id AND usecaserequirements.requirementid={$r['id']} ORDER BY usecase.usecaseid ASC;");
 			$usecases = $db->resultSet();
+			$usecases = sortUsecase($usecases);
+			$usecases = decode_entities($usecases);
 			if($usecases) {
 				$str = "\hyperlink{{$r["requirementid"]}}{{$r["requirementid"]}} ";
 				foreach($usecases as $usecase) {
@@ -224,8 +338,12 @@ function create_tracking_file($path) {
 		fputs($trackingf, "\\hline\n");
 		fputs($trackingf, "\\endhead\n");
 		$rs = $usecaseDAO->select($_SESSION["id"]);
+		$rs = sortUsecase($rs);
+		$rs = decode_entities($rs);
 		foreach($rs as $usecase) {
 			$requirements = $usecaseDAO->getTracking($usecase["id"]);
+			$requirements = sortRequirements($requirements);
+			$requirements = decode_entities($requirements);
 			if($requirements) {
 				$str = "\hyperlink{{$usecase["usecaseid"]}}{{$usecase["usecaseid"]}} ";
 				foreach($requirements as $requirement) {
@@ -245,45 +363,42 @@ function create_tracking_file($path) {
 
 function create_plantuml_file($path) {
 	$db = new Database();
-	$db->query("SELECT DISTINCT parent FROM usecase WHERE parent IS NOT NULL AND projectid = {$_SESSION["id"]};");
+	$db->query("select * from usecase where projectid = {$_SESSION["id"]} AND (parent IS NULL OR id IN (select parent from usecase where parent IS NOT NULL)) order by usecaseid;");
 	$rs = $db->resultSet();
 	if(empty($rs))
 		return;
-	foreach($rs as $parent) {
-		$db->query("SELECT * FROM usecase WHERE id = {$parent["parent"]};");
-		$info = $db->resultSet();
-		if($info) {
-			$info = $info[0];
-			$filename = str_replace('.', '-', $info["usecaseid"]).".txt";
-			$file = fopen($path."/".$filename, "w");
-			fputs($file, "@startuml\n");
-			fputs($file, "left to right direction\n");
-			fputs($file, "skinparam packageStyle rectangle\n");
-			$db->query("SELECT name FROM usecaseactors, actors WHERE usecaseactors.actorsid = actors.id AND usecaseactors.usecaseid = {$info["id"]} ORDER BY name;");
-			$actors = $db->resultSet();
-			if($actors) {
-				foreach($actors as $actor) {
-					$name = str_replace(" ", "-", $actor["name"]);
-					fputs($file, "actor ".$name."\n");
-				}
+	foreach($rs as $info) {
+		$filename = str_replace('.', '-', $info["usecaseid"]).".txt";
+		$file = fopen($path."/".$filename, "w");
+		fputs($file, "@startuml\n");
+		fputs($file, "left to right direction\n");
+		fputs($file, "skinparam packageStyle rectangle\n");
+		$db->query("SELECT name FROM usecaseactors, actors WHERE usecaseactors.actorsid = actors.id AND usecaseactors.usecaseid = {$info["id"]} ORDER BY name;");
+		$actors = $db->resultSet();
+		$actors = decode_entities($actors);
+		if($actors) {
+			foreach($actors as $actor) {
+				$name = str_replace(" ", "-", $actor["name"]);
+				fputs($file, "actor ".$name."\n");
 			}
-			fputs($file,"rectangle ".$info["usecaseid"]." {\n");
-			$link = "--";
-			if($info["generalization"]) {
-				$link = "<|--";
-			}
-			$db->query("SELECT usecase.usecaseid as ucid, usecase.name as ucname, actors.name as aname FROM usecase, usecaseactors, actors WHERE usecase.id = usecaseactors.usecaseid AND usecaseactors.actorsid = actors.id AND parent = {$info["id"]} ORDER BY aname, ucid;");
-			$sons = $db->resultSet();
-			if($sons) {
-				foreach($sons as $son) {
-					$name = str_replace(" ", "-", $son["aname"]);
-					fputs($file,"{$name} {$link} (".$son["ucid"]." - ".$son["ucname"].")\n");
-				}
-			}
-			fputs($file, "}\n");
-			fputs($file, "@enduml");
-			fclose($file);
 		}
+		fputs($file,"rectangle ".$info["usecaseid"]." {\n");
+		$link = "--";
+		if($info["generalization"]) {
+			$link = "<|--";
+		}
+		$db->query("SELECT usecase.usecaseid as ucid, usecase.name as ucname, actors.name as aname FROM usecase, usecaseactors, actors WHERE usecase.id = usecaseactors.usecaseid AND usecaseactors.actorsid = actors.id AND parent = {$info["id"]} ORDER BY aname, ucid;");
+		$sons = $db->resultSet();
+		$sons = decode_entities($sons);
+		if($sons) {
+			foreach($sons as $son) {
+				$name = str_replace(" ", "-", $son["aname"]);
+				fputs($file,"{$name} {$link} (".$son["ucid"]." - ".$son["ucname"].")\n");
+			}
+		}
+		fputs($file, "}\n");
+		fputs($file, "@enduml");
+		fclose($file);
 	}
 }
 

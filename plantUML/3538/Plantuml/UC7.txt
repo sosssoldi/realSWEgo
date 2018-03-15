@@ -1,0 +1,8 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor U
+rectangle UC7 {
+U -- (UC7.1 - Visualizzazione errore di chiave invalida od assente)
+}
+@enduml

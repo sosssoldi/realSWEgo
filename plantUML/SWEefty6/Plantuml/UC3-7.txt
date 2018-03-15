@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Utente
+rectangle UC3.7 {
+Utente -- (UC3.7.1 - Visualizzazione numerazione di ogni query)
+Utente -- (UC3.7.2 - Visualizzazione testo di ogni query)
+Utente -- (UC3.7.3 - Visualizzazione identificativo database interrogato)
+Utente -- (UC3.7.4 - Visualizzazione momento di esecuzione di ogni query)
+Utente -- (UC3.7.5 - Visualizzazione tempo di esecuzione di ogni query)
+}
+@enduml

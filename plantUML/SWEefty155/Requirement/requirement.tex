@@ -1,0 +1,134 @@
+\newcolumntype{H}{>{\centering\arraybackslash}m{7cm}}
+\subsection{Requisiti Funzionali}
+\normalsize
+\begin{longtable}{|c|H|c|}
+\hline
+\textbf{Id Requisito} & \textbf{Descrizione} & \textbf{Fonte}\\
+\hline
+\endhead
+\hypertarget{R0F1}{R0F1} & Deve essere possibile visualizzare una mappa topologica dell'applicazione monitorata. & VE_2017-12-06 \\ \hline 
+\hypertarget{R0F1.1}{R0F1.1} & Deve essere possibile visualizzare i componenti dell'applicazione monitorata. & VE_2017-12-06 \\ \hline 
+\hypertarget{R0F1.1.1}{R0F1.1.1} & Deve essere possibile visualizzare nella mappa i server dell'applicazione monitorata. & VE_2017-12-06 \\ \hline 
+\hypertarget{R0F1.1.2}{R0F1.1.2} & Deve essere possibile visualizzare nella mappa i database dell'applicazione monitorata. & VE_2017-12-06 \\ \hline 
+\hypertarget{R0F1.1.3}{R0F1.1.3} & Deve essere possibile visualizzare nella mappa i server cluster dell'applicazione monitorata. & Interno \\ \hline 
+\hypertarget{R1F1.2}{R1F1.2} & Ogni tipologia di componente dell'applicazione monitorata deve essere rappresenta graficamente in modo diverso dalle altre. & VE_2017-12-19 \\ \hline 
+\hypertarget{R1F1.2.1}{R1F1.2.1} & I server devono essere rappresentati sotto forma di cerchi. & Interno \\ \hline 
+\hypertarget{R1F1.2.2}{R1F1.2.2} & I database devono essere rappresentati sotto forma di cilindri. & Interno \\ \hline 
+\hypertarget{R1F1.2.3}{R1F1.2.3} & Deve essere possibile visualizzare il numero di server che compongono un cluster. & Interno \\ \hline 
+\hypertarget{R1F1.3}{R1F1.3} & Deve essere possibile visualizzare le informazioni riguardati i componenti della mappa topologica dell'applicazione. & Interno \\ \hline 
+\hypertarget{R2F1.3.1}{R2F1.3.1} & Deve essere possibile visualizzare il linguaggio d'implementazione dei server tramite un rettangolo informativo vicino al componente.
+ & Interno \\ \hline 
+\hypertarget{R1F1.3.2}{R1F1.3.2} & Deve essere possibile visualizzare vicino ad ogni componente dell'applicazione monitorata un identificativo per tale entità. & Interno \\ \hline 
+\hypertarget{R1F1.4}{R1F1.4} & Deve essere possibile per l'utente riposizionare i componenti all'interno della mappa topologica & Interno \\ \hline 
+\hypertarget{R2F1.4.1}{R2F1.4.1} & Deve essere possibile riposizionare ogni componente della mappa trascinandolo con il puntatore. & VE_2017-12-19 \\ \hline 
+\hypertarget{R2F1.4.2}{R2F1.4.2} & Deve essere possibile riposizionare in modo automatico i componenti all'interno della mappa. & VE_2017-12-19 \\ \hline 
+\hypertarget{R0F1.5}{R0F1.5} & Deve essere possibile visualizzare ciascun insieme di richieste fra due componenti della mappa topologica sotto forma di arco fra i due. & VE_2017-12-06 \\ \hline 
+\hypertarget{R2F1.5.1}{R2F1.5.1} & In base al tempo di esecuzione medio di un insieme di richieste fra due componenti dell'applicazione monitorata cambia il colore degli archi. & Interno \\ \hline 
+\hypertarget{R2F1.5.1.1}{R2F1.5.1.1} & Se il tempo di esecuzione medio di un insieme di richieste fra due componenti dell'applicazione monitorata sale oltre i 3 secondi l'arco che li unisce deve essere disegnato di colore rosso. & Interno \\ \hline 
+\hypertarget{R2F1.5.1.2}{R2F1.5.1.2} & Se il tempo di esecuzione medio di un insieme di richieste fra due componenti dell'applicazione monitorata è inferiore o uguale a 3 secondi l'arco che li unisce deve essere disegnato di colore nero. & Interno \\ \hline 
+\hypertarget{R0F1.5.2}{R0F1.5.2} & Deve essere possibile visualizzare gli archi in base al tipo di richiesta eseguita fra due componenti della mappa topologica. & Interno \\ \hline 
+\hypertarget{R0F1.5.2.1}{R0F1.5.2.1} & Deve essere possibile visualizzare sotto forma di arco un insieme di richieste fra un server ed un database. & Interno \\ \hline 
+\hypertarget{R0F1.5.2.2}{R0F1.5.2.2} & Deve essere possibile visualizzare sotto forma di arco un insieme di richieste HTTP fra due server. & Interno \\ \hline 
+\hypertarget{R1F1.6}{R1F1.6} & Deve essere possibile visualizzare informazioni sull'insieme di richieste fra due componenti dell'applicazione monitorata. & Interno \\ \hline 
+\hypertarget{R1F1.6.1}{R1F1.6.1} & Deve essere possibile visualizzare il tempo medio di risposta di un insieme di richieste fra due componenti dell'applicazione monitorata. & Interno \\ \hline 
+\hypertarget{R1F1.6.2}{R1F1.6.2} & Deve essere possibile visualizzare sotto forma di etichetta il tipo dell'insieme di richieste fatte fra due componenti, vicino agli archi che le rappresentano. & Interno \\ \hline 
+\hypertarget{R1F1.6.2.1}{R1F1.6.2.1} & Deve essere possibile visualizzare delle etichette con la scritta "DB" sugli archi che rappresentano delle richieste fra server e database. & Interno \\ \hline 
+\hypertarget{R1F1.6.2.2}{R1F1.6.2.2} & Deve essere possibile visualizzare delle etichette con la scritta "HTTP" sugli archi che rappresentano delle richieste HTTP fra server e server. & Interno \\ \hline 
+\hypertarget{R2F1.7}{R2F1.7} & Deve essere possibile ridimensionare la grandezza della mappa topologica. & Interno \\ \hline 
+\hypertarget{R2F1.7.1}{R2F1.7.1} & Deve essere possibile ingrandire i componenti della mappa topologica. & Interno \\ \hline 
+\hypertarget{R2F1.7.2}{R2F1.7.2} & Deve essere possibile restringere la dimensione dei componenti della mappa. & Interno \\ \hline 
+\hypertarget{R2F1.7.3}{R2F1.7.3} & Deve essere possibile visualizzare la mappa topologica in modalità a schermo intero. & Interno \\ \hline 
+\hypertarget{R1F1.8}{R1F1.8} & Deve essere visualizzato un messaggio di errore nel caso in cui ci sia un errore nel caricamento dei dati della mappa topologica. & Interno \\ \hline 
+\hypertarget{R0F2}{R0F2} & Deve essere possibile visualizzare una lista delle trace dell'applicazione monitorata. & VE_2017-12-06 \\ \hline 
+\hypertarget{R0F2.1}{R0F2.1} & Deve essere possibile visualizzare i dettagli relativi ad ogni singola trace. & Interno \\ \hline 
+\hypertarget{R1F2.1.1}{R1F2.1.1} & Ogni voce nella lista delle trace deve essere numerata in modo incrementale, partendo da 1. & Interno \\ \hline 
+\hypertarget{R0F2.1.2}{R0F2.1.2} & Deve essere possibile visualizzare per ogni voce della lista delle trace l'identificativo ad essa associato corrispondente alla richiesta HTTP effettuata. & VE_2017-12-06 \\ \hline 
+\hypertarget{R1F2.1.3}{R1F2.1.3} & Deve essere possibile visualizzare data e orario del momento in cui è iniziata l'esecuzione di ogni trace. & VE_2017-12-06 \\ \hline 
+\hypertarget{R1F2.1.4}{R1F2.1.4} & Per ogni trace deve essere possibile visualizzarne il tempo di esecuzione.
+ & VE_2017-12-06 \\ \hline 
+\hypertarget{R0F2.1.5}{R0F2.1.5} & Deve essere visualizzato il codice di stato della richiesta HTTP corrispondente ad ogni singola trace della lista. & VE_2017-12-06 \\ \hline 
+\hypertarget{R1F2.1.5.1}{R1F2.1.5.1} & Deve essere possibile visualizzare il dettaglio dell'errore avvenuto in forma testuale. & Interno \\ \hline 
+\hypertarget{R1F2.2}{R1F2.2} & Deve essere possibile riordinare la lista delle trace. & VE_2017-12-19 \\ \hline 
+\hypertarget{R1F2.2.1}{R1F2.2.1} & Deve essere possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione. & Interno \\ \hline 
+\hypertarget{R1F2.2.1.1}{R1F2.2.1.1} & Deve essere possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione in modo crescente. & Interno \\ \hline 
+\hypertarget{R1F2.2.1.2}{R1F2.2.1.2} & Deve essere possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione in modo decrescente. & Interno \\ \hline 
+\hypertarget{R1F2.2.2}{R1F2.2.2} & Deve essere possibile riordinare la lista delle trace in base al tempo di esecuzione. & Interno \\ \hline 
+\hypertarget{R1F2.2.2.1}{R1F2.2.2.1} & Deve essere possibile riordinare la lista delle trace in base al tempo di esecuzione in modo crescente. & Interno \\ \hline 
+\hypertarget{R1F2.2.2.2}{R1F2.2.2.2} & Deve essere possibile riordinare la lista delle trace in base al tempo di esecuzione in modo decrescente. & Interno \\ \hline 
+\hypertarget{R0F2.3}{R0F2.3} & La lista delle trace deve essere caricata ordinata in modo decrescente rispetto all'ordine cronologico di esecuzione. & Interno \\ \hline 
+\hypertarget{R1F2.4}{R1F2.4} & Deve essere visualizzato un messaggio di errore nel caso in cui ci sia un errore nel caricamento dei dati della lista delle trace. & Interno \\ \hline 
+\hypertarget{R0F3}{R0F3} & Deve essere possibile, per ogni trace, visualizzarne il call tree. & VE_2017-12-06 \\ \hline 
+\hypertarget{R0F3.1}{R0F3.1} & Deve essere possibile visualizzare dei dettagli riguardati ogni singolo metodo. & Interno \\ \hline 
+\hypertarget{R0F3.1.1}{R0F3.1.1} & Deve essere possibile visualizzare il nome di ogni metodo invocato. & VE_2017-12-06 \\ \hline 
+\hypertarget{R1F3.1.2}{R1F3.1.2} & Per ogni metodo invocato deve essere possibile visualizzarne il self execution time. & Interno \\ \hline 
+\hypertarget{R1F3.1.3}{R1F3.1.3} & Per ogni metodo invocato deve essere possibile visualizzarne il total execution time. & Interno \\ \hline 
+\hypertarget{R2F3.1.4}{R2F3.1.4} & Deve essere possibile per ogni metodo del call tree, visualizzare le query da esso effettuate. & Interno \\ \hline 
+\hypertarget{R2F3.2}{R2F3.2} & Deve essere possibile raggruppare gerarchicamente le sottochiamate di un metodo del call tree. & Interno \\ \hline 
+\hypertarget{R2F3.2.1}{R2F3.2.1} & Deve essere possibile, per ogni metodo nel call tree, nascondere le sottochiamate seguite dal metodo. & Interno \\ \hline 
+\hypertarget{R2F3.2.2}{R2F3.2.2} & Deve essere possibile, per ogni metodo nel call tree, visualizzare le sottochiamate seguite dal metodo. & Interno \\ \hline 
+\hypertarget{R2F3.3}{R2F3.3} & Ogni livello di annidamento delle sottochiamate nel call tree deve avere essere mostrato con un livello di indentazione rispetto al precedente.
+ & Interno \\ \hline 
+\hypertarget{R1F3.4}{R1F3.4} & Al momento del caricamento tutte le sottochiamate di un call tree devono essere visualizzate.
+ & Interno \\ \hline 
+\hypertarget{R1F4}{R1F4} & Deve essere possibile visualizzare la lista delle query eseguite in una singola trace. & VE_2017-12-19 \\ \hline 
+\hypertarget{R1F4.1}{R1F4.1} & Deve essere possibile visualizzare dei dettagli riguardati ogni singola query. & Interno \\ \hline 
+\hypertarget{R1F4.1.1}{R1F4.1.1} & Ogni voce nella lista delle query di una singola trace deve essere numerata in modo incrementale, partendo da 1. & Interno \\ \hline 
+\hypertarget{R1F4.1.2}{R1F4.1.2} & Deve essere possibile visualizzare il testo di tutte le query di una singola trace. & Interno \\ \hline 
+\hypertarget{R1F4.1.3}{R1F4.1.3} & Deve essere possibile visualizzare l'identificativo del database interrogato da ogni query presente nella lista queries di una singola trace. & Interno \\ \hline 
+\hypertarget{R1F4.1.4}{R1F4.1.4} & Deve essere possibile visualizzare data e orario del momento in cui è iniziata l' esecuzione di ogni query. & Interno \\ \hline 
+\hypertarget{R1F4.1.5}{R1F4.1.5} & Deve essere possibile visualizzare il tempo di esecuzione di ogni query. & Interno \\ \hline 
+\hypertarget{R1F4.2}{R1F4.2} & Deve essere possibile riordinare la lista delle query relativa ad una singola trace. & Interno \\ \hline 
+\hypertarget{R1F4.2.1}{R1F4.2.1} & Deve essere possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione. & Interno \\ \hline 
+\hypertarget{R1F4.2.1.1}{R1F4.2.1.1} & Deve essere possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione in modo crescente. & Interno \\ \hline 
+\hypertarget{R1F4.2.1.2}{R1F4.2.1.2} & Deve essere possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione in modo decrescente. & Interno \\ \hline 
+\hypertarget{R1F4.2.2}{R1F4.2.2} & Deve essere possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione. & Interno \\ \hline 
+\hypertarget{R1F4.2.2.1}{R1F4.2.2.1} & Deve essere possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione in modo crescente. & Interno \\ \hline 
+\hypertarget{R1F4.2.2.2}{R1F4.2.2.2} & Deve essere possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione in modo decrescente. & Interno \\ \hline 
+\hypertarget{R1F4.3}{R1F4.3} & La lista delle query di una singola trace deve essere caricata ordinata in modo decrescente rispetto all'ordine cronologico di esecuzione. & Interno \\ \hline 
+\caption[Requisiti Funzionali]{Requisiti Funzionali}
+\label{tabella:req0}
+\end{longtable}
+\clearpage
+\newcolumntype{H}{>{\centering\arraybackslash}m{7cm}}
+\subsection{Requisiti Di Qualità}
+\normalsize
+\begin{longtable}{|c|H|c|}
+\hline
+\textbf{Id Requisito} & \textbf{Descrizione} & \textbf{Fonte}\\
+\hline
+\endhead
+\hypertarget{R0Q1}{R0Q1} & Tutto il codice prodotto deve rispettare le norme che sono state stabilite nel documento Norme di Progetto. & Interno \\ \hline 
+\hypertarget{R0Q2}{R0Q2} & Tutti i documenti e il codice prodotto devono rispettare le metriche riportate nel documento Piano di Qualifica. & Interno \\ \hline 
+\hypertarget{R0Q3}{R0Q3} & Deve essere prodotto un manuale utente. & Interno \\ \hline 
+\hypertarget{R0Q4}{R0Q4} & Deve essere prodotto un manuale sviluppatore. & Interno \\ \hline 
+\hypertarget{R0Q5}{R0Q5} & Il codice sorgente prodotto deve essere rilasciato in un repository pubblico con licenza open source che ne permetta l'utilizzo a scopi commerciali. & Capitolato \\ \hline 
+\hypertarget{R0Q6}{R0Q6} & Deve essere presente un'interfaccia che gestisca i dati fornendo alla logica applicativa le stesse funzionalità indipendentemente dalla rappresentazione dei dati all'interno del database. & VE_2017-12-19 \\ \hline 
+\caption[Requisiti Di Qualità]{Requisiti Di Qualità}
+\label{tabella:req1}
+\end{longtable}
+\clearpage
+\newcolumntype{H}{>{\centering\arraybackslash}m{7cm}}
+\subsection{Requisiti Di Vincolo}
+\normalsize
+\begin{longtable}{|c|H|c|}
+\hline
+\textbf{Id Requisito} & \textbf{Descrizione} & \textbf{Fonte}\\
+\hline
+\endhead
+\hypertarget{R0V1}{R0V1} & I plugin sviluppati devono essere utilizzabili nell'ambiente Kibana v6.1. & Capitolato \\ \hline 
+\hypertarget{R0V2}{R0V2} & Il plugin deve utilizzare JavaScript ES6. & Capitolato \\ \hline 
+\hypertarget{R1V2.1}{R1V2.1} & Il plugin può utilizzare Node.js. & Interno \\ \hline 
+\hypertarget{R1V2.2}{R1V2.2} & Il plugin può utilizzare il framework AngularJS. & VE_2017-12-19 \\ \hline 
+\hypertarget{R1V2.3}{R1V2.3} & Il plugin può utilizzare la libreria D3.js. & Capitolato \\ \hline 
+\hypertarget{R1V2.4}{R1V2.4} & Il plugin può utilizzare la libreria Canvas.js. & Capitolato \\ \hline 
+\hypertarget{R1V2.5}{R1V2.5} & Il plugin può utilizzare la libreria Chart.js. & Capitolato \\ \hline 
+\hypertarget{R1V2.6}{R1V2.6} & Il plugin può utilizzare la libreria Plottly.js. & Capitolato \\ \hline 
+\hypertarget{R1V2.7}{R1V2.7} & Il plugin può utilizzare la libreria Cytoscape.js. & Capitolato \\ \hline 
+\hypertarget{R0V3}{R0V3} & Il prodotto deve essere compatibile con il browser Google Chrome v. 55.x. & VE_2017-12-19 \\ \hline 
+\hypertarget{R0V4}{R0V4} & Il prodotto deve essere compatibile con il browser Mozilla Firefix v. 50.x. & VE_2017-12-19 \\ \hline 
+\hypertarget{R0V5}{R0V5} & Il prodotto deve essere compatibile con il browser Safari v. 10.x. & VE_2017-12-19 \\ \hline 
+\hypertarget{R0V6}{R0V6} & Il prodotto deve essere compatibile con il browser Internet Explorer v. 11.x. & VE_2017-12-19 \\ \hline 
+\caption[Requisiti Di Vincolo]{Requisiti Di Vincolo}
+\label{tabella:req3}
+\end{longtable}
+\clearpage

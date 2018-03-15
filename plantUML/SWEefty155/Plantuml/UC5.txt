@@ -1,0 +1,8 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Utente
+rectangle UC5 {
+Utente -- (UC5.1 - Visualizzazione dettagli singola trace)
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Utente
+rectangle UC1.4.2 {
+Utente -- (UC1.4.2.1 - Visualizzazione etichetta chiamate a database)
+Utente -- (UC1.4.2.2 - Visualizzazione etichetta chiamate HTTP fra server)
+}
+@enduml

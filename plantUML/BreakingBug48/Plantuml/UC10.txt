@@ -1,0 +1,9 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Utente
+rectangle UC10 {
+Utente -- (UC10.1 - UC-10.1)
+Utente -- (UC10.2 - UC-10.2)
+}
+@enduml

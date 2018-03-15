@@ -1,1227 +1,1227 @@
-@font-face {
-  font-family: primaryFont;
-  src: url("../font/Lugos-Regular.otf");
-}
-
-@font-face {
-  font-family: codeFont;
-  src: url("../font/Cherry Monospace-Light.ttf");
-}
-
-.hide {
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-* {
-	margin: 0em;
-	padding: 0em;
-	font-family: primaryFont, Verdana;
-}
-
-/* Portrait smartphone */
-@media screen and (max-width: 960px) {
-
-	strong {
-		font-weight: normal;
-	}
-
-	#breadcrumb {
-		background-color: lightgray;
-		font-size: 0.75em;
-		padding-left: 3%;
-		padding-bottom: 2%;
-    padding-right: 3%;
-	}
-
-	#breadcrumb a {
-		color: black;
-	}
-
-	fieldset {
-		border: none;
-	}
-
-	table caption {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	input[type="submit"] {
-		display: block;
-		color: white;
-		background-color: #8b0000;
-		font-weight: bold;
-		font-size: 0.8em;
-		border: none;
-		border-radius: 0.3em;
-		cursor: pointer;
-		text-transform: uppercase;
-	}
-
-	input[type="submit"]:hover {
-		background-color: #9d0404;
-	}
-
-	.warning {
-		color: red;
-	}
-
-	.success {
-		color: green;
-	}
-
-	.message {
-		text-align: center;
-		margin-top: 4%;
-	}
-
-	#noResult {
-		text-align: center;
- 		font-size: 0.92em;
- 		color: #c40000;
- 		margin-top: 2%;
-		margin-bottom: 5%;
- 	}
-
-	#intro {
-		width: 94%;
-		padding: 4% 3% 2% 3%;
-		font-size: 0.92em;
-	}
-
-	#intro p {
-		padding-bottom: 2%;
-	}
-
-	#intro ul {
-		margin-left: 5%;
-		width: 93%;
-		margin-top: 2%;
-	}
-
-	/* INSERT */
-
-	#insert {
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-		text-align: center;
-	}
-
-	#insert legend {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	#insert label {
-		display: block;
-		margin-top: 4%;
-	}
-
-	#insert input[type="text"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#insert textarea {
-		padding: 0.5em;
-		width: 60%;
-		height: 5em;
-		font-size: 0.8em;
-		resize: none;
-	}
-
-	#insert select {
-		width: 63%;
-		padding: 0.5em;
-		font-size: 0.8em;
-		margin-bottom: 1%;
-	}
-
-	#insert input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
-	}
-
-	/* DELETE */
-
-	#delete {
-		width: 94%;
-		padding: 3% 3%;
-		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#delete input[type="submit"] {
-		width: 20%;
-		padding: 0.3em;
-		margin: 5% 15%;
-		float: left;
-	}
-
-	/* HEADER */
-
-	header {
-		background-color: #0060b6;
-		padding-top: 1%;
-		padding-bottom: 1%;
-	}
-
-	.fix {
-		position: fixed;
-		width: 100%;
-		top: 0;
-		z-index: 100;
-	}
-
-	.noSpaceHeader {
-		padding-top: 2%;
-	}
-
-	.spaceHeader {
-		padding-top: 6.6em;
-	}
-
-	#logo {
-		display: block;
-		float: left;
-		margin-left: 2%;
-		font-size: 2em;
-		color: white;
-		margin-bottom: 1%;
-	}
-
-	#mobileMenu {
-		background-color: white;
-		float: right;
-		width: 32px;
-		height: auto;
-		border: none;
-		border-radius: 0.25em;
-		margin-top: 2%;
-		margin-right: 2%;
-		text-align: center;
-		cursor: pointer;
-	}
-
-	.showButton {
-		display: block;
-	}
-
-	.hideButton {
-		display: none;
-	}
-
-	#mobileMenu span {
-		display: block;
-		margin: 0.31em 0.5em 0.31em 0.5em;
-		border: 1px solid #0060b6;
-	}
-
-	nav {
-		width: 100%;
-		display: block;
-		clear: both;
-		text-align: center;
-	}
-
-	.hideNav {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	nav ul {
-		list-style-type: none;
-	}
-
-	nav ul li {
-		display: block;
-		margin-top: 0.4em;
-		margin-bottom: 0.4em;
-		font-size: 0.9em;
-	}
-
-	nav ul li a {
-		color: lightgray;
-		text-decoration: none;
-	}
-
-	nav ul li a:hover {
-		text-decoration: underline;
-	}
-
-	.here {
-		font-weight: bold;
-		color: white;
-	}
-
-	#skipNavbar {
-		display: block;
-		float: left;
-		width: 0;
-		height: 0;
-		overflow: hidden;
-	}
-
-	/* LOGIN */
-
-	#whyAccount {
-		width: 94%;
-		padding: 4% 3% 2% 3%;
-		font-size: 0.92em;
-	}
-
-	#whyAccount p {
-		padding-bottom: 2%;
-	}
-
-	#whyAccount ul {
-		margin-left: 5%;
-		width: 93%;
-		margin-top: 2%;
-	}
-
-	#user_login {
-		width: 100%;
-		text-align: center;
-		margin-top: 2%;
-		padding-bottom: 2%;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#user_login legend {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	#user_login label {
-		display: block;
-		margin-top: 3%;
-	}
-
-	#user_login input[type="text"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#user_login input[type="password"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#user_login input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
-	}
-
-	/* REGISTRATION */
-
-	#registrationDescription {
-			width: 94%;
-			padding: 4% 3% 0% 3%;
-			font-size: 0.92em;
-		}
-
-	#registrationDescription p {
-		padding-bottom: 2%;
-	}
-
-	#user_registration {
-		width: 100%;
-		text-align: center;
-		margin-top: 2%;
-		padding-bottom: 2%;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#user_registration legend {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	#user_registration label {
-		display: block;
-		margin-top: 3%;
-	}
-
-	#user_registration input[type="text"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#user_registration input[type="password"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#user_registration input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
-	}
-
-	/* CONTACTS */
-
-	#socialContacts {
-		width: 100%;
-		text-align: center;
-		padding-top: 5%;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	.socialContact {
-		display: inline-block;
-		width: 94%;
-		margin: 3% 3% 5% 3%;
-		background-color: white;
-		overflow: auto;
-		position: relative;
-	}
-
-	.socialContact img {
-		width: 3em;
-		float: left;
-		position: absolute;
-		left: 3%;
-		top: 30%;
-		bottom: 30%;
-	}
-
-	.socialContact h2 {
-		font-size: 1.25em;
-		margin-top: 2%;
-		margin-bottom: 2%;
-		font-weight: normal;
-		color: #8b0000;
-	}
-
-	.socialContact div {
-		margin-right: 0.75em;
-		margin-left: 4.5em;
-	}
-
-	.socialContact p {
-		font-size: 0.85em;
-	}
-
-	.socialContact a {
-		display: block;
-		margin-top: 4%;
-		margin-bottom: 3%;
-		text-decoration: none;
-	}
-
-	/* INDEX */
-
-	#features {
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-		padding-top: 5%;
-		padding-bottom: 5%;
-	}
-
-	.info {
-		display: inline-block;
-		width: 96%;
-		margin: 3% 2%;
-		background-color: white;
-	}
-
-	.info h2 {
-		display: block;
-		width: 94%;
-		font-size: 1.15em;
-		text-align: center;
-		font-weight: normal;
-		margin-top: 4%;
-		margin-left: 3%;
-	}
-
-	.info img {
-		width: 70%;
-		margin: 4% 15%;
-	}
-
-	.info h3 {
-		font-size: 1.2em;
-		color: #8b0000;
-		font-weight: normal;
-	}
-
-	.info p {
-		font-size: 0.92em;
-		margin-bottom: 3%;
-	}
-
-	.info dl {
-		font-size: 0.92em;
-	}
-
-	.info dl dt {
-		font-weight: bold;
-	}
-
-	.info dl dt strong {
-		font-weight: bold;
-	}
-
-	.info dl dd {
-		margin-bottom: 3%;
-	}
-
-	.hideMoreInfo {
-		display: none;
-	}
-
-	.showMoreInfo {
-		display: block;
-		color: blue;
-		text-decoration: none;
-	}
-
-	.info a {
-		text-align: center;
-		margin-bottom: 4%;
-	}
-
-	.info div {
-		width: 94%;
-		margin-left: 3%;
-		margin-bottom: 5%;
-	}
-
-	/* USE CASE */
-
-	#search_UC {
-		width: 94%;
-		margin: 2% auto;
-		text-align: center;
-	}
-
-	#search_UC legend {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	#search_UC label {
-		display: none;
-	}
-
-	#search_UC input[type="text"] {
-		width: 70%;
-		font-size: 0.8em;
-		padding: 0.5em;
-		border: 0.1em solid lightgray;
-	}
-
-	#search_UC input[type="submit"] {
-		background-color: white;
-		background-image: url('../image/search.png');
-		background-size: 100% 100%;
-		width: 2.5em;
-		padding: 0.5em 0em;
-		display: inline;
-	}
-
-	/* TABELLA RESPONSIVE USE CASE*/
-
-	#allUC {
-		width: 100%;
-		margin-top: 2%;
-		padding-left: 3%;
-		padding-right: 3%;
-		font-size: 0.9em;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#allUC thead, #allUC tbody, #allUC th, #allUC td, #allUC tr {
-		display: block;
-	}
-
-	#allUC tr {
-		background-color: rgba(255, 255, 255, 0.7);
-		border: 0.1em solid black;
-		border-collapse: collapse;
-		margin: 4% 0%;
-	}
-
-	#allUC thead tr {
-		position: absolute;    /* Nascondiamo la testata */
-		top: -9999px;
-		left: -9999px;
-	}
-
-	#allUC td {
-		position: relative;		/* Creiamo lo spazio per l'intestazione */
-		border: 0em;
-		padding-top: 2%;
-		padding-left: 30%;
-    padding-right: 5%;
-	}
-
-	.operation {
-		padding-bottom: 3em;
-	}
-
-	#allUC td:before {
-		position: absolute;		/* Creiamo le altre celle per la descrizione */
-		top: 0.8em;
-		left: 0%;
-		width: 30%;
-		line-height: 0em;
-		text-align: center;
-		padding-top: 2%;
-	}
-
-	#allUC td:nth-of-type(1):before {
-		content: "Codice";
-		font-weight: bold;
-	}
-
-	#allUC td:nth-of-type(2):before {
-		content: "Nome";
-		font-weight: bold;
-	}
-
-	#allUC td:nth-of-type(3):before {
-		content: "Descrizione";
-		font-weight: bold;
-	}
-
-	#allUC td:nth-of-type(4):before {
-		content: "Pre";
-		font-weight: bold;
-	}
-
-	#allUC td:nth-of-type(5):before {
-		content: "Post";
-		font-weight: bold;
-	}
-
-	#allUC td:nth-of-type(6):before {
-		content: "Principale";
-		font-weight: bold;
-	}
-
-	#allUC td:nth-of-type(7):before {
-		content: "Inclusioni";
-		font-weight: bold;
-	}
-
-	#allUC td:nth-of-type(8):before {
-		content: "Estensioni";
-		font-weight: bold;
-	}
-
-	#allUC td:nth-of-type(9):before {
-		content: "Attori";
-		font-weight: bold;
-	}
-
-	.codUC {
-		background-color: #c40000;
-		color: white;
-	}
-
-	/* ACTORS */
-
-	#insertActor {
-		width: 94%;
-		padding: 3% 3%;
-		text-align: center;
-	}
-
-	#insertActor label {
-		display: block;
-		margin-top: 5%;
-	}
-
-	#insertActor input[type="text"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#insertActor input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
-	}
-
-	#insertActor textarea {
-		padding: 0.5em;
-		width: 60%;
-		height: 5em;
-		font-size: 0.8em;
-		resize: none;
-	}
-
-	#actors {
-		background-color: lightgray;
-		text-align: center;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-		padding: 3% 0%;
-	}
-
-	.actor {
-		display: inline-block;
-		width: 90%;
-		margin: 3% 5%;
-		background-color: #fefabc
-	}
-
-	.actor h2 {
-		font-size: 1.5em;
-		margin-top: 2%;
-		font-weight: normal;
-		color: #8b0000;
-		text-align: center;
-	}
-
-	.actor p {
-		text-align: left;
-		font-size: 0.92em;
-		padding: 2%;
-		border-bottom: 0.1em solid lightgray;
-	}
-
-	.delete {
-		display: block;
-		background-image: url('../image/delete.png');
-		background-size: 100% 100%;
-		width: 1.5em;
-		float: right;
-		margin: 0.3em;
-		padding: 0.2em;
-	}
-
-	.modify {
-		display: block;
-		background-image: url('../image/modify.png');
-		background-size: 100% 100%;
-		width: 1.5em;
-		float: right;
-		margin: 0.5em;
-		padding: 0.2em;
-	}
-
-	/* SOURCES */
-
-	#insertSource {
-		width: 94%;
-		padding: 3% 3%;
-		text-align: center;
-	}
-
-	#insertSource label {
-		display: block;
-		margin-top: 5%;
-	}
-
-	#insertSource input[type="text"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#insertSource input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
-	}
-
-	#insertSource textarea {
-		padding: 0.5em;
-		width: 60%;
-		height: 5em;
-		font-size: 0.8em;
-		resize: none;
-	}
-
-	#source {
-		text-align: center;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-		padding: 3% 0%;
-	}
-
-	.source {
-		display: inline-block;
-		width: 90%;
-		margin: 3% 5%;
-		background-color: #fefabc
-	}
-
-	.source h2 {
-		font-size: 1.5em;
-		margin-top: 2%;
-		font-weight: normal;
-		color: #8b0000;
-		text-align: center;
-	}
-
-	.source p {
-		text-align: left;
-		font-size: 0.92em;
-		padding: 2%;
-		border-bottom: 0.1em solid lightgray;
-	}
-
-	/* REQUIREMENT */
-
-	#search_R {
-		width: 94%;
-		margin: 2% auto;
-		text-align: center;
-	}
-
-	#search_R legend {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	#search_R label {
-		display: none;
-	}
-
-	#search_R input[type="text"] {
-		width: 70%;
-		font-size: 0.8em;
-		padding: 0.5em;
-		border: 0.1em solid lightgray;
-	}
-
-	#search_R input[type="submit"] {
-		background-color: white;
-		background-image: url('../image/search.png');
-		background-size: 100% 100%;
-		width: 2.5em;
-		padding: 0.5em 0em;
-		display: inline;
-	}
-
-	/* TABELLA RESPONSIVE REQUISITI */
-
-	#allR {
-		width: 100%;
-		margin-top: 2%;
-		padding-left: 3%;
-		padding-right: 3%;
-		font-size: 0.9em;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#allR thead, #allR tbody, #allR th, #allR td, #allR tr {
-		display: block;
-	}
-
-	#allR tr {
-		background-color: rgba(255, 255, 255, 0.7);
-		border: 0.1em solid black;
-		border-collapse: collapse;
-		margin: 4% 0%;
-	}
-
-	#allR thead tr {
-		position: absolute;    /* Nascondiamo la testata */
-		top: -9999px;
-		left: -9999px;
-	}
-
-	#allR td {
-		position: relative;		/* Creiamo lo spazio per l'intestazione */
-		border: 0em;
-		padding-top: 2%;
-		padding-left: 30%;
-    padding-right: 5%;
-	}
-
-	#allR td:before {
-		position: absolute;		/* Creiamo le altre celle per la descrizione */
-		top: 0.8em;
-		left: 0%;
-		width: 30%;
-		line-height: 0em;
-		text-align: center;
-		padding: 2% 0% 1% 0%;
-	}
-
-  #allR td:nth-of-type(1):before {
-		content: "Codice";
-		font-weight: bold;
-	}
-
-	#allR td:nth-of-type(2):before {
-		content: "Nome";
-		font-weight: bold;
-	}
-
-	#allR td:nth-of-type(3):before {
-		content: "Descrizione";
-		font-weight: bold;
-	}
-
-	#allR td:nth-of-type(4):before {
-		content: "Tipo";
-		font-weight: bold;
-	}
-
-	#allR td:nth-of-type(5):before {
-		content: "Importanza";
-		font-weight: bold;
-	}
-
-	#allR td:nth-of-type(6):before {
-		content: "Stato";
-		font-weight: bold;
-	}
-
-	#allR td:nth-of-type(7):before {
-		content: "Fonti";
-		font-weight: bold;
-	}
-
-	.codR {
-		background-color: #c40000;
-		color: white;
-	}
-
-	/* PROFILO */
-
-	#changePassword {
-		text-align: center;
-		margin-top: 2%;
-	}
-
-	#operationHeader {
-		margin-top: 3%;
-		margin-bottom: 3%;
-		text-align: center;
-	}
-
-	#change_password {
-		margin: 2% 0% 0% 0%;
-		text-align: center;
-	}
-
-	#change_password legend {
-		height: 0em;
-		overflow: hidden;
-	}
-
-	#change_password label {
-		display: block;
-		margin-top: 2%;
-	}
-
-	#change_password input[type="password"] {
-		padding: 0.5em;
-		width: 60%;
-		font-size: 0.8em;
-		text-align: center;
-	}
-
-	#change_password input[type="submit"] {
-		width: 64%;
-		padding: 0.7em;
-		margin: 5% 0% 5% 18%;
-	}
-
-	#graphics {
-		text-align: center;
-		margin-top: 6%;
-	}
-
-	#graphics a {
-		margin-top: 2%;
-	}
-
-	#graphics h3 {
-		text-align: center;
-		font-weight: normal;
-		padding-top: 4%;
-	}
-
-	#graphics ul {
-		padding-top: 3%;
-		list-style-type: none;
-	}
-
-	#graphicObb {
-		width: 96%;
-		margin: 0 auto;
-		border: 0.05em solid gray;
-		text-align: center;
-	}
-
-	#graphicDes {
-		width: 96%;
-		margin: 0 auto;
-		background-color: #3f3f4f;
-		color: white;
-	}
-
-	#graphicOpz {
-		width: 96%;
-		margin: 0 auto;
-		border: 0.05em solid gray;
-		text-align: center;
-	}
-
-	#logout {
-		text-align: center;
-		margin-top: 5%;
-		margin-bottom: 3%;
-	}
-
-	#logout a {
-		color: blue;
-		text-decoration: none;
-	}
-
-	#logout div {
-		display: inline-block;
-		width: 0.45em;
-		height: 0.45em;
-		background-image: url('../image/logout.jpg');
-		background-size: 100% 100%;
-		padding: 0.3em;
-	}
-
-	#summary {
-		width: 80%;
-		padding: 2% 10%;
-		text-align: center;
-	}
-
-	#summary ul {
-		list-style-type: none;
-		margin-top: 2%;
-	}
-
-	#createUML {
-		text-align: center;
-		margin-top: 6%;
-	}
-
-	#createUML a {
-		color: blue;
-		text-decoration: none;
-	}
-
-	.noRequirement {
-		padding: 1em;
-		font-size: 0.85em;
-	}
-
-	/* TABELLA RESPONSIVE TRACKING */
-
-	#allTracking {
-		width: 100%;
-		padding-left: 3%;
-		padding-right: 3%;
-		font-size: 0.9em;
-		background-color: lightgray;
-		background-image: url('../image/background.jpg');
-		background-size: 100%;
-	}
-
-	#allTracking thead, #allTracking tbody, #allTracking th, #allTracking td, #allTracking tr {
-		display: block;
-	}
-
-	#allTracking tr {
-		background-color: rgba(255, 255, 255, 0.7);
-		border: 0.1em solid black;
-		border-collapse: collapse;
-		margin: 4% 0%;
-	}
-
-	#allTracking thead tr {
-		position: absolute;    /* Nascondiamo la testata */
-		top: -9999px;
-		left: -9999px;
-	}
-
-	#allTracking td {
-		position: relative;		/* Creiamo lo spazio per l'intestazione */
-		border: 0em;
-		padding-top: 2%;
-		padding-left: 30%;
-	}
-
-	#allTracking td:before {
-		position: absolute;		/* Creiamo le altre celle per la descrizione */
-		top: 0.8em;
-		left: 0%;
-		width: 30%;
-		line-height: 0em;
-		text-align: center;
-		padding-top: 2%;
-	}
-
-	#allTracking td:nth-of-type(1):before {
-		content: "Use Case";
-		font-weight: bold;
-	}
-
-	#allTracking td:nth-of-type(2):before {
-		content: "Requisiti";
-		font-weight: bold;
-	}
-
-  /* MAPPA DEL SITO */
-
-  #siteMap {
-    display: block;
-    width: 90%;
-    margin: 5% 0 5% 10%;
-		font-size: 0.85em;
-  }
-
-  #siteMap > li {
-    list-style-image: url("../image/folder_icon.png");
-		margin-bottom: 5%;
-  }
-
-  #siteMap > li > ul{
-    margin-left: 10%;
-  }
-
-  #siteMap > li > ul > li {
-    list-style-image: url("../image/li_central.png");
-  }
-
-  #siteMap > li > ul > li:last-of-type {
-    list-style-image: url("../image/li_up.png");
-  }
-
-	/* FOOTER */
-
-	footer {
-		display: inline-block;
-		clear: both;
-		padding: 2%;
-		background-color: #0060b6;
-		width: 96%;
-	}
-
-  footer span {
-    float: left;
-		color: white;
-  }
-
-  footer a {
-    display: block;
-    margin-left: 4%;
-    float: left;
-		color: lightgray;
-  }
-
-  .valid {
-    display: block;
-    width: 15%;
-    margin-left: 4%;
-    float: right;
-  }
-
-  .multiple {
-  	background-color: white;
-		margin-left: 20%;
-		width: 60%;
-		height: 8em;
-		overflow-Y: scroll;
-		font-size: 0.92em;
-		font-family: primaryFont;
-	}
-
-	#insert .multiple label {
-		margin-top: 0.2em;
-	}
-
-	.multiple input[type="checkbox"] {
-		display: block;
-		float: left;
-		margin: 0.3em;
-	}
-
-  /* ERROR PAGE */
-
-  #errorImg
-  {
-    width: 50%;
-    margin-left: 25%;
-  }
-
-  /* Donations Page */
-
-  #donazione {
-    margin-bottom: 5em;
-    margin-top: 2em;
-    text-align: center;
-  }
-
-  /*FAQ*/
-
- 	#faqQuestion {
- 		width: 80%;
- 		margin: 0 auto;
- 	}
-
- 	#faqQuestion dt {
- 		margin-top: 1.5em;
- 		font-size: 1.6em;
- 		color: rgb(135, 30, 9);
- 	}
-
- 	#faqQuestion dd {
- 		margin-top: 0.8em;
- 		font-size: 1.2em;
- 	}
-
- 	#faqQuestion dd:last-of-type {
- 		margin-bottom: 2em;
- 	}
-
- 	#faqQuestion ol {
- 		margin-top: 0.5em;
- 		margin-left: 2em;
- 	}
-
- 	.code {
- 		font-family: codeFont;
- 		font-weight: bold;
-    word-break: break-all;
- 	}
-}
+@font-face {
+  font-family: primaryFont;
+  src: url("../font/Lugos-Regular.otf");
+}
+
+@font-face {
+  font-family: codeFont;
+  src: url("../font/Cherry Monospace-Light.ttf");
+}
+
+.hide {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+* {
+	margin: 0em;
+	padding: 0em;
+	font-family: primaryFont, Verdana;
+}
+
+/* Portrait smartphone */
+@media screen and (max-width: 960px) {
+
+	strong {
+		font-weight: normal;
+	}
+
+	#breadcrumb {
+		background-color: lightgray;
+		font-size: 0.75em;
+		padding-left: 3%;
+		padding-bottom: 2%;
+    padding-right: 3%;
+	}
+
+	#breadcrumb a {
+		color: black;
+	}
+
+	fieldset {
+		border: none;
+	}
+
+	table caption {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	input[type="submit"] {
+		display: block;
+		color: white;
+		background-color: #8b0000;
+		font-weight: bold;
+		font-size: 0.8em;
+		border: none;
+		border-radius: 0.3em;
+		cursor: pointer;
+		text-transform: uppercase;
+	}
+
+	input[type="submit"]:hover {
+		background-color: #9d0404;
+	}
+
+	.warning {
+		color: red;
+	}
+
+	.success {
+		color: green;
+	}
+
+	.message {
+		text-align: center;
+		margin-top: 4%;
+	}
+
+	#noResult {
+		text-align: center;
+ 		font-size: 0.92em;
+ 		color: #c40000;
+ 		margin-top: 2%;
+		margin-bottom: 5%;
+ 	}
+
+	#intro {
+		width: 94%;
+		padding: 4% 3% 2% 3%;
+		font-size: 0.92em;
+	}
+
+	#intro p {
+		padding-bottom: 2%;
+	}
+
+	#intro ul {
+		margin-left: 5%;
+		width: 93%;
+		margin-top: 2%;
+	}
+
+	/* INSERT */
+
+	#insert {
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+		text-align: center;
+	}
+
+	#insert legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#insert label {
+		display: block;
+		margin-top: 4%;
+	}
+
+	#insert input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#insert textarea {
+		padding: 0.5em;
+		width: 60%;
+		height: 5em;
+		font-size: 0.8em;
+		resize: none;
+	}
+
+	#insert select {
+		width: 63%;
+		padding: 0.5em;
+		font-size: 0.8em;
+		margin-bottom: 1%;
+	}
+
+	#insert input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	/* DELETE */
+
+	#delete {
+		width: 94%;
+		padding: 3% 3%;
+		text-align: center;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#delete input[type="submit"] {
+		width: 20%;
+		padding: 0.3em;
+		margin: 5% 15%;
+		float: left;
+	}
+
+	/* HEADER */
+
+	header {
+		background-color: #0060b6;
+		padding-top: 1%;
+		padding-bottom: 1%;
+	}
+
+	.fix {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		z-index: 100;
+	}
+
+	.noSpaceHeader {
+		padding-top: 2%;
+	}
+
+	.spaceHeader {
+		padding-top: 6.6em;
+	}
+
+	#logo {
+		display: block;
+		float: left;
+		margin-left: 2%;
+		font-size: 2em;
+		color: white;
+		margin-bottom: 1%;
+	}
+
+	#mobileMenu {
+		background-color: white;
+		float: right;
+		width: 32px;
+		height: auto;
+		border: none;
+		border-radius: 0.25em;
+		margin-top: 2%;
+		margin-right: 2%;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.showButton {
+		display: block;
+	}
+
+	.hideButton {
+		display: none;
+	}
+
+	#mobileMenu span {
+		display: block;
+		margin: 0.31em 0.5em 0.31em 0.5em;
+		border: 1px solid #0060b6;
+	}
+
+	nav {
+		width: 100%;
+		display: block;
+		clear: both;
+		text-align: center;
+	}
+
+	.hideNav {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	nav ul {
+		list-style-type: none;
+	}
+
+	nav ul li {
+		display: block;
+		margin-top: 0.4em;
+		margin-bottom: 0.4em;
+		font-size: 0.9em;
+	}
+
+	nav ul li a {
+		color: lightgray;
+		text-decoration: none;
+	}
+
+	nav ul li a:hover {
+		text-decoration: underline;
+	}
+
+	.here {
+		font-weight: bold;
+		color: white;
+	}
+
+	#skipNavbar {
+		display: block;
+		float: left;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+
+	/* LOGIN */
+
+	#whyAccount {
+		width: 94%;
+		padding: 4% 3% 2% 3%;
+		font-size: 0.92em;
+	}
+
+	#whyAccount p {
+		padding-bottom: 2%;
+	}
+
+	#whyAccount ul {
+		margin-left: 5%;
+		width: 93%;
+		margin-top: 2%;
+	}
+
+	#user_login {
+		width: 100%;
+		text-align: center;
+		margin-top: 2%;
+		padding-bottom: 2%;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#user_login legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#user_login label {
+		display: block;
+		margin-top: 3%;
+	}
+
+	#user_login input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#user_login input[type="password"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#user_login input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	/* REGISTRATION */
+
+	#registrationDescription {
+			width: 94%;
+			padding: 4% 3% 0% 3%;
+			font-size: 0.92em;
+		}
+
+	#registrationDescription p {
+		padding-bottom: 2%;
+	}
+
+	#user_registration {
+		width: 100%;
+		text-align: center;
+		margin-top: 2%;
+		padding-bottom: 2%;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#user_registration legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#user_registration label {
+		display: block;
+		margin-top: 3%;
+	}
+
+	#user_registration input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#user_registration input[type="password"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#user_registration input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	/* CONTACTS */
+
+	#socialContacts {
+		width: 100%;
+		text-align: center;
+		padding-top: 5%;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	.socialContact {
+		display: inline-block;
+		width: 94%;
+		margin: 3% 3% 5% 3%;
+		background-color: white;
+		overflow: auto;
+		position: relative;
+	}
+
+	.socialContact img {
+		width: 3em;
+		float: left;
+		position: absolute;
+		left: 3%;
+		top: 30%;
+		bottom: 30%;
+	}
+
+	.socialContact h2 {
+		font-size: 1.25em;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		font-weight: normal;
+		color: #8b0000;
+	}
+
+	.socialContact div {
+		margin-right: 0.75em;
+		margin-left: 4.5em;
+	}
+
+	.socialContact p {
+		font-size: 0.85em;
+	}
+
+	.socialContact a {
+		display: block;
+		margin-top: 4%;
+		margin-bottom: 3%;
+		text-decoration: none;
+	}
+
+	/* INDEX */
+
+	#features {
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+
+	.info {
+		display: inline-block;
+		width: 96%;
+		margin: 3% 2%;
+		background-color: white;
+	}
+
+	.info h2 {
+		display: block;
+		width: 94%;
+		font-size: 1.15em;
+		text-align: center;
+		font-weight: normal;
+		margin-top: 4%;
+		margin-left: 3%;
+	}
+
+	.info img {
+		width: 70%;
+		margin: 4% 15%;
+	}
+
+	.info h3 {
+		font-size: 1.2em;
+		color: #8b0000;
+		font-weight: normal;
+	}
+
+	.info p {
+		font-size: 0.92em;
+		margin-bottom: 3%;
+	}
+
+	.info dl {
+		font-size: 0.92em;
+	}
+
+	.info dl dt {
+		font-weight: bold;
+	}
+
+	.info dl dt strong {
+		font-weight: bold;
+	}
+
+	.info dl dd {
+		margin-bottom: 3%;
+	}
+
+	.hideMoreInfo {
+		display: none;
+	}
+
+	.showMoreInfo {
+		display: block;
+		color: blue;
+		text-decoration: none;
+	}
+
+	.info a {
+		text-align: center;
+		margin-bottom: 4%;
+	}
+
+	.info div {
+		width: 94%;
+		margin-left: 3%;
+		margin-bottom: 5%;
+	}
+
+	/* USE CASE */
+
+	#search_UC {
+		width: 94%;
+		margin: 2% auto;
+		text-align: center;
+	}
+
+	#search_UC legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#search_UC label {
+		display: none;
+	}
+
+	#search_UC input[type="text"] {
+		width: 70%;
+		font-size: 0.8em;
+		padding: 0.5em;
+		border: 0.1em solid lightgray;
+	}
+
+	#search_UC input[type="submit"] {
+		background-color: white;
+		background-image: url('../image/search.png');
+		background-size: 100% 100%;
+		width: 2.5em;
+		padding: 0.5em 0em;
+		display: inline;
+	}
+
+	/* TABELLA RESPONSIVE USE CASE*/
+
+	#allUC {
+		width: 100%;
+		margin-top: 2%;
+		padding-left: 3%;
+		padding-right: 3%;
+		font-size: 0.9em;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#allUC thead, #allUC tbody, #allUC th, #allUC td, #allUC tr {
+		display: block;
+	}
+
+	#allUC tr {
+		background-color: rgba(255, 255, 255, 0.7);
+		border: 0.1em solid black;
+		border-collapse: collapse;
+		margin: 4% 0%;
+	}
+
+	#allUC thead tr {
+		position: absolute;    /* Nascondiamo la testata */
+		top: -9999px;
+		left: -9999px;
+	}
+
+	#allUC td {
+		position: relative;		/* Creiamo lo spazio per l'intestazione */
+		border: 0em;
+		padding-top: 2%;
+		padding-left: 30%;
+    padding-right: 5%;
+	}
+
+	.operation {
+		padding-bottom: 3em;
+	}
+
+	#allUC td:before {
+		position: absolute;		/* Creiamo le altre celle per la descrizione */
+		top: 0.8em;
+		left: 0%;
+		width: 30%;
+		line-height: 0em;
+		text-align: center;
+		padding-top: 2%;
+	}
+
+	#allUC td:nth-of-type(1):before {
+		content: "Codice";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(2):before {
+		content: "Nome";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(3):before {
+		content: "Descrizione";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(4):before {
+		content: "Pre";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(5):before {
+		content: "Post";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(6):before {
+		content: "Principale";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(7):before {
+		content: "Inclusioni";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(8):before {
+		content: "Estensioni";
+		font-weight: bold;
+	}
+
+	#allUC td:nth-of-type(9):before {
+		content: "Attori";
+		font-weight: bold;
+	}
+
+	.codUC {
+		background-color: #c40000;
+		color: white;
+	}
+
+	/* ACTORS */
+
+	#insertActor {
+		width: 94%;
+		padding: 3% 3%;
+		text-align: center;
+	}
+
+	#insertActor label {
+		display: block;
+		margin-top: 5%;
+	}
+
+	#insertActor input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#insertActor input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	#insertActor textarea {
+		padding: 0.5em;
+		width: 60%;
+		height: 5em;
+		font-size: 0.8em;
+		resize: none;
+	}
+
+	#actors {
+		background-color: lightgray;
+		text-align: center;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+		padding: 3% 0%;
+	}
+
+	.actor {
+		display: inline-block;
+		width: 90%;
+		margin: 3% 5%;
+		background-color: #fefabc
+	}
+
+	.actor h2 {
+		font-size: 1.5em;
+		margin-top: 2%;
+		font-weight: normal;
+		color: #8b0000;
+		text-align: center;
+	}
+
+	.actor p {
+		text-align: left;
+		font-size: 0.92em;
+		padding: 2%;
+		border-bottom: 0.1em solid lightgray;
+	}
+
+	.delete {
+		display: block;
+		background-image: url('../image/delete.png');
+		background-size: 100% 100%;
+		width: 1.5em;
+		float: right;
+		margin: 0.3em;
+		padding: 0.2em;
+	}
+
+	.modify {
+		display: block;
+		background-image: url('../image/modify.png');
+		background-size: 100% 100%;
+		width: 1.5em;
+		float: right;
+		margin: 0.5em;
+		padding: 0.2em;
+	}
+
+	/* SOURCES */
+
+	#insertSource {
+		width: 94%;
+		padding: 3% 3%;
+		text-align: center;
+	}
+
+	#insertSource label {
+		display: block;
+		margin-top: 5%;
+	}
+
+	#insertSource input[type="text"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#insertSource input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	#insertSource textarea {
+		padding: 0.5em;
+		width: 60%;
+		height: 5em;
+		font-size: 0.8em;
+		resize: none;
+	}
+
+	#source {
+		text-align: center;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+		padding: 3% 0%;
+	}
+
+	.source {
+		display: inline-block;
+		width: 90%;
+		margin: 3% 5%;
+		background-color: #fefabc
+	}
+
+	.source h2 {
+		font-size: 1.5em;
+		margin-top: 2%;
+		font-weight: normal;
+		color: #8b0000;
+		text-align: center;
+	}
+
+	.source p {
+		text-align: left;
+		font-size: 0.92em;
+		padding: 2%;
+		border-bottom: 0.1em solid lightgray;
+	}
+
+	/* REQUIREMENT */
+
+	#search_R {
+		width: 94%;
+		margin: 2% auto;
+		text-align: center;
+	}
+
+	#search_R legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#search_R label {
+		display: none;
+	}
+
+	#search_R input[type="text"] {
+		width: 70%;
+		font-size: 0.8em;
+		padding: 0.5em;
+		border: 0.1em solid lightgray;
+	}
+
+	#search_R input[type="submit"] {
+		background-color: white;
+		background-image: url('../image/search.png');
+		background-size: 100% 100%;
+		width: 2.5em;
+		padding: 0.5em 0em;
+		display: inline;
+	}
+
+	/* TABELLA RESPONSIVE REQUISITI */
+
+	#allR {
+		width: 100%;
+		margin-top: 2%;
+		padding-left: 3%;
+		padding-right: 3%;
+		font-size: 0.9em;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#allR thead, #allR tbody, #allR th, #allR td, #allR tr {
+		display: block;
+	}
+
+	#allR tr {
+		background-color: rgba(255, 255, 255, 0.7);
+		border: 0.1em solid black;
+		border-collapse: collapse;
+		margin: 4% 0%;
+	}
+
+	#allR thead tr {
+		position: absolute;    /* Nascondiamo la testata */
+		top: -9999px;
+		left: -9999px;
+	}
+
+	#allR td {
+		position: relative;		/* Creiamo lo spazio per l'intestazione */
+		border: 0em;
+		padding-top: 2%;
+		padding-left: 30%;
+    padding-right: 5%;
+	}
+
+	#allR td:before {
+		position: absolute;		/* Creiamo le altre celle per la descrizione */
+		top: 0.8em;
+		left: 0%;
+		width: 30%;
+		line-height: 0em;
+		text-align: center;
+		padding: 2% 0% 1% 0%;
+	}
+
+  #allR td:nth-of-type(1):before {
+		content: "Codice";
+		font-weight: bold;
+	}
+
+	#allR td:nth-of-type(2):before {
+		content: "Nome";
+		font-weight: bold;
+	}
+
+	#allR td:nth-of-type(3):before {
+		content: "Descrizione";
+		font-weight: bold;
+	}
+
+	#allR td:nth-of-type(4):before {
+		content: "Tipo";
+		font-weight: bold;
+	}
+
+	#allR td:nth-of-type(5):before {
+		content: "Importanza";
+		font-weight: bold;
+	}
+
+	#allR td:nth-of-type(6):before {
+		content: "Stato";
+		font-weight: bold;
+	}
+
+	#allR td:nth-of-type(7):before {
+		content: "Fonti";
+		font-weight: bold;
+	}
+
+	.codR {
+		background-color: #c40000;
+		color: white;
+	}
+
+	/* PROFILO */
+
+	#changePassword {
+		text-align: center;
+		margin-top: 2%;
+	}
+
+	#operationHeader {
+		margin-top: 3%;
+		margin-bottom: 3%;
+		text-align: center;
+	}
+
+	#change_password {
+		margin: 2% 0% 0% 0%;
+		text-align: center;
+	}
+
+	#change_password legend {
+		height: 0em;
+		overflow: hidden;
+	}
+
+	#change_password label {
+		display: block;
+		margin-top: 2%;
+	}
+
+	#change_password input[type="password"] {
+		padding: 0.5em;
+		width: 60%;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	#change_password input[type="submit"] {
+		width: 64%;
+		padding: 0.7em;
+		margin: 5% 0% 5% 18%;
+	}
+
+	#graphics {
+		text-align: center;
+		margin-top: 6%;
+	}
+
+	#graphics a {
+		margin-top: 2%;
+	}
+
+	#graphics h3 {
+		text-align: center;
+		font-weight: normal;
+		padding-top: 4%;
+	}
+
+	#graphics ul {
+		padding-top: 3%;
+		list-style-type: none;
+	}
+
+	#graphicObb {
+		width: 96%;
+		margin: 0 auto;
+		border: 0.05em solid gray;
+		text-align: center;
+	}
+
+	#graphicDes {
+		width: 96%;
+		margin: 0 auto;
+		background-color: #3f3f4f;
+		color: white;
+	}
+
+	#graphicOpz {
+		width: 96%;
+		margin: 0 auto;
+		border: 0.05em solid gray;
+		text-align: center;
+	}
+
+	#logout {
+		text-align: center;
+		margin-top: 5%;
+		margin-bottom: 3%;
+	}
+
+	#logout a {
+		color: blue;
+		text-decoration: none;
+	}
+
+	#logout div {
+		display: inline-block;
+		width: 0.45em;
+		height: 0.45em;
+		background-image: url('../image/logout.jpg');
+		background-size: 100% 100%;
+		padding: 0.3em;
+	}
+
+	#summary {
+		width: 80%;
+		padding: 2% 10%;
+		text-align: center;
+	}
+
+	#summary ul {
+		list-style-type: none;
+		margin-top: 2%;
+	}
+
+	#createUML {
+		text-align: center;
+		margin-top: 6%;
+	}
+
+	#createUML a {
+		color: blue;
+		text-decoration: none;
+	}
+
+	.noRequirement {
+		padding: 1em;
+		font-size: 0.85em;
+	}
+
+	/* TABELLA RESPONSIVE TRACKING */
+
+	#allTracking {
+		width: 100%;
+		padding-left: 3%;
+		padding-right: 3%;
+		font-size: 0.9em;
+		background-color: lightgray;
+		background-image: url('../image/background.jpg');
+		background-size: 100%;
+	}
+
+	#allTracking thead, #allTracking tbody, #allTracking th, #allTracking td, #allTracking tr {
+		display: block;
+	}
+
+	#allTracking tr {
+		background-color: rgba(255, 255, 255, 0.7);
+		border: 0.1em solid black;
+		border-collapse: collapse;
+		margin: 4% 0%;
+	}
+
+	#allTracking thead tr {
+		position: absolute;    /* Nascondiamo la testata */
+		top: -9999px;
+		left: -9999px;
+	}
+
+	#allTracking td {
+		position: relative;		/* Creiamo lo spazio per l'intestazione */
+		border: 0em;
+		padding-top: 2%;
+		padding-left: 30%;
+	}
+
+	#allTracking td:before {
+		position: absolute;		/* Creiamo le altre celle per la descrizione */
+		top: 0.8em;
+		left: 0%;
+		width: 30%;
+		line-height: 0em;
+		text-align: center;
+		padding-top: 2%;
+	}
+
+	#allTracking td:nth-of-type(1):before {
+		content: "Use Case";
+		font-weight: bold;
+	}
+
+	#allTracking td:nth-of-type(2):before {
+		content: "Requisiti";
+		font-weight: bold;
+	}
+
+  /* MAPPA DEL SITO */
+
+  #siteMap {
+    display: block;
+    width: 90%;
+    margin: 5% 0 5% 10%;
+		font-size: 0.85em;
+  }
+
+  #siteMap > li {
+    list-style-image: url("../image/folder_icon.png");
+		margin-bottom: 5%;
+  }
+
+  #siteMap > li > ul{
+    margin-left: 10%;
+  }
+
+  #siteMap > li > ul > li {
+    list-style-image: url("../image/li_central.png");
+  }
+
+  #siteMap > li > ul > li:last-of-type {
+    list-style-image: url("../image/li_up.png");
+  }
+
+	/* FOOTER */
+
+	footer {
+		display: inline-block;
+		clear: both;
+		padding: 2%;
+		background-color: #0060b6;
+		width: 96%;
+	}
+
+  footer span {
+    float: left;
+		color: white;
+  }
+
+  footer a {
+    display: block;
+    margin-left: 4%;
+    float: left;
+		color: lightgray;
+  }
+
+  .valid {
+    display: block;
+    width: 15%;
+    margin-left: 4%;
+    float: right;
+  }
+
+  .multiple {
+  	background-color: white;
+		margin-left: 20%;
+		width: 60%;
+		height: 8em;
+		overflow-Y: scroll;
+		font-size: 0.92em;
+		font-family: primaryFont;
+	}
+
+	#insert .multiple label {
+		margin-top: 0.2em;
+	}
+
+	.multiple input[type="checkbox"] {
+		display: block;
+		float: left;
+		margin: 0.3em;
+	}
+
+  /* ERROR PAGE */
+
+  #errorImg
+  {
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  /* Donations Page */
+
+  #donazione {
+    margin-bottom: 5em;
+    margin-top: 2em;
+    text-align: center;
+  }
+
+  /*FAQ*/
+
+ 	#faqQuestion {
+ 		width: 80%;
+ 		margin: 0 auto;
+ 	}
+
+ 	#faqQuestion dt {
+ 		margin-top: 1.5em;
+ 		font-size: 1.6em;
+ 		color: rgb(135, 30, 9);
+ 	}
+
+ 	#faqQuestion dd {
+ 		margin-top: 0.8em;
+ 		font-size: 1.2em;
+ 	}
+
+ 	#faqQuestion dd:last-of-type {
+ 		margin-bottom: 2em;
+ 	}
+
+ 	#faqQuestion ol {
+ 		margin-top: 0.5em;
+ 		margin-left: 2em;
+ 	}
+
+ 	.code {
+ 		font-family: codeFont;
+ 		font-weight: bold;
+    word-break: break-all;
+ 	}
+}

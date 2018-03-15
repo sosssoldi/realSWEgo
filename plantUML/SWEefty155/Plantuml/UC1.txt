@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Utente
+rectangle UC1 {
+Utente -- (UC1.1 - Visualizzazione componenti)
+Utente -- (UC1.2 - Visualizzazione informazioni componenti)
+Utente -- (UC1.3 - Visualizzazione degli insiemi di richieste fra componenti)
+Utente -- (UC1.4 - Visualizzazione informazioni degli insiemi di richieste fra coppie di componenti)
+Utente -- (UC1.5 - Visualizzazione server)
+Utente -- (UC1.6 - Visualizzazione database)
+Utente -- (UC1.7 - Visualizzazione componenti server cluster)
+}
+@enduml

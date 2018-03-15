@@ -1,0 +1,9 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor wersdfg
+rectangle UC1 {
+wersdfg -- (UC1.1 - poi)
+wersdfg -- (UC1.2 - fghjghj)
+}
+@enduml

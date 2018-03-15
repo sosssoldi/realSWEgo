@@ -1,0 +1,9 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Utente
+rectangle UC1.3.2 {
+Utente -- (UC1.3.2.1 - Visualizzazione del nome identificativo per i server)
+Utente -- (UC1.3.2.2 - Visualizzazione del nome identificativo per i database)
+}
+@enduml

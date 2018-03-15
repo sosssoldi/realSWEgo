@@ -1,0 +1,13 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Utente
+rectangle UC1.2 {
+Utente -- (UC1.2.1 - Colorazione degli archi corrispondenti a tempi di risposta)
+Utente -- (UC1.2.2 - Visualizzazione in base al tipo di richiesta)
+Utente -- (UC1.2.3 - Visualizzazione delle richieste HTTP)
+Utente -- (UC1.2.4 - Visualizzazione delle richieste ai database)
+Utente -- (UC1.2.5 - Colorazione degli archi corrispondenti a tempi di risposta regolari)
+Utente -- (UC1.2.6 - Colorazione degli archi corrispondenti a tempi di risposta critici)
+}
+@enduml

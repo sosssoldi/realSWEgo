@@ -1,0 +1,9 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Utente
+rectangle UC9 {
+Utente -- (UC9.1 - Collasso sottochiamate)
+Utente -- (UC9.2 - Visualizzazione sottochiamate nascoste)
+}
+@enduml

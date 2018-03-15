@@ -1,0 +1,6 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+rectangle UC10 {
+}
+@enduml

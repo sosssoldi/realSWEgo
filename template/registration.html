@@ -1,70 +1,70 @@
-<!DOCTYPE html>
-<html lang="it">
-	<head>
-		<meta charset="utf-8" />
-		<title>SWEgo - Registrazione</title>
-		<meta name="title" content="SWEgo - Registrazione" />
-		<meta name="description" content="Form di registrazione" />
-		<meta name="keywords" content="SWEgo, Registrazione" />
-		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<link rel="icon" href="image/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
-		<link rel="stylesheet" type="text/css" href="css/desktop.css" />
-		<link rel="stylesheet" type="text/css" href="css/print.css" media="print"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="js/nav.js"></script>
-	</head>
-	<body>
-		<header>
-			<a href="index.php"><h1 id="logo" lang="en">SWEgo</h1></a>
-			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
-			<div id="mobileMenu" class="hideButton">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-			<nav>
-				<ul>
-					<li lang="en"><a href="index.php">HOMEPAGE</a></li>
-					<li><a href="contacts.php">CONTATTI</a></li>
-					<li><a href="login.php">ACCEDI</a></li>
-					<li class="here">REGISTRATI</li>
-					<li><a href="donations.php">DONAZIONI</a></li>
-					<li><a href="faq.php">F.A.Q.</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div id="breadcrumb" class="noSpaceHeader">
-			<p>Ti trovi in: REGISTRATI</p>
-		</div>
-		<div id="content">
-			<div id="registrationDescription">
-				<p>&Egrave; molto semplice registrarsi: compila il form con i dati richiesti. In questo modo potrai accedere alle funzionalit&agrave; di <span lang="en">SWEgo</span>.</p>
-				<p>Sei gi&agrave; un utente? <a href="login.php">Accedi</a></p>
-				:message:
-			</div>
-			<form method="post" action="registration.php" id="user_registration">
-				<fieldset form="user_registration">
-					<legend>Form di registrazione</legend>
-					<label for="groupname">Nome del gruppo</label>
-					<input id="groupname" name="groupname" type="text" value=":groupname:" required="required" autocomplete="off" maxlength="100" />
-					<label for="projectname">Nome del progetto</label>
-					<input id="projectname" name="projectname" type="text" value=":projectname:" required="required" autocomplete="off" maxlength="100" />
-					<label for="password">Password</label>
-					<input id="password" name="password" type="password" required="required" autocomplete="off" maxlength="100" />
-					<label for="checkPassword">Conferma password</label>
-					<input id="checkPassword" name="confirmpassword" type="password" required="required" autocomplete="off" maxlength="100" />
-					<input type="submit" name="enter" value="REGISTRATI" />
-				</fieldset>
-			</form>
-		</div>
-		<footer>
-			<span lang="en">SWEgo &copy;</span>
-			<a href="mapVisitor.html">Mappa del sito</a>
-			<img src="image/html5valid.png" class="valid" alt="HTML5 Valid!"/>
-			<img src="image/cssvalid.png" class="valid" alt="CSS Valid!"/>
-		</footer>
-	</body>
-</html>
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>SWEgo - Registrazione</title>
+		<meta name="title" content="SWEgo - Registrazione" />
+		<meta name="description" content="Form di registrazione" />
+		<meta name="keywords" content="SWEgo, Registrazione" />
+		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="icon" href="image/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+		<link rel="stylesheet" type="text/css" href="css/desktop.css" />
+		<link rel="stylesheet" type="text/css" href="css/print.css" media="print"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="js/nav.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="index.php"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
+			<div id="mobileMenu" class="hideButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li lang="en"><a href="index.php">HOMEPAGE</a></li>
+					<li><a href="contacts.php">CONTATTI</a></li>
+					<li><a href="login.php">ACCEDI</a></li>
+					<li class="here">REGISTRATI</li>
+					<li><a href="donations.php">DONAZIONI</a></li>
+					<li><a href="faq.php">F.A.Q.</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="breadcrumb" class="noSpaceHeader">
+			<p>Ti trovi in: REGISTRATI</p>
+		</div>
+		<div id="content">
+			<div id="registrationDescription">
+				<p>&Egrave; molto semplice registrarsi: compila il form con i dati richiesti. In questo modo potrai accedere alle funzionalit&agrave; di <span lang="en">SWEgo</span>.</p>
+				<p>Sei gi&agrave; un utente? <a href="login.php">Accedi</a></p>
+				:message:
+			</div>
+			<form method="post" action="registration.php" id="user_registration">
+				<fieldset form="user_registration">
+					<legend>Form di registrazione</legend>
+					<label for="groupname">Nome del gruppo</label>
+					<input id="groupname" name="groupname" type="text" value=":groupname:" required="required" autocomplete="off" maxlength="100" />
+					<label for="projectname">Nome del progetto</label>
+					<input id="projectname" name="projectname" type="text" value=":projectname:" required="required" autocomplete="off" maxlength="100" />
+					<label for="password">Password</label>
+					<input id="password" name="password" type="password" required="required" autocomplete="off" maxlength="100" />
+					<label for="checkPassword">Conferma password</label>
+					<input id="checkPassword" name="confirmpassword" type="password" required="required" autocomplete="off" maxlength="100" />
+					<input type="submit" name="enter" value="REGISTRATI" />
+				</fieldset>
+			</form>
+		</div>
+		<footer>
+			<span lang="en">SWEgo &copy;</span>
+			<a href="mapVisitor.html">Mappa del sito</a>
+			<img src="image/html5valid.png" class="valid" alt="HTML5 Valid!"/>
+			<img src="image/cssvalid.png" class="valid" alt="CSS Valid!"/>
+		</footer>
+	</body>
+</html>

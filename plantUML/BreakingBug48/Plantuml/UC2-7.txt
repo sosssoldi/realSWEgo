@@ -1,0 +1,7 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+rectangle UC2.7 {
+Utente -- (UC2.7.1 - UC-2.7.1)
+}
+@enduml

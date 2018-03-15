@@ -1,75 +1,80 @@
-<!DOCTYPE html>
-<html lang="it">
-	<head>
-		<meta charset="utf-8" />
-		<title>SWEgo - Visualizza Requisiti</title>
-		<meta name="title" content="SWEgo - Visualizza Requisiti" />
-		<meta name="description" content="Visualizza tutti i tuoi Requisiti." />
-		<meta name="keywords" content="SWEgo, Requisiti, Visualizza" />
-		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<link rel="icon" href="image/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
-		<link rel="stylesheet" type="text/css" href="css/desktop.css" />
-		<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="js/nav.js"></script>
-		<script src="js/requirement.js"></script>
-	</head>
-	<body>
-		<header>
-			<a href="index.php"><h1 id="logo" lang="en">SWEgo</h1></a>
-			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
-			<div id="mobileMenu" class="hideButton">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="insertSource.php">FONTI</a></li>
-					<li><a href="insertActor.php">ATTORI</a></li>
-					<li class="here">REQUISITI</li>
-					<li lang="en"><a href="viewUsecase.php">USE CASE</a></li>
-					<li><a href="viewTracking.php">TRACCIAMENTO</a></li>
-					<li><a href="user.php">PROFILO</a></li>
-					<li><a href="contacts.php">CONTATTI</a></li>
-					<li><a href="donations.php">DONAZIONI</a></li>
-					<li><a href="faq.php">F.A.Q.</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div id="breadcrumb" class="noSpaceHeader">
-			<p>Ti trovi in: REQUISITI</p>
-		</div>
-		<div id="content">
-			<div id="intro">
-				<p>Visualizza tutti i tuoi Requisiti. Puoi modificarli, eliminarli o <a href="insertRequirement.php">inserirne</a> di nuovi.</p>
-				<p>Ogni Requisito &egrave; identificato da un codice, costruito come descritto di seguito:</p>
-				<ul>
-					<li>la prima lettera &egrave; l'abbreviazione di Requisito;</li>
-					<li>il secondo valore indica l'importanza. Assume valore 0 se si tratta di un Requisito obbligatorio, 1 se si tratta di un Requisito desiderabile e 2 se si tratta di un Requisito opzionale;</li>
-					<li>la terza lettera indica il tipo. Assume valore F se si tratta di un Requisito funzionale, Q se di qualit&agrave;, P se prestazionale e V se di vincolo;</li>
-					<li>l'ultimo numero indica il numero di vincolo.</li>
-				</ul>
-				<p>Utilizzando la barra di ricerca potrai filtrare i tuoi Requisiti per codice o descrizione. Non hai ancora inserito quel Requisito? <a href="insertRequirement.php">Inseriscilo!</a></p>
-			</div>
-			<form method="get" action="viewRequirement.php" id="search_R">
-				<fieldset form="search_R">
-					<legend>Form di ricerca</legend>
-					<label for="name_R">Ricerca per codice o descrizione</label>
-					<input type="text" id="name_R" name="search" autocomplete="off" placeholder="Ricerca per codice o descrizione..." />
-					<input type="submit" class="hide" value="RICERCA" />
-				</fieldset>
-			</form>
-			:requirement:
-		</div>
-		<footer>
-			<span lang="en">SWEgo &copy;</span>
-			<a href="mapLogin.html">Mappa del sito</a>
-			<img src="image/html5valid.png" class="valid" alt="HTML5 Valid!"/>
-			<img src="image/cssvalid.png" class="valid" alt="CSS Valid!"/>
-		</footer>
-	</body>
-</html>
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>SWEgo - Visualizza Requisiti</title>
+		<meta name="title" content="SWEgo - Visualizza Requisiti" />
+		<meta name="description" content="Visualizza tutti i tuoi Requisiti." />
+		<meta name="keywords" content="SWEgo, Requisiti, Visualizza" />
+		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="icon" href="image/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+		<link rel="stylesheet" type="text/css" href="css/desktop.css" />
+		<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="js/nav.js"></script>
+		<script src="js/requirement.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="index.php"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
+			<div id="mobileMenu" class="hideButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="insertSource.php">FONTI</a></li>
+					<li><a href="insertActor.php">ATTORI</a></li>
+					<li class="here">REQUISITI</li>
+					<li lang="en"><a href="viewUsecase.php">USE CASE</a></li>
+					<li><a href="viewTracking.php">TRACCIAMENTO</a></li>
+					<li><a href="user.php">PROFILO</a></li>
+					<li><a href="contacts.php">CONTATTI</a></li>
+					<li><a href="donations.php">DONAZIONI</a></li>
+					<li><a href="faq.php">F.A.Q.</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="breadcrumb" class="noSpaceHeader">
+			<p>Ti trovi in: REQUISITI</p>
+		</div>
+		<div id="content">
+			<div id="intro">
+				<p>Visualizza tutti i tuoi Requisiti. Puoi modificarli, eliminarli o <a href="insertRequirement.php">inserirne</a> di nuovi.</p>
+				<p>Ogni Requisito &egrave; identificato da un codice, costruito come descritto di seguito:</p>
+				<ul>
+					<li>la prima lettera &egrave; l'abbreviazione di Requisito;</li>
+					<li>il secondo valore indica l'importanza. Assume valore 0 se si tratta di un Requisito obbligatorio, 1 se si tratta di un Requisito desiderabile e 2 se si tratta di un Requisito opzionale;</li>
+					<li>la terza lettera indica il tipo. Assume valore F se si tratta di un Requisito funzionale, Q se di qualit&agrave;, P se prestazionale e V se di vincolo;</li>
+					<li>l'ultimo numero indica il numero di vincolo.</li>
+				</ul>
+				<p>Utilizzando la barra di ricerca potrai filtrare i tuoi Requisiti per codice o descrizione. Non hai ancora inserito quel Requisito? <a href="insertRequirement.php">Inseriscilo!</a></p>
+			</div>
+			<form method="get" action="viewRequirement.php" id="search_R">
+				<fieldset form="search_R">
+					<legend>Form di ricerca</legend>
+					<label for="name_R">Ricerca per codice o descrizione</label>
+					<input type="text" id="name_R" name="search" autocomplete="off" placeholder="Ricerca per codice o descrizione..." />
+					<input type="submit" class="hide" value="RICERCA" />
+				</fieldset>
+			</form>
+                        <form method="GET" action="optimizeRequirement.php" id="insert">
+				<fieldset form="insert">
+					<input type="submit" name="optimize" value="OTTIMIZZA" style="margin: auto auto;"/>
+				</fieldset>
+			</form>
+			:requirement:
+		</div>
+		<footer>
+			<span lang="en">SWEgo ©</span>
+			<a href="mapLogin.html">Mappa del sito</a>
+			<img src="image/html5valid.png" class="valid" alt="HTML5 Valid!"/>
+			<img src="image/cssvalid.png" class="valid" alt="CSS Valid!"/>
+		</footer>
+	</body>
+</html>

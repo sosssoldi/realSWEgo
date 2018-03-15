@@ -1,69 +1,74 @@
-<!DOCTYPE html>
-<html lang="it">
-	<head>
-		<meta charset="utf-8" />
-		<title>SWEgo - Visualizza Use Case</title>
-		<meta name="title" content="SWEgo - Visualizza Use Case" />
-		<meta name="description" content="Visualizza tutti i tuoi Use Case." />
-		<meta name="keywords" content="SWEgo, Use Case, Visualizza" />
-		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<link rel="icon" href="image/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
-		<link rel="stylesheet" type="text/css" href="css/desktop.css" />
-		<link rel="stylesheet" type="text/css" href="css/print.css" media="print"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="js/nav.js"></script>
-		<script src="js/useCase.js"></script>
-	</head>
-	<body>
-		<header>
-			<a href="index.php"><h1 id="logo" lang="en">SWEgo</h1></a>
-			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
-			<div id="mobileMenu" class="hideButton">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="insertSource.php">FONTI</a></li>
-					<li><a href="insertActor.php">ATTORI</a></li>
-					<li><a href="viewRequirement.php">REQUISITI</a></li>
-					<li class="here" lang="en">USE CASE</li>
-					<li><a href="viewTracking.php">TRACCIAMENTO</a></li>
-					<li><a href="user.php">PROFILO</a></li>
-					<li><a href="contacts.php">CONTATTI</a></li>
-					<li><a href="donations.php">DONAZIONI</a></li>
-					<li><a href="faq.php">F.A.Q.</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div id="breadcrumb" class="noSpaceHeader">
-			<p>Ti trovi in: <span lang="en">USE CASE</span></p>
-		</div>
-		<div id="content">
-			<div id="intro">
-				<p>Visualizza tutti i tuoi <span lang="en">Use Case</span>. Puoi modificarli, eliminarli o <a href="insertUsecase.php">inserirne</a> di nuovi.</p>
-				<p>Ogni <span lang="en">Use Case</span> &egrave; indetificato da una serie di cifre separate dal punto. L'ultima cifra indica che numero di figlio sono, la penultima cifra indica la cifra dello <span lang="en">Use Case</span> padre e cos&igrave; via.</p>
-				<p>Utilizzando la barra di ricerca potrai anche filtrare i tuoi Casi d'Uso per codice o nome. Non hai ancora inserito quello <span lang="en">Use Case</span>? <a href="insertUsecase.php">Inseriscilo!</a></p>
-			</div>
-			<form method="get" action="viewUsecase.php" id="search_UC">
-				<fieldset form="search_UC">
-					<legend>Form di ricerca</legend>
-					<label for="name_UC">Ricerca per codice o nome</label>
-					<input type="text" id="name_UC" name="search" autocomplete="off" placeholder="Ricerca per codice o nome..." />
-					<input type="submit" class="hide" value="RICERCA" />
-				</fieldset>
-			</form>
-			:usecase:
-		</div>
-		<footer>
-			<span lang="en">SWEgo &copy;</span>
-			<a href="mapLogin.html">Mappa del sito</a>
-			<img src="image/html5valid.png" class="valid" alt="HTML5 Valid!"/>
-			<img src="image/cssvalid.png" class="valid" alt="CSS Valid!"/>
-		</footer>
-	</body>
-</html>
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>SWEgo - Visualizza Use Case</title>
+		<meta name="title" content="SWEgo - Visualizza Use Case" />
+		<meta name="description" content="Visualizza tutti i tuoi Use Case." />
+		<meta name="keywords" content="SWEgo, Use Case, Visualizza" />
+		<meta name="author" content="Luca Bertolini, Marco Bonolo, Mauro Carlin, Nicola Tintorri" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="icon" href="image/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" />
+		<link rel="stylesheet" type="text/css" href="css/desktop.css" />
+		<link rel="stylesheet" type="text/css" href="css/print.css" media="print"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="js/nav.js"></script>
+		<script src="js/useCase.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="index.php"><h1 id="logo" lang="en">SWEgo</h1></a>
+			<a id="skipNavbar" href="#breadcrumb">Premi per saltare il menu</a>
+			<div id="mobileMenu" class="hideButton">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="insertSource.php">FONTI</a></li>
+					<li><a href="insertActor.php">ATTORI</a></li>
+					<li><a href="viewRequirement.php">REQUISITI</a></li>
+					<li class="here" lang="en">USE CASE</li>
+					<li><a href="viewTracking.php">TRACCIAMENTO</a></li>
+					<li><a href="user.php">PROFILO</a></li>
+					<li><a href="contacts.php">CONTATTI</a></li>
+					<li><a href="donations.php">DONAZIONI</a></li>
+					<li><a href="faq.php">F.A.Q.</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="breadcrumb" class="noSpaceHeader">
+			<p>Ti trovi in: <span lang="en">USE CASE</span></p>
+		</div>
+		<div id="content">
+			<div id="intro">
+				<p>Visualizza tutti i tuoi <span lang="en">Use Case</span>. Puoi modificarli, eliminarli o <a href="insertUsecase.php">inserirne</a> di nuovi.</p>
+				<p>Ogni <span lang="en">Use Case</span> &egrave; identificato da una serie di cifre separate dal punto. L'ultima cifra indica che numero di figlio sono, la penultima cifra indica la cifra dello <span lang="en">Use Case</span> padre e cos&igrave; via.</p>
+				<p>Utilizzando la barra di ricerca potrai anche filtrare i tuoi Casi d'Uso per codice o nome. Non hai ancora inserito quello <span lang="en">Use Case</span>? <a href="insertUsecase.php">Inseriscilo!</a></p>
+			</div>
+			<form method="get" action="viewUsecase.php" id="search_UC">
+				<fieldset form="search_UC">
+					<legend>Form di ricerca</legend>
+					<label for="name_UC">Ricerca per codice o nome</label>
+					<input type="text" id="name_UC" name="search" autocomplete="off" placeholder="Ricerca per codice o nome..." />
+					<input type="submit" class="hide" value="RICERCA" />
+				</fieldset>
+			</form>
+                        <form method="GET" action="optimizeUsecase.php" id="insert">
+				<fieldset form="insert">
+					<input type="submit" name="optimize" value="OTTIMIZZA" style="margin: auto auto;"/>
+				</fieldset>
+			</form>
+			:usecase:
+		</div>
+		<footer>
+			<span lang="en">SWEgo ©</span>
+			<a href="mapLogin.html">Mappa del sito</a>
+			<img src="image/html5valid.png" class="valid" alt="HTML5 Valid!"/>
+			<img src="image/cssvalid.png" class="valid" alt="CSS Valid!"/>
+		</footer>
+	</body>
+</html>

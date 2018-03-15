@@ -1,0 +1,10 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Utente
+rectangle UC3 {
+Utente -- (UC3.1 - Ingrandimento della mappa topologica)
+Utente -- (UC3.2 - Restringimento della mappa)
+Utente -- (UC3.3 - Visualizzazione mappa a schermo intero)
+}
+@enduml
