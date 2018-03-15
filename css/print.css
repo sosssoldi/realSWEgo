@@ -362,23 +362,28 @@ table caption {
 	content: "Scenario Principale";
 	font-weight: bold;
 }
+
+#allUC td:nth-of-type(7):before {
+	content: "Generalizzazioni";
+	font-weight: bold;
+}
 
-#allUC td:nth-of-type(7):before {
+#allUC td:nth-of-type(8):before {
 	content: "Inclusioni";
 	font-weight: bold;
 }
 
-#allUC td:nth-of-type(8):before {
+#allUC td:nth-of-type(9):before {
 	content: "Estensioni";
 	font-weight: bold;
 }
 
-#allUC td:nth-of-type(9):before {
+#allUC td:nth-of-type(10):before {
 	content: "Attori";
 	font-weight: bold;
 }
 
-#allUC td:nth-of-type(10):before {
+#allUC td:nth-of-type(11):before {
 	content: "Operazioni";
 	font-weight: bold;
 }

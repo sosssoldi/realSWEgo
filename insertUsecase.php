@@ -28,7 +28,7 @@
 			$usecaseDAO = new UsecaseDAO();
 			$usecaseDAO->insert($_POST, $_SESSION["id"]);
 
-			//render_page('insert');
+			render_page('insert');
 		}
 	}
 ?>

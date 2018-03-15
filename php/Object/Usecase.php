@@ -37,7 +37,7 @@
 		//Metodo che fa il parsing delle informazioni inserite all'interno del form
 		public static function parse_input($obj) {
 			foreach($obj as $key => &$value) {
-                                if($key != "inclusion" && $key != "extension" && $key != "actor" && $key != "requirement")
+                                if($key != "generalization" && $key != "inclusion" && $key != "extension" && $key != "actor" && $key != "requirement")
 					$value = htmlentities($value, ENT_QUOTES);
 				/*$value = str_replace("'", "'", $value);
 				$value = str_replace("<", "<", $value);

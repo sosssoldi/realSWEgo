@@ -33,6 +33,7 @@
 		$str .= '<th scope="col">Precondizione</th>';
 		$str .= '<th scope="col">Postcondizione</th>';
 		$str .= '<th scope="col">ScenarioPrincipale</th>';
+    $str .= '<th scope="col">Generalizzazioni</th>';
 		$str .= '<th scope="col">Inclusioni</th>';
 		$str .= '<th scope="col">Estensioni</th>';
 		$str .= '<th scope="col">Attori</th>';
@@ -49,7 +50,23 @@
 			$html = str_replace(':postcondition:', $uc['postcondition'], $html);
 			$html = str_replace(':mainscenario:', $uc['mainscenario'], $html);
 			$html = str_replace(':id:', $uc['id'], $html);
-
+
+      $generalizations = $usecaseDAO->getMyGeneralizations($uc['id']);
+      $htmlGeneralizations = '';
+      foreach($generalizations as $generalization) {
+        $gen = $usecaseDAO->getUsecase($generalization['generalizationusecaseid'], $_SESSION["id"]);
+        if($gen) {
+          $htmlGeneralizations .= $gen[0]['usecaseid'];
+          $htmlGeneralizations .= ', ';
+        }
+      }
+      if($htmlGeneralizations == '')
+        $html = str_replace(':generalizations:', 'Nessuna generalizzazione', $html);
+      else {
+        $htmlGeneralizations = rtrim($htmlGeneralizations, ', ');
+        $html = str_replace(':generalizations:', $htmlGeneralizations, $html);
+      }
+
 			$inclusions = $usecaseDAO->getMyInclusions($uc['id']);
 			$htmlInclusions = '';
 			foreach($inclusions as $inclusion) {
