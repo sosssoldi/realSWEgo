@@ -84,7 +84,7 @@
 					$nid = $this->getIdWithParent($obj['parent'], $projectid);
 			else
 				$nid = $lid;
-			$this->query("UPDATE usecase SET usecaseid = '{$nid}', name = '{$obj['name']}', description = '{$obj['description']}', precondition = '{$obj['precondition']}', postcondition = '{$obj['postcondition']}', mainscenario = '{$obj['mainscenario']}', alternativescenario = '{$obj['alternativescenario']}', generalization = {$obj['generalization']}, parent = {$obj['parent']} WHERE id = {$id};");
+			$this->query("UPDATE usecase SET usecaseid = '{$nid}', name = '{$obj['name']}', description = '{$obj['description']}', precondition = '{$obj['precondition']}', postcondition = '{$obj['postcondition']}', mainscenario = '{$obj['mainscenario']}', alternativescenario = '{$obj['alternativescenario']}', parent = {$obj['parent']} WHERE id = {$id};");
 			$this->resultSet();
 			$this->query("DELETE FROM usecaseinclusions WHERE usecaseid = {$id};");
 			$this->resultSet();
