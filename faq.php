@@ -87,10 +87,10 @@
 				<dd>Il team di SWEgo vi consiglia di installare <a href="https://sourceforge.net/projects/texstudio/">TeXstudio</a> come editor e compilatore per LaTeX.
 				I pacchetti fondamentali da includere sono:
 					<ol>
-						<li><span class="code">\usepackage{graphicx}</span>;</li>
-						<li><span class="code">\usepackage{longtable}</span>;</li>
-						<li><span class="code">\usepackage{hyperref}</span>;</li>
-						<li><span class="code">\usepackage{array}</span>.</li>
+						<li><span class="code">\usepackage{graphicx}</span></li>
+						<li><span class="code">\usepackage{longtable}</span></li>
+						<li><span class="code">\usepackage{hyperref}</span></li>
+						<li><span class="code">\usepackage{array}</span></li>												<li><span class="code">\usepackage{pifont}</span></li>
 					</ol>
 			 </dd>
 			</dl>

@@ -218,7 +218,7 @@ function create_requirement_file($path) {
 	$i = 0;
 	$db = new Database();
 	while($i < count($t)) {
-		$db->query("SELECT requirements.id as id, requirementid, requirements.description as description, sources.name as name FROM requirements, sources WHERE type LIKE '%{$t[$i]}%' AND requirements.source = sources.id AND requirements.projectid = {$_SESSION["id"]} ORDER BY requirementid ASC;");
+		$db->query("SELECT requirements.id as id, requirementid, requirements.description as description, sources.name as name, requirements.satisfied as satisfied FROM requirements, sources WHERE type LIKE '%{$t[$i]}%' AND requirements.source = sources.id AND requirements.projectid = {$_SESSION["id"]} ORDER BY requirementid ASC;");
 		$rs = $db->resultSet();
 		$rs = sortRequirements($rs);
 		$rs = decode_entities($rs);
@@ -226,13 +226,15 @@ function create_requirement_file($path) {
 			fputs($requirementf, "\\newcolumntype{H}{>{\centering\arraybackslash}m{7cm}}\n");
 			fputs($requirementf, "\subsection{Requisiti {$tdesc{$i}}}\n");
 			fputs($requirementf, "\\normalsize\n");
-			fputs($requirementf, "\\begin{longtable}{|c|H|c|}\n");
+			fputs($requirementf, "\\begin{longtable}{|c|H|c|c|}\n");
 			fputs($requirementf, "\\hline\n");
-			fputs($requirementf, "\\textbf{Id Requisito} & \\textbf{Descrizione} & \\textbf{Fonte}\\\\\n");
+			fputs($requirementf, "\\textbf{Id Requisito} & \\textbf{Descrizione} & \\textbf{Fonte} & \\textbf{Copertura}\\\\\n");
 			fputs($requirementf, "\\hline\n");
 			fputs($requirementf, "\\endhead\n");
 			foreach($rs as $r) {
-				fputs($requirementf, "\\hypertarget{{$r['requirementid']}}{{$r['requirementid']}} & {$r['description']} & {$r["name"]} \\\\ \\hline \n");
+				//ding{51}: cmark; ding{55}: xmark; \usepackage{pifont}
+				$satisfied = strcmp(strtolower($r['satisfied']), 'implementato') === 0 ? '\\ding{51}' : '\\ding{55}';
+				fputs($requirementf, "\\hypertarget{{$r['requirementid']}}{{$r['requirementid']}} & {$r['description']} & {$r["name"]} & {$satisfied} \\\\ \\hline \n");
 			}
 			fputs($requirementf, "\\caption[Requisiti {$tdesc{$i}}]{Requisiti {$tdesc{$i}}}\n");
 			fputs($requirementf, "\\label{tabella:req{$i}}\n");
