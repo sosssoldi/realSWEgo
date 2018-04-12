@@ -1,8 +1,0 @@
-@startuml
-left to right direction
-skinparam packageStyle rectangle
-actor Utente
-rectangle UC3 {
-Utente -- (UC3.1 - Visualizzazione dettagli di una singola query)
-}
-@enduml

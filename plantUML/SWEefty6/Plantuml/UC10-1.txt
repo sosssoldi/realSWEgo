@@ -1,9 +1,0 @@
-@startuml
-left to right direction
-skinparam packageStyle rectangle
-actor Utente
-rectangle UC10.1 {
-Utente -- (UC10.1.1 - Riordinamento delle query per momento di inizio dell'esecuzione crescente)
-Utente -- (UC10.1.2 - Riordinamento delle query per momento di inizio dell'esecuzione decrescente)
-}
-@enduml

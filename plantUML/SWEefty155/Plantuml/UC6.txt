@@ -1,9 +1,0 @@
-@startuml
-left to right direction
-skinparam packageStyle rectangle
-actor Utente
-rectangle UC6 {
-Utente -- (UC6.1 - Riordinamento dello stack trace in ordine crescente)
-Utente -- (UC6.2 - Riordinamento dello stack trace per ordine decrescente)
-}
-@enduml

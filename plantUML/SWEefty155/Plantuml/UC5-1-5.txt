@@ -1,8 +1,0 @@
-@startuml
-left to right direction
-skinparam packageStyle rectangle
-actor Utente
-rectangle UC5.1.5 {
-Utente -- (UC5.1.5.1 - Visualizzazione dettaglio errore)
-}
-@enduml

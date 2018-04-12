@@ -1,9 +1,0 @@
-@startuml
-left to right direction
-skinparam packageStyle rectangle
-actor Utente
-rectangle UC6.1 {
-Utente -- (UC6.1.1 - Ingrandimento della mappa topologica)
-Utente -- (UC6.1.2 - Restringimento della mappa)
-}
-@enduml

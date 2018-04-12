@@ -1,8 +1,0 @@
-@startuml
-left to right direction
-skinparam packageStyle rectangle
-actor Utente
-rectangle UC2.6 {
-Utente -- (UC2.6.1 - UC-2.6.1)
-}
-@enduml

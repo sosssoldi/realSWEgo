@@ -1,9 +1,0 @@
-@startuml
-left to right direction
-skinparam packageStyle rectangle
-actor Utente
-rectangle UC1.2.4 {
-Utente <|-- (UC1.2.4.1 - Visualizzazione delle richieste HTTP)
-Utente <|-- (UC1.2.4.2 - Visualizzazione delle richieste ai database)
-}
-@enduml

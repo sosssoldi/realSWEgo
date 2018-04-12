@@ -1,7 +1,0 @@
-@startuml
-left to right direction
-skinparam packageStyle rectangle
-actor wersdfg
-rectangle UC3 {
-}
-@enduml
